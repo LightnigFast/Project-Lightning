@@ -13,6 +13,7 @@
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
 
+        <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
         <usercontrols:Cabecera Grid.Row="0"/>
 
     </Grid>

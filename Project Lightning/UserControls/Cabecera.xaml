@@ -5,8 +5,57 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project_Lightning"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Background="Red">
+             d:DesignHeight="70" d:DesignWidth="1280">
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--GRID PARA LOS BOTONES LAS EMPRESAS-->
+        <Grid Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
             
+            <!--BOTON UBISOFT-->
+            <Button x:Name="ubisoft_button" Background="Transparent" Grid.Column="0">
+                <Image Source="/res/media/logos/originals/Ubisoft_logo_white.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </Button>
+            
+            <!--BOTON EA-->
+            <Button x:Name="ea_button" Background="Transparent" Grid.Column="1">
+                <Image Source="/res/media/logos/originals/EA_Logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </Button>
+            
+            <!--BOTON ROCKSTAR-->
+            <Button x:Name="rockstar_button" Background="Transparent" Grid.Column="2">
+                <Image Source="/res/media/logos/originals/Rockstar_Games_Logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </Button>
+            
+            <!--BOTON DENUVO-->
+            <Button x:Name="denuvo_button" Background="Transparent" Grid.Column="3">
+                <Image Source="/res/media/logos/originals/Denuvo_logo_white.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </Button>
+            
+            <!--BOTON Play Station-->
+            <Button x:Name="ps_button" Background="Transparent" Grid.Column="4">
+                <Image Source="/res/media/logos/originals/PlayStation_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </Button>
+            
+            <!--BOTON PARA OTROS JUEGOS-->
+            <Button x:Name="other_games_button" Background="Transparent" Grid.Column="5">
+                <Image Source="/res/media/logos/originals/other_games_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </Button>
+            
+        </Grid>
+        
+        
+        <!--GRID PARA EL BUSCADOR-->
     </Grid>
 </UserControl>
