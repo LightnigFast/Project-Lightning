@@ -13,3 +13,6 @@ C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.csproj.CoreCompileInputs.cache
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.exe
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.pdb
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\UserControls\Cabecera.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\UserControls\Cabecera.baml
