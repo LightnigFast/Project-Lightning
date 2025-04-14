@@ -1,0 +1,15 @@
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.csproj.AssemblyReference.cache
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\App.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning_MarkupCompile.cache
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Project Lightning.exe.config
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Project Lightning.exe
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Project Lightning.pdb
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\MainWindow.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning_MarkupCompile.lref
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\MainWindow.baml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.g.resources
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project_Lightning.Properties.Resources.resources
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.csproj.GenerateResource.cache
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.csproj.CoreCompileInputs.cache
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.exe
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.pdb
