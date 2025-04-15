@@ -25,7 +25,7 @@
             </Grid.RowDefinitions>
 
             <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
-            <usercontrols:Cabecera Grid.Row="0"/>
+            <usercontrols:Cabecera x:Name="Cabecera" Grid.Row="0"/>
             
             <!--PAGINA DE BIENVENIDA-->
             <Frame Grid.Row="1" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>

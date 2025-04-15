@@ -107,12 +107,14 @@
             </Grid.ColumnDefinitions>
             
             <!--BOTON UBISOFT-->
-            <Button x:Name="ubisoft_button" Background="Transparent" Grid.Column="0" Style="{StaticResource MinimalButtonStyle}">
+            <Button x:Name="ubisoft_button" Background="Transparent" Grid.Column="0" Style="{StaticResource MinimalButtonStyle}"
+                    Click="ubisoft_click">
                 <Image Source="/res/media/logos/originals/Ubisoft_logo_white.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON EA-->
-            <Button x:Name="ea_button" Background="Transparent" Grid.Column="1" Style="{StaticResource MinimalButtonStyle}">
+            <Button x:Name="ea_button" Background="Transparent" Grid.Column="1" Style="{StaticResource MinimalButtonStyle}"
+                    Click="ea_click">
                 <Image Source="/res/media/logos/originals/EA_Logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             

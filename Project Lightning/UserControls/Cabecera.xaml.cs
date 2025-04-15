@@ -20,9 +20,23 @@ namespace Project_Lightning.UserControls
     /// </summary>
     public partial class Cabecera : UserControl
     {
+        public event RoutedEventHandler UbisoftPresionado;
+        public event RoutedEventHandler EAPresionado;
         public Cabecera()
         {
             InitializeComponent();
+        }
+
+        //UBISOFT CLICK
+        public void ubisoft_click(object sender, RoutedEventArgs e)
+        {
+            UbisoftPresionado?.Invoke(this, e);
+        }
+
+        //EA CLICK
+        public void ea_click(object sender, RoutedEventArgs e)
+        {
+            EAPresionado?.Invoke(this, e);
         }
     }
 }

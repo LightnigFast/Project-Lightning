@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Project_Lightning.UserControls;
 
 namespace Project_Lightning
 {
@@ -23,6 +24,20 @@ namespace Project_Lightning
         public MainWindow()
         {
             InitializeComponent();
+
+            Cabecera.UbisoftPresionado += boton_ubisoft_presionado;
+            Cabecera.EAPresionado += boton_ea_presionado;
+        }
+
+        private void boton_ubisoft_presionado(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("UBISOFT");
+        }
+
+        //METODO PARA EA
+        private void boton_ea_presionado(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("EA");
         }
 
     }
