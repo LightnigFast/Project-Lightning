@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/media/logos/originals/other_games_logo.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/media/backgrounds/milad-fakurian.jpg")]
 
 

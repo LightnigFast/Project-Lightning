@@ -8,13 +8,24 @@
         mc:Ignorable="d"
         Title="⚡Project Lightning⚡" Height="720" Width="1280">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="70"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
+        <Image Source="/res/media/backgrounds/milad-fakurian.jpg"
+               Stretch="Fill"
+               Panel.ZIndex="0"
+               RenderOptions.BitmapScalingMode="HighQuality">   
+            <Image.Effect>
+                <DropShadowEffect BlurRadius="100"/>
+            </Image.Effect>
+        </Image>
 
-        <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
-        <usercontrols:Cabecera Grid.Row="0"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
 
+            <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
+            <usercontrols:Cabecera Grid.Row="0"/>
+        
+        </Grid>
     </Grid>
 </Window>

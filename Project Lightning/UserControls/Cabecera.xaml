@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Project_Lightning"
              mc:Ignorable="d" 
              d:DesignHeight="70" d:DesignWidth="1280">
-    <Grid Background="Black">
+    <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
