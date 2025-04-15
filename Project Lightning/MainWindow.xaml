@@ -8,14 +8,14 @@
         mc:Ignorable="d"
         Title="⚡Project Lightning⚡" Height="720" Width="1280">
     <Grid>
-        <Image Source="/res/media/backgrounds/milad-fakurian.jpg"
-               Stretch="Fill"
-               Panel.ZIndex="0"
-               RenderOptions.BitmapScalingMode="HighQuality">   
-            <Image.Effect>
-                <DropShadowEffect BlurRadius="100"/>
-            </Image.Effect>
-        </Image>
+        <MediaElement Name="BackgroundVideo"
+                  Source="res/media/backgrounds/videoInicio.mp4"
+                  LoadedBehavior="Play"
+                  UnloadedBehavior="Stop"
+                  IsMuted="True"
+                  Stretch="Fill"
+                  Panel.ZIndex="0"
+                  MediaEnded="BackgroundVideo_MediaEnded" />
 
         <Grid>
             <Grid.RowDefinitions>

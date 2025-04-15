@@ -24,5 +24,11 @@ namespace Project_Lightning
         {
             InitializeComponent();
         }
+
+        private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            BackgroundVideo.Position = TimeSpan.Zero;
+            BackgroundVideo.Play();
+        }
     }
 }

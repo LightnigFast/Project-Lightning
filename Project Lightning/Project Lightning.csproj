@@ -128,5 +128,8 @@
   <ItemGroup>
     <Resource Include="res\media\backgrounds\milad-fakurian.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="res\media\backgrounds\videoInicio.mp4" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
