@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\pages\\panelbienvenida.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\panelbienvenida.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\usercontrols\\cabecera.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:usercontrols\\cabecera.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -31,13 +31,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "panelBienvenida.xaml",
-              "DocumentMoniker": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelBienvenida.xaml",
-              "RelativeDocumentMoniker": "Pages\\panelBienvenida.xaml",
-              "ToolTip": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelBienvenida.xaml*",
-              "RelativeToolTip": "Pages\\panelBienvenida.xaml*",
+              "Title": "Cabecera.xaml",
+              "DocumentMoniker": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml",
+              "RelativeDocumentMoniker": "UserControls\\Cabecera.xaml",
+              "ToolTip": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml*",
+              "RelativeToolTip": "UserControls\\Cabecera.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-15T17:04:55.356Z",
+              "WhenOpened": "2025-04-15T18:10:58.628Z",
               "EditorCaption": ""
             },
             {
