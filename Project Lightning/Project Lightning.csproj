@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Pages\panelBienvenida.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Cabecera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -66,6 +70,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Pages\panelBienvenida.xaml.cs">
+      <DependentUpon>panelBienvenida.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Cabecera.xaml.cs">
       <DependentUpon>Cabecera.xaml</DependentUpon>
@@ -97,6 +104,8 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="res\fonts\Muro.otf" />
+    <Resource Include="res\fonts\Muroslant.otf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -130,6 +139,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="res\media\backgrounds\videoInicio.mp4" />
+    <Resource Include="res\media\letters\Project-Lightning-font2.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

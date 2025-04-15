@@ -8,14 +8,15 @@
         mc:Ignorable="d"
         Title="⚡Project Lightning⚡" Height="720" Width="1280">
     <Grid>
-        <MediaElement Name="BackgroundVideo"
-                  Source="res/media/backgrounds/videoInicio.mp4"
-                  LoadedBehavior="Play"
-                  UnloadedBehavior="Stop"
-                  IsMuted="True"
-                  Stretch="Fill"
-                  Panel.ZIndex="0"
-                  MediaEnded="BackgroundVideo_MediaEnded" />
+
+        <!--FONDO CON GRADIENTE-->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#FF3B0056" Offset="1.0" />
+                <GradientStop Color="#FF1F002E" Offset="0.8" />
+                <GradientStop Color="#FF000000" Offset="0.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
 
         <Grid>
             <Grid.RowDefinitions>
@@ -25,7 +26,10 @@
 
             <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
             <usercontrols:Cabecera Grid.Row="0"/>
-        
+            
+            <!--PAGINA DE BIENVENIDA-->
+            <Frame Grid.Row="1" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
+
         </Grid>
     </Grid>
 </Window>

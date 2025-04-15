@@ -35,3 +35,6 @@ C:\Users\Luis\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pro
 C:\Users\Luis\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.csproj.GenerateResource.cache
 C:\Users\Luis\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning.csproj.CoreCompileInputs.cache
 C:\Users\Luis\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning_Content.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning_Content.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelBienvenida.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelBienvenida.baml

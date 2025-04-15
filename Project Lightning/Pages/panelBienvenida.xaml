@@ -1,0 +1,38 @@
+﻿<Page x:Class="Project_Lightning.Pages.panelBienvenida"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project_Lightning.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="650" d:DesignWidth="1280"
+      Title="panelBienvenida">
+
+    <Page.Resources>
+        <FontFamily x:Key="FuenteJohn">pack://application:,,,/res/fonts/#Muro Regulat</FontFamily>
+        <FontFamily x:Key="FuenteJohnInclinada">pack://application:,,,/res/fonts/#Muro Slant</FontFamily>
+        
+    </Page.Resources>
+
+    <Grid Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Welcome to" Foreground="White" FontSize="100" FontFamily="{StaticResource FuenteJohnInclinada}"
+                   Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+        <!--
+        <TextBlock Text="⚡Project Lightning⚡" Foreground="White" FontSize="100"
+           Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        -->
+        <Image Source="/res/media/letters/Project-Lightning-font2.png" Grid.Row="1" Height="170" RenderOptions.BitmapScalingMode="HighQuality"/>
+        
+        <TextBlock Text="Select an app to get started" Foreground="White" FontSize="30" FontFamily="{StaticResource FuenteJohnInclinada}"
+                   Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        
+        
+        
+    </Grid>
+</Page>
