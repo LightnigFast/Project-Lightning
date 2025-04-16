@@ -1,0 +1,20 @@
+{
+    "UBISOFT": {
+        "33230": {
+            "name": "Assassin's Creed II",
+            "launch-steam": true,
+            "launch-exe": true,
+            "comentatios": "",
+            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
+            "nombre-fix": "Assassin's Creed II - bypass"
+        },
+        "48190": {
+            "name": "Assassin's Creed Brotherhood",
+            "launch-steam": true,
+            "launch-exe": true,
+            "comentatios": "",
+            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
+            "nombre-fix": "Assassin's Creed Brotherhood - bypass"
+        }
+    }
+}
