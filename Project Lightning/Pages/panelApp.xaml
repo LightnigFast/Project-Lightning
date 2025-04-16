@@ -5,16 +5,47 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Project_Lightning.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="680" d:DesignWidth="1280"
+      d:DesignHeight="680" d:DesignWidth="1270"
       Title="panelUbisoft">
 
     <Page.Resources>
         <FontFamily x:Key="FuenteJohn">pack://application:,,,/res/fonts/#Muro Regulat</FontFamily>
         <FontFamily x:Key="FuenteJohnInclinada">pack://application:,,,/res/fonts/#Muro Slant</FontFamily>
 
+
+        <Style TargetType="ScrollBar">
+            <Setter Property="Width" Value="3"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Grid Background="Transparent">
+                            <Track Name="PART_Track" IsDirectionReversed="True">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="ScrollBar.LineUpCommand" Visibility="Collapsed"/>
+                                </Track.DecreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb>
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Border Background="#555" CornerRadius="3"/>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="ScrollBar.LineDownCommand" Visibility="Collapsed"/>
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Page.Resources>
 
-    <Grid Background="Black" Margin="15,0,0,0">
+    <Grid Background="Transparent" Margin="15,0,0,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
@@ -35,8 +66,40 @@
             <TextBlock Text="prueba" FontSize="30" Foreground="Yellow" FontFamily="{StaticResource FuenteJohnInclinada}"
                        Name="txtApp" Grid.Column="1"/>
         
-        
-        
         </Grid>
+
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto">
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
+                
+            </WrapPanel>
+        </ScrollViewer>
     </Grid>
 </Page>

@@ -40,3 +40,9 @@ C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelBienvenida.baml
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelApp.g.cs
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelApp.baml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Bunifu.Licensing.dll
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\System.CodeDom.dll
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\System.CodeDom.xml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project .2B1E12A5.Up2Date
