@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Project_Lightning.Pages;
 using Project_Lightning.UserControls;
 
 namespace Project_Lightning
@@ -27,11 +28,17 @@ namespace Project_Lightning
 
             Cabecera.UbisoftPresionado += boton_ubisoft_presionado;
             Cabecera.EAPresionado += boton_ea_presionado;
+            Cabecera.RockstarPresionado += boton_rockstar_presionado;
+            Cabecera.DenuvoPresionado += boton_denuvo_presionado;
+            Cabecera.PlayStationPresionado += boton_playstation_presionado;
+            Cabecera.OthersPresionado += boton_others_presionado;
         }
 
+        //METODO PARA UBISOFT
         private void boton_ubisoft_presionado(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("UBISOFT");
+
+            framePrincipal.Navigate(new panelApp("UBISFOT"));
         }
 
         //METODO PARA EA
@@ -39,6 +46,33 @@ namespace Project_Lightning
         {
             MessageBox.Show("EA");
         }
+
+        //METODO PARA ROCKSTAR
+        private void boton_rockstar_presionado(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Rockstar");
+        }
+
+        //METODO PARA DENUVO
+        private void boton_denuvo_presionado(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Denuvo");
+        }
+
+        //METODO PARA PLAY STATION
+        private void boton_playstation_presionado(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Play Station");
+        }
+
+        //METODO PARA OTHERS
+        private void boton_others_presionado(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Otros juegos");
+        }
+
+
+
 
     }
 }

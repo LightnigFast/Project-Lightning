@@ -1,0 +1,42 @@
+﻿<Page x:Class="Project_Lightning.Pages.panelApp"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Project_Lightning.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="680" d:DesignWidth="1280"
+      Title="panelUbisoft">
+
+    <Page.Resources>
+        <FontFamily x:Key="FuenteJohn">pack://application:,,,/res/fonts/#Muro Regulat</FontFamily>
+        <FontFamily x:Key="FuenteJohnInclinada">pack://application:,,,/res/fonts/#Muro Slant</FontFamily>
+
+    </Page.Resources>
+
+    <Grid Background="Black" Margin="15,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--GRID PARA EL TEXTO-->
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!--TEXTO PREDEFINIDO-->
+            <TextBlock Text="Games From " FontSize="30" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}"
+                       Grid.Column="0"/>
+            
+            <!--TEXTO QUE CAMBIARA DEPENDIENDO DE LA APP-->
+            <TextBlock Text="prueba" FontSize="30" Foreground="Yellow" FontFamily="{StaticResource FuenteJohnInclinada}"
+                       Name="txtApp" Grid.Column="1"/>
+        
+        
+        
+        </Grid>
+    </Grid>
+</Page>

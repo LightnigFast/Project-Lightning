@@ -59,6 +59,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\panelApp.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Cabecera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -73,6 +77,9 @@
     </Compile>
     <Compile Include="Pages\panelBienvenida.xaml.cs">
       <DependentUpon>panelBienvenida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\panelApp.xaml.cs">
+      <DependentUpon>panelApp.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Cabecera.xaml.cs">
       <DependentUpon>Cabecera.xaml</DependentUpon>

@@ -38,3 +38,5 @@ C:\Users\Luis\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pro
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Project Lightning_Content.g.cs
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelBienvenida.g.cs
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelBienvenida.baml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelApp.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Pages\panelApp.baml

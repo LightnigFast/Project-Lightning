@@ -18,7 +18,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <Grid Margin="0,10,0,0">
+        <Grid Margin="10,10,20,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="70"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
@@ -28,7 +28,7 @@
             <usercontrols:Cabecera x:Name="Cabecera" Grid.Row="0"/>
             
             <!--PAGINA DE BIENVENIDA-->
-            <Frame Grid.Row="1" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
+            <Frame x:Name="framePrincipal" Grid.Row="1" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
 
         </Grid>
     </Grid>

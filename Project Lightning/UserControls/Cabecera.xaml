@@ -91,7 +91,7 @@
 
     <Grid Background="Transparent">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="640"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
@@ -119,22 +119,26 @@
             </Button>
             
             <!--BOTON ROCKSTAR-->
-            <Button x:Name="rockstar_button" Background="Transparent" Grid.Column="2" Style="{StaticResource MinimalButtonStyle}">
+            <Button x:Name="rockstar_button" Background="Transparent" Grid.Column="2" Style="{StaticResource MinimalButtonStyle}"
+                    Click="rockstar_click">
                 <Image Source="/res/media/logos/originals/Rockstar_Games_Logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON DENUVO-->
-            <Button x:Name="denuvo_button" Background="Transparent" Grid.Column="3" Style="{StaticResource MinimalButtonStyle}">
+            <Button x:Name="denuvo_button" Background="Transparent" Grid.Column="3" Style="{StaticResource MinimalButtonStyle}"
+                    Click="denuvo_click">
                 <Image Source="/res/media/logos/originals/Denuvo_logo_white.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON Play Station-->
-            <Button x:Name="ps_button" Background="Transparent" Grid.Column="4" Style="{StaticResource MinimalButtonStyle}">
+            <Button x:Name="ps_button" Background="Transparent" Grid.Column="4" Style="{StaticResource MinimalButtonStyle}"
+                    Click="playstation_click">
                 <Image Source="/res/media/logos/originals/PlayStation_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON PARA OTROS JUEGOS-->
-            <Button x:Name="other_games_button" Background="Transparent" Grid.Column="5" Style="{StaticResource MinimalButtonStyle}">
+            <Button x:Name="other_games_button" Background="Transparent" Grid.Column="5" Style="{StaticResource MinimalButtonStyle}"
+                    Click="others_click">
                 <Image Source="/res/media/logos/originals/other_games_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             

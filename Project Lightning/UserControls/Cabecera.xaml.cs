@@ -22,6 +22,10 @@ namespace Project_Lightning.UserControls
     {
         public event RoutedEventHandler UbisoftPresionado;
         public event RoutedEventHandler EAPresionado;
+        public event RoutedEventHandler RockstarPresionado;
+        public event RoutedEventHandler DenuvoPresionado;
+        public event RoutedEventHandler PlayStationPresionado;
+        public event RoutedEventHandler OthersPresionado;
         public Cabecera()
         {
             InitializeComponent();
@@ -38,5 +42,31 @@ namespace Project_Lightning.UserControls
         {
             EAPresionado?.Invoke(this, e);
         }
+
+        //ROCKSTAR CLICK
+        public void rockstar_click(object sender, RoutedEventArgs e)
+        {
+            RockstarPresionado?.Invoke(this, e);
+        }
+
+        //DENUVO CLICK
+        public void denuvo_click(object sender, RoutedEventArgs e)
+        {
+            DenuvoPresionado?.Invoke(this, e);
+        }
+
+        //PLAYSTATION CLICK
+        public void playstation_click(object sender, RoutedEventArgs e)
+        {
+            PlayStationPresionado?.Invoke(this, e);
+        }
+
+        //OTHERS PRESIONADO
+        public void others_click(object sender, RoutedEventArgs e)
+        {
+            OthersPresionado?.Invoke(this, e);
+        }
+
+
     }
 }
