@@ -76,41 +76,98 @@ namespace Project_Lightning.Pages
         //ESTE METODO BUSCA CREAR TODOS LOS BOTONES, COLCOAR SU IMAGEN Y SU RESPECTIVO METODO DE CLICK
         private void colocarBotones(Dictionary<string, Juego> juegosApp)
         {
-            //BUCLE PARA SACAR TODOS LOS JUEGOS
-            foreach (var juego in juegosApp)
+            if (juegosApp.Count != 0)
             {
-                //CREO LOS BOTONES DE CADA JUEGO Y LE ASIGNO EL TAMAÑO PREDEFINIDO
-                Button botonJuego = new Button
+                //BUCLE PARA SACAR TODOS LOS JUEGOS
+                foreach (var juego in juegosApp)
                 {
-                    Width = 198,
-                    Height = 298,
-                    Margin = new Thickness(17)
-                };
+                    //CREO LOS BOTONES DE CADA JUEGO Y LE ASIGNO EL TAMAÑO PREDEFINIDO
+                    Button botonJuego = new Button
+                    {
+                        Width = 198,
+                        Height = 298,
+                        Margin = new Thickness(17),
+                    };
 
-                //CREO LA IMAGEN QUE IRA EN CADA BOTON
-                Image imagenJuego = new Image
-                {
-                    Width = 198,
-                    Height = 298,
-                    Stretch = Stretch.Fill
-                };
+                    //APLICO EL ESTILO QUE HE HECHO EN EL XAML
+                    botonJuego.Style = (Style)FindResource("Boton_juego");
 
-                //INTENTO CARGAR LA IMAGEN ORIGINAL
-                imagenJuego.Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/library_600x900.jpg"));
+                    //CREO LA IMAGEN QUE IRA EN CADA BOTON
+                    Image imagenJuego = new Image
+                    {
+                        Width = 198,
+                        Height = 298,
+                        Stretch = Stretch.Fill
+                    };
 
-                //SI NO SE HA PUESTO NINGUNA IMAGEN (ES DECIR, QUE ESTE JUEGO NO TIENE)
-                imagenJuego.ImageFailed += (sender, e) =>
-                {
-                    imagenJuego.Stretch = Stretch.Uniform;
-                    imagenJuego.Source = new BitmapImage(new Uri("https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/capsule_184x69.jpg?t=1739176298"));
-                };
+                    //INTENTO CARGAR LA IMAGEN ORIGINAL
+                    imagenJuego.Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/library_600x900.jpg"));
 
-                //AGREGO LA IMAGEN AL BOTON
-                botonJuego.Content = imagenJuego;
+                    //SI NO SE HA PUESTO NINGUNA IMAGEN (ES DECIR, QUE ESTE JUEGO NO TIENE)
+                    imagenJuego.ImageFailed += (sender, e) =>
+                    {
+                        imagenJuego.Stretch = Stretch.Uniform;
+                        imagenJuego.Source = new BitmapImage(new Uri("https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/capsule_184x69.jpg?t=1739176298"));
+                    };
 
-                //POR ÚLTIMO, LOS AGREGO AL PANEL DE JUEGOS
-                panelJuegos.Children.Add(botonJuego);
+                    //AGREGO LA IMAGEN AL BOTON
+                    botonJuego.Content = imagenJuego;
+
+                    //POR ÚLTIMO, LOS AGREGO AL PANEL DE JUEGOS
+                    panelJuegos.Children.Add(botonJuego);
+                }
             }
+            else
+            {
+
+                TextBlock textBlock = new TextBlock
+                {
+                    TextAlignment = TextAlignment.Center,
+                    FontSize = 40,
+                    FontFamily = (FontFamily)this.Resources["FuenteJohnInclinada"],
+                    Padding = new Thickness(20)
+                };
+
+                //TEXTO NORMAL
+                textBlock.Inlines.Add(new Run
+                {
+                    Text = "THERE ARE NO GAMES ",
+                    Foreground = Brushes.White
+                });
+
+                //TEXTO PARA EL FOR NOW
+                textBlock.Inlines.Add(new Run
+                {
+                    Text = "FOR NOW",
+                    Foreground = Brushes.Red
+                });
+
+                //TEXTO PARA EL EMOJI
+                textBlock.Inlines.Add(new Run
+                {
+                    Text = "🚧",
+                    Foreground = Brushes.Yellow
+                });
+
+                //CREO EL BINDING DEL ANCHO
+                Binding binding = new Binding("ActualWidth")
+                {
+                    Source = panelJuegos
+                };
+                textBlock.SetBinding(FrameworkElement.WidthProperty, binding);
+
+                //CREO EL BORDER
+                Border border = new Border
+                {
+                    Background = Brushes.Transparent,
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    Child = textBlock
+                };
+
+                panelJuegos.Children.Add(border);
+
+            }
+            
         }
 
 
