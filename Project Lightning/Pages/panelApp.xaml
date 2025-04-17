@@ -70,7 +70,7 @@
 
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto">
-                <Button Content="Botón 1" Width="198" Height="298" Margin="17"/>
+                
                 
 
             </WrapPanel>
