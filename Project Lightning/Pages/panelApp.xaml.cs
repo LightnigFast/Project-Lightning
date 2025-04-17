@@ -92,8 +92,17 @@ namespace Project_Lightning.Pages
                 {
                     Width = 198,
                     Height = 298,
-                    Stretch = Stretch.Fill,
-                    Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/library_600x900.jpg"))
+                    Stretch = Stretch.Fill
+                };
+
+                //INTENTO CARGAR LA IMAGEN ORIGINAL
+                imagenJuego.Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/library_600x900.jpg"));
+
+                //SI NO SE HA PUESTO NINGUNA IMAGEN (ES DECIR, QUE ESTE JUEGO NO TIENE)
+                imagenJuego.ImageFailed += (sender, e) =>
+                {
+                    imagenJuego.Stretch = Stretch.Uniform;
+                    imagenJuego.Source = new BitmapImage(new Uri("https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/capsule_184x69.jpg?t=1739176298"));
                 };
 
                 //AGREGO LA IMAGEN AL BOTON
@@ -103,6 +112,12 @@ namespace Project_Lightning.Pages
                 panelJuegos.Children.Add(botonJuego);
             }
         }
+
+
+
+
+
+
 
         //METODO PARA DESCARGAR LOS ARCHIVOS FIX DE UN JUEGO INTEPENDIENTE
         private async void descargarJuego(KeyValuePair<string, Juego> keyValuePair)
