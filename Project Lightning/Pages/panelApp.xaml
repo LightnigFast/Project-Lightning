@@ -70,35 +70,33 @@
 
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
             <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto">
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                <Button Content="Botón 1" Width="200" Height="300" Margin="17"/>
-                
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+                <Button Content="Botón 1" Width="198" Height="299" Margin="17"/>
+
             </WrapPanel>
         </ScrollViewer>
     </Grid>
