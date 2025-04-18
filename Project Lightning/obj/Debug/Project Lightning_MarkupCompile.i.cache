@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\App.xaml
-4-775680594
+51107588556
 11244266952
-9-1374950899
+10-1324208317
 1222080309667
-Pages\panelBienvenida.xaml;Pages\panelApp.xaml;UserControls\Cabecera.xaml;MainWindow.xaml;
+Pages\panelBienvenida.xaml;Pages\panelApp.xaml;Pages\panelJuego.xaml;UserControls\Cabecera.xaml;MainWindow.xaml;
 
-False
+True
 

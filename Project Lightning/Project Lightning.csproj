@@ -108,6 +108,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\panelJuego.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Cabecera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -125,6 +129,9 @@
     </Compile>
     <Compile Include="Pages\panelApp.xaml.cs">
       <DependentUpon>panelApp.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\panelJuego.xaml.cs">
+      <DependentUpon>panelJuego.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Cabecera.xaml.cs">
       <DependentUpon>Cabecera.xaml</DependentUpon>

@@ -23,12 +23,18 @@ namespace Project_Lightning.Pages
     /// </summary>
     public partial class panelApp : Page
     {
-        public panelApp(String nomApp)
+
+        MainWindow ventanaPrincipal;
+        string nombreApp;
+        public panelApp(String nomApp, MainWindow mainWindow)
         {
             InitializeComponent();
             
             //CAMBIO EL NOMBRE DE LA ETIQUETA
             txtApp.Text = nomApp;
+            //INICIALIZO LA VENTANA PARA TENER UNA REFERENCIA DE LA VENTANA PRINCIPAL Y LA VARIABLE DE TEXTO
+            ventanaPrincipal = mainWindow;
+            nombreApp = nomApp;
 
             ponerJuegos(nomApp);
 
@@ -112,6 +118,13 @@ namespace Project_Lightning.Pages
 
                     //AGREGO LA IMAGEN AL BOTON
                     botonJuego.Content = imagenJuego;
+
+                    //EVENTO CUANDO SE HACE CLICK EN UN BOTÓN
+                    botonJuego.Click += (sender, e) =>
+                    {
+
+                        ventanaPrincipal.framePrincipal.Navigate(new panelJuego(nombreApp, juego, this, ventanaPrincipal));
+                    };
 
                     //POR ÚLTIMO, LOS AGREGO AL PANEL DE JUEGOS
                     panelJuegos.Children.Add(botonJuego);

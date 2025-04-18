@@ -38,37 +38,37 @@ namespace Project_Lightning
         private void boton_ubisoft_presionado(object sender, RoutedEventArgs e)
         {
 
-            framePrincipal.Navigate(new panelApp("UBISOFT"));
+            framePrincipal.Navigate(new panelApp("UBISOFT", this));
         }
 
         //METODO PARA EA
         private void boton_ea_presionado(object sender, RoutedEventArgs e)
         {
-            framePrincipal.Navigate(new panelApp("EA"));
+            framePrincipal.Navigate(new panelApp("EA", this));
         }
 
         //METODO PARA ROCKSTAR
         private void boton_rockstar_presionado(object sender, RoutedEventArgs e)
         {
-            framePrincipal.Navigate(new panelApp("ROCKSTAR"));
+            framePrincipal.Navigate(new panelApp("ROCKSTAR", this));
         }
 
         //METODO PARA DENUVO
         private void boton_denuvo_presionado(object sender, RoutedEventArgs e)
         {
-            framePrincipal.Navigate(new panelApp("DENUVO"));
+            framePrincipal.Navigate(new panelApp("DENUVO", this));
         }
 
         //METODO PARA PLAY STATION
         private void boton_playstation_presionado(object sender, RoutedEventArgs e)
         {
-            framePrincipal.Navigate(new panelApp("PlayStation"));
+            framePrincipal.Navigate(new panelApp("PlayStation", this));
         }
 
         //METODO PARA OTHERS
         private void boton_others_presionado(object sender, RoutedEventArgs e)
         {
-            framePrincipal.Navigate(new panelApp("OTHERS"));
+            framePrincipal.Navigate(new panelApp("OTHERS", this));
         }
 
 
