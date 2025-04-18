@@ -233,7 +233,7 @@
                     <!--GRID PARA LA IMAGEN Y EL BOTON DE PARCHEAR-->
                     <Grid>
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="400"/>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
@@ -245,28 +245,37 @@
                 </Grid>
 
                 <!-- ZONA INFERIOR (ROJA) -->
-                <Grid Background="Transparent">
+                <Grid Background="Transparent" Margin="0,20,0,0">
                     <!-- Contenido que puede ser largo -->
                     <StackPanel x:Name="panelInfo">
                         <TextBlock Grid.Column="1" FontSize="40" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
                                    VerticalAlignment="Center" Text="Game opening method:"/>
                         <!--GRID PARA LOS METODOS DE INICIO DEL JUEGO-->
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*"/>
-                                <RowDefinition Height="*"/>
-                            </Grid.RowDefinitions>
+                        <Grid Margin="0,15,0,0">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="60"/>
                                 <ColumnDefinition Width="*"/>
                             </Grid.ColumnDefinitions>
 
-                            <TextBlock Grid.Column="0" Grid.Row="0" FontSize="25" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
+                            <!--PARTE PARA STEAM-->
+                            <TextBlock Grid.Column="0" FontSize="25" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
                                        VerticalAlignment="Center" Text="steam:"/>
-                            <TextBlock Grid.Column="1" Grid.Row="0" FontSize="35" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
-                                       VerticalAlignment="Center" Name="txtSteamPosible"/>
+                            <TextBlock Grid.Column="1" FontSize="35" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
+                                       VerticalAlignment="Center" Name="txtSteamPosible"  Text="das"/>
+                            <!--PARTE PARA EXE-->
+                            <TextBlock Grid.Column="2" FontSize="25" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
+                                       VerticalAlignment="Center" Text="EXE:"/>
+                            <TextBlock Grid.Column="3" FontSize="35" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
+                                       VerticalAlignment="Center" Name="txtExePosible"  Text="das"/>
 
                         </Grid>
+
+                        <TextBlock Grid.Column="1" FontSize="40" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
+                                   VerticalAlignment="Center" Text="Any errors?? Check this:" Margin="0,15,0,0"/>
+                        <TextBlock Grid.Column="1" FontSize="20" Foreground="White" FontFamily="{StaticResource FuenteJohn}" 
+                                   VerticalAlignment="Center" Text="Any errors?? Check this:" Margin="0,15,0,0" Name="txtErrors"/>
 
                     </StackPanel>
                 </Grid>

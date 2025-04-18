@@ -101,14 +101,33 @@ namespace Project_Lightning.Pages
             //SACAMOS SI ES POSIBLE JUGAR CON STEAM
             if (juego.Value.launch_steam == true)
             {
+                txtSteamPosible.Foreground = Brushes.Green;
                 txtSteamPosible.Text = "✔";
             }
             else
             {
+                txtSteamPosible.Foreground = Brushes.Red;
                 txtSteamPosible.Text = "✘";
             }
 
+            //SACAMOS SI ES POSIBLE JUGAR CON EXE
+            if (juego.Value.launch_exe == true)
+            {
+                txtExePosible.Foreground = Brushes.Green;
+                txtExePosible.Text = "✔";
             }
+            else
+            {
+                txtExePosible.Foreground = Brushes.Red;
+                txtExePosible.Text = "✘";
+            }
+
+            //SACAR EL APARTADO DE ERROES
+            txtErrors.Text = juego.Value.errores;
+
+        }
+
+         
 
         //CLICK DEL BOTON DE VOLVER
         private void volverClick(object sender, RoutedEventArgs e)
