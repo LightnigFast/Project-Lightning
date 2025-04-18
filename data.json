@@ -2,51 +2,51 @@
     "UBISOFT": {
         "33230": {
             "name": "Assassin's Creed II",
-            "launch-steam": true,
-            "launch-exe": true,
+            "launch_steam": true,
+            "launch_exe": true,
             "comentarios": "",
             "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre-fix": "Assassin's Creed II - bypass"
+            "nombre_fix": "Assassin's Creed II - bypass"
         },
         "48190": {
             "name": "Assassin's Creed Brotherhood",
-            "launch-steam": true,
-            "launch-exe": true,
+            "launch_steam": true,
+            "launch_exe": true,
             "comentarios": "",
             "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre-fix": "Assassin's Creed Brotherhood - bypass"
+            "nombre_fix": "Assassin's Creed Brotherhood - bypass"
         },
         "201870": {
             "name": "Assassin's Creed Revelations",
-            "launch-steam": true,
-            "launch-exe": true,
+            "launch_steam": true,
+            "launch_exe": true,
             "comentarios": "",
             "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre-fix": "Assassins Creed Revelations - bypass"
+            "nombre_fix": "Assassins Creed Revelations - bypass"
         },
         "208480": {
             "name": "Assassin's Creed III",
-            "launch-steam": true,
-            "launch-exe": true,
+            "launch_steam": true,
+            "launch_exe": true,
             "comentarios": "",
             "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre-fix": "Assassin's Creed III - bypass"
+            "nombre_fix": "Assassin's Creed III - bypass"
         },
         "911400": {
             "name": "Assassin's Creed III Remastered",
-            "launch-steam": true,
-            "launch-exe": true,
+            "launch_steam": true,
+            "launch_exe": true,
             "comentarios": "",
             "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre-fix": "Assassins Creed III Remastered - bypass"
+            "nombre_fix": "Assassins Creed III Remastered - bypass"
         },
         "242050": {
             "name": "Assassin's Creed IV Black Flag",
-            "launch-steam": true,
-            "launch-exe": true,
+            "launch_steam": true,
+            "launch_exe": true,
             "comentarios": "",
             "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre-fix": "Assassin's Creed IV Black Flag - bypass"
+            "nombre_fix": "Assassin's Creed IV Black Flag - bypass"
         }
     },
     "EA": {
