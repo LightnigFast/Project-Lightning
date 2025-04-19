@@ -239,7 +239,12 @@
     <Resource Include="res\media\backgrounds\milad-fakurian.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="res\media\backgrounds\videoInicio.mp4" />
+    <Content Include="res\media\backgrounds\background.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\media\backgrounds\videoInicio.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="res\media\letters\Project-Lightning-font2.png" />
   </ItemGroup>
   <ItemGroup />

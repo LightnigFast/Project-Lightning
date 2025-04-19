@@ -9,7 +9,6 @@
         Title="⚡Project Lightning⚡" Height="720" Width="1280">
     <Grid>
 
-        <!--FONDO CON GRADIENTE-->
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
                 <GradientStop Color="#FF3B0056" Offset="1.0" />
@@ -17,6 +16,18 @@
                 <GradientStop Color="#FF000000" Offset="0.0" />
             </LinearGradientBrush>
         </Grid.Background>
+
+        <!--FONDO CON GRADIENTE-->
+        <MediaElement Name="BackgroundVideo" 
+                      Source="res/media/backgrounds/videoInicio.mp4"
+                      LoadedBehavior="Manual" 
+                      UnloadedBehavior="Manual" 
+                      IsMuted="True" 
+                      Stretch="UniformToFill" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch" 
+                      MediaFailed="BackgroundVideo_MediaFailed"
+                      MediaEnded="BackgroundVideo_MediaEnded" />
 
         <Grid Margin="10,10,20,0">
             <Grid.RowDefinitions>

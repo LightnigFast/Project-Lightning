@@ -24,7 +24,10 @@ namespace Project_Lightning
     {
         public MainWindow()
         {
+
+            
             InitializeComponent();
+            BackgroundVideo.Play();
 
             Cabecera.UbisoftPresionado += boton_ubisoft_presionado;
             Cabecera.EAPresionado += boton_ea_presionado;
@@ -71,6 +74,25 @@ namespace Project_Lightning
             framePrincipal.Navigate(new panelApp("OTHERS", this));
         }
 
+        private void BackgroundVideo_MediaFailed(object sender, ExceptionRoutedEventArgs e)
+        {
+            MessageBox.Show("Error al cargar el video: " + e.ErrorException.Message);
+        }
+
+        private void BackgroundVideo_MediaEnded(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                // Reinicia el video al principio
+                BackgroundVideo.Position = TimeSpan.Zero;
+                BackgroundVideo.Play();
+            }
+            catch (Exception ex)
+            {
+                // Manejo de excepciones para evitar que la app se cierre
+                MessageBox.Show("Error al reiniciar el video: " + ex.Message);
+            }
+        }
 
 
 

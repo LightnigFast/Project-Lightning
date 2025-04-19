@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/media/backgrounds/background.mp4")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("res/media/backgrounds/videoinicio.mp4")]
 
 

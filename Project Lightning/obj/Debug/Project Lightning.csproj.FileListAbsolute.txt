@@ -67,3 +67,5 @@ C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Microsoft.WindowsAPICodePack.xml
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\res\media\backgrounds\background.mp4
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\res\media\backgrounds\videoInicio.mp4
