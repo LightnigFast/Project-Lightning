@@ -63,3 +63,7 @@ C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Microsoft.WindowsAPICodePack.dll
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Microsoft.WindowsAPICodePack.Shell.dll
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Microsoft.WindowsAPICodePack.xml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml

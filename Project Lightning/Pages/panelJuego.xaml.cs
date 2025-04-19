@@ -19,6 +19,9 @@ using Newtonsoft.Json;
 using SharpCompress.Archives;
 using SharpCompress.Common;
 using SharpCompress.Readers;
+using System.Windows.Forms;
+using Microsoft.WindowsAPICodePack.Dialogs;
+
 using static Project_Lightning.Pages.panelApp;
 
 namespace Project_Lightning.Pages
@@ -82,7 +85,7 @@ namespace Project_Lightning.Pages
             imagenJuego.ImageFailed += (sender, e) =>
             {
                 imagenJuego.Stretch = Stretch.UniformToFill;
-                imagenJuego.HorizontalAlignment = HorizontalAlignment.Stretch;
+                imagenJuego.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
                 imagenJuego.VerticalAlignment = VerticalAlignment.Top;
                 imagenJuego.Source = new BitmapImage(new Uri("https://cdn.cloudflare.steamstatic.com/steam/apps/" + key + "/capsule_616x353.jpg"));
             };
@@ -173,73 +176,158 @@ namespace Project_Lightning.Pages
                 string json = await client.GetStringAsync(apiUrl);
                 var archivos = JsonConvert.DeserializeObject<List<ArchivoGitHub>>(json);
 
-                string escritorio = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                string carpetaDestino = System.IO.Path.Combine(escritorio, appId);
-                Directory.CreateDirectory(carpetaDestino);
+                //CommonOpenFileDialog PARA SELECCIONAR EL SELECTOR DE FICHEROS DE WINDOWS
+                var folderDialog = new CommonOpenFileDialog();
+                folderDialog.IsFolderPicker = true;
+                folderDialog.Title = "Select the game folder of " + juego.Value.name + ":";
 
-                string rutaZipExtraer = null;
-
-                // DESCARGAR TODO
-                foreach (var archivo in archivos)
+                if (folderDialog.ShowDialog() == CommonFileDialogResult.Ok)
                 {
-                    if (archivo.type == "file")
+                    string carpetaDestino = folderDialog.FileName;
+
+                    //VERIFICAR QUE LA CARPETA SELCCIONADA ESTE DENTRO DE "steamapps/common"
+                    string carpetaSteamApps = System.IO.Path.Combine(carpetaDestino, "steamapps");
+                    string carpetaCommon = System.IO.Path.Combine(carpetaSteamApps, "common");
+
+                    //VERIFICAR QUE LA CARPETA SELCCIONADA ESTE DENTRO DE "steamapps/common"
+                    if (!carpetaDestino.Contains("steamapps\\common"))
                     {
-                        string rutaDestino = System.IO.Path.Combine(carpetaDestino, archivo.name);
-                        byte[] datos = await client.GetByteArrayAsync(archivo.download_url);
-                        File.WriteAllBytes(rutaDestino, datos);
-
-                        // GUARDAR RUTA AL PRIMER ZIP ENCONTRADO PARA EXTRAERLO DESPUÉS
-                        if (archivo.name.EndsWith(".zip") && rutaZipExtraer == null)
-                            rutaZipExtraer = rutaDestino;
+                        System.Windows.MessageBox.Show("You must select the game folder of " + juego.Value.name + ":");
+                        return;
                     }
-                }
 
-                // EXTRAER ZIP SI EXISTE
-                if (rutaZipExtraer != null)
-                {
+                    //COMPRUEBO SI LA CARPETA SELECCIONADA ES COMMON
+                    if (System.IO.Path.GetFileName(carpetaDestino).Equals("common", StringComparison.OrdinalIgnoreCase))
+                    {
+                        System.Windows.MessageBox.Show("You must select the game folder of " + juego.Value.name + ":");
+                        return;
+                    }
+
+                    //SI LLEGAMOS HASTA AQUI, LA CARPETA SELCCIONADA ES CORRECTA Y ESTA DENTRO DE "STEAMAPPS/COMMON"
+
+                    //VERIFICAR QUE LA SUBCARPETA DEL JUEGO DENTRO DE 'COMMON' NO EXISTA, SI EXISTE LA ELIMINAMOS
+                    string carpetaJuego = System.IO.Path.Combine(carpetaCommon, "game"); 
+                    if (Directory.Exists(carpetaJuego))
+                    {
+                        Directory.Delete(carpetaJuego, true);  //ELIMINO LA CARPETA DEL JUEGO SI YA EXISTE
+                    }
+
+                    string rutaZipExtraer = null;
                     string carpetaTemporal = System.IO.Path.Combine(carpetaDestino, "temp_extraccion");
 
-                    // Usamos SharpCompress para manejar archivos zip
-                    using (var archive = ArchiveFactory.Open(rutaZipExtraer))
+                    //CREAR CARPETA TEMPORAL SI NO EXISTE
+                    if (!Directory.Exists(carpetaTemporal))
                     {
-                        foreach (var entry in archive.Entries)
-                        {
-                            if (!entry.IsDirectory)
-                            {
-                                string filePath = System.IO.Path.Combine(carpetaTemporal, entry.Key);
-                                Directory.CreateDirectory(System.IO.Path.GetDirectoryName(filePath)); // Crear directorios si no existen
+                        Directory.CreateDirectory(carpetaTemporal);
+                    }
 
-                                // Extraer el archivo
-                                using (var fileStream = File.Create(filePath))
+                    //DESCARGAR TODO
+                    foreach (var archivo in archivos)
+                    {
+                        if (archivo.type == "file")
+                        {
+                            string rutaDestino = System.IO.Path.Combine(carpetaDestino, archivo.name);
+
+                            //VERIFICAR SI EL ARCHIVO YA EXISTE Y ELIMINARLO ANTES
+                            if (File.Exists(rutaDestino))
+                            {
+                                try
                                 {
-                                    entry.WriteTo(fileStream);  // Extrae el contenido del archivo
+                                    //INTENTO ELIMINAR EL ARCHIVO, SI SE ESTÁ USANDO, ESPERO ANTES DE ELIMINAR
+                                    File.Delete(rutaDestino);
+                                    await Task.Delay(100);  //ESPERO POR SI EL ARCHIVO SE ESTA USANDO
+                                }
+                                catch (IOException)
+                                {
+                                    try
+                                    {
+                                        //FUERZO ELIMINAICION
+                                        File.Delete(rutaDestino);
+                                    }
+                                    catch (IOException ioEx)
+                                    {
+                                        System.Windows.MessageBox.Show("Error trying to delete the file: " + ioEx.Message);
+                                        return;
+                                    }
                                 }
                             }
+
+                            byte[] datos = await client.GetByteArrayAsync(archivo.download_url);
+                            File.WriteAllBytes(rutaDestino, datos);
+
+                            //GUARDO LA RUTA AL PRIMER ZIP ENCONTRADO PARA EXTRAERLO DESPUÉS
+                            if (archivo.name.EndsWith(".zip") && rutaZipExtraer == null)
+                                rutaZipExtraer = rutaDestino;
                         }
                     }
 
-                    // MOVER CONTENIDO EXTRAÍDO A CARPETA FINAL
-                    foreach (var archivoExtraido in Directory.GetFiles(carpetaTemporal, "*", SearchOption.AllDirectories))
+                    //EXTRAIGO EL ZIP SI EXISTE
+                    if (rutaZipExtraer != null)
                     {
-                        string nombreRelativo = archivoExtraido.Substring(carpetaTemporal.Length + 1);
-                        string rutaFinal = System.IO.Path.Combine(carpetaDestino, nombreRelativo);
+                        //PARA MANEJAR LOS ARCHIVOS ZIP
+                        using (var archive = ArchiveFactory.Open(rutaZipExtraer))
+                        {
+                            foreach (var entry in archive.Entries)
+                            {
+                                if (!entry.IsDirectory)
+                                {
+                                    string filePath = System.IO.Path.Combine(carpetaTemporal, entry.Key);
+                                    Directory.CreateDirectory(System.IO.Path.GetDirectoryName(filePath)); //CREAR DIRECTORIOS SI NO EXISTEN
 
-                        Directory.CreateDirectory(System.IO.Path.GetDirectoryName(rutaFinal));
-                        File.Move(archivoExtraido, rutaFinal);
+                                    //EXTRAIGO EL ARCHIVO
+                                    using (var fileStream = File.Create(filePath))
+                                    {
+                                        entry.WriteTo(fileStream);  //EXTRAIGO EL CONTENIDO DEL ARCHIVO
+                                    }
+                                }
+                            }
+                        }
+
+                        //MUEVO EL CONTENIDO EXTRAÍDO A LA CARPETA FINAL (REEMPLAZAR SI YA EXISTEN)
+                        foreach (var archivoExtraido in Directory.GetFiles(carpetaTemporal, "*", SearchOption.AllDirectories))
+                        {
+                            string nombreRelativo = archivoExtraido.Substring(carpetaTemporal.Length + 1);
+                            string rutaFinal = System.IO.Path.Combine(carpetaDestino, nombreRelativo);
+
+                            Directory.CreateDirectory(System.IO.Path.GetDirectoryName(rutaFinal));
+
+                            //SI EL ARCHIVO YA EXISTE LO REMPLAZO
+                            if (File.Exists(rutaFinal))
+                            {
+                                File.Delete(rutaFinal);
+                            }
+
+                            File.Move(archivoExtraido, rutaFinal);
+                        }
+
+                        //ELIMINO ARCHIVOS TEMPORALES
+                        Directory.Delete(carpetaTemporal, true);
+                        File.Delete(rutaZipExtraer);
                     }
 
-                    // Eliminar archivos temporales
-                    Directory.Delete(carpetaTemporal, true);
-                    File.Delete(rutaZipExtraer);
+                    System.Windows.MessageBox.Show("Download and extraction completed: " + carpetaDestino);
                 }
-
-                MessageBox.Show("Descarga y extracción completadas: " + carpetaDestino);
+                else
+                {
+                    System.Windows.MessageBox.Show("No folder selected.");
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("ERROR: " + ex.Message);
+                System.Windows.MessageBox.Show("ERROR: " + ex.Message);
             }
         }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
