@@ -124,85 +124,74 @@
             </Setter>
         </Style>
 
-        <!--ESTILO DEL BOTON DE CADA JUEGO-->
-        <Style x:Key="Boton_juego" TargetType="Button">
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="Focusable" Value="False"/>
-            <Setter Property="OverridesDefaultStyle" Value="True"/>
-            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
-            <Setter Property="RenderTransform">
-                <Setter.Value>
-                    <ScaleTransform ScaleX="1" ScaleY="1"/>
-                </Setter.Value>
-            </Setter>
+        <!--ESTILO DEL BOTON DEl FIX-->
+        <Style x:Key="FixButtonStyle" TargetType="Button">
+            <!-- Establecer el color de fondo como morado brillante -->
+            <Setter Property="Background" Value="#9C27B0"/>
+            <!-- Morado brillante -->
+            <Setter Property="Foreground" Value="White"/>
+            <!-- Texto blanco -->
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="BorderBrush" Value="#7B1FA2"/>
+            <!-- Un morado ligeramente más oscuro para el borde -->
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,5"/>
+
+            <!-- Bordes redondeados -->
+            <Setter Property="Cursor" Value="Hand"/>
+            <!-- Cursor tipo mano en hover -->
 
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <ContentPresenter 
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"/>
+                        <Border x:Name="border" Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--EFECTO PARA CUANDO EL RATON ESTE ENCIMA-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <!--ANIMACION DEL FONDO-->
+                                            <ColorAnimation 
+                                                Storyboard.TargetName="border" 
+                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
+                                                From="Transparent" To="Purple" Duration="0:0:0.3" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+
+                            <!--EFECTO PARA CUANDO EL RATON SE VA-->
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <!--ANIMACION DEL FONDO-->
+                                            <ColorAnimation 
+                                                    Storyboard.TargetName="border" 
+                                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
+                                                    From="Transparent" To="#9C27B0" Duration="0:0:0.3" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+
+                            <!--EFECTO PARA CUANDO SE PRESIONE EL BOTON-->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Trigger.EnterActions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                                To="1.1" Duration="0:0:0.2"/>
-                                <DoubleAnimation
-                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                                To="1.1" Duration="0:0:0.2"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </Trigger.EnterActions>
-                    <Trigger.ExitActions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                                To="1" Duration="0:0:0.2"/>
-                                <DoubleAnimation
-                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                                To="1" Duration="0:0:0.2"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </Trigger.ExitActions>
-                </Trigger>
-                <Trigger Property="IsPressed" Value="True">
-                    <Trigger.EnterActions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                                To="0.95" Duration="0:0:0.05"/>
-                                <DoubleAnimation
-                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                                To="0.95" Duration="0:0:0.05"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </Trigger.EnterActions>
-                    <Trigger.ExitActions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation
-                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                                To="1" Duration="0:0:0.1"/>
-                                <DoubleAnimation
-                                Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                                To="1" Duration="0:0:0.1"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </Trigger.ExitActions>
-                </Trigger>
-
-            </Style.Triggers>
         </Style>
 
     </Page.Resources>
@@ -258,8 +247,8 @@
                                        VerticalAlignment="Center" Text="Game opening method:"/>
                             
                             <!--BOTON PARA FIXEAR EL JUEGO-->
-                            <Button x:Name="fixButton" Grid.Column="2" Width="150" Content="Fixear" Click="fixButtonClick"
-                                    HorizontalAlignment="Right"/>
+                            <Button x:Name="fixButton" Grid.Column="2" Width="150" Content="Apply Fix" Click="fixButtonClick" FontSize="25" VerticalAlignment="Center" Height="45"
+                                    HorizontalAlignment="Right" Style="{StaticResource FixButtonStyle}" FontFamily="{StaticResource FuenteJohnInclinada}"/>
                         </Grid>
                         
                         <!--GRID PARA LOS METODOS DE INICIO DEL JUEGO-->
