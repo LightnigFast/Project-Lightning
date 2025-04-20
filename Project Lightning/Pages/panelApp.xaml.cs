@@ -166,7 +166,8 @@ namespace Project_Lightning.Pages
                 textBlock.Inlines.Add(new Run
                 {
                     Text = "FOR NOW",
-                    Foreground = Brushes.Red
+                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6A0DAD"))
+
                 });
 
                 //TEXTO PARA EL EMOJI
