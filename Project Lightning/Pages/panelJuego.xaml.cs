@@ -132,6 +132,21 @@ namespace Project_Lightning.Pages
                 txtExePosible.Text = "✘";
             }
 
+            //SACAR APARTADO DE PROGRAMAS NECESARIOS
+            if (juego.Value.programas_necesarios != null && juego.Value.programas_necesarios.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var programa in juego.Value.programas_necesarios)
+                {
+                    sb.AppendLine($"    • {programa}");
+                }
+                txtProgramasNecesarios.Text = sb.ToString();
+            }
+            else
+            {
+                txtProgramasNecesarios.Text = "No additional programs are required.";
+            }
+
             //SACAR EL APARTADO DE ERROES
             txtErrors.Text = juego.Value.errores;
 
