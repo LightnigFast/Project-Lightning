@@ -1,90 +1,107 @@
 {
-    "UBISOFT": {
-        "33230": {
-            "name": "Assassin's Creed II",
-            "launch_steam": true,
-            "launch_exe": true,
-            "comentarios": "Enjoy the game ♥",
-            "programas_necesarios": ["DirectX",".NET","Ubisoft Play"],
-            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre_fix": "Assassin's Creed II - bypass"
-        },
-        "48190": {
-            "name": "Assassin's Creed Brotherhood",
-            "launch_steam": true,
-            "launch_exe": true,
-            "comentarios": "Enjoy the game ♥",
-            "programas_necesarios": ["DirectX",".NET","Ubisoft Play"],
-            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre_fix": "Assassin's Creed Brotherhood - bypass"
-        },
-        "201870": {
-            "name": "Assassin's Creed Revelations",
-            "launch_steam": true,
-            "launch_exe": true,
-            "comentarios": "Enjoy the game ♥",
-            "programas_necesarios": ["DirectX",".NET","Ubisoft Play"],
-            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre_fix": "Assassins Creed Revelations - bypass"
-        },
-        "208480": {
-            "name": "Assassin's Creed III",
-            "launch_steam": true,
-            "launch_exe": true,
-            "comentarios": "Enjoy the game ♥",
-            "programas_necesarios": ["DirectX",".NET","Ubisoft Play"],
-            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre_fix": "Assassin's Creed III - bypass"
-        },
-        "911400": {
-            "name": "Assassin's Creed III Remastered",
-            "launch_steam": true,
-            "launch_exe": true,
-            "comentarios": "Enjoy the game ♥",
-            "programas_necesarios": ["DirectX",".NET","Ubisoft Play"],
-            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre_fix": "Assassins Creed III Remastered - bypass"
-        },
-        "242050": {
-            "name": "Assassin's Creed IV Black Flag",
-            "launch_steam": true,
-            "launch_exe": true,
-            "comentarios": "Enjoy the game ♥",
-            "programas_necesarios": ["DirectX",".NET","Ubisoft Play"],
-            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre_fix": "Assassin's Creed IV Black Flag - bypass"
-        }
+  "UBISOFT": {
+    "33230": {
+      "name": "Assassin's Creed II",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed II - bypass"
     },
-    "EA": {
-        "47870": {
-            "name": "Need for Speed: Hot Pursuit",
-            "launch_steam": true,
-            "launch_exe": true,
-            "comentarios": "Enjoy the game ♥",
-            "programas_necesarios": ["C++ 2008","DirectX"],
-            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre_fix": "Need for Speed Hot Pursuit - bypass"
-        },
-        "1262560": {
-            "name": "Need for Speed™ Most Wanted",
-            "launch_steam": false,
-            "launch_exe": true,
-            "comentarios": "Enjoy the game ♥",
-            "programas_necesarios": ["EA App","DirectX"],
-            "errores": "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-            "nombre_fix": "Need for Speed Most Wanted - bypass"
-        }
+    "48190": {
+      "name": "Assassin's Creed Brotherhood",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed Brotherhood - bypass"
     },
-    "ROCKSTAR": {
-        
+    "201870": {
+      "name": "Assassin's Creed Revelations",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassins Creed Revelations - bypass"
     },
-    "DENUVO": {
-        
+    "208480": {
+      "name": "Assassin's Creed III",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed III - bypass"
     },
-    "PlayStation": {
-        
+    "911400": {
+      "name": "Assassin's Creed III Remastered",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassins Creed III Remastered - bypass"
     },
-    "OTHERS": {
-        
+    "242050": {
+      "name": "Assassin's Creed IV Black Flag",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed IV Black Flag - bypass"
     }
+  },
+  "EA": {
+    "47870": {
+      "name": "Need for Speed: Hot Pursuit",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["C++ 2008", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, C++2008 and EA Play."
+      ],
+      "nombre_fix": "Need for Speed Hot Pursuit - bypass"
+    },
+    "1262560": {
+      "name": "Need for Speed™ Most Wanted",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and EA Play.",
+        "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder."
+      ],
+      "nombre_fix": "Need for Speed Most Wanted - bypass"
+    }
+  },
+  "ROCKSTAR": {
+      
+  },
+  "DENUVO": {
+      
+  },
+  "PlayStation": {
+      
+  },
+  "OTHERS": {
+      
+  }
 }
