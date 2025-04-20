@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\paneljuego.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\pages\\panelapp.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\panelapp.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -30,11 +34,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "panelApp.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelApp.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\panelApp.xaml.cs",
+              "ToolTip": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelApp.xaml.cs",
+              "RelativeToolTip": "Pages\\panelApp.xaml.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAgwDIAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-20T14:49:11.134Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "panelJuego.xaml",
               "DocumentMoniker": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml",
               "RelativeDocumentMoniker": "Pages\\panelJuego.xaml",
@@ -52,14 +69,14 @@
               "RelativeDocumentMoniker": "Pages\\panelJuego.xaml.cs",
               "ToolTip": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml.cs*",
               "RelativeToolTip": "Pages\\panelJuego.xaml.cs*",
-              "ViewState": "AgIAAHoAAAAAAAAAAAAcwJIAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAowJ0AAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-20T14:31:54.216Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
@@ -71,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -84,7 +101,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\App.xaml",
               "RelativeDocumentMoniker": "App.xaml",

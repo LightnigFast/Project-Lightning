@@ -148,7 +148,19 @@ namespace Project_Lightning.Pages
             }
 
             //SACAR EL APARTADO DE ERROES
-            txtErrors.Text = juego.Value.errores;
+            if (juego.Value.errores != null && juego.Value.errores.Count > 0)
+            {
+                StringBuilder sb = new StringBuilder();
+                foreach (var error in juego.Value.errores)
+                {
+                    sb.AppendLine($"{error}");
+                }
+                txtErrors.Text = sb.ToString();
+            }
+            else
+            {
+                txtProgramasNecesarios.Text = "No errors found.";
+            }
 
             //SACAR EL APARTADO DE COMENTARIOS
             txtComentarios.Text = juego.Value.comentarios;

@@ -48,7 +48,7 @@ namespace Project_Lightning.Pages
             public bool launch_exe { get; set; }
             public string comentarios { get; set; }
             public List<string> programas_necesarios { get; set; }
-            public string errores { get; set; }
+            public List<string> errores { get; set; }
             public string nombre_fix { get; set; }
         }
         
