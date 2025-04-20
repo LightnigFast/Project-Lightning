@@ -6,7 +6,9 @@
         xmlns:usercontrols="clr-namespace:Project_Lightning.UserControls"
         xmlns:local="clr-namespace:Project_Lightning"
         mc:Ignorable="d"
-        Title="⚡Project Lightning⚡" Height="720" Width="1280">
+        WindowStartupLocation="CenterScreen"
+        Title="⚡Project Lightning⚡" Height="745" Width="1280"
+        MinHeight="530" MinWidth="1000">
     <Grid>
 
         <Grid.Background>
@@ -29,18 +31,20 @@
                       MediaFailed="BackgroundVideo_MediaFailed"
                       MediaEnded="BackgroundVideo_MediaEnded" />
 
-        <Grid Margin="10,10,20,0">
+        <Border Margin="10,10,10,10" Background="#80000000" CornerRadius="15">
+            <Grid >
             <Grid.RowDefinitions>
-                <RowDefinition Height="70"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
             <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
-            <usercontrols:Cabecera x:Name="Cabecera" Grid.Row="0"/>
+            <usercontrols:Cabecera x:Name="Cabecera" Grid.Row="0" Margin="0,10,0,0"/>
             
             <!--PAGINA DE BIENVENIDA-->
             <Frame x:Name="framePrincipal" Grid.Row="1" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
 
         </Grid>
+        </Border>
     </Grid>
 </Window>

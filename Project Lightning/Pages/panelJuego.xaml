@@ -15,12 +15,12 @@
         <!--ESTILO PARA LOS BOTONES-->
         <Style x:Key="MinimalButtonStyle" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Purple"/>
+            <Setter Property="BorderBrush" Value="#6A0DAD"/>
             <Setter Property="BorderThickness" Value="2"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="Padding" Value="0 -1000 0 0"/>
             <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="Foreground" Value="Purple"/>
+            <Setter Property="Foreground" Value="#6A0DAD"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Height" Value="50"/>
             <Setter Property="Width" Value="80"/>
@@ -49,7 +49,7 @@
                                             <ColorAnimation 
                                                 Storyboard.TargetName="border" 
                                                 Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                From="Transparent" To="Purple" Duration="0:0:0.3" AutoReverse="False"/>
+                                                From="Transparent" To="#6A0DAD" Duration="0:0:0.3" AutoReverse="False"/>
                                             <!--ANIMACION DEL BORDE
                                     <ColorAnimation 
                                         Storyboard.TargetName="border" 
@@ -70,7 +70,7 @@
                                             <ColorAnimation 
                                                 Storyboard.TargetName="border" 
                                                 Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                From="Purple" To="Transparent" Duration="0:0:0.3" AutoReverse="False"/>
+                                                From="#6A0DAD" To="Transparent" Duration="0:0:0.3" AutoReverse="False"/>
                                             <!--ANIMACION DEL BORDE
                                     <ColorAnimation 
                                         Storyboard.TargetName="border" 
@@ -127,7 +127,7 @@
         <!--ESTILO DEL BOTON DEl FIX-->
         <Style x:Key="FixButtonStyle" TargetType="Button">
             <!-- Establecer el color de fondo como morado brillante -->
-            <Setter Property="Background" Value="#9C27B0"/>
+            <Setter Property="Background" Value="#6A0DAD"/>
             <!-- Morado brillante -->
             <Setter Property="Foreground" Value="White"/>
             <!-- Texto blanco -->
@@ -162,7 +162,7 @@
                                             <ColorAnimation 
                                                 Storyboard.TargetName="border" 
                                                 Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                From="Transparent" To="Purple" Duration="0:0:0.3" AutoReverse="False"/>
+                                                From="Transparent" To="#6A0DAD" Duration="0:0:0.3" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.EnterActions>
@@ -177,7 +177,7 @@
                                             <ColorAnimation 
                                                     Storyboard.TargetName="border" 
                                                     Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                                    From="Transparent" To="#9C27B0" Duration="0:0:0.3" AutoReverse="False"/>
+                                                    From="Transparent" To="#6A0DAD" Duration="0:0:0.3" AutoReverse="False"/>
                                         </Storyboard>
                                     </BeginStoryboard>
                                 </Trigger.ExitActions>

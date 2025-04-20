@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -32,6 +33,18 @@ namespace Project_Lightning.Pages
             
             //CAMBIO EL NOMBRE DE LA ETIQUETA
             txtApp.Text = nomApp;
+            //CAMBIO DE COLOR DE LA ETIQUETA
+            switch (nomApp)
+            {
+                case "UBISOFT": txtApp.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6A0DAD ")); break;
+                case "EA": txtApp.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f74545")); break;
+                case "ROCKSTAR": txtApp.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#f7a600")); break;
+                case "DENUVO": txtApp.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#607D8B")); break;
+                case "PlayStation": txtApp.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#0300b3")); break;
+                case "OTHERS": txtApp.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#F8BBD0")); break;
+
+            }
+
             //INICIALIZO LA VENTANA PARA TENER UNA REFERENCIA DE LA VENTANA PRINCIPAL Y LA VARIABLE DE TEXTO
             ventanaPrincipal = mainWindow;
             nombreApp = nomApp;

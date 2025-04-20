@@ -128,12 +128,12 @@
 
     <Grid Background="Transparent" Margin="15,0,0,0">
         <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <!--GRID PARA EL TEXTO-->
-        <Grid Grid.Row="0">
+        <Grid Grid.Row="0" Margin="0,10,0,10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="*"/>
@@ -144,7 +144,7 @@
                        Grid.Column="0"/>
             
             <!--TEXTO QUE CAMBIARA DEPENDIENDO DE LA APP-->
-            <TextBlock Text="prueba" FontSize="30" Foreground="Yellow" FontFamily="{StaticResource FuenteJohnInclinada}"
+            <TextBlock Text="prueba" FontSize="30" Foreground="#0000FF" FontFamily="{StaticResource FuenteJohnInclinada}"
                        Name="txtApp" Grid.Column="1"/>
         
         </Grid>
