@@ -219,14 +219,16 @@ namespace Project_Lightning.Pages
                     //VERIFICAR QUE LA CARPETA SELCCIONADA ESTE DENTRO DE "steamapps/common"
                     if (!carpetaDestino.Contains("steamapps\\common"))
                     {
-                        System.Windows.MessageBox.Show("You must select the game folder of " + juego.Value.name + ":");
+                        var ventanaError3 = new Windows.ErrorDialog("You must select the game folder of " + juego.Value.name + ":", Brushes.Red);
+                        ventanaError3.ShowDialog();
                         return;
                     }
 
                     //COMPRUEBO SI LA CARPETA SELECCIONADA ES COMMON
                     if (System.IO.Path.GetFileName(carpetaDestino).Equals("common", StringComparison.OrdinalIgnoreCase))
                     {
-                        System.Windows.MessageBox.Show("You must select the game folder of " + juego.Value.name + ":");
+                        var ventanaError2 = new Windows.ErrorDialog("You must select the game folder of " + juego.Value.name + ":", Brushes.Red);
+                        ventanaError2.ShowDialog();
                         return;
                     }
 
@@ -273,7 +275,9 @@ namespace Project_Lightning.Pages
                                     }
                                     catch (IOException ioEx)
                                     {
-                                        System.Windows.MessageBox.Show("Error trying to delete the file: " + ioEx.Message);
+                                        var ventanaError4 = new Windows.ErrorDialog("Error trying to delete the file: " + ioEx.Message, Brushes.Red);
+                                        ventanaError4.ShowDialog();
+                                        //System.Windows.MessageBox.Show("Error trying to delete the file: " + ioEx.Message);
                                         return;
                                     }
                                 }
@@ -332,16 +336,22 @@ namespace Project_Lightning.Pages
                         File.Delete(rutaZipExtraer);
                     }
 
-                    System.Windows.MessageBox.Show("Download and extraction completed: " + carpetaDestino);
+                    var ventanaError = new Windows.ErrorDialog("Game ready to play", Brushes.Green);
+                    ventanaError.ShowDialog();
+                    //System.Windows.MessageBox.Show("Download and extraction completed: " + carpetaDestino);
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("No folder selected.");
+                    var ventanaError = new Windows.ErrorDialog("No folder selected.", Brushes.Red);
+                    ventanaError.ShowDialog();
+                    //System.Windows.MessageBox.Show("No folder selected.");
                 }
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show("ERROR: " + ex.Message);
+                var ventanaError = new Windows.ErrorDialog("ERROR: " + ex.Message, Brushes.Red);
+                ventanaError.ShowDialog();
+                //System.Windows.MessageBox.Show("ERROR: " + ex.Message);
             }
         }
 
