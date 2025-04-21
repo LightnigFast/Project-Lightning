@@ -93,6 +93,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="640"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         
         <!--GRID PARA LOS BOTONES LAS EMPRESAS-->
@@ -144,7 +145,15 @@
             
         </Grid>
         
-        
         <!--GRID PARA EL BUSCADOR-->
+        
+        
+        
+        <!--BOTON PARA DONACIONES-->
+        <Button x:Name="donate_button" Background="Transparent" Grid.Column="5" Style="{StaticResource MinimalButtonStyle}"
+                Click="others_click">
+            <Image Source="/res/media/logos/originals/other_games_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+        </Button>
+
     </Grid>
 </UserControl>
