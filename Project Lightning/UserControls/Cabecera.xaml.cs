@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Project_Lightning.Windows;
 using WpfAnimatedGif;
 
 namespace Project_Lightning.UserControls
@@ -35,7 +36,7 @@ namespace Project_Lightning.UserControls
 
         private void cargarGif()
         {
-            var gifPath = "/res/media/logos/originals/donate.gif";  // Ruta relativa en tu proyecto
+            var gifPath = "/res/media/logos/originals/donate.gif";  //RUTA RELATIVA
 
             var image = new BitmapImage();
             image.BeginInit();
@@ -79,6 +80,14 @@ namespace Project_Lightning.UserControls
         public void others_click(object sender, RoutedEventArgs e)
         {
             OthersPresionado?.Invoke(this, e);
+        }
+
+
+        //DONACION PRESIONADO
+        public void donate_click(object sender, RoutedEventArgs e)
+        {
+            var ventanaDonacion = new DonateWindow();
+            ventanaDonacion.Show();
         }
 
 

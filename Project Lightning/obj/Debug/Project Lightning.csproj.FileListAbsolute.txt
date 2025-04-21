@@ -74,3 +74,5 @@ C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\WpfAnimatedGif.dll
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\WpfAnimatedGif.pdb
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\WpfAnimatedGif.xml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Windows\DonateWindow.baml
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Windows\DonateWindow.g.cs

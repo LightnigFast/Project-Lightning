@@ -94,7 +94,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="640"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="110"/>
         </Grid.ColumnDefinitions>
         
         <!--GRID PARA LOS BOTONES LAS EMPRESAS-->
@@ -152,7 +152,7 @@
         
         <!--BOTON PARA DONACIONES-->
         <Button x:Name="donate_button" Background="Transparent" Grid.Column="5" Style="{StaticResource MinimalButtonStyle}"
-                Click="others_click">
+                Click="donate_click">
             <Image x:Name="gifImage" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
         </Button>
 
