@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Project_Lightning"
+             xmlns:wpfAnimatedGif="http://wpfanimatedgif.codeplex.com"
              mc:Ignorable="d" 
              d:DesignHeight="70" d:DesignWidth="1280">
 
@@ -152,7 +153,7 @@
         <!--BOTON PARA DONACIONES-->
         <Button x:Name="donate_button" Background="Transparent" Grid.Column="5" Style="{StaticResource MinimalButtonStyle}"
                 Click="others_click">
-            <Image Source="/res/media/logos/originals/other_games_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <Image x:Name="gifImage" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
         </Button>
 
     </Grid>

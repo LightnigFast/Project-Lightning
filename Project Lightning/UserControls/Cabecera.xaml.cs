@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAnimatedGif;
 
 namespace Project_Lightning.UserControls
 {
@@ -29,6 +30,19 @@ namespace Project_Lightning.UserControls
         public Cabecera()
         {
             InitializeComponent();
+            cargarGif();
+        }
+
+        private void cargarGif()
+        {
+            var gifPath = "/res/media/logos/originals/donate.gif";  // Ruta relativa en tu proyecto
+
+            var image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(gifPath, UriKind.Relative);
+            image.EndInit();
+
+            ImageBehavior.SetAnimatedSource(gifImage, image);
         }
 
         //UBISOFT CLICK

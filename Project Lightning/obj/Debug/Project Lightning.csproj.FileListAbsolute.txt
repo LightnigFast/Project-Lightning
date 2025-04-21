@@ -71,3 +71,6 @@ C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\res\media\backgrounds\videoInicio.mp4
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Windows\ErrorDialog.baml
 C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\obj\Debug\Windows\ErrorDialog.g.cs
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\WpfAnimatedGif.dll
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\WpfAnimatedGif.pdb
+C:\Users\Jesus-Trabajo\Documents\GitHub\Project-Lightning\Project Lightning\bin\Debug\WpfAnimatedGif.xml
