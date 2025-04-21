@@ -74,7 +74,7 @@
       "programas_necesarios": ["DirectX", "Visual C++", "Ubisoft Play"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX, Visual C++, and Ubisoft Play.",
-        "It’s very likely that your antivirus will delete the uplay_r164.dll file; it is trustworthy and essential to play."
+        "It’s very likely that your antivirus will delete the uplay_r164.dll file, it is trustworthy and essential to play."
       ],
       "nombre_fix": "Assassins Creed Unity - bypass"
     },
@@ -110,7 +110,7 @@
       "programas_necesarios": ["EA App", "DirectX"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX and EA Play.",
-        "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder."
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder."
       ],
       "nombre_fix": "Need for Speed Most Wanted - bypass"
     },
@@ -122,9 +122,9 @@
       "programas_necesarios": ["EA App", "DirectX"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX and EA Play.",
-        "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder.",
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
         "You need to have the EA app installed, or the game won't launch.",
-        "Your antivirus may block the RldOrigin.dll file; it is completely safe and necessary to play."
+        "Your antivirus may block the RldOrigin.dll file, it is completely safe and necessary to play."
       ],
       "nombre_fix": "Need For Speed Rivals - bypass"
     }
@@ -138,7 +138,7 @@
         "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
         "errores": [
           "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX.",
-          "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder.",
+          "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
           "It is very important to launch the game using the RDR.exe executable."
         ],
         "nombre_fix": "Red Dead Redemption -  bypass"
@@ -153,9 +153,9 @@
         "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
         "errores": [
           "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
-          "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder.",
+          "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
           "It is very important to launch the game using the first .exe you see in the folder.",
-          "Your antivirus may block the EMP.dll file; it is completely safe. To make the fix work, you need to allow it and reapply the fix."
+          "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
         ],
         "nombre_fix": "Hogwarts Legacy - bypass"
       }
