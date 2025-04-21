@@ -221,14 +221,9 @@
                 <Grid Name="panelBackground" Background="Transparent" Height="400" SizeChanged="panelBackground_SizeChanged">
                     <!--GRID PARA LA IMAGEN Y EL BOTON DE PARCHEAR-->
                     <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="400"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        
+
                         <!--NUEVO GRID PARA LA IMAGEN DEL LOGO DEL JUEGO-->
-                        <Grid x:Name="gridImagenPeque" Grid.Column="0" Height="200"/>
+                        <Grid x:Name="gridImagenPeque" Grid.Column="0" Height="200" HorizontalAlignment="Left"/>
 
                     </Grid>
                 </Grid>

@@ -58,7 +58,8 @@ namespace Project_Lightning.Pages
             //CREO LA IMAGEN QUE IRA EN CADA BOTON
             Image imagenJuego = new Image
             {
-                Stretch = Stretch.Fill
+                Stretch = Stretch.Uniform
+                
             };
 
             //INTENTO CARGAR LA IMAGEN ORIGINAL
