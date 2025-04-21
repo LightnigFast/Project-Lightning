@@ -133,7 +133,20 @@
       }
   },
   "DENUVO": {
-      
+      "990080": {
+        "name": "Hogwarts Legacy",
+        "launch_steam": false,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+        "errores": [
+          "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
+          "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder.",
+          "It is very important to launch the game using the first .exe you see in the folder.",
+          "Your antivirus may block the EMP.dll file; it is completely safe. To make the fix work, you need to allow it and reapply the fix."
+        ],
+        "nombre_fix": "Hogwarts Legacy - bypass"
+      }
   },
   "PlayStation": {
       
