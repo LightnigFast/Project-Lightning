@@ -73,7 +73,8 @@
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Visual C++", "Ubisoft Play"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX, Visual C++, and Ubisoft Play."
+        "If the game shows errors when opening, you need to install DirectX, Visual C++, and Ubisoft Play.",
+        "It’s very likely that your antivirus will delete the uplay_r164.dll file; it is trustworthy and essential to play."
       ],
       "nombre_fix": "Assassins Creed Unity - bypass"
     },
