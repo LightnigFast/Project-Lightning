@@ -334,6 +334,25 @@ namespace Project_Lightning.Pages
                         //ELIMINO ARCHIVOS TEMPORALES
                         Directory.Delete(carpetaTemporal, true);
                         File.Delete(rutaZipExtraer);
+
+                        //ELIMINO TODOS LOS FRAGMENTOS DEL ZIP (EJ: .z01, .z02, etc.)
+                        string zipBaseName = System.IO.Path.GetFileNameWithoutExtension(rutaZipExtraer);
+                        string zipDir = System.IO.Path.GetDirectoryName(rutaZipExtraer);
+                        var fragmentos = Directory.GetFiles(zipDir, zipBaseName + ".*")
+                                                  .Where(f => !f.EndsWith(".zip", StringComparison.OrdinalIgnoreCase));
+
+                        foreach (var frag in fragmentos)
+                        {
+                            try
+                            {
+                                File.Delete(frag);
+                            }
+                            catch (Exception ex)
+                            {
+                                var ventanaError5 = new Windows.ErrorDialog("Could not delete fragment file: " + ex.Message, Brushes.Red);
+                                ventanaError5.ShowDialog();
+                            }
+                        }
                     }
 
                     var ventanaError = new Windows.ErrorDialog("Game ready to play", Brushes.Green);
