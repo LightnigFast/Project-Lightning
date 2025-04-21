@@ -101,6 +101,19 @@
         "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder."
       ],
       "nombre_fix": "Need for Speed Most Wanted - bypass"
+    },
+    "1262600": {
+      "name": "Need for Speed™ Rivals",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and EA Play.",
+        "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder.",
+        "You need to have the EA app installed, or the game won't launch."
+      ],
+      "nombre_fix": "Need For Speed Rivals - bypass"
     }
   },
   "ROCKSTAR": {
