@@ -7,19 +7,19 @@
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:usercontrols\\cabecera.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\pages\\panelapp.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\pages\\panelapp.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\panelapp.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\pages\\paneljuego.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\pages\\paneljuego.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\paneljuego.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\jesus-trabajo\\documents\\github\\project-lightning\\project lightning\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -58,8 +58,7 @@
               "RelativeToolTip": "Pages\\panelApp.xaml.cs",
               "ViewState": "AgIAAIkAAAAAAAAAAAAcwKkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T16:39:36.971Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T16:39:36.971Z"
             },
             {
               "$type": "Document",
@@ -70,8 +69,7 @@
               "ToolTip": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml",
               "RelativeToolTip": "Pages\\panelJuego.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-20T14:31:52.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T14:31:52.216Z"
             },
             {
               "$type": "Document",
@@ -83,8 +81,7 @@
               "RelativeToolTip": "Pages\\panelJuego.xaml.cs",
               "ViewState": "AgIAADwBAAAAAAAAAAAAwBcBAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-20T14:31:54.216Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-20T14:31:54.216Z"
             },
             {
               "$type": "Document",
@@ -95,8 +92,7 @@
               "ToolTip": "C:\\Users\\Jesus-Trabajo\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-14T16:48:16.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T16:48:16.196Z"
             },
             {
               "$type": "Document",
@@ -108,8 +104,7 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAQwEkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T16:08:43.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T16:08:43.556Z"
             }
           ]
         }
