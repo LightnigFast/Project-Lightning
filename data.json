@@ -93,7 +93,19 @@
     }
   },
   "ROCKSTAR": {
-      
+       "2668510": {
+        "name": "Red Dead Redemption",
+        "launch_steam": false,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+        "errores": [
+          "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX.",
+          "The game is not compatible with Steam; it needs to be launched using the executable inside the game folder.",
+          "It is very important to launch the game using the RDR.exe executable."
+        ],
+        "nombre_fix": "Need for Speed Most Wanted - bypass"
+      }
   },
   "DENUVO": {
       
