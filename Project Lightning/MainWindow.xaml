@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:Project_Lightning"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="⚡Project Lightning⚡" Height="745" Width="1280"
+        Title="⚡Project Lightning⚡" Height="760" Width="1280"
         MinHeight="530" MinWidth="1000">
     <Grid>
 
@@ -33,18 +33,29 @@
 
         <Border Margin="10,10,10,10" Background="#80000000" CornerRadius="15">
             <Grid >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"></RowDefinition>
-                <RowDefinition Height="*"></RowDefinition>
-            </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
 
-            <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
-            <usercontrols:Cabecera x:Name="Cabecera" Grid.Row="0" Margin="0,10,0,0"/>
+                <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
+                <usercontrols:Cabecera x:Name="Cabecera" Grid.Row="0" Margin="0,10,0,0"/>
             
-            <!--PAGINA DE BIENVENIDA-->
-            <Frame x:Name="framePrincipal" Grid.Row="1" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
+                <!--PAGINA DE BIENVENIDA-->
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <Frame x:Name="framePrincipal" Grid.Row="0" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
 
-        </Grid>
+                    <TextBlock Grid.Row="1" Text="Created by: ♡B̷y̷D̷r̷a̷X̷x̷♡" Foreground="#FFB0B0B0" FontSize="11"
+                               FontFamily="Segoe UI" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>    
+                </Grid>
+                
+
+            </Grid>
         </Border>
     </Grid>
 </Window>

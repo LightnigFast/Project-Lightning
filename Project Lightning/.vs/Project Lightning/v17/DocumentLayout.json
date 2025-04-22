@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\windows\\donatewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:windows\\donatewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\windows\\donatewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:windows\\donatewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
@@ -34,36 +26,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DonateWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Windows\\DonateWindow.xaml.cs",
-              "RelativeDocumentMoniker": "Windows\\DonateWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Windows\\DonateWindow.xaml.cs",
-              "RelativeToolTip": "Windows\\DonateWindow.xaml.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAAADMAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T18:41:32.771Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DonateWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Windows\\DonateWindow.xaml",
-              "RelativeDocumentMoniker": "Windows\\DonateWindow.xaml",
-              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Windows\\DonateWindow.xaml",
-              "RelativeToolTip": "Windows\\DonateWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-21T18:33:28.802Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 2,
               "Title": "Cabecera.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml.cs",
               "RelativeDocumentMoniker": "UserControls\\Cabecera.xaml.cs",
@@ -76,30 +43,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
               "Title": "Cabecera.xaml",
               "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml",
               "RelativeDocumentMoniker": "UserControls\\Cabecera.xaml",
               "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml",
               "RelativeToolTip": "UserControls\\Cabecera.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-20T16:43:58.457Z"
+              "WhenOpened": "2025-04-20T16:43:58.457Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml*",
+              "RelativeToolTip": "MainWindow.xaml*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-14T16:48:16.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
