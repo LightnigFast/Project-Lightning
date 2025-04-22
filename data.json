@@ -158,6 +158,18 @@
           "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
         ],
         "nombre_fix": "Hogwarts Legacy - bypass"
+      },
+      "2050650": {
+        "name": "Resident Evil 4",
+        "launch_steam": true,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+        "errores": [
+          "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
+          "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
+        ],
+        "nombre_fix": "Resident Evil 4 Remake - bypass"
       }
   },
   "PlayStation": {
