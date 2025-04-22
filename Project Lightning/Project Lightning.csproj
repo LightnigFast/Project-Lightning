@@ -262,6 +262,8 @@
     <Content Include="res\media\backgrounds\videoInicio.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="res\media\logos\originals\discord_logo.gif" />
+    <Resource Include="res\media\logos\originals\purple-heart.gif" />
     <Resource Include="res\media\logos\originals\donate.gif" />
     <Resource Include="res\media\letters\Project-Lightning-font2.png" />
   </ItemGroup>

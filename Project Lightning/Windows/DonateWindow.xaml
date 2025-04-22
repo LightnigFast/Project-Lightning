@@ -121,11 +121,11 @@
 
 
                 <!--TEXTO DE DONACION-->
-                <TextBlock x:Name="txtMensaje" Grid.Row="1" Foreground="White" FontSize="16" TextWrapping="Wrap" Text="
+                <TextBlock x:Name="txtMensaje" Grid.Row="1" Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Text=" 
 💖 Support This Project However You Can!&#x0a;&#x0a;
 This project is something I do for fun and to help out fellow gamers. If it’s helped you, saved your day, or you just think it’s cool, there are a few ways you can support me — no money involved!&#x0a;&#x0a;
-🎮 Games and Keys&#x0a;
-Got a spare game key or a duplicate from a bundle? That stuff helps a lot for testing and bringing more content.&#x0a;&#x0a;
+🎮 Games, Keys, and Steam Cards&#x0a;
+Got a spare game key, a duplicate from a bundle, or some extra Steam cards lying around? That stuff helps a lot for testing, bringing more content, and even rewarding users in the community!&#x0a;&#x0a;
 💬 Discord Nitro&#x0a;
 Any Nitro boost or gift is super helpful to keep the Discord running smoothly and make the community even better.&#x0a;&#x0a;
 📣 Spread the Word&#x0a;
@@ -136,12 +136,12 @@ Thanks a ton for supporting this project!⚡
 
 
                 <!--BOTON PARA IR A MI DISCORD-->
-
-
-                
-
-                <Button Content="OK" Width="80" Height="30" HorizontalAlignment="Right" Margin="0,20,0,0"
-                        Grid.Row="3"  Style="{StaticResource BotonSalir}" Name="botonOk"/>
+                <Button Width="170" Height="60" HorizontalAlignment="Center" Margin="0,20,0,0"
+                        Grid.Row="3"  Style="{StaticResource BotonSalir}" Name="botonDiscord" Click="botonDiscord_Click">
+                    <Button.Content>
+                        <Image x:Name="gifImageButton" Width="100" Height="50"/>
+                    </Button.Content>
+                </Button>
             </Grid>
         </StackPanel>
         
