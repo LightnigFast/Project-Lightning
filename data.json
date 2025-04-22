@@ -127,6 +127,20 @@
         "Your antivirus may block the RldOrigin.dll file, it is completely safe and necessary to play."
       ],
       "nombre_fix": "Need For Speed Rivals - bypass"
+    },
+    "1262580": {
+      "name": "Need for Speed™ Payback",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2013", "VC Redist 2015"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and EA Play.",
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+        "You need to have the EA app installed, or the game won't launch.",
+        "I know, I know the fix is too large, but it’s the best I could come up with to make everything work properly :("
+      ],
+      "nombre_fix": "Need for Speed Payback - bypass"
     }
   },
   "ROCKSTAR": {
