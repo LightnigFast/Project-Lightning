@@ -7,11 +7,11 @@
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\panelbienvenida.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -37,8 +37,7 @@
               "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml",
               "RelativeToolTip": "Pages\\panelJuego.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T11:11:24.372Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-23T11:11:24.372Z"
             },
             {
               "$type": "Document",
@@ -61,8 +60,7 @@
               "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml",
               "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-14T16:48:16.196Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T16:48:16.196Z"
             },
             {
               "$type": "Document",
