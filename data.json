@@ -89,6 +89,17 @@
       ],
       "nombre_fix": "Assassin's Creed Rogue - bypass"
     },
+    "354380": {
+      "name": "Assassin’s Creed Chronicles: China",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play, VC Redist 2010, DoNet"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, DoNet and VC Redist 2010."
+      ],
+      "nombre_fix": "Assassins Creed Chronicles China - bypass"
+    },
     "446560": {
       "name": "Just Dance 2017",
       "launch_steam": true,
