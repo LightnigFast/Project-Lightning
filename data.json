@@ -94,7 +94,7 @@
       "launch_steam": true,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": ["DirectX", "Ubisoft Play, VC Redist 2010, DoNet"],
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist 2010", "DoNet"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, DoNet and VC Redist 2010."
       ],
