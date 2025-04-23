@@ -144,7 +144,7 @@
                        Grid.Column="0"/>
             
             <!--TEXTO QUE CAMBIARA DEPENDIENDO DE LA APP-->
-            <TextBlock Text="PRUEBA" FontSize="30" Foreground="#0000FF" FontFamily="{StaticResource FuenteJohnInclinada}"
+            <TextBlock Text="prueba" FontSize="30" Foreground="#0000FF" FontFamily="{StaticResource FuenteJohnInclinada}"
                        Name="txtApp" Grid.Column="1"/>
         
         </Grid>
