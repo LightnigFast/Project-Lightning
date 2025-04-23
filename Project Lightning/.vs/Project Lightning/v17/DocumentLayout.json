@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\pages\\paneljuego.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\paneljuego.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\pages\\panelbienvenida.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\panelbienvenida.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -26,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "panelJuego.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml.cs",
-              "RelativeDocumentMoniker": "Pages\\panelJuego.xaml.cs",
-              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml.cs*",
-              "RelativeToolTip": "Pages\\panelJuego.xaml.cs*",
-              "ViewState": "AgIAAFMBAAAAAAAAAAAAAHMBAAAxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-23T09:26:34.941Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -50,7 +37,19 @@
               "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml",
               "RelativeToolTip": "Pages\\panelJuego.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-23T09:26:33.239Z",
+              "WhenOpened": "2025-04-23T11:11:24.372Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "panelBienvenida.xaml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelBienvenida.xaml",
+              "RelativeDocumentMoniker": "Pages\\panelBienvenida.xaml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelBienvenida.xaml",
+              "RelativeToolTip": "Pages\\panelBienvenida.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-23T10:58:56.276Z",
               "EditorCaption": ""
             },
             {
