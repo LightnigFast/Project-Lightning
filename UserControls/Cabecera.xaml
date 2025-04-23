@@ -100,6 +100,7 @@
         <!--GRID PARA LOS BOTONES LAS EMPRESAS-->
         <Grid Grid.Column="0">
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -107,39 +108,45 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+
+            <!--BOTON HOME-->
+            <Button x:Name="home_button" Background="Transparent" Grid.Column="0" Style="{StaticResource MinimalButtonStyle}"
+                    Click="home_click" Width="40">
+                <Image Source="/res/media/logos/originals/home.png"  Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+            </Button>
+
             <!--BOTON UBISOFT-->
-            <Button x:Name="ubisoft_button" Background="Transparent" Grid.Column="0" Style="{StaticResource MinimalButtonStyle}"
+            <Button x:Name="ubisoft_button" Background="Transparent" Grid.Column="1" Style="{StaticResource MinimalButtonStyle}"
                     Click="ubisoft_click">
                 <Image Source="/res/media/logos/originals/Ubisoft_logo_white.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON EA-->
-            <Button x:Name="ea_button" Background="Transparent" Grid.Column="1" Style="{StaticResource MinimalButtonStyle}"
+            <Button x:Name="ea_button" Background="Transparent" Grid.Column="2" Style="{StaticResource MinimalButtonStyle}"
                     Click="ea_click">
                 <Image Source="/res/media/logos/originals/EA_Logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON ROCKSTAR-->
-            <Button x:Name="rockstar_button" Background="Transparent" Grid.Column="2" Style="{StaticResource MinimalButtonStyle}"
+            <Button x:Name="rockstar_button" Background="Transparent" Grid.Column="3" Style="{StaticResource MinimalButtonStyle}"
                     Click="rockstar_click">
                 <Image Source="/res/media/logos/originals/Rockstar_Games_Logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON DENUVO-->
-            <Button x:Name="denuvo_button" Background="Transparent" Grid.Column="3" Style="{StaticResource MinimalButtonStyle}"
+            <Button x:Name="denuvo_button" Background="Transparent" Grid.Column="4" Style="{StaticResource MinimalButtonStyle}"
                     Click="denuvo_click">
                 <Image Source="/res/media/logos/originals/Denuvo_logo_white.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON Play Station-->
-            <Button x:Name="ps_button" Background="Transparent" Grid.Column="4" Style="{StaticResource MinimalButtonStyle}"
+            <Button x:Name="ps_button" Background="Transparent" Grid.Column="5" Style="{StaticResource MinimalButtonStyle}"
                     Click="playstation_click">
                 <Image Source="/res/media/logos/originals/PlayStation_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
             
             <!--BOTON PARA OTROS JUEGOS-->
-            <Button x:Name="other_games_button" Background="Transparent" Grid.Column="5" Style="{StaticResource MinimalButtonStyle}"
+            <Button x:Name="other_games_button" Background="Transparent" Grid.Column="6" Style="{StaticResource MinimalButtonStyle}"
                     Click="others_click">
                 <Image Source="/res/media/logos/originals/other_games_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>

@@ -22,6 +22,7 @@ namespace Project_Lightning.UserControls
     /// </summary>
     public partial class Cabecera : UserControl
     {
+        public event RoutedEventHandler HomePresionado;
         public event RoutedEventHandler UbisoftPresionado;
         public event RoutedEventHandler EAPresionado;
         public event RoutedEventHandler RockstarPresionado;
@@ -45,6 +46,13 @@ namespace Project_Lightning.UserControls
 
             ImageBehavior.SetAnimatedSource(gifImage, image);
         }
+
+        //HOME CLICK
+        public void home_click(object sender, RoutedEventArgs e)
+        {
+            HomePresionado?.Invoke(this, e);
+        }
+
 
         //UBISOFT CLICK
         public void ubisoft_click(object sender, RoutedEventArgs e)

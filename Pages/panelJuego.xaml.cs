@@ -173,6 +173,8 @@ namespace Project_Lightning.Pages
         //CLICK PARA EL BOTON DE FIXEAR
         private void fixButtonClick(object sender, RoutedEventArgs e)
         {
+
+            fixButton.IsEnabled = false;
             descargarJuego(juego);
         }
 
@@ -376,6 +378,7 @@ namespace Project_Lightning.Pages
                     progressText.Text = "";
                     progressBar.Visibility = Visibility.Collapsed;
                     textoDescargando.Text = "";
+                    fixButton.IsEnabled = true;
                     //System.Windows.MessageBox.Show("Download and extraction completed: " + carpetaDestino);
                 }
                 else

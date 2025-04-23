@@ -80,7 +80,7 @@ namespace Project_Lightning.Pages
         //ESTE METODO BUSCA SACAR TODOS LOS JUEGOS DE UNA SOLA COMPAÑIA DADA POR EL nomApp
         private Dictionary<string, Juego> sacarJuegosDeApp(string nomApp)
         {
-            string rutaJson = System.IO.Path.GetFullPath(@"..\..\..\data.json");
+            string rutaJson = System.IO.Path.GetFullPath(@"..\..\data.json");
             string json = File.ReadAllText(rutaJson);
 
             var data = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Juego>>>(json);

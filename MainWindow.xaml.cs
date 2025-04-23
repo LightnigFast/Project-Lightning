@@ -29,12 +29,20 @@ namespace Project_Lightning
             InitializeComponent();
             BackgroundVideo.Play();
 
+            Cabecera.HomePresionado += boton_home_presionado;
             Cabecera.UbisoftPresionado += boton_ubisoft_presionado;
             Cabecera.EAPresionado += boton_ea_presionado;
             Cabecera.RockstarPresionado += boton_rockstar_presionado;
             Cabecera.DenuvoPresionado += boton_denuvo_presionado;
             Cabecera.PlayStationPresionado += boton_playstation_presionado;
             Cabecera.OthersPresionado += boton_others_presionado;
+        }
+
+        //METODO PARA UBISOFT
+        private void boton_home_presionado(object sender, RoutedEventArgs e)
+        {
+
+            framePrincipal.Navigate(new panelBienvenida());
         }
 
         //METODO PARA UBISOFT
