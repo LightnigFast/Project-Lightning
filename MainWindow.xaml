@@ -1,0 +1,61 @@
+﻿<Window x:Class="Project_Lightning.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:usercontrols="clr-namespace:Project_Lightning.UserControls"
+        xmlns:local="clr-namespace:Project_Lightning"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="⚡Project Lightning⚡" Height="760" Width="1280"
+        MinHeight="530" MinWidth="1000">
+    <Grid>
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="#FF3B0056" Offset="1.0" />
+                <GradientStop Color="#FF1F002E" Offset="0.8" />
+                <GradientStop Color="#FF000000" Offset="0.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!--FONDO CON GRADIENTE-->
+        <MediaElement Name="BackgroundVideo" 
+                      Source="res/media/backgrounds/background.mp4"
+                      LoadedBehavior="Manual" 
+                      UnloadedBehavior="Manual" 
+                      IsMuted="True" 
+                      Stretch="UniformToFill" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch" 
+                      MediaFailed="BackgroundVideo_MediaFailed"
+                      MediaEnded="BackgroundVideo_MediaEnded" />
+
+        <Border Margin="10,10,10,10" Background="#80000000" CornerRadius="15">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
+                <usercontrols:Cabecera x:Name="Cabecera" Grid.Row="0" Margin="0,10,0,0"/>
+            
+                <!--PAGINA DE BIENVENIDA-->
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    
+                    <Frame x:Name="framePrincipal" Grid.Row="0" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
+
+                    <TextBlock Grid.Row="1" Text="Created by: ♡B̷y̷D̷r̷a̷X̷x̷♡" Foreground="#FFB0B0B0" FontSize="11"
+                               FontFamily="Segoe UI" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>    
+                </Grid>
+                
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

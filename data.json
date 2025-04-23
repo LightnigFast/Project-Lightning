@@ -1,0 +1,206 @@
+{
+  "UBISOFT": {
+    "33230": {
+      "name": "Assassin's Creed II",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed II - bypass"
+    },
+    "48190": {
+      "name": "Assassin's Creed Brotherhood",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed Brotherhood - bypass"
+    },
+    "201870": {
+      "name": "Assassin's Creed Revelations",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassins Creed Revelations - bypass"
+    },
+    "208480": {
+      "name": "Assassin's Creed III",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed III - bypass"
+    },
+    "911400": {
+      "name": "Assassin's Creed III Remastered",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassins Creed III Remastered - bypass"
+    },
+    "242050": {
+      "name": "Assassin's Creed IV Black Flag",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed IV Black Flag - bypass"
+    },
+    "289650": {
+      "name": "Assassin's Creed Unity",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Visual C++", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Visual C++, and Ubisoft Play.",
+        "It’s very likely that your antivirus will delete the uplay_r164.dll file, it is trustworthy and essential to play."
+      ],
+      "nombre_fix": "Assassins Creed Unity - bypass"
+    },
+    "311560": {
+      "name": "Assassin's Creed Rogue",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed Rogue - bypass"
+    },
+    "446560": {
+      "name": "Just Dance 2017",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and Ubisoft Play."
+      ],
+      "nombre_fix": "Just Dance 2017 - bypass"
+    }
+  },
+  "EA": {
+    "47870": {
+      "name": "Need for Speed: Hot Pursuit",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["C++ 2008", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, C++2008 and EA Play."
+      ],
+      "nombre_fix": "Need for Speed Hot Pursuit - bypass"
+    },
+    "1262560": {
+      "name": "Need for Speed™ Most Wanted",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and EA Play.",
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder."
+      ],
+      "nombre_fix": "Need for Speed Most Wanted - bypass"
+    },
+    "1262600": {
+      "name": "Need for Speed™ Rivals",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and EA Play.",
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+        "You need to have the EA app installed, or the game won't launch.",
+        "Your antivirus may block the RldOrigin.dll file, it is completely safe and necessary to play."
+      ],
+      "nombre_fix": "Need For Speed Rivals - bypass"
+    },
+    "1262580": {
+      "name": "Need for Speed™ Payback",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2013", "VC Redist 2015"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and EA Play.",
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+        "You need to have the EA app installed, or the game won't launch.",
+        "I know, I know the fix is too large, but it’s the best I could come up with to make everything work properly :("
+      ],
+      "nombre_fix": "Need for Speed Payback - bypass"
+    }
+  },
+  "ROCKSTAR": {
+       "2668510": {
+        "name": "Red Dead Redemption",
+        "launch_steam": false,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+        "errores": [
+          "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX.",
+          "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+          "It is very important to launch the game using the RDR.exe executable."
+        ],
+        "nombre_fix": "Red Dead Redemption -  bypass"
+      }
+  },
+  "DENUVO": {
+      "990080": {
+        "name": "Hogwarts Legacy",
+        "launch_steam": false,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+        "errores": [
+          "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
+          "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+          "It is very important to launch the game using the first .exe you see in the folder.",
+          "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
+        ],
+        "nombre_fix": "Hogwarts Legacy - bypass"
+      },
+      "2050650": {
+        "name": "Resident Evil 4",
+        "launch_steam": true,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+        "errores": [
+          "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
+          "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
+        ],
+        "nombre_fix": "Resident Evil 4 Remake - bypass"
+      }
+  },
+  "PlayStation": {
+      
+  },
+  "OTHERS": {
+      
+  }
+}
