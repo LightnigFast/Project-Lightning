@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Project_Lightning.Pages;
 using Project_Lightning.UserControls;
+using Project_Lightning.Windows;
 
 namespace Project_Lightning
 {

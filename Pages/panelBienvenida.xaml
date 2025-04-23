@@ -132,7 +132,7 @@
                 <Button Grid.Column="2" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
                         Style="{StaticResource MinimalButtonStyle}"/>
                 <Button Grid.Column="3" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
-                        Style="{StaticResource MinimalButtonStyle}"/>
+                        Content="Legal Notice" Style="{StaticResource MinimalButtonStyle}" Click="legalButtonClick"/>
 
 
             </Grid>

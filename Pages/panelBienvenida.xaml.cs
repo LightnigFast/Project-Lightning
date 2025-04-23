@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Project_Lightning.Windows;
 
 namespace Project_Lightning.Pages
 {
@@ -24,5 +25,13 @@ namespace Project_Lightning.Pages
         {
             InitializeComponent();
         }
+
+        private void legalButtonClick(object sender, RoutedEventArgs e)
+        {
+            var legalWindow = new LegalWindow();
+            legalWindow.Show();
+        }
+
+
     }
 }

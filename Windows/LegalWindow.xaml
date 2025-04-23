@@ -1,0 +1,132 @@
+﻿<Window x:Class="Project_Lightning.Windows.LegalWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        Width="800" Height="700"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+
+        <!--ESTILO PARA EL BOTON DE SALIR-->
+        <Style x:Key="BotonSalir" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="#6A0DAD"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Padding" Value="10,5"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Foreground" Value="#6A0DAD"/>
+            <Setter Property="Cursor" Value="Hand"/>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center"
+                              VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--EFECTO PARA CUANDO EL RATON ESTE ENCIMA-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <!--ANIMACION DEL FONDO-->
+                                            <ColorAnimation 
+                                                Storyboard.TargetName="border" 
+                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
+                                                From="Transparent" To="#6A0DAD" Duration="0:0:0.3" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+
+                            <!--EFECTO PARA CUANDO EL RATON SE VA-->
+                            <Trigger Property="IsMouseOver" Value="False">
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <!--ANIMACION DEL FONDO-->
+                                            <ColorAnimation 
+                                                Storyboard.TargetName="border" 
+                                                Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
+                                                From="#6A0DAD" To="Transparent" Duration="0:0:0.3" AutoReverse="False"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+
+                            <!--EFECTO PARA CUANDO SE PRESIONE EL BOTON-->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="White"/>
+                                <Setter Property="Foreground" Value="White"/>
+                                <Setter Property="BorderBrush" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border CornerRadius="15" Background="#FF2D2D30" Padding="20" BorderBrush="#6A0DAD" BorderThickness="4" Name="borde">
+        <StackPanel>
+            <!--BOTON PARA SALIR DE ESTA VENTANA-->
+            <Button Content="X" Width="30" Height="30" HorizontalAlignment="Right"
+                    Style="{StaticResource BotonSalir}" Name="botonSalir" Click="botonSalirClick"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+
+
+
+                <!--GIF DE CABEZERA-->
+                <Image x:Name="gifImage" Grid.Row="0" Height="100" RenderOptions.BitmapScalingMode="HighQuality" Margin="0,0,0,10"/>
+
+                <!--TITULO DEBAJO DEL GIF-->
+
+
+                <!--TEXTO DE DONACION-->
+                <TextBlock x:Name="txtMensaje" Grid.Row="1" Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Text=" 
+This application is intended solely to improve the experience of users who own games legitimately,&#x0a;
+  enabling local offline functionality under specific circumstances.&#x0a;&#x0a;
+
+        * This app does not promote, support, or facilitate piracy in any form.&#x0a;&#x0a;
+
+        * No game files or copyrighted fixes are hosted within this application.&#x0a;
+           All patches or files are retrieved from external, publicly accessible sources.&#x0a;&#x0a;
+
+        * The use of this app requires legal ownership of the game through Steam.&#x0a;
+            It does not bypass any licensing or ownership verification systems.&#x0a;&#x0a;
+
+        * Users are fully responsible for ensuring their use of this app complies with the End User License &#x0a;
+           Agreements (EULAs) of the respective games.&#x0a;&#x0a;
+
+        * The developer is not liable for any misuse or illegal usage of this tool.&#x0a;&#x0a;
+
+💬 Developers or rights holders:&#x0a;
+  If you are the owner or representative of a game featured in this app and would like us to remove&#x0a;
+  support for your title, you may contact me directly.&#x0a;&#x0a;
+
+ I will comply with any such request respectfully and without any opposition.&#x0a;&#x0a;
+
+ By using this software, you accept these terms. If you disagree, please do not use the application.
+"/>
+
+
+            </Grid>
+        </StackPanel>
+
+
+    </Border>
+</Window>

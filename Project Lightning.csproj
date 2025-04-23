@@ -150,6 +150,9 @@
     <Compile Include="Windows\ErrorDialog.xaml.cs">
       <DependentUpon>ErrorDialog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\LegalWindow.xaml.cs">
+      <DependentUpon>LegalWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Pages\panelBienvenida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -195,6 +198,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\ErrorDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LegalWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,6 +269,7 @@
     <Content Include="res\media\backgrounds\videoInicio.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="res\media\logos\originals\law.gif" />
     <Resource Include="res\media\logos\originals\home.png" />
     <Resource Include="res\media\logos\originals\discord_logo.gif" />
     <Resource Include="res\media\logos\originals\purple-heart.gif" />
