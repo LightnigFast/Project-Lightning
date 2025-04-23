@@ -78,6 +78,17 @@
       ],
       "nombre_fix": "Assassins Creed Unity - bypass"
     },
+    "311560": {
+      "name": "Assassin's Creed Rogue",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and Ubisoft Play.",
+      ],
+      "nombre_fix": "Assassin's Creed Rogue - bypass"
+    },
     "446560": {
       "name": "Just Dance 2017",
       "launch_steam": true,
