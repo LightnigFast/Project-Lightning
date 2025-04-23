@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\pages\\paneljuego.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\paneljuego.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:pages\\paneljuego.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|c:\\users\\luis\\documents\\github\\project-lightning\\project lightning\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\usercontrols\\cabecera.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:usercontrols\\cabecera.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\usercontrols\\cabecera.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{91B418AE-2851-4CD8-88C9-D99A7DECA05B}|Project Lightning.csproj|solutionrelative:usercontrols\\cabecera.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,48 +26,48 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Cabecera.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml.cs",
-              "RelativeDocumentMoniker": "UserControls\\Cabecera.xaml.cs",
-              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml.cs",
-              "RelativeToolTip": "UserControls\\Cabecera.xaml.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAcwFYAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-21T18:21:26.719Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Cabecera.xaml",
-              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml",
-              "RelativeDocumentMoniker": "UserControls\\Cabecera.xaml",
-              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\UserControls\\Cabecera.xaml",
-              "RelativeToolTip": "UserControls\\Cabecera.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-20T16:43:58.457Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "panelJuego.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml.cs",
+              "RelativeDocumentMoniker": "Pages\\panelJuego.xaml.cs",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml.cs*",
+              "RelativeToolTip": "Pages\\panelJuego.xaml.cs*",
+              "ViewState": "AgIAACYBAAAAAAAAAAAAADMBAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-23T09:26:34.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "panelJuego.xaml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml",
+              "RelativeDocumentMoniker": "Pages\\panelJuego.xaml",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\Pages\\panelJuego.xaml",
+              "RelativeToolTip": "Pages\\panelJuego.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-23T09:26:33.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml",
               "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml*",
-              "RelativeToolTip": "MainWindow.xaml*",
+              "ToolTip": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-04-14T16:48:16.196Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\Luis\\Documents\\GitHub\\Project-Lightning\\Project Lightning\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
@@ -75,8 +75,7 @@
               "RelativeToolTip": "MainWindow.xaml.cs",
               "ViewState": "AgIAACsAAAAAAAAAAAAQwEkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-15T16:08:43.556Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-15T16:08:43.556Z"
             }
           ]
         }

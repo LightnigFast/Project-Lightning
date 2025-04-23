@@ -45,6 +45,7 @@ namespace Project_Lightning.Pages
             this.ventanaPrincipal = ventanaPrincipal;
             this.juego = juego;
 
+            progressBar.Visibility = Visibility.Collapsed;
             crearBackground(juego.Key);
             crearLogo(juego.Key);
             sacarInfoJuego(juego);
@@ -251,6 +252,13 @@ namespace Project_Lightning.Pages
                         Directory.CreateDirectory(carpetaTemporal);
                     }
 
+                    //PARA LA BARRA DE PROGRESO
+                    progressBar.Value = 0;
+                    int totalArchivos = archivos.Count;
+                    int archivosProcesados = 0;
+                    progressBar.Visibility = Visibility.Visible;
+                    textoDescargando.Text = "Downloading...";
+
                     //DESCARGAR TODO
                     foreach (var archivo in archivos)
                     {
@@ -290,8 +298,13 @@ namespace Project_Lightning.Pages
                             //GUARDO LA RUTA AL PRIMER ZIP ENCONTRADO PARA EXTRAERLO DESPUÉS
                             if (archivo.name.EndsWith(".zip") && rutaZipExtraer == null)
                                 rutaZipExtraer = rutaDestino;
+
+                            archivosProcesados++;
+                            progressBar.Value = (double)archivosProcesados / totalArchivos * 100;
+                            progressText.Text = $"{(int)((double)archivosProcesados / totalArchivos * 100)}%";
                         }
                     }
+
 
                     //EXTRAIGO EL ZIP SI EXISTE
                     if (rutaZipExtraer != null)
@@ -356,8 +369,13 @@ namespace Project_Lightning.Pages
                         }
                     }
 
+                    textoDescargando.Text = "Done";
                     var ventanaError = new Windows.ErrorDialog("Game ready to play", Brushes.Green);
                     ventanaError.ShowDialog();
+                    progressBar.Value = 0;
+                    progressText.Text = "";
+                    progressBar.Visibility = Visibility.Collapsed;
+                    textoDescargando.Text = "";
                     //System.Windows.MessageBox.Show("Download and extraction completed: " + carpetaDestino);
                 }
                 else

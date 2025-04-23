@@ -193,6 +193,49 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <!--ESTULO PARA EL PROGRESS BAR-->
+        <Style x:Key="MinimalProgressBarStyle" TargetType="ProgressBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Border CornerRadius="10" Background="{TemplateBinding Background}" Height="10">
+                            <Grid x:Name="Root" ClipToBounds="True">
+                                <Border x:Name="PART_Track" Background="#333333" CornerRadius="5"/>
+                                <Border x:Name="PART_Indicator"
+                                        HorizontalAlignment="Left"
+                                        CornerRadius="5"
+                                        Width="0">  
+                                    <Border.Background>
+                                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" MappingMode="RelativeToBoundingBox">
+                                            <GradientStop Color="#6A0DAD" Offset="0"/>
+                                            <GradientStop Color="#B466FF" Offset="0.5"/>
+                                            <GradientStop Color="#6A0DAD" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Border.Background>
+                                </Border>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsIndeterminate" Value="True">
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard RepeatBehavior="Forever">
+                                            <DoubleAnimation
+                                            Storyboard.TargetName="PART_Indicator"
+                                            Storyboard.TargetProperty="(Border.Background).(LinearGradientBrush.GradientStops)[1].Offset"
+                                            From="0" To="1" Duration="0:0:1" AutoReverse="True"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
 
     </Page.Resources>
 
@@ -235,12 +278,35 @@
                         <Grid Grid.Column="1">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="350"/>
+                                <ColumnDefinition Width="170"/>
                             </Grid.ColumnDefinitions>
                             <TextBlock Grid.Column="0" FontSize="40" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
                                        VerticalAlignment="Center" Text="Game opening method:"/>
                             
+                            <!--PARA LA BARRA DE DESCARGA-->
+                            <Grid Grid.Column="1" Height="25" VerticalAlignment="Center" Margin="10,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="40"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+
+                                <TextBlock x:Name="textoDescargando" Grid.Column="0" Grid.Row="0" Text="" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                           Foreground="White" FontWeight="Bold" FontSize="14" Padding="0,0,0,5"/>
+
+                                <ProgressBar x:Name="progressBar" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100" Value="0" Foreground="LimeGreen" 
+                                             Background="#FF1E1E1E" BorderBrush="Gray" BorderThickness="1" Style="{StaticResource MinimalProgressBarStyle}"/>
+
+                                <TextBlock x:Name="progressText" Grid.Column="1" Grid.Row="1" Text="" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                             Foreground="White" FontWeight="Bold" FontSize="14"/>          
+                            </Grid>
+
+
+
                             <!--BOTON PARA FIXEAR EL JUEGO-->
                             <Button x:Name="fixButton" Grid.Column="2" Width="150" Content="Apply Fix" Click="fixButtonClick" FontSize="25" VerticalAlignment="Center" Height="45"
                                     HorizontalAlignment="Right" Style="{StaticResource FixButtonStyle}" FontFamily="{StaticResource FuenteJohnInclinada}"/>
