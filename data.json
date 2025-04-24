@@ -112,7 +112,8 @@
       ],
       "nombre_fix": "Assassins Creed Chronicles China - bypass",
       "custom_images": {
-        "hero_image": "https://cdn2.steamgriddb.com/thumb/38a9dbfce0500ac32fa4092cf609e572.jpg"
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/38a9dbfce0500ac32fa4092cf609e572.jpg",
+        "background": "https://cdn2.steamgriddb.com/grid/9e0b74a472b637a40fed9506a7539e5e.jpg"
       }
     },
     "368500": {
