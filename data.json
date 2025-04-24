@@ -35,7 +35,8 @@
       ],
       "nombre_fix": "Assassins Creed Revelations - bypass",
       "custom_images": {
-        "hero_image": "https://cdn2.steamgriddb.com/thumb/105fb0578a9e90c458f69bad63c38709.png"
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/105fb0578a9e90c458f69bad63c38709.png",
+        "background": "https://cdn2.steamgriddb.com/grid/5b4db7da70c4c1f3005198b8379ec177.png"
       }
     },
     "208480": {
