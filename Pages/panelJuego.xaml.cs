@@ -80,6 +80,31 @@ namespace Project_Lightning.Pages
                 Stretch = Stretch.Fill
             };
 
+            string imagenPersonalizada = null;
+
+            if (juego.Value != null &&
+                juego.Value.custom_images.TryGetValue("background", out imagenPersonalizada) &&
+                !string.IsNullOrWhiteSpace(imagenPersonalizada))
+            {
+                //SI HAY IMAGEN PERSONALIZADA, LA USO
+                imagenJuego.Source = new BitmapImage(new Uri(imagenPersonalizada));
+            }
+            else
+            {
+                //INTENTO CARGAR LA IMAGEN ORIGINAL DE STEAM
+                imagenJuego.Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + key + "/library_hero.jpg"));
+
+                //SI FALLA LA CARGA, PONGO UNA IMAGEN DE RESPALDO
+                imagenJuego.ImageFailed += (sender, e) =>
+                {
+                    imagenJuego.Stretch = Stretch.UniformToFill;
+                    imagenJuego.HorizontalAlignment = System.Windows.HorizontalAlignment.Stretch;
+                    imagenJuego.VerticalAlignment = VerticalAlignment.Top;
+                    imagenJuego.Source = new BitmapImage(new Uri("https://cdn.cloudflare.steamstatic.com/steam/apps/" + key + "/capsule_616x353.jpg"));
+                };
+            }
+
+            /*
             //INTENTO CARGAR LA IMAGEN ORIGINAL
             imagenJuego.Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + key + "/library_hero.jpg"));
 
@@ -91,7 +116,7 @@ namespace Project_Lightning.Pages
                 imagenJuego.VerticalAlignment = VerticalAlignment.Top;
                 imagenJuego.Source = new BitmapImage(new Uri("https://cdn.cloudflare.steamstatic.com/steam/apps/" + key + "/capsule_616x353.jpg"));
             };
-
+            */
             panelBackground.Children.Insert(0,imagenJuego);
         }
 
