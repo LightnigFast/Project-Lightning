@@ -214,7 +214,9 @@
         "Your antivirus may block the RldOrigin.dll file, it is completely safe and necessary to play."
       ],
       "nombre_fix": "Need For Speed Rivals - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "background": "https://cdn2.steamgriddb.com/hero/7f3721efabdb38d926d9688f7e1ed28e.jpg"
+      }
     },
     "1262580": {
       "name": "Need for Speed™ Payback",
