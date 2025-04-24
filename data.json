@@ -12,18 +12,6 @@
       "nombre_fix": "Assassin's Creed II - bypass",
       "custom_images": {}
     },
-    "730": {
-      "name": "Counter-Strike 2",
-      "launch_steam": true,
-      "launch_exe": true,
-      "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
-      "errores": [
-        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
-      ],
-      "nombre_fix": "Assassin's Creed II - bypass",
-      "custom_images": {}
-    },
     "48190": {
       "name": "Assassin's Creed Brotherhood",
       "launch_steam": true,
@@ -167,6 +155,18 @@
         "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC Redist."
       ],
       "nombre_fix": "Assassins Creed Origins - bypass",
+      "custom_images": {}
+    },
+    "812140": {
+      "name": "Assassin's Creed Odyssey",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC Redist."
+      ],
+      "nombre_fix": "Assassins Creed Odyssey - bypass",
       "custom_images": {}
     },
     "446560": {
