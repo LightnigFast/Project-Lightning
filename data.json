@@ -142,6 +142,18 @@
         "background": "https://cdn2.steamgriddb.com/grid/efc7802abcfcabf60cf5abe86e9b0465.png"
       }
     },
+    "582160": {
+      "name": "Assassin's Creed Origins",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC Redist."
+      ],
+      "nombre_fix": "Assassins Creed Origins - bypass",
+      "custom_images": {}
+    },
     "446560": {
       "name": "Just Dance 2017",
       "launch_steam": true,
