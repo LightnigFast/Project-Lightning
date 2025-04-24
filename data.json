@@ -9,7 +9,8 @@
       "errores": [
         "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
       ],
-      "nombre_fix": "Assassin's Creed II - bypass"
+      "nombre_fix": "Assassin's Creed II - bypass",
+      "custom_images": {}
     },
     "48190": {
       "name": "Assassin's Creed Brotherhood",
