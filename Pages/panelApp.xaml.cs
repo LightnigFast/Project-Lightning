@@ -63,6 +63,7 @@ namespace Project_Lightning.Pages
             public List<string> programas_necesarios { get; set; }
             public List<string> errores { get; set; }
             public string nombre_fix { get; set; }
+            public Dictionary<string, string> custom_images { get; set; }
         }
         
 
@@ -120,15 +121,27 @@ namespace Project_Lightning.Pages
                         Stretch = Stretch.Fill
                     };
 
-                    //INTENTO CARGAR LA IMAGEN ORIGINAL
-                    imagenJuego.Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/library_600x900.jpg"));
+                    string imagenPersonalizada = null;
 
-                    //SI NO SE HA PUESTO NINGUNA IMAGEN (ES DECIR, QUE ESTE JUEGO NO TIENE)
-                    imagenJuego.ImageFailed += (sender, e) =>
+                    if (juego.Value != null &&
+                        juego.Value.custom_images.TryGetValue("hero_image", out imagenPersonalizada) &&
+                        !string.IsNullOrWhiteSpace(imagenPersonalizada))
                     {
-                        imagenJuego.Stretch = Stretch.Uniform;
-                        imagenJuego.Source = new BitmapImage(new Uri("https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/capsule_184x69.jpg?t=1739176298"));
-                    };
+                        //SI HAY IMAGEN PERSONALIZADA, LA USO
+                        imagenJuego.Source = new BitmapImage(new Uri(imagenPersonalizada));
+                    }
+                    else
+                    {
+                        //INTENTO CARGAR LA IMAGEN ORIGINAL DE STEAM
+                        imagenJuego.Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/library_600x900.jpg"));
+
+                        //SI FALLA LA CARGA, PONGO UNA IMAGEN DE RESPALDO
+                        imagenJuego.ImageFailed += (sender, e) =>
+                        {
+                            imagenJuego.Stretch = Stretch.Uniform;
+                            imagenJuego.Source = new BitmapImage(new Uri("https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/capsule_184x69.jpg?t=1739176298"));
+                        };
+                    }
 
                     //AGREGO LA IMAGEN AL BOTON
                     botonJuego.Content = imagenJuego;
