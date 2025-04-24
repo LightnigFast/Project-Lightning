@@ -100,6 +100,17 @@
       ],
       "nombre_fix": "Assassins Creed Chronicles China - bypass"
     },
+    "368500": {
+      "name": "Assassin's Creed Syndicate",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "Visual C++", "Visual C++ 2012"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and Visual C++."
+      ],
+      "nombre_fix": "Assassin's Creed Syndicate - bypass"
+    },
     "446560": {
       "name": "Just Dance 2017",
       "launch_steam": true,
