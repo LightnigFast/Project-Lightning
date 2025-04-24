@@ -67,9 +67,9 @@ namespace Project_Lightning.Pages
         }
         
 
-        private void ponerJuegos(string nomApp)
+        private async Task ponerJuegos(string nomApp)
         {
-            var juegosApp = sacarJuegosDeApp(nomApp);
+            var juegosApp = await sacarJuegosDeApp(nomApp);
 
             colocarBotones(juegosApp);
 
@@ -79,19 +79,39 @@ namespace Project_Lightning.Pages
 
 
         //ESTE METODO BUSCA SACAR TODOS LOS JUEGOS DE UNA SOLA COMPAÑIA DADA POR EL nomApp
-        private Dictionary<string, Juego> sacarJuegosDeApp(string nomApp)
+        private async Task<Dictionary<string, Juego>> sacarJuegosDeApp(string nomApp)
         {
-            string rutaJson = System.IO.Path.GetFullPath(@"..\..\data.json");
-            string json = File.ReadAllText(rutaJson);
+            string rutaJson = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data.json");
 
+            // Verificar si el archivo existe
+            if (!File.Exists(rutaJson))
+            {
+                // Si no existe, descargarlo desde GitHub
+                string urlJson = "https://raw.githubusercontent.com/LightnigFast/Project-Lightning/main/data.json"; // URL del archivo en GitHub
+                await DescargarArchivoDesdeGithub(urlJson, rutaJson);
+            }
+
+            // Leer el contenido del archivo JSON
+            string json = File.ReadAllText(rutaJson);
             var data = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Juego>>>(json);
 
             if (data.ContainsKey(nomApp))
             {
-                return data[nomApp]; //DEVUELVO LOS JUEGOS DE ESA APP
+                return data[nomApp]; // DEVUELVO LOS JUEGOS DE ESA APP
             }
 
-            return new Dictionary<string, Juego>(); //SI NO HAY JUEGOS, NO DEVUELVO NADA
+            return new Dictionary<string, Juego>(); // SI NO HAY JUEGOS, NO DEVUELVO NADA
+        }
+
+        // Método para descargar el archivo desde GitHub
+        private async Task DescargarArchivoDesdeGithub(string url, string rutaDestino)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                // Descargar el archivo y guardarlo en la ruta destino
+                var contenido = await client.GetStringAsync(url);
+                File.WriteAllText(rutaDestino, contenido);
+            }
         }
 
         //ESTE METODO BUSCA CREAR TODOS LOS BOTONES, COLCOAR SU IMAGEN Y SU RESPECTIVO METODO DE CLICK
