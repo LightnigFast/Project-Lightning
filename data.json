@@ -62,7 +62,8 @@
       ],
       "nombre_fix": "Assassins Creed III Remastered - bypass",
       "custom_images": {
-        "hero_image": "https://cdn2.steamgriddb.com/thumb/f0ce59b6bf8e03499c788c348919a196.jpg"
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/f0ce59b6bf8e03499c788c348919a196.jpg",
+        "background": "https://cdn2.steamgriddb.com/grid/9ca302e07507002d527cc02ac1372c09.png"
       }
     },
     "242050": {
