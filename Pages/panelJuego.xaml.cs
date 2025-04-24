@@ -220,7 +220,7 @@ namespace Project_Lightning.Pages
             string appId = keyValuePair.Key;
             string user = "LightnigFast";
             string repo = "gamesFixes";
-            string token = "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";
+            string token = "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";
 
             string apiUrl = $"https://api.github.com/repos/{user}/{repo}/contents/{appId}";
 
