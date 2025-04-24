@@ -137,7 +137,10 @@
         "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, DoNet and VC Redist 2010."
       ],
       "nombre_fix": "Assassin's Creed Chronicles India - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/05761d7cd3d824ac6da56e12eb7c8c6f.jpg",
+        "background": "https://cdn2.steamgriddb.com/grid/efc7802abcfcabf60cf5abe86e9b0465.png"
+      }
     },
     "446560": {
       "name": "Just Dance 2017",
