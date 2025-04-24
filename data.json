@@ -138,7 +138,8 @@
       ],
       "nombre_fix": "Just Dance 2017 - bypass",
       "custom_images": {
-        "hero_image": "https://cdn2.steamgriddb.com/thumb/4dad75d2365dedf73aa94b7606de7426.jpg"
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/4dad75d2365dedf73aa94b7606de7426.jpg"`,
+        "background": "https://cdn2.steamgriddb.com/grid/1bd0726541b5b65167034a4449ebf1f5.png"
       }
     }
   },
