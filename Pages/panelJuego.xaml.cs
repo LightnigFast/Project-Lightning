@@ -88,6 +88,8 @@ namespace Project_Lightning.Pages
             {
                 //SI HAY IMAGEN PERSONALIZADA, LA USO
                 imagenJuego.Source = new BitmapImage(new Uri(imagenPersonalizada));
+                imagenJuego.Stretch = Stretch.UniformToFill;
+                imagenJuego.VerticalAlignment = VerticalAlignment.Center;
             }
             else
             {
