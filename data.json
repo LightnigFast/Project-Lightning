@@ -127,6 +127,18 @@
       "nombre_fix": "Assassin's Creed Syndicate - bypass",
       "custom_images": {}
     },
+    "359610": {
+      "name": "Assassin’s Creed Chronicles: India",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist 2010", "DoNet"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, DoNet and VC Redist 2010."
+      ],
+      "nombre_fix": "Assassin's Creed Chronicles India - bypass",
+      "custom_images": {}
+    },
     "446560": {
       "name": "Just Dance 2017",
       "launch_steam": true,
