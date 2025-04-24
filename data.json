@@ -60,7 +60,9 @@
         "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
       ],
       "nombre_fix": "Assassins Creed III Remastered - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/f0ce59b6bf8e03499c788c348919a196.jpg"
+      }
     },
     "242050": {
       "name": "Assassin's Creed IV Black Flag",
@@ -109,7 +111,9 @@
         "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, DoNet and VC Redist 2010."
       ],
       "nombre_fix": "Assassins Creed Chronicles China - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/38a9dbfce0500ac32fa4092cf609e572.jpg"
+      }
     },
     "368500": {
       "name": "Assassin's Creed Syndicate",
@@ -133,7 +137,9 @@
         "If the game shows errors when opening, you need to install DirectX and Ubisoft Play."
       ],
       "nombre_fix": "Just Dance 2017 - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/4dad75d2365dedf73aa94b7606de7426.jpg"
+      }
     }
   },
   "EA": {
