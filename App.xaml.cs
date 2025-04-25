@@ -19,7 +19,7 @@ namespace Project_Lightning
         {
             base.OnStartup(e);
 
-            await Actualizador.ComprobarActualizacion();
+            //await Actualizador.ComprobarActualizacion();
 
         }
 
