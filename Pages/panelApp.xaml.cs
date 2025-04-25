@@ -83,6 +83,7 @@ namespace Project_Lightning.Pages
         private async Task<Dictionary<string, Juego>> sacarJuegosDeApp(string nomApp)
         {
             string rutaJson = System.IO.Path.GetFullPath(@"..\\..\\data.json");
+            string rutaJsonApp = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data.json");
             string urlJson = "https://raw.githubusercontent.com/LightnigFast/Project-Lightning/main/data.json";
 
             if (await EsArchivoGitHubDiferente(urlJson, rutaJson))
@@ -93,6 +94,7 @@ namespace Project_Lightning.Pages
                     {
                         string contenidoGitHub = await client.GetStringAsync(urlJson);
                         File.WriteAllText(rutaJson, contenidoGitHub); //ACTUALIZA ARCHIVO LOCAL
+                        File.WriteAllText(rutaJsonApp, contenidoGitHub); //ACTUALIZA ARCHIVO LOCAL
                         //MessageBox.Show("Se ha actualizado el archivo data.json desde GitHub");
                     }
                 }
@@ -105,7 +107,7 @@ namespace Project_Lightning.Pages
             }
 
             //CARGAR LOCAL
-            string json = File.ReadAllText(rutaJson);
+            string json = File.ReadAllText(rutaJsonApp);
             var data = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Juego>>>(json);
 
             if (data.ContainsKey(nomApp))
