@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Windows.Media;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using Newtonsoft.Json;
+using Project_Lightning.Windows;
 
 namespace Project_Lightning.Classes
 {
@@ -32,7 +34,10 @@ namespace Project_Lightning.Classes
 
                     if (versionRemota > versionLocal)
                     {
-                        MessageBox.Show($"Nueva versión disponible: {versionRemota}. Se descargará la actualización.");
+                        var ventanaActualizacion = new Windows.ErrorDialog($"New version available: {versionRemota}. The update will be downloaded once the window is closed..", Brushes.Green);
+                        ventanaActualizacion.ShowDialog();
+
+                        //MessageBox.Show($"New version available: {versionRemota}. The update will be downloaded once the window is closed..");
 
                         string rutaDescarga = Path.Combine(Path.GetTempPath(), nombreInstalador);
 
@@ -47,7 +52,9 @@ namespace Project_Lightning.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("No se pudo comprobar la actualización: " + ex.Message);
+                var ventanaActualizacion = new Windows.ErrorDialog($"Could not check for updates: ", Brushes.Green);
+                ventanaActualizacion.Show();
+                //MessageBox.Show("No se pudo comprobar la actualización: " + ex.Message);
             }
         }
     }
