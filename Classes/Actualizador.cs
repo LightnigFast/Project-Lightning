@@ -30,7 +30,7 @@ namespace Project_Lightning.Classes
                     Version versionRemota = new Version(ultimaVersionTexto.Trim());
                     Version versionLocal = Assembly.GetExecutingAssembly().GetName().Version;
 
-                    MessageBox.Show($"Version local: { versionLocal} vs Version github: {versionRemota}");
+                    //MessageBox.Show($"Version local: { versionLocal} vs Version github: {versionRemota}");
 
                     if (versionRemota > versionLocal)
                     {

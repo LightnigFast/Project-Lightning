@@ -279,13 +279,7 @@
     <Resource Include="res\media\logos\originals\Other_games_logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="res\media\backgrounds\milad-fakurian.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="res\media\backgrounds\background.mp4">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="res\media\backgrounds\videoInicio.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="res\media\logos\originals\hello.gif" />
