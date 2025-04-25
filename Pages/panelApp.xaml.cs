@@ -99,7 +99,7 @@ namespace Project_Lightning.Pages
                 catch (Exception ex)
                 {
                     //MessageBox.Show("Error al actualizar data.json: " + ex.Message);
-                    var ventanaError = new Windows.ErrorDialog("Error al actualizar data.json: " + ex.Message, Brushes.Red);
+                    var ventanaError = new Windows.ErrorDialog("Error updating the game list, please try again later: " + ex.Message, Brushes.Red);
                     ventanaError.ShowDialog();
                 }
             }
