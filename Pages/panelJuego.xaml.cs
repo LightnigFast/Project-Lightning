@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using TokenProvider;
 using System.Windows.Shapes;
 using System.IO.Compression;
 using Newtonsoft.Json;
@@ -202,7 +203,17 @@ namespace Project_Lightning.Pages
         {
 
             fixButton.IsEnabled = false;
-            descargarJuego(juego);
+            try
+            {
+                descargarJuego(juego);
+            }
+            catch (Exception ex) {
+                var ventanaError = new Windows.ErrorDialog("An unexpected error occurred while trying to download the game " + juego.Value.name + 
+                    ". Please wait a few minutes and, if the error persists, contact the developer.", Brushes.Red);
+                ventanaError.ShowDialog();
+                //System.Windows.MessageBox.Show(ex.Message);
+                fixButton.IsEnabled = true;
+            }
         }
 
         //CLICK DEL BOTON DE VOLVER
@@ -220,18 +231,27 @@ namespace Project_Lightning.Pages
             string appId = keyValuePair.Key;
             string user = "LightnigFast";
             string repo = "gamesFixes";
-            string token = "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";
+            string token = TokenManager.GetGithubToken();
 
             string apiUrl = $"https://api.github.com/repos/{user}/{repo}/contents/{appId}";
 
-            HttpClient client = new HttpClient();
-            client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
-            client.DefaultRequestHeaders.Authorization =
-                new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
-
             try
             {
+                HttpClient client = new HttpClient();
+                client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
+                client.DefaultRequestHeaders.Authorization =
+                    new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+          
                 string json = await client.GetStringAsync(apiUrl);
+  
+                if (string.IsNullOrEmpty(json))
+                {
+                    var ventanaError = new Windows.ErrorDialog("Failed to authenticate with GitHub. Please check your token.", Brushes.Red);
+                    ventanaError.ShowDialog();
+                    return;
+                }
+
                 var archivos = JsonConvert.DeserializeObject<List<ArchivoGitHub>>(json);
 
                 //CommonOpenFileDialog PARA SELECCIONAR EL SELECTOR DE FICHEROS DE WINDOWS
