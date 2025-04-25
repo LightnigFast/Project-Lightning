@@ -38,6 +38,12 @@ namespace Project_Lightning.Pages
             changeLog.Show();
         }
 
+        private void quickGuideButtonClick(object sender, RoutedEventArgs e)
+        {
+            var quieckGuide = new QuickGuide();
+            quieckGuide.Show();
+        }
+
 
     }
 }

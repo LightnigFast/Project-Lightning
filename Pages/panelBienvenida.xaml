@@ -117,21 +117,18 @@
                        Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
 
             <!--GRID PARA LOS BOTONES DE LEGAL, ULTIMA ACTUALIZACION, ETC-->
-            <Grid Grid.Row="1" Width="800">
+            <Grid Grid.Row="1" Width="600">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
                 <Button Grid.Column="0" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
-                        Style="{StaticResource MinimalButtonStyle}"/>
+                        Content="Quick Guide" Style="{StaticResource MinimalButtonStyle}" Click="quickGuideButtonClick"/>
                 <Button Grid.Column="1" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
-                        Style="{StaticResource MinimalButtonStyle}"/>
-                <Button Grid.Column="2" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
                         Content="Changelog" Style="{StaticResource MinimalButtonStyle}" Click="changeLogButtonClick"/>
-                <Button Grid.Column="3" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
+                <Button Grid.Column="2" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
                         Content="Legal Notice" Style="{StaticResource MinimalButtonStyle}" Click="legalButtonClick"/>
 
 

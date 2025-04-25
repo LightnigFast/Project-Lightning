@@ -156,6 +156,9 @@
     <Compile Include="Windows\LegalWindow.xaml.cs">
       <DependentUpon>LegalWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\QuickGuide.xaml.cs">
+      <DependentUpon>QuickGuide.xaml</DependentUpon>
+    </Compile>
     <Page Include="Pages\panelBienvenida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -209,6 +212,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\LegalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\QuickGuide.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -276,6 +283,7 @@
     <Content Include="res\media\backgrounds\videoInicio.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="res\media\logos\originals\hello.gif" />
     <Resource Include="res\media\logos\originals\changelog.gif" />
     <Resource Include="res\media\logos\originals\law.gif" />
     <Resource Include="res\media\logos\originals\home.png" />

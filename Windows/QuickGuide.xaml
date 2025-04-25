@@ -1,5 +1,5 @@
-﻿<Window x:Class="Project_Lightning.Windows.ChangeLog"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<Window x:Class="Project_Lightning.Windows.QuickGuide"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         WindowStyle="None"
         AllowsTransparency="True"
@@ -116,15 +116,72 @@
                 <StackPanel>
                     <!--GIF DE CABEZERA-->
                     <Image x:Name="gifImage" Grid.Row="0" Height="100" RenderOptions.BitmapScalingMode="HighQuality" Margin="0,0,0,10"/>
-                    <TextBlock Text="Changelog" Foreground="White" FontSize="28" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Hi!!" Foreground="White" FontSize="28" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Left"/>
                 </StackPanel>
-                
+
             </StackPanel>
 
             <!--CONTENIDO CON SCROLL-->
             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
                 <StackPanel>
-                    
+                    <TextBlock Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left">
+                        <Run Text="Thank you for choosing " />
+                        <Run Text="Project Lightning" FontWeight="Bold" FontStyle="Italic"/>
+                        <Run Text="! This application is designed to enhance your experience with " />
+                        <Run Text="games legally acquired on Steam" />
+                        <Run Text=", allowing you to enjoy patches and fixes that improve their functionality " />
+                        <Run Text="and performance."/>      
+                    </TextBlock>
+
+                    <TextBlock Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Margin="0,10,0,0">
+                        <Run Text="What does Project Lightning do?" FontWeight="Bold" FontSize="20"/>
+                        <LineBreak/>
+                        <Run Text="Project Lightning allows you to:" />                
+                    </TextBlock>
+
+                    <TextBlock Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Margin="0,10,0,0">
+                        <Run Text="     * Download and apply fixes: " FontWeight="Bold"/>
+                        <Run Text="Get necessary game patches directly from public sources, ensuring your "/> <LineBreak/> <Run Text="        experience is as smooth as possible." />
+                        <LineBreak/>
+                        <Run Text="     * Easy access to games: " FontWeight="Bold"/>
+                        <Run Text="With just a button, you can apply patches to your favorite games so they "/> <LineBreak/> <Run Text="        always work without needing an account or being connected to the internet." />
+                    </TextBlock>
+
+                    <TextBlock Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Margin="0,10,0,0">
+                        <Run Text="How does it work?" FontWeight="Bold" FontSize="20"/>
+                        <LineBreak/>
+                        <Run Text="     1. The application checks if a fix is available." />
+                        <LineBreak/>
+                        <Run Text="     2. If there is one, it displays it in the appropriate category." />
+                        <LineBreak/>
+                        <Run Text="     3. Select the game you want to apply the fix to, apply it, and enjoy the game."/>
+                        <LineBreak/>
+                        <Run Text="     4. Enjoy a better gaming experience with the improvements provided by the community."/>
+                        <LineBreak/>
+                    </TextBlock>
+
+                    <TextBlock Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Margin="0,10,0,0">
+                        <Run Text="Important:" FontWeight="Bold" FontSize="20"/>
+                        <LineBreak/>
+                        <Run Text="     * Compliance with laws: " FontWeight="Bold"/>
+                        <Run Text="Project Lightning is designed to be used only with games you have legally "/> <LineBreak/> <Run Text="        acquired on Steam. It does not include or promote the use of pirated content." />
+                        <LineBreak/>
+                        <Run Text="     * No game files: " FontWeight="Bold"/>
+                        <Run Text="This application does not distribute or host game files; it only manages and "/> <LineBreak/> <Run Text="        applies publicly available fixes."/>
+                        <LineBreak/>
+                    </TextBlock>
+
+                    <TextBlock Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Margin="0,10,0,0">
+                        <Run Text="Need help or have a suggestion?" FontWeight="Bold" FontSize="20"/>
+                        <LineBreak/>
+                        <Run Text="If you have any questions or need assistance, feel free to contact me. I will also be attentive to suggestions to improve the app." />
+                        <LineBreak/>
+                        <LineBreak/>
+                        <Run Text="Enjoy your enhanced games and have an excellent experience with " />
+                        <Run Text="Project Lightning" FontWeight="Bold" FontStyle="Italic"/>
+                    </TextBlock>
+
+
                 </StackPanel>
             </ScrollViewer>
         </DockPanel>
