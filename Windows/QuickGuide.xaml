@@ -127,9 +127,9 @@
                     <TextBlock Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left">
                         <Run Text="Thank you for choosing " />
                         <Run Text="Project Lightning" FontWeight="Bold" FontStyle="Italic"/>
-                        <Run Text="! This application is designed to enhance your experience with " />
-                        <Run Text="games legally acquired on Steam" />
-                        <Run Text=", allowing you to enjoy patches and fixes that improve their functionality " />
+                        <Run Text="! This application is designed to enhance your experience with" />
+                        <Run Text="games legally acquired on Steam," />
+                        <Run Text="allowing you to enjoy patches and fixes that improve their functionality" />
                         <Run Text="and performance."/>      
                     </TextBlock>
 
@@ -141,7 +141,7 @@
 
                     <TextBlock Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Margin="0,10,0,0">
                         <Run Text="     * Download and apply fixes: " FontWeight="Bold"/>
-                        <Run Text="Get necessary game patches directly from public sources, ensuring your "/> <LineBreak/> <Run Text="        experience is as smooth as possible." />
+                        <Run Text="Get necessary game patches directly from public sources, ensuring"/> <LineBreak/> <Run Text="        your experience is as smooth as possible." />
                         <LineBreak/>
                         <Run Text="     * Easy access to games: " FontWeight="Bold"/>
                         <Run Text="With just a button, you can apply patches to your favorite games so they "/> <LineBreak/> <Run Text="        always work without needing an account or being connected to the internet." />
