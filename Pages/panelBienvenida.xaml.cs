@@ -32,6 +32,12 @@ namespace Project_Lightning.Pages
             legalWindow.Show();
         }
 
+        private void changeLogButtonClick(object sender, RoutedEventArgs e)
+        {
+            var changeLog = new ChangeLog();
+            changeLog.Show();
+        }
+
 
     }
 }
