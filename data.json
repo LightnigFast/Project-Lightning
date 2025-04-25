@@ -1,7 +1,19 @@
 {
   "UBISOFT": {
     "33230": {
-      "name": "Assassin's Creed II ",
+      "name": "Assassin's Creed II",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+      ],
+      "nombre_fix": "Assassin's Creed II - bypass",
+      "custom_images": {}
+    },
+    "33230": {
+      "name": "Assassin's Creed II",
       "launch_steam": true,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
