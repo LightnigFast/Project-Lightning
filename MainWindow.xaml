@@ -6,6 +6,7 @@
         xmlns:usercontrols="clr-namespace:Project_Lightning.UserControls"
         xmlns:local="clr-namespace:Project_Lightning"
         mc:Ignorable="d"
+        Icon="/res/media/icons/ico.ico"
         WindowStartupLocation="CenterScreen"
         Title="⚡Project Lightning⚡" Height="760" Width="1280"
         MinHeight="530" MinWidth="1000">
