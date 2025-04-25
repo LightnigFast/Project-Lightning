@@ -296,6 +296,17 @@
       
   },
   "OTHERS": {
-      
+      "730": {
+        "name": "Counter Strike 2",
+        "launch_steam": true,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+        "errores": [
+          "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play."
+        ],
+        "nombre_fix": "Assassin's Creed II - bypass",
+        "custom_images": {}
+      },
   }
 }
