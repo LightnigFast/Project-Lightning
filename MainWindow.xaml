@@ -50,8 +50,18 @@
                     
                     <Frame x:Name="framePrincipal" Grid.Row="0" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
 
-                    <TextBlock Grid.Row="1" Text="Created by: ♡B̷y̷D̷r̷a̷X̷x̷♡" Foreground="#FFB0B0B0" FontSize="11"
-                               FontFamily="Segoe UI" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>    
+                    <Grid Grid.Row="1" HorizontalAlignment="Right">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Created by: ♡B̷y̷D̷r̷a̷X̷x̷♡" Foreground="#FFB0B0B0" FontSize="11"
+                                   FontFamily="Segoe UI" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                        <TextBlock Grid.Column="1" Text="Version: " Foreground="#FFB0B0B0" FontSize="11" Name="txtVersion"
+                                   FontFamily="Segoe UI" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+                    </Grid>
+                    
+                    
                 </Grid>
                 
 

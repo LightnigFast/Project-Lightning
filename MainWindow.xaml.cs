@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -29,6 +31,9 @@ namespace Project_Lightning
             
             InitializeComponent();
             BackgroundVideo.Play();
+
+            string versionLocal = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
+            txtVersion.Text = "Version: " + versionLocal + " ";
 
             Cabecera.HomePresionado += boton_home_presionado;
             Cabecera.UbisoftPresionado += boton_ubisoft_presionado;
