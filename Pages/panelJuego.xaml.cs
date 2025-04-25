@@ -249,6 +249,7 @@ namespace Project_Lightning.Pages
                 {
                     var ventanaError = new Windows.ErrorDialog("Failed to authenticate with GitHub. Please check your token.", Brushes.Red);
                     ventanaError.ShowDialog();
+                    fixButton.IsEnabled = true;
                     return;
                 }
 
@@ -272,6 +273,8 @@ namespace Project_Lightning.Pages
                     {
                         var ventanaError3 = new Windows.ErrorDialog("You must select the game folder of " + juego.Value.name + ":", Brushes.Red);
                         ventanaError3.ShowDialog();
+                        fixButton.IsEnabled = true;
+
                         return;
                     }
 
@@ -280,6 +283,7 @@ namespace Project_Lightning.Pages
                     {
                         var ventanaError2 = new Windows.ErrorDialog("You must select the game folder of " + juego.Value.name + ":", Brushes.Red);
                         ventanaError2.ShowDialog();
+                        fixButton.IsEnabled = true;
                         return;
                     }
 
@@ -335,6 +339,7 @@ namespace Project_Lightning.Pages
                                     {
                                         var ventanaError4 = new Windows.ErrorDialog("Error trying to delete the file: " + ioEx.Message, Brushes.Red);
                                         ventanaError4.ShowDialog();
+                                        fixButton.IsEnabled = true;
                                         //System.Windows.MessageBox.Show("Error trying to delete the file: " + ioEx.Message);
                                         return;
                                     }
@@ -414,6 +419,7 @@ namespace Project_Lightning.Pages
                             {
                                 var ventanaError5 = new Windows.ErrorDialog("Could not delete fragment file: " + ex.Message, Brushes.Red);
                                 ventanaError5.ShowDialog();
+                                fixButton.IsEnabled = true;
                             }
                         }
                     }
@@ -432,6 +438,7 @@ namespace Project_Lightning.Pages
                 {
                     var ventanaError = new Windows.ErrorDialog("No folder selected.", Brushes.Red);
                     ventanaError.ShowDialog();
+                    fixButton.IsEnabled = true;
                     //System.Windows.MessageBox.Show("No folder selected.");
                 }
             }
@@ -439,6 +446,7 @@ namespace Project_Lightning.Pages
             {
                 var ventanaError = new Windows.ErrorDialog("ERROR: " + ex.Message, Brushes.Red);
                 ventanaError.ShowDialog();
+                fixButton.IsEnabled = true;
                 //System.Windows.MessageBox.Show("ERROR: " + ex.Message);
             }
         }

@@ -128,8 +128,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="TokenProvider">
-      <HintPath>..\..\..\source\repos\TokenProvider\bin\Debug\net8.0\TokenProvider.dll</HintPath>
+    <Reference Include="TokenProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\source\repos\TokenProvider\bin\Debug\TokenProvider.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
