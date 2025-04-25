@@ -14,7 +14,7 @@ namespace Project_Lightning.Classes
 {
     public class Actualizador
     {
-        private static readonly string urlVersion = "https://github.com/LightnigFast/Project-Lightning/releases/latest/download/latest-version.txt";
+        private static readonly string urlVersion = "https://raw.githubusercontent.com/LightnigFast/Project-Lightning/main/latest-version.txt";
         private static readonly string urlInstalador = "https://github.com/LightnigFast/Project-Lightning/releases/latest/download/ProjectLightningInstaller.exe";
         private static readonly string nombreInstalador = "ProjectLightningInstaller.exe";
 
@@ -27,6 +27,8 @@ namespace Project_Lightning.Classes
                     string ultimaVersionTexto = await client.GetStringAsync(urlVersion);
                     Version versionRemota = new Version(ultimaVersionTexto.Trim());
                     Version versionLocal = Assembly.GetExecutingAssembly().GetName().Version;
+
+                    MessageBox.Show($"Version local: { versionLocal} vs Version github: {versionRemota}");
 
                     if (versionRemota > versionLocal)
                     {
