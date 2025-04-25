@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Newtonsoft.Json;
+using Project_Lightning.Windows;
 
 namespace Project_Lightning.Pages
 {
@@ -67,9 +68,9 @@ namespace Project_Lightning.Pages
         }
         
 
-        private void ponerJuegos(string nomApp)
+        private async void ponerJuegos(string nomApp)
         {
-            var juegosApp = sacarJuegosDeApp(nomApp);
+            var juegosApp = await sacarJuegosDeApp(nomApp);
 
             colocarBotones(juegosApp);
 
@@ -79,20 +80,66 @@ namespace Project_Lightning.Pages
 
 
         //ESTE METODO BUSCA SACAR TODOS LOS JUEGOS DE UNA SOLA COMPAÑIA DADA POR EL nomApp
-        private Dictionary<string, Juego> sacarJuegosDeApp(string nomApp)
+        private async Task<Dictionary<string, Juego>> sacarJuegosDeApp(string nomApp)
         {
-            string rutaJson = System.IO.Path.GetFullPath(@"..\..\data.json");
-            string json = File.ReadAllText(rutaJson);
+            string rutaJson = System.IO.Path.GetFullPath(@"..\\..\\data.json");
+            string urlJson = "https://raw.githubusercontent.com/LightnigFast/Project-Lightning/main/data.json";
 
+            if (await EsArchivoGitHubDiferente(urlJson, rutaJson))
+            {
+                try
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        string contenidoGitHub = await client.GetStringAsync(urlJson);
+                        File.WriteAllText(rutaJson, contenidoGitHub); //ACTUALIZA ARCHIVO LOCAL
+                        //MessageBox.Show("Se ha actualizado el archivo data.json desde GitHub");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    //MessageBox.Show("Error al actualizar data.json: " + ex.Message);
+                    var ventanaError = new Windows.ErrorDialog("Error al actualizar data.json: " + ex.Message, Brushes.Red);
+                    ventanaError.ShowDialog();
+                }
+            }
+
+            //CARGAR LOCAL
+            string json = File.ReadAllText(rutaJson);
             var data = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, Juego>>>(json);
 
             if (data.ContainsKey(nomApp))
             {
-                return data[nomApp]; //DEVUELVO LOS JUEGOS DE ESA APP
+                return data[nomApp];
             }
 
-            return new Dictionary<string, Juego>(); //SI NO HAY JUEGOS, NO DEVUELVO NADA
+            return new Dictionary<string, Juego>();
         }
+
+        private async Task<bool> EsArchivoGitHubDiferente(string url, string rutaLocal)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string contenidoGitHub = await client.GetStringAsync(url);
+
+                    if (!File.Exists(rutaLocal))
+                    {
+                        return true; //NO EXISTE EL LOCAL, ES DIFERENTE
+                    }
+
+                    string contenidoLocal = File.ReadAllText(rutaLocal);
+                    return !contenidoLocal.Equals(contenidoGitHub);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al comparar archivos: " + ex.Message);
+                return false;
+            }
+        }
+
 
         //ESTE METODO BUSCA CREAR TODOS LOS BOTONES, COLCOAR SU IMAGEN Y SU RESPECTIVO METODO DE CLICK
         private void colocarBotones(Dictionary<string, Juego> juegosApp)
