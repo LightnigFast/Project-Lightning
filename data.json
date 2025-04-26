@@ -169,6 +169,18 @@
       "nombre_fix": "Assassins Creed Odyssey - bypass",
       "custom_images": {}
     },
+    "2208920": {
+      "name": "Assassin's Creed Valhalla",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC C++ 2019"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC C++ 2019."
+      ],
+      "nombre_fix": "Assassin's Creed Valhalla - bypass",
+      "custom_images": {}
+    },
     "446560": {
       "name": "Just Dance 2017",
       "launch_steam": true,
