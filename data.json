@@ -181,6 +181,18 @@
       "nombre_fix": "Assassin's Creed Valhalla - bypass",
       "custom_images": {}
     },
+    "220240": {
+      "name": "Far Cry 3",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "Visual C++ 2008", "Visual C++ 2010", ".NET 4.0"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, Visual C++ 2008, Visual C++ 2010 and .NET 4.0."
+      ],
+      "nombre_fix": "Far Cry 3 - bypass",
+      "custom_images": {}
+    },
     "446560": {
       "name": "Just Dance 2017",
       "launch_steam": true,
