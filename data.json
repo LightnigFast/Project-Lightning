@@ -268,6 +268,35 @@
       ],
       "nombre_fix": "Need for Speed Payback - bypass",
       "custom_images": {}
+    },
+    "1225560": {
+      "name": "Unravel",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2012"},
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA Play and VC Redist 2012.",
+        "The game must be launched from the executable in the folder named 'Unravel.exe'. If you launch it from Steam, it won’t work.",
+        "You need to have the EA app installed, or the game won't launch."
+      ],
+      "nombre_fix": "Need for Speed Payback - bypass",
+      "custom_images": {}
+    },
+    "1225570": {
+      "name": "Unravel Two",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2013", "VC Redist 2013"},
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA Play, VC Redist 2013 and VC Redist 2015.",
+        "It's important to launch the game using the executable named 'UnravelTwo.exe'.",
+        "When the game is launching, an EA App window will pop up, just close it, and the game will launch automatically.",
+        "You need to have the EA app installed, or the game won't launch."
+      ],
+      "nombre_fix": "Need for Speed Payback - bypass",
+      "custom_images": {}
     }
   },
   "ROCKSTAR": {
