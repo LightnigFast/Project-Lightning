@@ -280,7 +280,7 @@
         "The game must be launched from the executable in the folder named 'Unravel.exe'. If you launch it from Steam, it won’t work.",
         "You need to have the EA app installed, or the game won't launch."
       ],
-      "nombre_fix": "Need for Speed Payback - bypass",
+      "nombre_fix": "Unravel - bypass",
       "custom_images": {}
     },
     "1225570": {
@@ -295,7 +295,7 @@
         "When the game is launching, an EA App window will pop up, just close it, and the game will launch automatically.",
         "You need to have the EA app installed, or the game won't launch."
       ],
-      "nombre_fix": "Need for Speed Payback - bypass",
+      "nombre_fix": "Unravel 2 - bypass",
       "custom_images": {}
     }
   },
