@@ -52,7 +52,7 @@ namespace Project_Lightning.Classes
             }
             catch (Exception ex)
             {
-                var ventanaActualizacion = new Windows.ErrorDialog($"Could not check for updates: ", Brushes.Green);
+                var ventanaActualizacion = new Windows.ErrorDialog($"Could not check for updates: ", Brushes.Red);
                 ventanaActualizacion.Show();
                 //MessageBox.Show("No se pudo comprobar la actualización: " + ex.Message);
             }

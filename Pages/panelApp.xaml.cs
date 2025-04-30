@@ -137,7 +137,9 @@ namespace Project_Lightning.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al comparar archivos: " + ex.Message);
+                var ventanaError = new ErrorDialog("Error comparing files: " + ex.Message, Brushes.Red);
+                ventanaError.Show();
+                //MessageBox.Show("Error al comparar archivos: " + ex.Message);
                 return false;
             }
         }
