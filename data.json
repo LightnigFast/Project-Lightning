@@ -369,7 +369,7 @@
         "programas_necesarios": ["DirectX 9", "VC Redist"],
         "errores": [
           "If the game shows errors when opening, you need to install DirectX 9 and VC Redist",
-          "If the game doesn't launch, go to the main folder of the game, open the localization.txt file, and change it to the language in which the game is installed."
+          "If the game doesn't launch, go to the main folder of the game, open the localization.txt file, and change it to the language"
         ],
         "nombre_fix": "Call of Duty Black Ops - bypass",
         "custom_images": {}
