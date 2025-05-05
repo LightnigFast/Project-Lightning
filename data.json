@@ -205,6 +205,18 @@
       "nombre_fix": "Far Cry 4 - bypass",
       "custom_images": {}
     },
+    "488790": {
+      "name": "South Park The Fractured But Whole",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC Redist"
+      ],
+      "nombre_fix": "South Park The Fractured But Whole - bypass",
+      "custom_images": {}
+    },
     "446560": {
       "name": "Just Dance 2017",
       "launch_steam": true,
@@ -321,41 +333,79 @@
         "errores": [
           "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX.",
           "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
-          "It is very important to launch the game using the RDR.exe executable."
+          "It is very important to launch the game using the RDR.exe executable.",
+          "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
         ],
         "nombre_fix": "Red Dead Redemption -  bypass",
         "custom_images": {}
-      }
-  },
-  "DENUVO": {
-      "990080": {
-        "name": "Hogwarts Legacy",
-        "launch_steam": false,
-        "launch_exe": true,
-        "comentarios": "Enjoy the game ♥",
-        "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
-        "errores": [
-          "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
-          "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
-          "It is very important to launch the game using the first .exe you see in the folder.",
-          "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
-        ],
-        "nombre_fix": "Hogwarts Legacy - bypass",
-        "custom_images": {}
       },
-      "2050650": {
-        "name": "Resident Evil 4",
+    "3240220": {
+        "name": "Grand Theft Auto V Enhanced",
         "launch_steam": true,
         "launch_exe": true,
         "comentarios": "Enjoy the game ♥",
-        "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+        "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX 12"],
         "errores": [
-          "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
-          "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
+          "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX 12.",
+          "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
         ],
-        "nombre_fix": "Resident Evil 4 Remake - bypass",
+        "nombre_fix": "Red Dead Redemption -  bypass",
         "custom_images": {}
-      }
+      },
+  },
+  "DENUVO": {
+    "990080": {
+      "name": "Hogwarts Legacy",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+        "It is very important to launch the game using the first .exe you see in the folder.",
+        "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
+      ],
+      "nombre_fix": "Hogwarts Legacy - bypass",
+      "custom_images": {}
+    },
+    "2050650": {
+      "name": "Resident Evil 4",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
+        "Your antivirus may block the EMP.dll file, it is completely safe. To make the fix work, you need to allow it and reapply the fix."
+      ],
+      "nombre_fix": "Resident Evil 4 Remake - bypass",
+      "custom_images": {}
+    },
+    "225540": {
+      "name": "Just Cause 3",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist" ],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "Just Cause 3 - bypass",
+      "custom_images": {}
+    },
+    "517630": {
+        "name": "Just Cause 4",
+        "launch_steam": true,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": [ "DirectX", "VC Redist 2010", "VC Redist 2015" ],
+        "errores": [
+          "If the game shows errors when opening, you need to install DirectX, VC Redist 2010 and VC Redist 2015."
+        ],
+        "nombre_fix": "Just Cause 4 - bypass",
+        "custom_images": {}
+      },
   },
   "PlayStation": {
       
