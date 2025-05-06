@@ -86,7 +86,7 @@ namespace Project_Lightning.Pages
             string rutaJsonApp = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "data.json");
             string urlJson = "https://raw.githubusercontent.com/LightnigFast/Project-Lightning/main/data.json";
 
-            if (await EsArchivoGitHubDiferente(urlJson, rutaJson))
+            if (await EsArchivoGitHubDiferente(urlJson, rutaJson) && await EsArchivoGitHubDiferente(urlJson, rutaJsonApp))
             {
                 try
                 {
