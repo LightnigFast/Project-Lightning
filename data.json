@@ -205,6 +205,18 @@
       "nombre_fix": "Far Cry 4 - bypass",
       "custom_images": {}
     },
+    "298110": {
+      "name": "Far Cry Primal",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist 2012", ".NET 4.0"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, VC Redist 2012 and .NET 4.0."
+      ],
+      "nombre_fix": "Far Cry Primal - bypass",
+      "custom_images": {}
+    },
     "488790": {
       "name": "South Park The Fractured But Whole",
       "launch_steam": true,
@@ -321,6 +333,19 @@
       ],
       "nombre_fix": "Unravel 2 - bypass",
       "custom_images": {}
+    },
+    "2001120": {
+      "name": "Split Fiction",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022.",
+        "The game already includes the online fix, but to play with your friends, you all must have the latest version of the game."
+      ],
+      "nombre_fix": "Unravel 2 - bypass",
+      "custom_images": {}
     }
   },
   "ROCKSTAR": {
@@ -411,17 +436,42 @@
       
   },
   "OTHERS": {
-      "42700": {
-        "name": "Call of Duty: Black Ops",
+    "42700": {
+      "name": "Call of Duty: Black Ops",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 9", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 9 and VC Redist",
+        "If the game doesn't launch, go to the main folder of the game, open the localization.txt file, and change it to the language."
+      ],
+      "nombre_fix": "Call of Duty Black Ops - bypass",
+      "custom_images": {}
+    },
+    "202970": {
+        "name": "Call of Duty: Black Ops II",
         "launch_steam": true,
         "launch_exe": true,
         "comentarios": "Enjoy the game ♥",
-        "programas_necesarios": ["DirectX 9", "VC Redist"],
+        "programas_necesarios": ["DirectX", "VC Redist"],
         "errores": [
-          "If the game shows errors when opening, you need to install DirectX 9 and VC Redist",
-          "If the game doesn't launch, go to the main folder of the game, open the localization.txt file, and change it to the language."
+          "If the game shows errors when opening, you need to install DirectX and VC Redist",
+          "This game only includes the campaign. If you want to play Zombies and multiplayer, I recommend using Plutonium."
         ],
-        "nombre_fix": "Call of Duty Black Ops - bypass",
+        "nombre_fix": "Call of Duty Black Ops II - bypass",
+        "custom_images": {}
+      },
+    "1659040": {
+        "name": "HITMAN World of Assassination",
+        "launch_steam": true,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": ["DirectX 12", "VC Redist"],
+        "errores": [
+          "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
+        ],
+        "nombre_fix": "HITMAN World of Assassination - bypass",
         "custom_images": {}
       }
   }
