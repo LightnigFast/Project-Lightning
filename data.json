@@ -472,7 +472,9 @@
           "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
         ],
         "nombre_fix": "HITMAN World of Assassination - bypass",
-        "custom_images": {}
+        "custom_images": {
+          "background": "https://cdn2.steamgriddb.com/hero/f367a3b6dfb09748bd8b3d3ac10e291d.jpg"
+        }
       }
   }
 }
