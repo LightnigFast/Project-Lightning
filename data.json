@@ -242,7 +242,7 @@
         "3. Run FC25.exe to generate the Denuvo ticket.",
         "4. Send 'DenuvoTicket' file via DM (short message first).",
         "5. Replace 'DenuvoToken' in anadius.cfg with the token I send you. Keep the quotes.",
-        "6. Save the config and launch FC25.exe."",
+        "6. Save the config and launch FC25.exe.",
         "Game requires my manifest version to work.",
         "Support only via AnyDesk.",
         "Disable Windows/driver updates to avoid issues.",
