@@ -246,6 +246,28 @@
     }
   },
   "EA": {
+    "2669320": {
+      "name": "EA SPORTS FC 25",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist",
+        "1. Install the game using files from 'FC 25 - GET HERE'. If already installed, update via SteamTools.",
+        "2. Open Project Lightning, select FC 25, and apply the fix to the game folder.",
+        "3. Run FC25.exe to generate the Denuvo ticket.",
+        "4. Send 'DenuvoTicket' file via DM (short message first).",
+        "5. Replace 'DenuvoToken' in anadius.cfg with the token I send you. Keep the quotes.",
+        "6. Save the config and launch FC25.exe.",
+        "Game requires my manifest version to work.",
+        "Support only via AnyDesk.",
+        "Disable Windows/driver updates to avoid issues.",
+        "If updated, send a new DenuvoTicket and repeat steps."
+      ],
+      "nombre_fix": "EA SPORTS FC 25 - bypass",
+      "custom_images": {}
+    },
     "47870": {
       "name": "Need for Speed: Hot Pursuit",
       "launch_steam": true,
