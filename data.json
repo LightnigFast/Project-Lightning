@@ -526,7 +526,7 @@
       "custom_images": {}
     }
   },
-  "275850": {
+"275850": {
     "name": "No Man's Sky",
     "launch_steam": true,
     "launch_exe": true,
@@ -537,5 +537,5 @@
     ],
     "nombre_fix": "No Man's Sky - bypass",
     "custom_images": {}
-  },
+  }
 }
