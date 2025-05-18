@@ -243,6 +243,21 @@
         "hero_image": "https://cdn2.steamgriddb.com/thumb/4dad75d2365dedf73aa94b7606de7426.jpg",
         "background": "https://cdn2.steamgriddb.com/grid/1bd0726541b5b65167034a4449ebf1f5.png"
       }
+    },
+    "33440": {
+      "name": "Driver San Francisco",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and Ubisoft Play."
+      ],
+      "nombre_fix": "Driver San Francisco - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/1cfef7cfd8d26b1ecb8b0eccca6366ca.jpg",
+        "background": "https://cdn2.steamgriddb.com/hero/792c7b5aae4a79e78aaeda80516ae2ac.png"
+      }
     }
   },
   "EA": {
@@ -387,18 +402,18 @@
         "custom_images": {}
       },
     "3240220": {
-        "name": "Grand Theft Auto V Enhanced",
-        "launch_steam": true,
-        "launch_exe": true,
-        "comentarios": "Enjoy the game ♥",
-        "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX 12"],
-        "errores": [
-          "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX 12.",
-          "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
-        ],
-        "nombre_fix": "Red Dead Redemption -  bypass",
-        "custom_images": {}
-      },
+      "name": "Grand Theft Auto V Enhanced",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX 12"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX 12.",
+        "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
+      ],
+      "nombre_fix": "Red Dead Redemption -  bypass",
+      "custom_images": {}
+    }
   },
   "DENUVO": {
     "990080": {
@@ -442,17 +457,29 @@
       "custom_images": {}
     },
     "517630": {
-        "name": "Just Cause 4",
-        "launch_steam": true,
-        "launch_exe": true,
-        "comentarios": "Enjoy the game ♥",
-        "programas_necesarios": [ "DirectX", "VC Redist 2010", "VC Redist 2015" ],
-        "errores": [
-          "If the game shows errors when opening, you need to install DirectX, VC Redist 2010 and VC Redist 2015."
-        ],
-        "nombre_fix": "Just Cause 4 - bypass",
-        "custom_images": {}
-      },
+      "name": "Just Cause 4",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist 2010", "VC Redist 2015" ],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, VC Redist 2010 and VC Redist 2015."
+      ],
+      "nombre_fix": "Just Cause 4 - bypass",
+      "custom_images": {}
+    },
+    "1874000": {
+      "name": "Life is Strange: Double Exposure",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist 2022."
+      ],
+      "nombre_fix": "Life is Strange Double Exposure - bypass",
+      "custom_images": {}
+    }
   },
   "PlayStation": {
       
@@ -472,31 +499,43 @@
       "custom_images": {}
     },
     "202970": {
-        "name": "Call of Duty: Black Ops II",
-        "launch_steam": true,
-        "launch_exe": true,
-        "comentarios": "Enjoy the game ♥",
-        "programas_necesarios": ["DirectX", "VC Redist"],
-        "errores": [
-          "If the game shows errors when opening, you need to install DirectX and VC Redist",
-          "This game only includes the campaign. If you want to play Zombies and multiplayer, I recommend using Plutonium."
-        ],
-        "nombre_fix": "Call of Duty Black Ops II - bypass",
-        "custom_images": {
-          "background": "https://cdn2.steamgriddb.com/hero/8f14179f61cad1a80133387187c01092.jpg"
-        }
-      },
-    "1659040": {
-        "name": "HITMAN World of Assassination",
-        "launch_steam": true,
-        "launch_exe": true,
-        "comentarios": "Enjoy the game ♥",
-        "programas_necesarios": ["DirectX 12", "VC Redist"],
-        "errores": [
-          "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
-        ],
-        "nombre_fix": "HITMAN World of Assassination - bypass",
-        "custom_images": {}
+      "name": "Call of Duty: Black Ops II",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist",
+        "This game only includes the campaign. If you want to play Zombies and multiplayer, I recommend using Plutonium."
+      ],
+      "nombre_fix": "Call of Duty Black Ops II - bypass",
+      "custom_images": {
+        "background": "https://cdn2.steamgriddb.com/hero/8f14179f61cad1a80133387187c01092.jpg"
       }
+    },
+    "1659040": {
+      "name": "HITMAN World of Assassination",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
+      ],
+      "nombre_fix": "HITMAN World of Assassination - bypass",
+      "custom_images": {}
+    },
+    "275850": {
+      "name": "No Man's Sky",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist 2022"
+      ],
+      "nombre_fix": "No Man's Sky - bypass",
+      "custom_images": {}
+    }
   }
 }
