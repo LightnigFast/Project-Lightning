@@ -258,6 +258,21 @@
         "hero_image": "https://cdn2.steamgriddb.com/grid/1cfef7cfd8d26b1ecb8b0eccca6366ca.jpg",
         "background": "https://cdn2.steamgriddb.com/hero/792c7b5aae4a79e78aaeda80516ae2ac.png"
       }
+    },
+    "243470": {
+      "name": "Watch_Dogs",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET 4.0 and Ubisoft Play."
+      ],
+      "nombre_fix": "Watch_Dogs - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/4f89626165ff9607bfc8c6cff2fed560.png",
+        "background": "https://cdn2.steamgriddb.com/hero/601b5cbe8c87380898b5911c1e904d31.jpg"
+      }
     }
   },
   "EA": {
@@ -411,7 +426,20 @@
         "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX 12.",
         "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
       ],
-      "nombre_fix": "Red Dead Redemption -  bypass",
+      "nombre_fix": "Grand Theft Auto V Enhanced -  bypass",
+      "custom_images": {}
+    },
+    "204100": {
+      "name": "Max Payne 3",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX.",
+        "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
+      ],
+      "nombre_fix": "Max Payne 3 - bypass",
       "custom_images": {}
     }
   },
@@ -479,6 +507,18 @@
       ],
       "nombre_fix": "Life is Strange Double Exposure - bypass",
       "custom_images": {}
+    },
+    "1244460": {
+      "name": "Jurassic World Evolution 2",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist 2022."
+      ],
+      "nombre_fix": "Jurassic World Evolution 2 - bypass",
+      "custom_images": {}
     }
   },
   "PlayStation": {
@@ -535,6 +575,18 @@
         "If the game shows errors when opening, you need to install DirectX and VC Redist 2022"
       ],
       "nombre_fix": "No Man's Sky - bypass",
+      "custom_images": {}
+    },
+    "50130": {
+      "name": "Mafia II (Classic)",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist"
+      ],
+      "nombre_fix": "Mafia II - bypass",
       "custom_images": {}
     }
   }
