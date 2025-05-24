@@ -418,7 +418,7 @@
       },
     "3240220": {
       "name": "Grand Theft Auto V Enhanced",
-      "launch_steam": true,
+      "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX 12"],
