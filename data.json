@@ -415,7 +415,34 @@
         ],
         "nombre_fix": "Red Dead Redemption -  bypass",
         "custom_images": {}
-      },
+    },
+    "1174180": {
+        "name": "Red Dead Redemption 2",
+        "launch_steam": false,
+        "launch_exe": true,
+        "comentarios": "Enjoy the game ♥",
+        "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+        "errores": [
+          "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX.",
+          "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+          "It is very important to launch the game using the Launcher.exe executable.",
+          "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
+        ],
+        "nombre_fix": "Red Dead Redemption 2 - bypass",
+        "custom_images": {}
+    },
+    "1547000": {
+      "name": "Grand Theft Auto: San Andreas - The Definitive Edition",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX."
+      ],
+      "nombre_fix": "Grand Theft Auto San Andreas - The Definitive Edition - bypass",
+      "custom_images": {}
+    },
     "3240220": {
       "name": "Grand Theft Auto V Enhanced",
       "launch_steam": false,
@@ -518,6 +545,30 @@
         "If the game shows errors when opening, you need to install DirectX 12 and VC Redist 2022."
       ],
       "nombre_fix": "Jurassic World Evolution 2 - bypass",
+      "custom_images": {}
+    },
+    "1904540": {
+      "name": "Football Manager 2023",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist 2022."
+      ],
+      "nombre_fix": "Football Manager 2023 - bypass",
+      "custom_images": {}
+    },
+    "678950": {
+      "name": "DRAGON BALL FighterZ",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "DRAGON BALL FighterZ - bypass",
       "custom_images": {}
     }
   },
