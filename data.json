@@ -181,6 +181,18 @@
       "nombre_fix": "Assassin's Creed Valhalla - bypass",
       "custom_images": {}
     },
+    "3035570": {
+      "name": "Assassin's Creed Mirage",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "Ubisoft Play", "VC C++ 2019"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12, Ubisoft Play and VC C++ 2019."
+      ],
+      "nombre_fix": "Assassin's Creed Mirage - bypass",
+      "custom_images": {}
+    },
     "220240": {
       "name": "Far Cry 3",
       "launch_steam": true,
@@ -616,6 +628,18 @@
       "nombre_fix": "HITMAN World of Assassination - bypass",
       "custom_images": {}
     },
+    "203140": {
+      "name": "Hitman: Absolution",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
+      ],
+      "nombre_fix": "Hitman: Absolution - bypass",
+      "custom_images": {}
+    },
     "275850": {
       "name": "No Man's Sky",
       "launch_steam": true,
@@ -638,6 +662,30 @@
         "If the game shows errors when opening, you need to install DirectX and VC Redist"
       ],
       "nombre_fix": "Mafia II - bypass",
+      "custom_images": {}
+    },
+    "255480": {
+      "name": "NBA 2K14",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist"
+      ],
+      "nombre_fix": "NBA 2K14 - bypass",
+      "custom_images": {}
+    },
+    "3265250": {
+      "name": "MindsEye",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist"
+      ],
+      "nombre_fix": "MindsEye - bypass",
       "custom_images": {}
     }
   }
