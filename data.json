@@ -674,7 +674,9 @@
         "If the game shows errors when opening, you need to install DirectX and VC Redist"
       ],
       "nombre_fix": "NBA 2K14 - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/thumb/863fdb719f9f659a50266e85255bae68.jpg",
+      }
     },
     "3265250": {
       "name": "MindsEye",
