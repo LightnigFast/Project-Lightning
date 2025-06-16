@@ -285,6 +285,9 @@
     <Content Include="res\media\backgrounds\background.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="res\media\sponsors\steam-manifest-sponsor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Resource Include="res\media\icons\ico.ico" />
     <Resource Include="res\media\logos\originals\hello.gif" />
     <Resource Include="res\media\logos\originals\changelog.gif" />

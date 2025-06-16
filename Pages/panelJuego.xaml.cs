@@ -207,7 +207,7 @@ namespace Project_Lightning.Pages
             {
                 descargarJuego(juego);
             }
-            catch (Exception ex) {
+            catch (Exception ) {
                 var ventanaError = new Windows.ErrorDialog("An unexpected error occurred while trying to download the game " + juego.Value.name + 
                     ". Please wait a few minutes and, if the error persists, contact the developer.", Brushes.Red);
                 ventanaError.ShowDialog();

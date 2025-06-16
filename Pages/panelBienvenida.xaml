@@ -111,6 +111,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="Select an app to get started" Foreground="White" FontSize="30" FontFamily="{StaticResource FuenteJohnInclinada}"
@@ -130,10 +131,16 @@
                         Content="Changelog" Style="{StaticResource MinimalButtonStyle}" Click="changeLogButtonClick"/>
                 <Button Grid.Column="2" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
                         Content="Legal Notice" Style="{StaticResource MinimalButtonStyle}" Click="legalButtonClick"/>
-
-
+                
             </Grid>
-            
+
+            <Image Grid.Row="2" Name="imagenSponsor" Width="350" Height="60" Margin="0,10,0,0" 
+                   RenderTransformOrigin="0.5,0.5">
+                <Image.RenderTransform>
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                </Image.RenderTransform>
+            </Image>
+
         </Grid>
 
 
