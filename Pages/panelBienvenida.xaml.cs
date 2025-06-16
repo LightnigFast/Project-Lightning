@@ -134,16 +134,27 @@ namespace Project_Lightning.Pages
             indiceActualSponsor = 1;
 
             timerCarrusel = new DispatcherTimer();
-            timerCarrusel.Interval = TimeSpan.FromSeconds(3);
+            timerCarrusel.Interval = TimeSpan.FromSeconds(4);
             timerCarrusel.Tick += (s, e) =>
             {
-                imagenSponsor.Source = listaSponsors[indiceActualSponsor].Imagen;
+                CambiarImagenConFade(listaSponsors[indiceActualSponsor].Imagen);
                 indiceSponsorVisible = indiceActualSponsor;
                 indiceActualSponsor = (indiceActualSponsor + 1) % listaSponsors.Count;
             };
             timerCarrusel.Start();
         }
 
+        private void CambiarImagenConFade(BitmapImage nuevaImagen)
+        {
+            var fadeOut = new DoubleAnimation(1, 0, TimeSpan.FromMilliseconds(500));
+            fadeOut.Completed += (s, e) =>
+            {
+                imagenSponsor.Source = nuevaImagen;
+                var fadeIn = new DoubleAnimation(0, 1, TimeSpan.FromMilliseconds(500));
+                imagenSponsor.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+            };
+            imagenSponsor.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+        }
 
 
         private void ImagenSponsor_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)

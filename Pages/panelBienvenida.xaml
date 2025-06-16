@@ -97,9 +97,9 @@
 
     <Grid Background="Transparent">
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
 
         <TextBlock Text="Welcome to" Foreground="White" FontSize="100" FontFamily="{StaticResource FuenteJohnInclinada}"
@@ -109,13 +109,13 @@
 
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
             <TextBlock Text="Select an app to get started" Foreground="White" FontSize="30" FontFamily="{StaticResource FuenteJohnInclinada}"
-                       Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                       Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,20"/>
 
             <!--GRID PARA LOS BOTONES DE LEGAL, ULTIMA ACTUALIZACION, ETC-->
             <Grid Grid.Row="1" Width="600">
@@ -134,12 +134,24 @@
                 
             </Grid>
 
-            <Image Grid.Row="2" Name="imagenSponsor" Width="350" Height="60" Margin="0,10,0,0" 
-                   RenderTransformOrigin="0.5,0.5">
-                <Image.RenderTransform>
-                    <ScaleTransform ScaleX="1" ScaleY="1" />
-                </Image.RenderTransform>
-            </Image>
+            <!--GRID LA IMAGEN DE SPONSORS-->
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Sponsors" Foreground="White" FontSize="20" FontFamily="{StaticResource FuenteJohnInclinada}"
+                            Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0"/>
+
+                <Image Grid.Row="1" Name="imagenSponsor" Width="350" Height="60" Margin="0,10,0,0" VerticalAlignment="Top"
+                    RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </Image.RenderTransform>
+                </Image>
+            </Grid>
+            
 
         </Grid>
 
