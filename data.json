@@ -285,6 +285,18 @@
         "hero_image": "https://cdn2.steamgriddb.com/grid/4f89626165ff9607bfc8c6cff2fed560.png",
         "background": "https://cdn2.steamgriddb.com/hero/601b5cbe8c87380898b5911c1e904d31.jpg"
       }
+    },
+    "447040": {
+      "name": "Watch_Dogs 2",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET 4.0 and Ubisoft Play."
+      ],
+      "nombre_fix": "Watch_Dogs 2 - bypass",
+      "custom_images": {}
     }
   },
   "EA": {
@@ -455,6 +467,18 @@
       "nombre_fix": "Grand Theft Auto San Andreas - The Definitive Edition - bypass",
       "custom_images": {}
     },
+    "12210": {
+      "name": "Grand Theft Auto IV: The Complete Edition",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX."
+      ],
+      "nombre_fix": "Grand Theft Auto IV: The Complete Edition - bypass",
+      "custom_images": {}
+    },
     "3240220": {
       "name": "Grand Theft Auto V Enhanced",
       "launch_steam": false,
@@ -533,6 +557,18 @@
         "If the game shows errors when opening, you need to install DirectX, VC Redist 2010 and VC Redist 2015."
       ],
       "nombre_fix": "Just Cause 4 - bypass",
+      "custom_images": {}
+    },
+    "532210": {
+      "name": "Life is Strange 2",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "Life is Strange 2 - bypass",
       "custom_images": {}
     },
     "1874000": {
@@ -690,6 +726,21 @@
       ],
       "nombre_fix": "MindsEye - bypass",
       "custom_images": {}
+    },
+    "224060": {
+      "name": "Deadpool",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist"
+      ],
+      "nombre_fix": "Deadpool - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/e57e85a7df105d798f7976d594fec4fc.png",
+        "background": "https://cdn2.steamgriddb.com/hero/ce4cb51bc1dd050febf96d2500681491.jpg"
+      }
     }
   }
 }
