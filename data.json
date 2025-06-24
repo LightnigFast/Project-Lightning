@@ -188,7 +188,7 @@
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX 12", "Ubisoft Play", "VC C++ 2019"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX 12, Ubisoft Play and VC C++ 2019."`,
+        "If the game shows errors when opening, you need to install DirectX 12, Ubisoft Play and VC C++ 2019.",
         "To remove fps monitoring you just have to press the letter 'P' several times"
       ],
       "nombre_fix": "Assassin's Creed Mirage - bypass",
