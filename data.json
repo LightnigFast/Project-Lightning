@@ -323,6 +323,42 @@
       "nombre_fix": "EA SPORTS FC 25 - bypass",
       "custom_images": {}
     },
+    "1237950": {
+      "name": "STAR WARS™ Battlefront™ II",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist 2013", "VC Redist 2015"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App, VC Redist 2013 and VC Redist 2015"
+      ],
+      "nombre_fix": "STAR WARS Battlefront II - bypass",
+      "custom_images": {}
+    },
+    "1172380": {
+      "name": "STAR WARS Jedi: Fallen Order™",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist 2015"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist 2015"
+      ],
+      "nombre_fix": "STAR WARS Jedi La Orden caída - bypass",
+      "custom_images": {}
+    },
+    "1774580": {
+      "name": "STAR WARS Jedi: Survivor™",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist 2015"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist 2015"
+      ],
+      "nombre_fix": "STAR WARS Jedi La Orden caída - bypass",
+      "custom_images": {}
+    },
     "47870": {
       "name": "Need for Speed: Hot Pursuit",
       "launch_steam": true,
