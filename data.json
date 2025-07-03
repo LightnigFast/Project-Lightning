@@ -230,6 +230,42 @@
       "nombre_fix": "Far Cry Primal - bypass",
       "custom_images": {}
     },
+    "552520": {
+      "name": "Far Cry 5",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist 2012", ".NET 4.0"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, VC Redist 2012 and .NET 4.0."
+      ],
+      "nombre_fix": "Far Cry 5 - bypass",
+      "custom_images": {}
+    },
+    "939960": {
+      "name": "Far Cry New Dawn",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC Redist."
+      ],
+      "nombre_fix": "Far Cry New Dawn - bypass",
+      "custom_images": {}
+    },
+    "2369390": {
+      "name": "Far Cry 6",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC Redist."
+      ],
+      "nombre_fix": "Far Cry 6 - bypass",
+      "custom_images": {}
+    },
     "488790": {
       "name": "South Park The Fractured But Whole",
       "launch_steam": true,
