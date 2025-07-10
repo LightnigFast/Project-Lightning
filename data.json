@@ -691,6 +691,30 @@
       ],
       "nombre_fix": "DRAGON BALL FighterZ - bypass",
       "custom_images": {}
+    },
+    "287700": {
+      "name": "METAL GEAR SOLID V: THE PHANTOM PAIN",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "METAL GEAR SOLID V: THE PHANTOM PAIN - bypass",
+      "custom_images": {}
+    },
+    "312660": {
+      "name": "Sniper Elite 4",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "Sniper Elite 4 - bypass",
+      "custom_images": {}
     }
   },
   "PlayStation": {
