@@ -540,6 +540,18 @@
       "nombre_fix": "Grand Theft Auto San Andreas - The Definitive Edition - bypass",
       "custom_images": {}
     },
+    "1546970": {
+      "name": "Grand Theft Auto III - The Definitive Edition",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX."
+      ],
+      "nombre_fix": "Grand Theft Auto III - The Definitive Edition - bypass",
+      "custom_images": {}
+    },
     "12210": {
       "name": "Grand Theft Auto IV: The Complete Edition",
       "launch_steam": true,
@@ -550,6 +562,18 @@
         "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX."
       ],
       "nombre_fix": "Grand Theft Auto IV: The Complete Edition - bypass",
+      "custom_images": {}
+    },
+    "271590": {
+      "name": "Grand Theft Auto V Legacy",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX 11"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX 11."
+      ],
+      "nombre_fix": "Grand Theft Auto V Legacy -  bypass",
       "custom_images": {}
     },
     "3240220": {
