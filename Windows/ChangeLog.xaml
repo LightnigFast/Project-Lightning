@@ -125,8 +125,8 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
                 <StackPanel>
 
-                    <!--v2.0.0.1-->
-                    <TextBlock Text="v2.0.0.1" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                    <!--v2.0.0.3-->
+                    <TextBlock Text="v2.0.0.3" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
 
                     <TextBlock Foreground="White" FontSize="16" FontWeight="Normal" Margin="0,0,0,10" TextAlignment="Left" TextWrapping="Wrap" Text="
 * A carousel with the sponsors has been added to the main menu.
