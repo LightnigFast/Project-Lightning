@@ -152,6 +152,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Actualizador.cs" />
+    <Compile Include="Pages\panelBypass.xaml.cs">
+      <DependentUpon>panelBypass.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\panelMenuPrincipal.xaml.cs">
+      <DependentUpon>panelMenuPrincipal.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ChangeLog.xaml.cs">
       <DependentUpon>ChangeLog.xaml</DependentUpon>
     </Compile>
@@ -167,6 +173,10 @@
     <Compile Include="Windows\QuickGuide.xaml.cs">
       <DependentUpon>QuickGuide.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\panelBypass.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\panelBienvenida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -176,6 +186,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\panelJuego.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\panelMenuPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -285,6 +299,7 @@
     <Content Include="res\media\backgrounds\background.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="res\media\logos\originals\onlineFix_logo.png" />
     <Content Include="res\media\sponsors\steam-manifest-sponsor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

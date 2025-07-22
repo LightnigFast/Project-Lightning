@@ -35,13 +35,13 @@
         <Border Margin="10,10,10,10" Background="#80000000" CornerRadius="15">
             <Grid >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <!--CABECERA DONDE ESTARAN LOS JUEGOS Y EL BUSCADOR-->
                 <usercontrols:Cabecera x:Name="Cabecera" Grid.Row="0" Margin="0,10,0,0"/>
-            
+
                 <!--PAGINA DE BIENVENIDA-->
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -49,7 +49,7 @@
                         <RowDefinition Height="auto"></RowDefinition>
                     </Grid.RowDefinitions>
                     
-                    <Frame x:Name="framePrincipal" Grid.Row="0" Source="/Pages/panelBienvenida.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
+                    <Frame x:Name="framePrincipal" Grid.Row="0" Source="/Pages/panelMenuPrincipal.xaml" NavigationUIVisibility="Hidden" Background="Transparent"/>
 
                     <Grid Grid.Row="1" HorizontalAlignment="Right">
                         <Grid.ColumnDefinitions>

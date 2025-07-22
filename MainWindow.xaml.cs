@@ -35,6 +35,7 @@ namespace Project_Lightning
             string versionLocal = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
             txtVersion.Text = "Version: " + versionLocal + " ";
 
+            Cabecera.Height = 0;
             Cabecera.HomePresionado += boton_home_presionado;
             Cabecera.UbisoftPresionado += boton_ubisoft_presionado;
             Cabecera.EAPresionado += boton_ea_presionado;
@@ -42,6 +43,7 @@ namespace Project_Lightning
             Cabecera.DenuvoPresionado += boton_denuvo_presionado;
             Cabecera.PlayStationPresionado += boton_playstation_presionado;
             Cabecera.OthersPresionado += boton_others_presionado;
+            
         }
 
         //METODO PARA UBISOFT
