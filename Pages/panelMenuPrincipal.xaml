@@ -201,7 +201,7 @@
                 <RowDefinition Height="auto"/>
             </Grid.RowDefinitions>
 
-            <TextBlock Text="Select an app to get started" Foreground="White" FontSize="30" FontFamily="{StaticResource FuenteJohnInclinada}"
+            <TextBlock Text="What fix do you need?" Foreground="White" FontSize="30" FontFamily="{StaticResource FuenteJohnInclinada}"
                        Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,0,0,20"/>
             
             <!--GRID PARA LAS OPCIONES (ONLINE FIX / BYPASS)-->
@@ -219,7 +219,7 @@
 
                 <Button x:Name="bypass_button" Background="Transparent" Grid.Column="1" Style="{StaticResource MinimalButtonStyleSeleccion}"
                         Height="120" Width="120"  Margin="20,0,20,20" Click="bypassButtonClick">
-                    <Image Source="/res/media/logos/originals/Ubisoft_logo_white.png" Height="100" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    <Image Source="/res/media/logos/originals/bypass_logo.png" Height="110" RenderOptions.BitmapScalingMode="HighQuality"/>
                 </Button>
             </Grid>
 
@@ -235,8 +235,9 @@
             
 
             <!--GRID PARA LOS BOTONES DE LEGAL, ULTIMA ACTUALIZACION, ETC-->
-            <Grid Grid.Row="0" Width="600" Margin="0,30,0,0">
+            <Grid Grid.Row="0" Width="750" Margin="0,30,0,0">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -248,6 +249,8 @@
                         Content="Changelog" Style="{StaticResource MinimalButtonStyle}" Click="changeLogButtonClick"/>
                 <Button Grid.Column="2" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
                         Content="Legal Notice" Style="{StaticResource MinimalButtonStyle}" Click="legalButtonClick"/>
+                <Button Grid.Column="3" Width="150" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top"
+                        Content="Donate" Style="{StaticResource MinimalButtonStyle}" Click="donate_click"/>
 
             </Grid>
 

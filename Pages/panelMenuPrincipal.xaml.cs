@@ -74,7 +74,12 @@ namespace Project_Lightning.Pages
             quieckGuide.Show();
         }
 
-
+        //DONACION PRESIONADO
+        public void donate_click(object sender, RoutedEventArgs e)
+        {
+            var ventanaDonacion = new DonateWindow();
+            ventanaDonacion.Show();
+        }
 
 
         public class Sponsor
