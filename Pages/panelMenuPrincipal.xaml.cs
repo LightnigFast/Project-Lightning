@@ -44,12 +44,13 @@ namespace Project_Lightning.Pages
         //BOTON DE BYPASS
         private void bypassButtonClick(object sender, RoutedEventArgs e)
         {
-            var mainWindow = Application.Current.MainWindow as MainWindow;
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
 
-            if (mainWindow != null)
+            if (ventanaPrincipal != null)
             {
+
                 //CAMBIAR EL CONTENIDO DEL FRAME
-                mainWindow.framePrincipal.Navigate(new Uri("/Pages/panelBypass.xaml", UriKind.Relative));
+                ventanaPrincipal.framePrincipal.Navigate(new panelBypass(ventanaPrincipal));
             }
             
         }

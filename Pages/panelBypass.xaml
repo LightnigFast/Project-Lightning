@@ -97,50 +97,54 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Button x:Name="botonVolver" Content="🡸" FontSize="30"  Style="{StaticResource MinimalButtonStyle}" Click="volverClick" 
+                HorizontalAlignment="Left" Height="55" Width="90" Margin="20,0,0,0"/>
+        
         <TextBlock Text="Select an app to get started" Foreground="White" FontSize="50"
                    FontFamily="{StaticResource FuenteJohnInclinada}"
-                   Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top"
-                   Margin="0,60,0,20"/>
+                   Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"
+                   Margin="0,0,0,20"/>
 
 
-        <WrapPanel Grid.Row="1" HorizontalAlignment="Center">
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Center" Width="720">
             <!--BOTON UBISOFT-->
             <Button x:Name="ubisoft_button" Background="Transparent" Grid.Column="1" Style="{StaticResource MinimalButtonStyle}"
-                    >
-                <Image Source="/res/media/logos/originals/Ubisoft_logo_white.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    Height="200" Width="200" Margin="20" Click="boton_ubisoft_presionado">
+                <Image Source="/res/media/logos/originals/Ubisoft_logo_white.png" Height="170" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
 
             <!--BOTON EA-->
             <Button x:Name="ea_button" Background="Transparent" Grid.Column="2" Style="{StaticResource MinimalButtonStyle}"
-        >
-                <Image Source="/res/media/logos/originals/EA_Logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    Height="200" Width="200" Margin="20" Click="boton_ea_presionado">
+                <Image Source="/res/media/logos/originals/EA_Logo.png" Height="170" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
 
             <!--BOTON ROCKSTAR-->
             <Button x:Name="rockstar_button" Background="Transparent" Grid.Column="3" Style="{StaticResource MinimalButtonStyle}"
-        >
-                <Image Source="/res/media/logos/originals/Rockstar_Games_Logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    Height="200" Width="200" Margin="20" Click="boton_rockstar_presionado">
+                <Image Source="/res/media/logos/originals/Rockstar_Games_Logo.png" Height="170" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
 
             <!--BOTON DENUVO-->
             <Button x:Name="denuvo_button" Background="Transparent" Grid.Column="4" Style="{StaticResource MinimalButtonStyle}"
-        >
-                <Image Source="/res/media/logos/originals/Denuvo_logo_white.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    Height="200" Width="200" Margin="20" Click="boton_denuvo_presionado">
+                <Image Source="/res/media/logos/originals/Denuvo_logo_white.png" Height="85" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
 
             <!--BOTON Play Station-->
             <Button x:Name="ps_button" Background="Transparent" Grid.Column="5" Style="{StaticResource MinimalButtonStyle}"
-        >
-                <Image Source="/res/media/logos/originals/PlayStation_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    Height="200" Width="200" Margin="20" Click="boton_playstation_presionado">
+                <Image Source="/res/media/logos/originals/PlayStation_logo.png" Height="170" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
 
             <!--BOTON PARA OTROS JUEGOS-->
             <Button x:Name="other_games_button" Background="Transparent" Grid.Column="6" Style="{StaticResource MinimalButtonStyle}"
-        >
-                <Image Source="/res/media/logos/originals/other_games_logo.png" Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
+                    Height="200" Width="200" Margin="20" Click="boton_others_presionado">
+                <Image Source="/res/media/logos/originals/other_games_logo.png" Height="170" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
         </WrapPanel>
         

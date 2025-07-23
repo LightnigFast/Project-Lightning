@@ -35,7 +35,7 @@ namespace Project_Lightning
             string versionLocal = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
             txtVersion.Text = "Version: " + versionLocal + " ";
 
-            Cabecera.Height = 0;
+            ocultarCabecera();
             Cabecera.HomePresionado += boton_home_presionado;
             Cabecera.UbisoftPresionado += boton_ubisoft_presionado;
             Cabecera.EAPresionado += boton_ea_presionado;
@@ -43,14 +43,25 @@ namespace Project_Lightning
             Cabecera.DenuvoPresionado += boton_denuvo_presionado;
             Cabecera.PlayStationPresionado += boton_playstation_presionado;
             Cabecera.OthersPresionado += boton_others_presionado;
-            
+
+
+            framePrincipal.Navigating += (s, e) =>
+            {
+                // BLOQUEAR NAVEGACIÓN SI EL MOTIVO ES "MouseButton"
+                if (e.NavigationMode == NavigationMode.Back || e.NavigationMode == NavigationMode.Forward)
+                {
+                    e.Cancel = true; // CANCELA la navegación
+                }
+            };
+
         }
 
         //METODO PARA UBISOFT
         private void boton_home_presionado(object sender, RoutedEventArgs e)
         {
 
-            framePrincipal.Navigate(new panelBienvenida());
+            framePrincipal.Navigate(new panelMenuPrincipal());
+            ocultarCabecera();
         }
 
         //METODO PARA UBISOFT
@@ -110,7 +121,17 @@ namespace Project_Lightning
             }
         }
 
+        //METODO PARA RESTAURAR LA CABECERA
+        public void ocultarCabecera()
+        {
+            Cabecera.Height = 0;
+        }
 
+        //METODO PARA OCULTAR LA CABECERA
+        public void mostrarCabecera()
+        {
+            Cabecera.Height = 70;
+        }
 
     }
 }
