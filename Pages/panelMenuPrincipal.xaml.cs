@@ -55,6 +55,20 @@ namespace Project_Lightning.Pages
             
         }
 
+        //BOTON DE ONLINE FIX
+        private void onlineFixButtonClick(object sender, RoutedEventArgs e)
+        {
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
+
+            if (ventanaPrincipal != null)
+            {
+
+                //CAMBIAR EL CONTENIDO DEL FRAME
+                ventanaPrincipal.framePrincipal.Navigate(new panelOnlineFix(ventanaPrincipal));
+            }
+
+        }
+
 
         private void legalButtonClick(object sender, RoutedEventArgs e)
         {

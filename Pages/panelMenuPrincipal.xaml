@@ -213,7 +213,7 @@
 
 
                 <Button x:Name="onlinefix_button" Background="Transparent" Grid.Column="0" Style="{StaticResource MinimalButtonStyleSeleccion}"
-                        Height="120" Width="120" Margin="20,0,20,20">
+                        Height="120" Width="120" Margin="20,0,20,20" Click="onlineFixButtonClick">
                     <Image Source="/res/media/logos/originals/onlineFix_logo.png" Height="100" RenderOptions.BitmapScalingMode="HighQuality"/>
                 </Button>
 

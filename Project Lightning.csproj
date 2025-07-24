@@ -158,6 +158,9 @@
     <Compile Include="Pages\panelMenuPrincipal.xaml.cs">
       <DependentUpon>panelMenuPrincipal.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\panelOnlineFix.xaml.cs">
+      <DependentUpon>panelOnlineFix.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\ChangeLog.xaml.cs">
       <DependentUpon>ChangeLog.xaml</DependentUpon>
     </Compile>
@@ -190,6 +193,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\panelMenuPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\panelOnlineFix.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

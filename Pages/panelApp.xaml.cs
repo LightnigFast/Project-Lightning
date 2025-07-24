@@ -72,6 +72,8 @@ namespace Project_Lightning.Pages
         {
             var juegosApp = await sacarJuegosDeApp(nomApp);
 
+            MessageBox.Show(juegosApp.ToString());
+
             colocarBotones(juegosApp);
 
             //descargarJuego(juegosApp.First());
