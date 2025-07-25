@@ -122,8 +122,8 @@
         
         
         <!--GRID PARA LOS JUEGOS-->
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,30,0,0">
-            <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,0,0,0">
+            <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto" Margin="10,0,10,0">
 
 
 
