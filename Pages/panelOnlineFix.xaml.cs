@@ -95,7 +95,7 @@ namespace Project_Lightning.Pages
 
             //YA NO HAY NIVELES INTERNOS, SOLO APPID -> Juego
             var data = JsonConvert.DeserializeObject<Dictionary<string, Juego>>(json);
-            MessageBox.Show(data.Count.ToString());
+            //MessageBox.Show(data.Count.ToString());
 
             return data ?? new Dictionary<string, Juego>();
         }
