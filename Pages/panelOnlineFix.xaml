@@ -127,6 +127,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         
         <!--GRID PARA LA CABECERA-->
@@ -152,13 +153,19 @@
         
         
         <!--GRID PARA LOS JUEGOS-->
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,0,0,0">
+        <ScrollViewer x:Name="scrollViewerJuegos" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,0,0,0">
             <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto" Margin="10,0,10,0">
 
 
 
             </WrapPanel>
         </ScrollViewer>
+        
+        <!--GRID PARA LA PAGINACION-->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+            <Button x:Name="botonAnterior" Content="Anterior" Click="BotonAnterior_Click" Margin="5" Style="{StaticResource MinimalButtonStyle}" Height="30"/>
+            <Button x:Name="botonSiguiente" Content="Siguiente" Click="BotonSiguiente_Click" Margin="5" Style="{StaticResource MinimalButtonStyle}" Height="30"/>
+        </StackPanel>
 
     </Grid>
 </Page>

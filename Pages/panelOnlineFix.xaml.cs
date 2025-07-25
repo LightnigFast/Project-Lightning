@@ -26,6 +26,12 @@ namespace Project_Lightning.Pages
     public partial class panelOnlineFix : Page
     {
         MainWindow ventanaPrincipal;
+
+        //VARIABLES PARA LA PAGINACION
+        private const int JuegosPorPagina = 12;
+        private int paginaActual = 1;
+        private Dictionary<string, Juego> todosLosJuegos = new Dictionary<string, Juego>();
+
         public panelOnlineFix(MainWindow ventanaPrincipal)
         {
             InitializeComponent();
@@ -56,11 +62,8 @@ namespace Project_Lightning.Pages
 
         private async void ponerJuegos()
         {
-            var juegosApp = await sacarJuegosDeApp();
-
-            colocarBotones(juegosApp);
-
-
+            todosLosJuegos = await sacarJuegosDeApp();
+            MostrarPagina(paginaActual);
 
         }
 
@@ -128,6 +131,33 @@ namespace Project_Lightning.Pages
                 return false;
             }
         }
+
+        private void MostrarPagina(int pagina)
+        {
+            panelJuegos.Children.Clear(); //LIMPIA PANEL
+
+            var juegosPaginados = todosLosJuegos
+                .Skip((pagina - 1) * JuegosPorPagina)
+                .Take(JuegosPorPagina)
+                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+            colocarBotones(juegosPaginados);
+
+            // Actualiza los botones de navegación si los tienes
+            botonAnterior.Visibility = pagina > 1
+                ? Visibility.Visible
+                : Visibility.Collapsed;
+
+            botonSiguiente.Visibility = pagina * JuegosPorPagina < todosLosJuegos.Count
+                ? Visibility.Visible
+                : Visibility.Collapsed;
+
+
+            //VOLVER AL INICIO DEL SCROLL
+            scrollViewerJuegos.ScrollToVerticalOffset(0);
+        }
+
+
 
         private void colocarBotones(Dictionary<string, Juego> juegosApp)
         {
@@ -266,6 +296,25 @@ namespace Project_Lightning.Pages
             }
         }
 
+
+        //EVENTOS DE LOS BOTONES DE ANTERIOR Y SIGUIENTE
+        private void BotonAnterior_Click(object sender, RoutedEventArgs e)
+        {
+            if (paginaActual > 1)
+            {
+                paginaActual--;
+                MostrarPagina(paginaActual);
+            }
+        }
+
+        private void BotonSiguiente_Click(object sender, RoutedEventArgs e)
+        {
+            if (paginaActual * JuegosPorPagina < todosLosJuegos.Count)
+            {
+                paginaActual++;
+                MostrarPagina(paginaActual);
+            }
+        }
 
 
     }
