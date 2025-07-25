@@ -90,11 +90,12 @@ namespace Project_Lightning.Pages
                 }
             }
 
-            // CARGAR JSON LOCAL
+            //CARGAR JSON LOCAL
             string json = File.ReadAllText(rutaJsonApp);
 
-            // YA NO HAY NIVELES INTERNOS, SOLO APPID -> Juego
+            //YA NO HAY NIVELES INTERNOS, SOLO APPID -> Juego
             var data = JsonConvert.DeserializeObject<Dictionary<string, Juego>>(json);
+            MessageBox.Show(data.Count.ToString());
 
             return data ?? new Dictionary<string, Juego>();
         }
@@ -114,6 +115,7 @@ namespace Project_Lightning.Pages
                     }
 
                     string contenidoLocal = File.ReadAllText(rutaLocal);
+
                     return !contenidoLocal.Equals(contenidoGitHub);
 
                 }
