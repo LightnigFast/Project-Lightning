@@ -17,6 +17,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TokenProvider;
 
 namespace Project_Lightning.Pages
 {
@@ -28,7 +29,7 @@ namespace Project_Lightning.Pages
         MainWindow ventanaPrincipal;
 
         //VARIABLES PARA LA PAGINACION
-        private const int JuegosPorPagina = 12;
+        private const int JuegosPorPagina = 18;
         private int paginaActual = 1;
         private Dictionary<string, Juego> todosLosJuegos = new Dictionary<string, Juego>();
 
@@ -143,18 +144,11 @@ namespace Project_Lightning.Pages
 
             colocarBotones(juegosPaginados);
 
-            // Actualiza los botones de navegación si los tienes
-            botonAnterior.Visibility = pagina > 1
-                ? Visibility.Visible
-                : Visibility.Collapsed;
-
-            botonSiguiente.Visibility = pagina * JuegosPorPagina < todosLosJuegos.Count
-                ? Visibility.Visible
-                : Visibility.Collapsed;
-
-
-            //VOLVER AL INICIO DEL SCROLL
+            // VOLVER ARRIBA
             scrollViewerJuegos.ScrollToVerticalOffset(0);
+
+            // ACTUALIZAR BOTONES DE PÁGINA
+            ActualizarBotonesDePagina();
         }
 
 
@@ -247,13 +241,12 @@ namespace Project_Lightning.Pages
                     Content = "Apply Fix",
                     Width = 120,
                     Height = 35,
-                    
                     Margin = new Thickness(5),
                     Tag = kvp.Key
                 };
                 botonFix.Click += BotonFix_Click;
                 botonFix.Style = (Style)this.FindResource("MinimalButtonStyle");
-                AplicarEsquinasRedondeadas(botonFix,10);
+                AplicarEsquinasRedondeadas(botonFix, 10);
 
                 Grid.SetRow(botonFix, 3);
                 contenedor.Children.Add(botonFix);
@@ -290,32 +283,108 @@ namespace Project_Lightning.Pages
         {
             if (sender is Button boton && boton.Tag is string appId)
             {
-                //LLAMADA A TU LÓGICA DE FIX
-                MessageBox.Show($"Apply fix para el juego con ID: {appId}");
-                //Ejemplo: aplicarFix(appId);
+                if (todosLosJuegos.TryGetValue(appId, out Juego juego))
+                {
+                    MessageBox.Show($"Apply fix para el juego: {juego.name}");
+
+                    boton.IsEnabled = false;
+                    try
+                    {
+                        if (todosLosJuegos.TryGetValue(appId, out Juego juegoEncontrado))
+                        {
+                            descargarJuego(new KeyValuePair<string, Juego>(appId, juegoEncontrado));
+                        }
+
+                    }
+                    catch (Exception)
+                    {
+                        var ventanaError = new Windows.ErrorDialog("An unexpected error occurred while trying to download the game " + juego.name +
+                            ". Please wait a few minutes and, if the error persists, contact the developer.", Brushes.Red);
+                        ventanaError.ShowDialog();
+                        boton.IsEnabled = true;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró el juego con el appId: " + appId);
+                }
             }
         }
 
 
-        //EVENTOS DE LOS BOTONES DE ANTERIOR Y SIGUIENTE
-        private void BotonAnterior_Click(object sender, RoutedEventArgs e)
+
+        private void ActualizarBotonesDePagina()
         {
-            if (paginaActual > 1)
+            paginacionPanel.Children.Clear();
+            int totalPaginas = (int)Math.Ceiling((double)todosLosJuegos.Count / JuegosPorPagina);
+
+            for (int i = 1; i <= totalPaginas; i++)
             {
-                paginaActual--;
-                MostrarPagina(paginaActual);
+                Button boton = new Button
+                {
+                    Content = i.ToString(),
+                    Margin = new Thickness(5),
+                    Height = 35,
+                    Width = 35,
+                    Padding = new Thickness(10, 5, 10, 5),
+                    Tag = i,
+                    Style = (Style)this.FindResource("MinimalButtonStyle")
+                };
+
+                //ESTILO PERSONALIZADO SI ES LA PÁGINA ACTUAL
+                if (i == paginaActual)
+                {
+                    boton.Background = Brushes.Transparent;
+                    boton.Foreground = Brushes.White;
+                    boton.BorderBrush = Brushes.White;
+                }
+
+                boton.Click += (s, e) =>
+                {
+                    paginaActual = (int)((Button)s).Tag;
+                    MostrarPagina(paginaActual);
+                };
+
+                paginacionPanel.Children.Add(boton);
             }
         }
 
-        private void BotonSiguiente_Click(object sender, RoutedEventArgs e)
+        //METODO PARA LA BARRA DE BUSQUEDA
+        private void txtBuscar_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (paginaActual * JuegosPorPagina < todosLosJuegos.Count)
+            string texto = txtBuscar.Text.Trim().ToLower();
+
+            //SI ESTÁ VACÍO, MOSTRAR LA PÁGINA ACTUAL
+            if (string.IsNullOrWhiteSpace(texto))
             {
-                paginaActual++;
                 MostrarPagina(paginaActual);
+                return;
             }
+
+            //FILTRAR JUEGOS POR NOMBRE O NOMBRE_FIX
+            var juegosFiltrados = todosLosJuegos
+                .Where(kvp =>
+                    kvp.Value.name.ToLower().Contains(texto) ||
+                    kvp.Value.nombre_fix.ToLower().Contains(texto))
+                .ToDictionary(kvp => kvp.Key, kvp => kvp.Value);
+
+            //LIMPIAR Y MOSTRAR LOS JUEGOS FILTRADOS
+            panelJuegos.Children.Clear();
+            colocarBotones(juegosFiltrados);
         }
 
+        //METODO PARA DECARGAR EL JUEGO
+        private async void descargarJuego(KeyValuePair<string, Juego> keyValuePair)
+        {
+            string appId = keyValuePair.Key;
+            string user = "LightnigFast";
+            string repo = "onlineFixes";
+            string token = TokenManager.GetGithubToken();
 
+            string apiUrl = $"https://api.github.com/repos/{user}/{repo}/contents/{appId}";
+
+            MessageBox.Show(apiUrl);
+
+        }
     }
 }
