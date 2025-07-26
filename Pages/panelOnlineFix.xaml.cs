@@ -383,7 +383,7 @@ namespace Project_Lightning.Pages
 
             string apiUrl = $"https://api.github.com/repos/{user}/{repo}/contents/{appId}";
 
-            MessageBox.Show(apiUrl);
+
 
         }
     }
