@@ -36,6 +36,9 @@ namespace Project_Lightning.Pages
         private int paginaActual = 1;
         private Dictionary<string, Juego> todosLosJuegos = new Dictionary<string, Juego>();
 
+        //DICCIONARIO PARA EL ESTADO DEL BOTON
+        private Dictionary<string, string> estadoBotonesFix = new Dictionary<string, string>();
+
         public panelOnlineFix(MainWindow ventanaPrincipal)
         {
             InitializeComponent();
@@ -250,6 +253,21 @@ namespace Project_Lightning.Pages
                 botonFix.Click += BotonFix_Click;
                 botonFix.Style = (Style)this.FindResource("MinimalButtonStyle");
                 AplicarEsquinasRedondeadas(botonFix, 10);
+                string estado = estadoBotonesFix.ContainsKey(kvp.Key) ? estadoBotonesFix[kvp.Key] : "Apply Fix";
+
+                switch (estado)
+                {
+                    case "Downloading":
+                        ponerBotonDescargando(botonFix);
+                        break;
+                    case "Ready":
+                        ponerBotonListo(botonFix);
+                        break;
+                    default:
+                        ponerBotonApplyFix(botonFix);
+                        break;
+                }
+
 
                 Grid.SetRow(botonFix, 3);
                 contenedor.Children.Add(botonFix);
@@ -609,6 +627,9 @@ namespace Project_Lightning.Pages
             fixButton.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#007BCF"));
             fixButton.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#007BCF"));
             fixButton.Content = "Downloading";
+
+            if (fixButton.Tag is string appId)
+                estadoBotonesFix[appId] = "Downloading";
         }
 
         private void ponerBotonListo(Button fixButton)
@@ -616,6 +637,9 @@ namespace Project_Lightning.Pages
             fixButton.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B515"));
             fixButton.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B515"));
             fixButton.Content = "Ready";
+
+            if (fixButton.Tag is string appId)
+                estadoBotonesFix[appId] = "Ready";
         }
 
         private void ponerBotonApplyFix(Button fixButton)
@@ -623,7 +647,11 @@ namespace Project_Lightning.Pages
             fixButton.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6A0DAD"));
             fixButton.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6A0DAD"));
             fixButton.Content = "Apply Fix";
+
+            if (fixButton.Tag is string appId)
+                estadoBotonesFix[appId] = "Apply Fix";
         }
+
     }
 
 
