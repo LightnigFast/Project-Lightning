@@ -133,7 +133,7 @@
     </Reference>
     <Reference Include="TokenProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\source\repos\TokenProvider\bin\Debug\TokenProvider.dll</HintPath>
+      <HintPath>..\TokenProvider\bin\Debug\TokenProvider.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
