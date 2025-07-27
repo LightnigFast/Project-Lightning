@@ -150,10 +150,10 @@ namespace Project_Lightning.Pages
 
             colocarBotones(juegosPaginados);
 
-            // VOLVER ARRIBA
+            //VOLVER ARRIBA
             scrollViewerJuegos.ScrollToVerticalOffset(0);
 
-            // ACTUALIZAR BOTONES DE PÁGINA
+            //ACTUALIZAR BOTONES DE PÁGINA
             ActualizarBotonesDePagina();
         }
 
@@ -211,7 +211,7 @@ namespace Project_Lightning.Pages
                 //DEFINIR 3 FILAS
                 contenedor.RowDefinitions.Add(new RowDefinition { Height = new GridLength(2, GridUnitType.Auto) }); //IMAGEN
                 contenedor.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) }); //NOMBRE
-                contenedor.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }); // ESPACIADOR
+                contenedor.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) }); //ESPACIADOR
                 contenedor.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Auto) }); //BOTÓN
 
                 //IMAGEN (SE ADAPTA A LA FILA)
