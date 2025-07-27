@@ -29,9 +29,9 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
                         <Border x:Name="border" Background="{TemplateBinding Background}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                BorderThickness="{TemplateBinding BorderThickness}"
-                CornerRadius="10">
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
                             <ContentPresenter HorizontalAlignment="Center"
                               VerticalAlignment="Center" />
                         </Border>
@@ -84,6 +84,7 @@
                                 <Setter Property="Foreground" Value="White"/>
                                 <Setter Property="BorderBrush" Value="White"/>
                             </Trigger>
+                            
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
@@ -183,7 +184,7 @@
 
     </Page.Resources>
 
-    <Grid Background="Transparent">
+    <Grid Background="Transparent" Name="gridPrincipal">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>

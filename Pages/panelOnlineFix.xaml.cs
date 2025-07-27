@@ -458,6 +458,9 @@ namespace Project_Lightning.Pages
 
 
                     //DESCARGAR TODO
+                    gridPrincipal.IsEnabled = false;
+                    ponerBotonDescargando(fixButton);
+
                     foreach (var archivo in archivos)
                     {
                         if (archivo.type == "file")
@@ -485,6 +488,8 @@ namespace Project_Lightning.Pages
                                         var ventanaError4 = new Windows.ErrorDialog("Error trying to delete the file: " + ioEx.Message, Brushes.Red);
                                         ventanaError4.ShowDialog();
                                         fixButton.IsEnabled = true;
+                                        gridPrincipal.IsEnabled = true;
+                                        ponerBotonApplyFix(fixButton);
                                         //System.Windows.MessageBox.Show("Error trying to delete the file: " + ioEx.Message);
                                         return;
                                     }
@@ -562,13 +567,17 @@ namespace Project_Lightning.Pages
                                 var ventanaError5 = new Windows.ErrorDialog("Could not delete fragment file: " + ex.Message, Brushes.Red);
                                 ventanaError5.ShowDialog();
                                 fixButton.IsEnabled = true;
+                                gridPrincipal.IsEnabled = true;
+                                ponerBotonApplyFix(fixButton);
                             }
                         }
                     }
 
                     var ventanaError = new Windows.ErrorDialog("Game ready to play", Brushes.Green);
+                    ponerBotonListo(fixButton);
                     ventanaError.ShowDialog();
                     fixButton.IsEnabled = true;
+                    gridPrincipal.IsEnabled = true;
                     //System.Windows.MessageBox.Show("Download and extraction completed: " + carpetaDestino);
                 }
                 else
@@ -576,6 +585,8 @@ namespace Project_Lightning.Pages
                     var ventanaError = new Windows.ErrorDialog("No folder selected.", Brushes.Red);
                     ventanaError.ShowDialog();
                     fixButton.IsEnabled = true;
+                    gridPrincipal.IsEnabled = true;
+                    ponerBotonApplyFix(fixButton);
                     //System.Windows.MessageBox.Show("No folder selected.");
                 }
             }
@@ -584,9 +595,36 @@ namespace Project_Lightning.Pages
                 var ventanaError = new Windows.ErrorDialog("ERROR: " + ex.Message, Brushes.Red);
                 ventanaError.ShowDialog();
                 fixButton.IsEnabled = true;
+                gridPrincipal.IsEnabled = true;
+                ponerBotonApplyFix(fixButton);
                 //System.Windows.MessageBox.Show("ERROR: " + ex.Message);
             }
 
         }
+
+
+        //PARA LOS COLORES DEL BOTON
+        private void ponerBotonDescargando(Button fixButton)
+        {
+            fixButton.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#007BCF"));
+            fixButton.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#007BCF"));
+            fixButton.Content = "Downloading";
+        }
+
+        private void ponerBotonListo(Button fixButton)
+        {
+            fixButton.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B515"));
+            fixButton.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00B515"));
+            fixButton.Content = "Ready";
+        }
+
+        private void ponerBotonApplyFix(Button fixButton)
+        {
+            fixButton.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6A0DAD"));
+            fixButton.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6A0DAD"));
+            fixButton.Content = "Apply Fix";
+        }
     }
+
+
 }
