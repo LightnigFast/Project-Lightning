@@ -308,6 +308,9 @@
     </Content>
     <Resource Include="res\media\logos\originals\onlineFix_logo.png" />
     <Resource Include="res\media\logos\originals\bypass_logo.png" />
+    <Content Include="res\media\backgrounds\sunset-waves.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\media\sponsors\steam-manifest-sponsor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

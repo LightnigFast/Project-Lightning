@@ -47,10 +47,10 @@ namespace Project_Lightning
 
             framePrincipal.Navigating += (s, e) =>
             {
-                // BLOQUEAR NAVEGACIÓN SI EL MOTIVO ES "MouseButton"
+                //BLOQUEO LA NAVEGACIÓN SI EL MOTIVO ES "MouseButton"
                 if (e.NavigationMode == NavigationMode.Back || e.NavigationMode == NavigationMode.Forward)
                 {
-                    e.Cancel = true; // CANCELA la navegación
+                    e.Cancel = true; //CANCELO la navegación
                 }
             };
 

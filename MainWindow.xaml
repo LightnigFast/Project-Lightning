@@ -22,7 +22,7 @@
 
         <!--FONDO CON GRADIENTE-->
         <MediaElement Name="BackgroundVideo" 
-                      Source="res/media/backgrounds/background.mp4"
+                      Source="res/media/backgrounds/sunset-waves.mp4"
                       LoadedBehavior="Manual" 
                       UnloadedBehavior="Manual" 
                       IsMuted="True" 
