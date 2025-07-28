@@ -596,6 +596,8 @@ namespace Project_Lightning.Pages
                     ventanaError.ShowDialog();
                     fixButton.IsEnabled = true;
                     gridPrincipal.IsEnabled = true;
+
+                    mostrarMensajeDeDonacion();
                     //System.Windows.MessageBox.Show("Download and extraction completed: " + carpetaDestino);
                 }
                 else
@@ -618,6 +620,18 @@ namespace Project_Lightning.Pages
                 //System.Windows.MessageBox.Show("ERROR: " + ex.Message);
             }
 
+        }
+
+        private void mostrarMensajeDeDonacion()
+        {
+            Random random = new Random();
+            //PROBABILIDAD DEL 50%
+            if (random.NextDouble() < 0.5)
+            {
+                //MOSTRAR LA VENTANA DE DONACIÓN
+                var ventana = new Windows.DonateWindow();
+                ventana.ShowDialog();
+            }
         }
 
 
