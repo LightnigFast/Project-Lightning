@@ -759,7 +759,7 @@
       "launch_steam": true,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": ["DirectX", ".VC Redist"],
+      "programas_necesarios": ["DirectX", "VC Redist"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX and VC Redist."
       ],
