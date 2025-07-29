@@ -334,6 +334,18 @@
       ],
       "nombre_fix": "Watch_Dogs 2 - bypass",
       "custom_images": {}
+    },
+    "2239550": {
+      "name": "Watch Dogs: Legion",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET 4.0 and Ubisoft Play."
+      ],
+      "nombre_fix": "Watch Dogs: Legion - bypass",
+      "custom_images": {}
     }
   },
   "EA": {
@@ -742,7 +754,18 @@
     }
   },
   "PlayStation": {
-      
+    "2428810": {
+      "name": "LEGO® Horizon Adventures™",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "LEGO® Horizon Adventures™ - bypass",
+      "custom_images": {}
+    }
   },
   "OTHERS": {
     "42700": {
