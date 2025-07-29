@@ -99,4 +99,59 @@
       "nombre_fix":"The Forest - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/242760/capsule_616x353.jpg?t=1699381053"
    },
+   "1326470":{
+      "name":"Sons Of The Forest",
+      "nombre_fix":"Sons Of The Forest - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1326470/capsule_616x353.jpg?t=1708624856"
+   },
+   "2300320":{
+      "name":"Farming Simulator 25",
+      "nombre_fix":"Farming Simulator 25 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2300320/capsule_616x353.jpg?t=1749803684"
+   },
+   "251570":{
+      "name":"7 Days to Die",
+      "nombre_fix":"7 Days to Die - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/251570/capsule_616x353.jpg?t=1750884786"
+   },
+   "526870":{
+      "name":"Satisfactory",
+      "nombre_fix":"Satisfactory - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/526870/290c413f4075e43a5d2e106dcbbaa036b3271621/capsule_616x353.jpg?t=1749717464"
+   },
+   "493520":{
+      "name":"GTFO",
+      "nombre_fix":"GTFO - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/493520/1f73e0a96f592c76f7140cce484901cc0baf5eca/capsule_616x353.jpg?t=1728027032"
+   },
+   "2646460":{
+      "name":"Soulmask",
+      "nombre_fix":"Soulmask - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2646460/afb5f419b5424c08f3ae47e066b9bcab8499e7d0/capsule_616x353.jpg?t=1753256816"
+   },
+   "739630":{
+      "name":"Phasmophobia",
+      "nombre_fix":"Phasmophobia - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/739630/capsule_616x353.jpg?t=1751054308"
+   },
+   "2881650":{
+      "name":"Content Warning",
+      "nombre_fix":"Content Warning - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2881650/capsule_616x353.jpg?t=1736717925"
+   },
+   "1384160":{
+      "name":"GUILTY GEAR -STRIVE",
+      "nombre_fix":"GUILTY GEAR -STRIVE - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1384160/f2f96f68e4405d870209121bdbb9025bf752cb7f/capsule_616x353.jpg?t=1748483857"
+   },
+   "1335830":{
+      "name":"Len's Island",
+      "nombre_fix":"Len's Island - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1335830/4e408d3391094a9c8eb589bd53bbc536d110d077/capsule_616x353.jpg?t=1751968500"
+   },
+   "284160":{
+      "name":"BeamNG.drive",
+      "nombre_fix":"BeamNG.drive - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/284160/capsule_616x353.jpg?t=1743607220"
+   },
 }
