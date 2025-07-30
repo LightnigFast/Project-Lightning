@@ -1,4 +1,9 @@
 {
+   "2661300":{
+      "name":"Grounded 2",
+      "nombre_fix":"Grounded 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2661300/ea6e08dcd53fc579bfa710fe1dcef90765e2ba91/capsule_616x353.jpg?t=1753821224"
+   },
    "1144200":{
       "name":"Ready or Not",
       "nombre_fix":"Ready or Not - fix",
@@ -153,5 +158,50 @@
       "name":"BeamNG.drive",
       "nombre_fix":"BeamNG.drive - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/284160/capsule_616x353.jpg?t=1743607220"
+   },
+   "2999030":{
+      "name":"Exploding Kittens 2",
+      "nombre_fix":"Exploding Kittens 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2999030/821be9a55cbc7863392bf603e7ad0d178477d20e/capsule_616x353.jpg?t=1753371280"
+   },
+   "227300":{
+      "name":"Euro Truck Simulator 2",
+      "nombre_fix":"Euro Truck Simulator 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/227300/capsule_616x353.jpg?t=1750168417"
+   },
+   "270880":{
+      "name":"American Truck Simulator",
+      "nombre_fix":"American Truck Simulator - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/270880/capsule_616x353.jpg?t=1752167624"
+   },
+   "1066890":{
+      "name":"Automobilista 2",
+      "nombre_fix":"Automobilista 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1066890/capsule_616x353.jpg?t=1742042973"
+   },
+   "1307550":{
+      "name":"Craftopia",
+      "nombre_fix":"Craftopia - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1307550/capsule_616x353.jpg?t=1750302934"
+   },
+   "239140":{
+      "name":"Dying Light",
+      "nombre_fix":"Dying Light - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/239140/75644e31be5e0e57ac44a3e13468555fb21eb4ea/capsule_616x353.jpg?t=1751370984"
+   },
+   "534380":{
+      "name":"Dying Light 2: Reloaded Edition",
+      "nombre_fix":"Dying Light 2: Reloaded Edition - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/534380/bb99b9529e0585181f0c09fa6b9eff324dba0675/capsule_616x353.jpg?t=1739988558"
+   },
+   "997010":{
+      "name":"Police Simulator: Patrol Officers",
+      "nombre_fix":"Police Simulator: Patrol Officers - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/997010/capsule_616x353.jpg?t=1753171400"
+   },
+   "285900":{
+      "name":"Gang Beasts",
+      "nombre_fix":"Gang Beasts - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/285900/capsule_616x353.jpg?t=1732109683"
    },
 }
