@@ -9,7 +9,7 @@
         Icon="/res/media/icons/ico.ico"
         WindowStartupLocation="CenterScreen"
         Title="⚡Project Lightning⚡" Height="760" Width="1280"
-        MinHeight="530" MinWidth="1000">
+        MinHeight="740" MinWidth="1000">
     <Grid>
 
         <Grid.Background>
