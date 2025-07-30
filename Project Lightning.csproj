@@ -164,6 +164,9 @@
     <Compile Include="Windows\ChangeLog.xaml.cs">
       <DependentUpon>ChangeLog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\DMCA_Window.xaml.cs">
+      <DependentUpon>DMCA_Window.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DonateWindow.xaml.cs">
       <DependentUpon>DonateWindow.xaml</DependentUpon>
     </Compile>
@@ -229,6 +232,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\ChangeLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\DMCA_Window.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -311,6 +318,7 @@
     <Content Include="res\media\backgrounds\sunset-waves.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="res\media\logos\originals\advertencia.gif" />
     <Content Include="res\media\sponsors\steam-manifest-sponsor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

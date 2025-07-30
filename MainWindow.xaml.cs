@@ -54,6 +54,28 @@ namespace Project_Lightning
                 }
             };
 
+            //CUANDO LA VENTANA SE CARGUE POR COMPLETO, ABRO LA VENTANA DMCA
+            this.Loaded += (s, e) =>
+            {
+                string ultimaVersion = Properties.Settings.Default.UltimaVersionConDMCA;
+
+                if (ultimaVersion != versionLocal) //SI ES LA PRIMERA VEZ EN ESTA VERSIÓN
+                {
+                    var DMCA_Window = new DMCA_Window
+                    {
+                        Owner = this,
+                        WindowStartupLocation = WindowStartupLocation.CenterOwner
+                    };
+
+                    DMCA_Window.ShowDialog();
+
+                    //GUARDO QUE YA SE MOSTRÓ EN ESTA VERSIÓN
+                    Properties.Settings.Default.UltimaVersionConDMCA = versionLocal;
+                    Properties.Settings.Default.Save();
+                }
+            };
+
+
         }
 
         //METODO PARA UBISOFT
