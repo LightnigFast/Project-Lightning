@@ -4,6 +4,11 @@
       "nombre_fix":"Grounded 2 - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2661300/ea6e08dcd53fc579bfa710fe1dcef90765e2ba91/capsule_616x353.jpg?t=1753821224"
    },
+   "3716600":{
+      "name":"Mage Arena",
+      "nombre_fix":"Mage Arena - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3716600/e245a7cf3cadf5331c1155b6c082a38fe01a2ae9/capsule_616x353.jpg?t=1753574038"
+   },
    "1144200":{
       "name":"Ready or Not",
       "nombre_fix":"Ready or Not - fix",
@@ -203,5 +208,50 @@
       "name":"Gang Beasts",
       "nombre_fix":"Gang Beasts - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/285900/capsule_616x353.jpg?t=1732109683"
+   },
+   "2235200":{
+      "name":"Neon Abyss 2",
+      "nombre_fix":"Neon Abyss 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2235200/1fae7d1274ac9665e59277ecf563a3c0059b0de0/capsule_616x353.jpg?t=1753248564"
+   },
+   "588030":{
+      "name":"Derail Valley",
+      "nombre_fix":"Derail Valley - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/588030/capsule_616x353.jpg?t=1747663360"
+   },
+   "1931180":{
+      "name":"Lost Skies",
+      "nombre_fix":"Lost Skies - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1931180/937e33f988447d501c93f6e455dc17b5327caf88/capsule_616x353.jpg?t=1749557065"
+   },
+   "2440510":{
+      "name":"Forza Motorsport",
+      "nombre_fix":"Forza Motorsport - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2440510/capsule_616x353.jpg?t=1747073895"
+   },
+   "1551360":{
+      "name":"Forza Horizon 5",
+      "nombre_fix":"Forza Horizon 5 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1551360/capsule_616x353.jpg?t=1746471508"
+   },
+   "1293830":{
+      "name":"Forza Horizon 4",
+      "nombre_fix":"Forza Horizon 4 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1293830/capsule_616x353.jpg?t=1734336342"
+   },
+   "1250410":{
+      "name":"Microsoft Flight Simulator (2020)",
+      "nombre_fix":"Microsoft Flight Simulator (2020) - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1250410/capsule_616x353.jpg?t=1748576233"
+   },
+   "2788040":{
+      "name":"Another Try 2",
+      "nombre_fix":"Another Try 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2788040/capsule_616x353.jpg?t=1745619523"
+   },
+   "2800450":{
+      "name":"Planetaries",
+      "nombre_fix":"Planetaries - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2800450/capsule_616x353.jpg?t=1742224330"
    },
 }
