@@ -4,9 +4,11 @@ using Project_Lightning.Windows;
 using SharpCompress.Archives;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -45,7 +47,36 @@ namespace Project_Lightning.Pages
             this.ventanaPrincipal = ventanaPrincipal;
 
 
+
             ponerJuegos();
+
+            //SACO LA VERSION DE LA APP
+            string versionLocal = FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion;
+            //versionLocal = "0,0,0,0";
+
+            //CUANDO LA VENTANA SE CARGUE POR COMPLETO, ABRO LA VENTANA DMCA
+            this.Loaded += (s, e) =>
+            {
+                string ultimaVersion = Properties.Settings.Default.UltimaVersionConAdvertenciaOnline;
+
+                if (ultimaVersion != versionLocal) //SI ES LA PRIMERA VEZ EN ESTA VERSIÓN
+                {
+                    var Online_Window = new OnlineFixWarning
+                    {
+                        Owner = ventanaPrincipal,
+                        WindowStartupLocation = WindowStartupLocation.CenterOwner
+                    };
+
+                    Online_Window.ShowDialog();
+
+                    //GUARDO QUE YA SE MOSTRÓ EN ESTA VERSIÓN
+                    Properties.Settings.Default.UltimaVersionConAdvertenciaOnline = versionLocal;
+                    Properties.Settings.Default.Save();
+                }
+            };
+
+
+
         }
 
         //BOTON DE HOME

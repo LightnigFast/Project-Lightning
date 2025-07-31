@@ -1,4 +1,4 @@
-﻿<Window x:Class="Project_Lightning.Windows.DMCA_Window"
+﻿<Window x:Class="Project_Lightning.Windows.OnlineFixWarning"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -8,34 +8,10 @@
         AllowsTransparency="True"
         Background="Transparent"
         ResizeMode="NoResize"
-        Width="800" Height="550"
+        Width="800" Height="370"
         WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
-        <!--ESTILO PARA EL BOTON-->
-        <Style x:Key="BotonDisocord" TargetType="Button">
-            <Setter Property="Background" Value="red"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontSize" Value="16"/>
-            <Setter Property="BorderBrush" Value="Red"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            <Setter Property="Padding" Value="10,5"/>
-            <Setter Property="Cursor" Value="Hand"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border x:Name="border" Background="{TemplateBinding Background}"
-                                BorderBrush="{TemplateBinding BorderBrush}"
-                                BorderThickness="{TemplateBinding BorderThickness}"
-                                CornerRadius="10">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
         <!--ESTILO PARA EL BOTON DE SALIR-->
         <Style x:Key="BotonSalir" TargetType="Button">
             <Setter Property="Background" Value="Transparent"/>
@@ -112,7 +88,6 @@
                     <RowDefinition Height="auto" />
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="auto" />
-                    <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
 
@@ -123,23 +98,18 @@
                 <!--TITULO DEBAJO DEL GIF-->
 
 
-                <!--TEXTO DE DONACION-->
+                <!--TEXTO DE AVISO SOBRE EL FIX-->
                 <TextBlock x:Name="txtMensaje" Grid.Row="1" Foreground="White" FontSize="16" TextWrapping="Wrap" TextAlignment="Left" Margin="0,20,0,0" Text="
-⚠️ This application was created and released by me for FREE. If someone charged you for it, you were scammed, sorry.&#x0a;&#x0a;
-🛑 Please report the server and the user who sold it to you. They are violating the terms of this project and committing fraud.&#x0a;&#x0a;
-📩 If you’ve been affected or want to reach out, you can contact me directly by clicking the button below to send me a DM on Discord.&#x0a;&#x0a;
-This project is 100% free and was made to help people — not to be sold or abused. Thanks for your support!"/>
+⚠️ It is strongly recommended that you add your Steam games folder to the exclusions list of your &#x0a;       antivirus.&#x0a;&#x0a;
+🛡️ Some antivirus software might mistakenly delete the .dll files required for the fixes to work properly.&#x0a;&#x0a;
+🧩 If any file is removed, you will need to reapply the fix manually to restore functionality."/>
 
-                <!--BOTON PARA IR A MI DISCORD-->
-                <Button Width="170" Height="60" HorizontalAlignment="Center" Margin="0,20,0,0"
-                        Grid.Row="3"  Style="{StaticResource BotonSalir}" Name="botonDiscord" Click="botonDiscord_Click">
-                    <Button.Content>
-                        <Image x:Name="gifImageButton" Width="100" Height="50"/>
-                    </Button.Content>
-                </Button>
+
+
             </Grid>
         </StackPanel>
 
 
     </Border>
 </Window>
+

@@ -34,5 +34,17 @@ namespace Project_Lightning.Properties {
                 this["UltimaVersionConDMCA"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UltimaVersionConAdvertenciaOnline {
+            get {
+                return ((string)(this["UltimaVersionConAdvertenciaOnline"]));
+            }
+            set {
+                this["UltimaVersionConAdvertenciaOnline"] = value;
+            }
+        }
     }
 }

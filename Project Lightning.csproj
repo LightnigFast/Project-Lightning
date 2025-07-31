@@ -176,6 +176,9 @@
     <Compile Include="Windows\LegalWindow.xaml.cs">
       <DependentUpon>LegalWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\OnlineFixWarning.xaml.cs">
+      <DependentUpon>OnlineFixWarning.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\QuickGuide.xaml.cs">
       <DependentUpon>QuickGuide.xaml</DependentUpon>
     </Compile>
@@ -251,6 +254,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\OnlineFixWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\QuickGuide.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -319,6 +326,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="res\media\logos\originals\advertencia.gif" />
+    <Resource Include="res\media\logos\originals\Electricity.gif" />
     <Content Include="res\media\sponsors\steam-manifest-sponsor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
