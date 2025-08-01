@@ -327,6 +327,9 @@
     </Content>
     <Resource Include="res\media\logos\originals\advertencia.gif" />
     <Resource Include="res\media\logos\originals\Electricity.gif" />
+    <Content Include="res\media\sponsors\steam-force-sponsor.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\media\sponsors\steam-manifest-sponsor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
