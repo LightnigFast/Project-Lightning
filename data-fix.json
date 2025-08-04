@@ -259,59 +259,99 @@
       "nombre_fix":"Minecraft Dungeons - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1672970/capsule_616x353.jpg?t=1717003107"
    },
-
    "516750":{
       "name":"My Summer Car",
       "nombre_fix":"My Summer Car - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/516750/capsule_616x353.jpg?t=1736372299"
    },
-
    "962130":{
       "name":"Grounded",
       "nombre_fix":"Grounded - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/962130/capsule_616x353.jpg?t=1727719725"
    },
-
    "1149460":{
       "name":"Icarus",
       "nombre_fix":"Icarus - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1149460/capsule_616x353.jpg?t=1753143921"
    },
-
    "1284190":{
       "name":"The Planet Crafter",
       "nombre_fix":"The Planet Crafter - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1284190/0cb237d6b6c54c8a571a13dfbd5837398571084d/capsule_616x353.jpg?t=1748077331"
    },
-
    "648800":{
       "name":"Raft",
       "nombre_fix":"Raft - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/648800/capsule_616x353.jpg?t=1727184011"
    },
-
    "2406770":{
       "name":"Bodycam",
       "nombre_fix":"Bodycam - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2406770/76db1ded1096ef1195cf3f77532af1b60ab527d3/capsule_616x353.jpg?t=1750962796"
    },
-
    "313120":{
       "name":"Stranded Deep",
       "nombre_fix":"Stranded Deep - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/313120/capsule_616x353.jpg?t=1727731485"
    },
-
    "2248760":{
       "name":"Car For Sale Simulator 2023",
       "nombre_fix":"Car For Sale Simulator 2023 - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2248760/12d1a322ff6e02bff73be56ab30ed701a02b42f7/capsule_616x353.jpg?t=1753985645"
    },
-
    "1158310":{
       "name":"Crusader Kings III",
       "nombre_fix":"Crusader Kings III - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1158310/capsule_616x353.jpg?t=1745933101"
    },
-
+   "1660080":{
+      "name":"Aloft",
+      "nombre_fix":"Aloft - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1660080/6069fe15c6b3e47b26938124485519ab7ae1cfda/capsule_616x353.jpg?t=1753378614"
+   },
+   "3121110":{
+      "name":"Zort",
+      "nombre_fix":"Zort - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3121110/capsule_616x353.jpg?t=1741804510"
+   },
+   "1641960":{
+      "name":"Forever Skies",
+      "nombre_fix":"Forever Skies - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1641960/b5be7d2a898ee6e43eaa7dc81e059f612eeef2cc/capsule_616x353.jpg?t=1753885686"
+   },
+   "2835570":{
+      "name":"Buckshot Roulette",
+      "nombre_fix":"Buckshot Roulette - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2835570/capsule_616x353.jpg?t=1751896884"
+   },
+   "1190970":{
+      "name":"House Flipper 2",
+      "nombre_fix":"House Flipper 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1190970/a21c39496d6abc69cba4fd9ad78ab489b3f3b115/capsule_616x353.jpg?t=1752765762"
+   },
+   "1790600":{
+      "name":"DRAGON BALL: Sparking! ZERO",
+      "nombre_fix":"DRAGON BALL: Sparking! ZERO - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1790600/dd58a5788c333cf0ebb5743e32fb716448e28cb0/capsule_616x353.jpg?t=1753266072"
+   },
+   "2644470":{
+      "name":"PICO PARK 2",
+      "nombre_fix":"PICO PARK 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2644470/capsule_616x353.jpg?t=1726674876"
+   },
+   "500":{
+      "name":"Left 4 Dead",
+      "nombre_fix":"Left 4 Dead - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/500/capsule_616x353.jpg?t=1745368560"
+   },
+   "550":{
+      "name":"Left 4 Dead 2",
+      "nombre_fix":"Left 4 Dead 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/550/capsule_616x353.jpg?t=1745368562"
+   },
+   "1534840":{
+      "name":"Hyper Light Breaker",
+      "nombre_fix":"Hyper Light Breaker - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1534840/6260b05a582607fc5584a53b15823f6d01b7c33a/capsule_616x353.jpg?t=1745951553"
+   },
 }
