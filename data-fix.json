@@ -1,4 +1,9 @@
 {
+   "2943670":{
+      "name":"Night Club Simulator",
+      "nombre_fix":"Night Club Simulator - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2943670/aea658aeb4a6115bdaa325c87672fdd1f86f8dcd/capsule_616x353.jpg?t=1753903448"
+   },
    "2661300":{
       "name":"Grounded 2",
       "nombre_fix":"Grounded 2 - fix",
@@ -353,5 +358,50 @@
       "name":"Hyper Light Breaker",
       "nombre_fix":"Hyper Light Breaker - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1534840/6260b05a582607fc5584a53b15823f6d01b7c33a/capsule_616x353.jpg?t=1745951553"
+   },
+   "1796470":{
+      "name":"Haste",
+      "nombre_fix":"Haste - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1796470/facaebeaca52dc14ae2a85d5a4f017947e9c3a87/capsule_616x353.jpg?t=1752241805"
+   },
+   "346110":{
+      "name":"ARK: Survival Evolved",
+      "nombre_fix":"ARK: Survival Evolved - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/346110/capsule_616x353.jpg?t=1752704051"
+   },
+   "361420":{
+      "name":"ASTRONEER",
+      "nombre_fix":"ASTRONEER - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/361420/capsule_616x353.jpg?t=1744744143"
+   },
+   "218620":{
+      "name":"PAYDAY 2",
+      "nombre_fix":"PAYDAY 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/218620/capsule_616x353.jpg?t=1748420788"
+   },
+   "1272080":{
+      "name":"PAYDAY 3",
+      "nombre_fix":"PAYDAY 3 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1272080/capsule_616x353.jpg?t=1749715358"
+   },
+   "1448440":{
+      "name":"Wo Long: Fallen Dynasty",
+      "nombre_fix":"Wo Long: Fallen Dynasty - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1448440/dcb5987b4ea792958bc86ecc2887ac12318b904b/capsule_616x353.jpg?t=1751503287"
+   },
+   "1511630":{
+      "name":"TrackDayR",
+      "nombre_fix":"TrackDayR - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1511630/capsule_616x353.jpg?t=1742490610"
+   },
+   "108600":{
+      "name":"Project Zomboid",
+      "nombre_fix":"Project Zomboid - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/108600/capsule_616x353.jpg?t=1739309087"
+   },
+   "495420":{
+      "name":"State of Decay 2",
+      "nombre_fix":"State of Decay 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/495420/capsule_616x353.jpg?t=1741378867"
    },
 }
