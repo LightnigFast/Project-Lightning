@@ -10,6 +10,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -32,6 +33,7 @@ namespace Project_Lightning.Pages
     public partial class panelOnlineFix : Page
     {
         MainWindow ventanaPrincipal;
+        private static readonly BitmapImageCache _imageCache = new BitmapImageCache();
 
         //VARIABLES PARA LA PAGINACION
         private const int JuegosPorPagina = 18;
@@ -248,14 +250,19 @@ namespace Project_Lightning.Pages
                 //IMAGEN (SE ADAPTA A LA FILA)
                 Image imagen = new Image
                 {
-                    Source = new BitmapImage(new Uri(juego.custom_images)),
-                    Stretch = Stretch.Uniform, //MANTENGO LA PROPORCION
+                    Stretch = Stretch.Uniform,
                     HorizontalAlignment = HorizontalAlignment.Stretch,
-                    VerticalAlignment = VerticalAlignment.Top, //EVITO QUE SE ESTIRE VERTICALMENTE
+                    VerticalAlignment = VerticalAlignment.Top,
                 };
 
                 Grid.SetRow(imagen, 0);
                 contenedor.Children.Add(imagen);
+
+                //CARGA ASINCRÓNICA DE LA IMAGEN SIN BLOQUEAR
+                _ = CargarImagenAsync(imagen, juego.custom_images);
+
+                //Grid.SetRow(imagen, 0);
+                //contenedor.Children.Add(imagen);
 
                 //NOMBRE DEL JUEGO
                 TextBlock nombre = new TextBlock
@@ -360,6 +367,76 @@ namespace Project_Lightning.Pages
                 {
                     MessageBox.Show("No se encontró el juego con el appId: " + appId);
                 }
+            }
+        }
+
+        //CLASE PARA MANEJAR EL CACHE DE IMAGENES
+        public class BitmapImageCache
+        {
+            private readonly Dictionary<string, BitmapImage> _cache = new Dictionary<string, BitmapImage>();
+            private readonly SemaphoreSlim _semaforo = new SemaphoreSlim(5); //MÁXIMO 5 DESCARGAS A LA VEZ
+            private readonly object _lock = new object();
+
+            public async Task<BitmapImage> GetImageAsync(string uri)
+            {
+                lock (_lock)
+                {
+                    if (_cache.TryGetValue(uri, out var cachedImage))
+                        return cachedImage;
+                }
+
+                try
+                {
+                    await _semaforo.WaitAsync(); //LIMITAMOS CONCURRENCIA
+
+                    using (var client = new HttpClient())
+                    {
+                        var imageBytes = await client.GetByteArrayAsync(uri);
+
+                        using (var ms = new MemoryStream(imageBytes))
+                        {
+                            var newImage = new BitmapImage();
+                            newImage.BeginInit();
+                            newImage.CacheOption = BitmapCacheOption.OnLoad;
+                            newImage.StreamSource = ms;
+                            newImage.EndInit();
+                            newImage.Freeze();
+
+                            lock (_lock)
+                            {
+                                _cache[uri] = newImage;
+                            }
+
+                            return newImage;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("Error cargando imagen: " + ex.Message);
+                    return null;
+                }
+                finally
+                {
+                    _semaforo.Release();
+                }
+            }
+        }
+
+        //METODO PARA CARGAR MAS RAPIDO LAS IMAGENES
+        private async Task CargarImagenAsync(Image imgControl, string url)
+        {
+            try
+            {
+                var bitmap = await _imageCache.GetImageAsync(url);
+                if (bitmap != null)
+                {
+                    imgControl.Source = bitmap;
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error mostrando imagen: " + ex.Message);
             }
         }
 
@@ -696,6 +773,10 @@ namespace Project_Lightning.Pages
             if (fixButton.Tag is string appId)
                 estadoBotonesFix[appId] = "Apply Fix";
         }
+
+
+
+
 
     }
 
