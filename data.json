@@ -346,6 +346,33 @@
       ],
       "nombre_fix": "Watch Dogs: Legion - bypass",
       "custom_images": {}
+    },
+    "235600": {
+      "name": "Tom Clancy's Splinter Cell Blacklist",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET and Ubisoft Play."
+      ],
+      "nombre_fix": "Tom Clancy's Splinter Cell Blacklist - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/dc10fce584f2cdf09d6690e0f2883227.png",
+        "background": "https://cdn2.steamgriddb.com/hero/28fa10065a8481936a690e7347a66f4d.png"
+      }
+    },
+    "460930": {
+      "name": "Tom Clancy's Ghost Recon Wildlands",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET 4.0 and Ubisoft Play."
+      ],
+      "nombre_fix": "Tom Clancy's Ghost Recon Wildlands - bypass",
+      "custom_images": {}
     }
   },
   "EA": {
