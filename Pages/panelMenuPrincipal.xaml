@@ -207,20 +207,71 @@
             <!--GRID PARA LAS OPCIONES (ONLINE FIX / BYPASS)-->
             <Grid Grid.Row="1" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="290"/>
+                    <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
 
 
-                <Button x:Name="onlinefix_button" Background="Transparent" Grid.Column="0" Style="{StaticResource MinimalButtonStyleSeleccion}"
+                <Button x:Name="onlinefix_button" Background="Transparent" Grid.Column="1" Style="{StaticResource MinimalButtonStyleSeleccion}"
                         Height="120" Width="120" Margin="20,0,20,20" Click="onlineFixButtonClick">
                     <Image Source="/res/media/logos/originals/onlineFix_logo.png" Height="100" RenderOptions.BitmapScalingMode="HighQuality"/>
                 </Button>
 
-                <Button x:Name="bypass_button" Background="Transparent" Grid.Column="1" Style="{StaticResource MinimalButtonStyleSeleccion}"
+                <Button x:Name="bypass_button" Background="Transparent" Grid.Column="2" Style="{StaticResource MinimalButtonStyleSeleccion}"
                         Height="120" Width="120"  Margin="20,0,20,20" Click="bypassButtonClick">
                     <Image Source="/res/media/logos/originals/bypass_logo.png" Height="110" RenderOptions.BitmapScalingMode="HighQuality"/>
                 </Button>
+
+                <!-- TARJETA ESTILO "UNIRSE A DISCORD" -->
+                <Border Grid.Column="3" Background="#2B2D31" CornerRadius="12" Padding="12" Margin="20,0,20,20" Width="250" Height="120">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!-- LOGO -->
+                        <Image Grid.Column="0" Width="64" Height="64" Source="/res/media/icons/ico.ico" Margin="0,0,0,0" VerticalAlignment="Center"/>
+
+                        <!-- TEXTOS + BOTÓN -->
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+                            <TextBlock Text="Join my new server" FontSize="16" FontWeight="Bold" Foreground="White" Margin="0,0,0,6" HorizontalAlignment="Right"/>
+                            <TextBlock Text="The official  &#x0a; Project Lightning server⚡" FontSize="12" Foreground="#bbbbbb" Margin="0,0,0,12" 
+                                       TextAlignment="Right" HorizontalAlignment="Right"/>
+                            <Button Content="Join here" Width="100" Height="24" Background="#00863a" Foreground="White"
+                                    FontWeight="Bold" FontSize="13" BorderThickness="0" Cursor="Hand" HorizontalAlignment="Right" Click="joinServerClick">
+                                    <Button.Style>
+                                    <Style TargetType="Button">
+                                        <Setter Property="Background" Value="#00863a"/>
+                                        <Setter Property="Template">
+                                            <Setter.Value>
+                                                <ControlTemplate TargetType="Button">
+                                                    <Border x:Name="border"
+                                                                Background="{TemplateBinding Background}"
+                                                                CornerRadius="8">
+                                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    </Border>
+                                                    <ControlTemplate.Triggers>
+                                                        <Trigger Property="IsMouseOver" Value="True">
+                                                            <Setter TargetName="border" Property="Background" Value="#00692d"/>
+                                                            <!-- VERDE MÁS OSCURO -->
+                                                        </Trigger>
+                                                    </ControlTemplate.Triggers>
+                                                </ControlTemplate>
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+
+
+
             </Grid>
 
         </Grid>

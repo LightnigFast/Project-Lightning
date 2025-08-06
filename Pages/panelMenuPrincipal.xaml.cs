@@ -69,6 +69,20 @@ namespace Project_Lightning.Pages
 
         }
 
+        //METODO PARA EL CLICK PARA UNIRSE A MI SERVIDOR
+        private void joinServerClick(object sender, RoutedEventArgs e)
+        {
+            //URL DE MI PERFIL DE DISCORD
+            string url = "https://discord.gg/JBB2pTNTqK";
+
+            //ABRIR URL EN EL NAVEGADOR PREDETERMINADO
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+
 
         private void legalButtonClick(object sender, RoutedEventArgs e)
         {
