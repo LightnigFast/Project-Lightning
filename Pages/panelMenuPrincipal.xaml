@@ -207,7 +207,7 @@
             <!--GRID PARA LAS OPCIONES (ONLINE FIX / BYPASS)-->
             <Grid Grid.Row="1" HorizontalAlignment="Center">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="290"/>
+                    <ColumnDefinition Width="300"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="auto"/>
@@ -225,7 +225,7 @@
                 </Button>
 
                 <!-- TARJETA ESTILO "UNIRSE A DISCORD" -->
-                <Border Grid.Column="3" Background="#2B2D31" CornerRadius="12" Padding="12" Margin="20,0,20,20" Width="250" Height="120">
+                <Border Grid.Column="3" Background="#2B2D31" CornerRadius="12" Padding="12" Margin="30,0,20,20" Width="250" Height="120">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
