@@ -125,15 +125,26 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
                 <StackPanel>
 
-                    <!--v2.0.0.3-->
-                    <TextBlock Text="v2.0.0.3" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                    <!--v2.0.0.0-->
+                    <TextBlock Text="v2.0.0.0" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Foreground="White" FontSize="16" FontWeight="Normal" Margin="0,0,0,10" TextAlignment="Left" TextWrapping="Wrap" Text="
+* Full integration of OnlineFix into the app.&#x0a;
+* New background with a cleaner and more modern look.&#x0a;
+* General performance improvements: faster startup and smoother &#x0a;    navigation.&#x0a;
+* New sponsor added to the main section.&#x0a;
+* New button to join the official Project Lightning server.&#x0a;
+* Partial redesign of the Bypass section, with a clearer and more polished &#x0a;    layout."/>
+
+                    <!--v0.2.0.3-->
+                    <TextBlock Text="v0.2.0.3" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
 
                     <TextBlock Foreground="White" FontSize="16" FontWeight="Normal" Margin="0,0,0,10" TextAlignment="Left" TextWrapping="Wrap" Text="
 * A carousel with the sponsors has been added to the main menu.
                                "/>
 
                     <!--v1.0.0.1-->
-                    <TextBlock Text="v1.0.0.1" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+                    <TextBlock Text="v0.1.0.1" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
                     
                     <TextBlock Foreground="White" FontSize="16" FontWeight="Normal" Margin="0,0,0,10" TextAlignment="Left" TextWrapping="Wrap" Text="
 * Fixed a bug that prevented recently added games from appearing after &#x0a;   reinstalling or performing a fresh install of the program.
