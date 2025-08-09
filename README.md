@@ -71,7 +71,7 @@ With an intuitive interface and outstanding performance, Project Lightning fixes
 
 ## Resources and Support
 
-- **Help Channel:** Join our [Discord/Slack/Telegram](https://discord.com/invite/NhqjTUWSWc) for real-time support.
+- **Help Channel:** Join our [Discord/Slack/Telegram](https://discord.gg/JBB2pTNTqK) for real-time support.
 - **Report Issues:** If you find a bug or want to suggest improvements, please open an [issue](https://github.com/LightnigFast/Project-Lightning/issues) on GitHub.
 
 ---
