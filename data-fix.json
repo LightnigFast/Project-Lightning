@@ -1,4 +1,19 @@
 {
+   "1619310":{
+      "name":"SWAT Commander",
+      "nombre_fix":"SWAT Commander - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1619310/97c64d1d4327f67f54e4790fafdcfa9333283c3b/capsule_616x353.jpg?t=1754990909"
+   },
+   "3484300":{
+      "name":"DREADZONE",
+      "nombre_fix":"DREADZONE - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3484300/8aab06c561cbd54582c51d058473a6158c90aec7/capsule_616x353.jpg?t=1753565904"
+   },
+   "3077390":{
+      "name":"MotoGP 25",
+      "nombre_fix":"MotoGP 25 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3077390/32cd6f7dea139a91ee036565c41481eb751cf651/capsule_616x353.jpg?t=1753692631"
+   },
    "2943670":{
       "name":"Night Club Simulator",
       "nombre_fix":"Night Club Simulator - fix",
@@ -28,6 +43,11 @@
       "name":"PEAK",
       "nombre_fix":"PEAK - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3527290/c6791f0f1b7b29f6304e283ac7a2cabc27c7eb0d/capsule_616x353.jpg?t=1753331942"
+   },
+   "1245620":{
+      "name":"ELDEN RING",
+      "nombre_fix":"ELDEN RING - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1245620/capsule_616x353.jpg?t=1748630546"
    },
    "2622380":{
       "name":"ELDEN RING NIGHTREIGN",
@@ -453,5 +473,35 @@
       "name":"LEGO The Lord of the Rings",
       "nombre_fix":"LEGO The Lord of the Rings - fix",
       "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/214510/capsule_616x353.jpg?t=1729803813"
+   },
+   "214950":{
+      "name":"Total War: ROME II - Emperor Editio",
+      "nombre_fix":"Total War: ROME II - Emperor Editio - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/214950/capsule_616x353.jpg?t=1748526690"
+   },
+   "1154030":{
+      "name":"Titan Quest II",
+      "nombre_fix":"Titan Quest II - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1154030/capsule_616x353.jpg?t=1755288487"
+   },
+   "815370":{
+      "name":"Green Hell",
+      "nombre_fix":"Green Hell - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/815370/4a4325781844ab83154dbccdc59e1913cf5facfc/capsule_616x353.jpg?t=1752746520"
+   },
+   "602960":{
+      "name":"Barotrauma",
+      "nombre_fix":"Barotrauma - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/602960/capsule_616x353.jpg?t=1750262405"
+   },
+   "1222700":{
+      "name":"A Way Out",
+      "nombre_fix":"A Way Out - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1222700/capsule_616x353.jpg?t=1730912036"
+   },
+   "2567870":{
+      "name":"Chained Together",
+      "nombre_fix":"Chained Together - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2567870/capsule_616x353.jpg?t=1732288374"
    },
 }
