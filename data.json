@@ -534,6 +534,54 @@
       ],
       "nombre_fix": "Unravel 2 - bypass",
       "custom_images": {}
+    },
+    "1238820": {
+      "name": "Battlefield 3",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022."
+      ],
+      "nombre_fix": "Battlefield 3 - bypass",
+      "custom_images": {}
+    },
+    "1238860": {
+      "name": "Battlefield 4",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022."
+      ],
+      "nombre_fix": "Battlefield 4 - bypass",
+      "custom_images": {}
+    },
+    "1238840": {
+      "name": "Battlefield™ 1",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022."
+      ],
+      "nombre_fix": "Battlefield 1 - bypass",
+      "custom_images": {}
+    },
+    "1238810": {
+      "name": "Battlefield™ V",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022."
+      ],
+      "nombre_fix": "Battlefield V - bypass",
+      "custom_images": {}
     }
   },
   "ROCKSTAR": {
