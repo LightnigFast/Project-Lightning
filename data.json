@@ -540,9 +540,9 @@
       "launch_steam": true,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
+      "programas_necesarios": ["EA App", "DirectX 11", "VC Redist 2013"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022."
+        "If the game shows errors when opening, you need to install DirectX 11, EA Play and VC Redist 2013."
       ],
       "nombre_fix": "Battlefield 3 - bypass",
       "custom_images": {}
@@ -552,9 +552,9 @@
       "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
+      "programas_necesarios": ["EA App", "DirectX 11", "VC Redist 2013"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022.",
+        "If the game shows errors when opening, you need to install DirectX 11, EA Play and VC Redist 2013.",
         "The game opens with the exe *bf4.exe*"
       ],
       "nombre_fix": "Battlefield 4 - bypass",
