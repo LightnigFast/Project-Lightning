@@ -124,6 +124,65 @@
             </Style.Triggers>
         </Style>
 
+        <!--ESTILO PARA LA BARRA DE BUSQUEDA-->
+        <Style x:Key="DarkMinimalistSearchBox" TargetType="TextBox">
+            <Setter Property="Background" Value="#2D2D2D"/>
+            <Setter Property="BorderBrush" Value="#444444"/>
+            <Setter Property="BorderThickness" Value="0 0 0 2"/>
+            <Setter Property="Padding" Value="8,0,8,2"/>
+            <Setter Property="Foreground" Value="#E0E0E0"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontFamily" Value="Segoe UI"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Height" Value="38"/>
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border x:Name="border" 
+                Background="{TemplateBinding Background}"
+                BorderBrush="{TemplateBinding BorderBrush}"
+                BorderThickness="{TemplateBinding BorderThickness}"
+                CornerRadius="2">
+                            <Grid>
+                                <ScrollViewer x:Name="PART_ContentHost"
+                            Margin="34,0,8,0"
+                            VerticalAlignment="Center"/>
+                                <TextBlock x:Name="placeholder"
+                           Text="Search..."
+                           Margin="34,0,0,0"
+                           Foreground="#777777"
+                           FontStyle="Italic"
+                           Visibility="Collapsed"
+                           VerticalAlignment="Center"/>
+                                <Path Data="M15.5,14h-0.79l-0.28,-0.27C15.41,12.59 16,11.11 16,9.5 16,5.91 13.09,3 9.5,3S3,5.91 3,9.5 5.91,16 9.5,16c1.61,0 3.09,-0.59 4.23,-1.57l0.27,0.28v0.79l5,5 1.5,-1.5 -5,-5Zm-6,0C7.01,14 5,11.99 5,9.5S7.01,5 9.5,5 14,7.01 14,9.5 11.99,14 9.5,14Z"
+                      Stretch="Uniform"
+                      Fill="#777777"
+                      Width="20"
+                      Height="20"
+                      Margin="8,0,0,0"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Text" Value="">
+                                <Setter TargetName="placeholder" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="BorderBrush" Value="#5E5E5E"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="BorderBrush" Value="#4A90E2"/>
+                                <Setter TargetName="placeholder" Property="Visibility" Value="Collapsed"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Page.Resources>
 
     <Grid Background="Transparent" Margin="15,0,0,0">
@@ -137,6 +196,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="150"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="300"/>
             </Grid.ColumnDefinitions>
 
             <!--TEXTO PREDEFINIDO-->
@@ -146,7 +206,17 @@
             <!--TEXTO QUE CAMBIARA DEPENDIENDO DE LA APP-->
             <TextBlock Text="prueba" FontSize="30" Foreground="#0000FF" FontFamily="{StaticResource FuenteJohnInclinada}"
                        Name="txtApp" Grid.Column="1"/>
-        
+
+            <!-- CAJA DE BÚSQUEDA -->
+            <TextBox Name="txtBuscador"
+                     Width="300" Height="30" Margin="10,0,10,0"
+                     Grid.Column="2"
+                     VerticalAlignment="Center"
+                     Padding="10,0"
+                     FontSize="16"
+                     TextChanged="txtBuscador_TextChanged"
+                     Style="{StaticResource DarkMinimalistSearchBox}" Cursor="Hand"/>
+
         </Grid>
 
         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">

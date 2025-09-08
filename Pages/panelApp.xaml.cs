@@ -28,6 +28,8 @@ namespace Project_Lightning.Pages
 
         MainWindow ventanaPrincipal;
         string nombreApp;
+        private Dictionary<string, Juego> juegosCargados = new Dictionary<string, Juego>();
+
         public panelApp(String nomApp, MainWindow mainWindow)
         {
             InitializeComponent();
@@ -70,9 +72,11 @@ namespace Project_Lightning.Pages
 
         private async void ponerJuegos(string nomApp)
         {
-            var juegosApp = await sacarJuegosDeApp(nomApp);
-
-            colocarBotones(juegosApp);
+            //var juegosApp = await sacarJuegosDeApp(nomApp);
+            //colocarBotones(juegosApp);
+            juegosCargados = await sacarJuegosDeApp(nomApp); //GUARDAMOS LA LISTA ORIGINAL
+            colocarBotones(juegosCargados);
+            
 
             //descargarJuego(juegosApp.First());
 
@@ -149,6 +153,8 @@ namespace Project_Lightning.Pages
         //ESTE METODO BUSCA CREAR TODOS LOS BOTONES, COLCOAR SU IMAGEN Y SU RESPECTIVO METODO DE CLICK
         private void colocarBotones(Dictionary<string, Juego> juegosApp)
         {
+            panelJuegos.Children.Clear();
+
             if (juegosApp.Count != 0)
             {
                 //BUCLE PARA SACAR TODOS LOS JUEGOS
@@ -261,6 +267,25 @@ namespace Project_Lightning.Pages
 
             }
             
+        }
+
+        //EVENTO DEL BUSCADOR
+        private void txtBuscador_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string filtro = txtBuscador.Text.Trim().ToLower();
+
+            if (string.IsNullOrWhiteSpace(filtro))
+            {
+                colocarBotones(juegosCargados); //MOSTRAR TODOS
+            }
+            else
+            {
+                var filtrados = juegosCargados
+                    .Where(j => j.Value.name != null && j.Value.name.ToLower().Contains(filtro))
+                    .ToDictionary(j => j.Key, j => j.Value);
+
+                colocarBotones(filtrados);
+            }
         }
 
 
