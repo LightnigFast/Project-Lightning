@@ -125,6 +125,14 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
                 <StackPanel>
 
+                    <!--v2.3.0.0-->
+                    <TextBlock Text="v2.3.0.0" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Foreground="White" FontSize="16" FontWeight="Normal" Margin="0,0,0,10" TextAlignment="Left" TextWrapping="Wrap" Text="
+* I’ve added a search button in the bypass section that works categories.&#x0a;
+* I’ve added a few more buttons.&#x0a;
+* Some changes to the app’s security&#x0a;"/>
+
                     <!--v2.0.0.0-->
                     <TextBlock Text="v2.0.0.0" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
 

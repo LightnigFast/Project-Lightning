@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,7 +25,7 @@ namespace Project_Lightning.Windows
         {
             InitializeComponent(); 
             cargarGif();
-            cargarGifDiscord();
+            //cargarGifDiscord();
         }
 
         private void cargarGif()
@@ -60,7 +61,18 @@ namespace Project_Lightning.Windows
             });
         }
 
+        //EVENTO PARA EL BOTON DE KO-FI
+        private void botonKoFi_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://ko-fi.com/lightningfast",
+                UseShellExecute = true
+            });
+        }
+
         //METODO PARA CARGAR EL GIF DEL BOTON DE FISCORD
+        /*
         private void cargarGifDiscord()
         {
             var gifPath = "/res/media/logos/originals/discord_logo.gif";  //RUTA RELATIVA
@@ -73,6 +85,6 @@ namespace Project_Lightning.Windows
             ImageBehavior.SetAnimatedSource(gifImageButton, image);
 
         }
-
+        */
     }
 }

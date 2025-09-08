@@ -96,6 +96,49 @@
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <!--ESTILO PARA BOTÓN KO-FI-->
+        <Style x:Key="BotonKoFi" TargetType="Button">
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Background" Value="#794bc4"/>
+            <Setter Property="BorderBrush" Value="#794bc4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="https://storage.ko-fi.com/cdn/cup-border.png" Width="30" Height="30" Margin="0,0,10,0"/>
+                                <TextBlock Text="Support on Ko-fi" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--HOVER-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#794bc4"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.05" ScaleY="1.05"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                            </Trigger>
+                            <!--CLICK-->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#794bc4"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
 
     <Border CornerRadius="15" Background="#FF2D2D30" Padding="20" BorderBrush="#6A0DAD" BorderThickness="4" Name="borde">
@@ -127,22 +170,24 @@ This project is something I do for fun and to help out fellow gamers. If it’s 
 you just think it’s cool, there are a few ways you can support me no money involved!&#x0a;&#x0a;
 🎮 Games, Keys, and Steam Cards&#x0a;
 Got a spare game key, a duplicate from a bundle, or some extra Steam cards lying around? That stuff &#x0a; helps a lot for testing, bringing more content, and even rewarding users in the community!&#x0a;&#x0a;
-💬 Discord Nitro&#x0a;
-Any Nitro boost or gift is super helpful to keep the Discord running smoothly and make the community &#x0a; even better.&#x0a;&#x0a;
 📣 Spread the Word&#x0a;
 One of the best ways to support is just sharing the project. Forums, groups, social media, every bit of &#x0a; exposure helps more than you’d think.&#x0a;&#x0a;
+☕ Ko-fi Donations&#x0a;
+If you’d like to support me directly, you can buy me a coffee on Ko-fi! Every little bit helps me keep this &#x0a; project alive and growing.&#x0a;&#x0a;
 📬 If you want to donate something or get in touch, just hit me up through Discord or directly in DM.&#x0a;
 Thanks a ton for supporting this project!⚡
 "/>
 
 
-                <!--BOTON PARA IR A MI DISCORD-->
-                <Button Width="170" Height="60" HorizontalAlignment="Center" Margin="0,20,0,0"
-                        Grid.Row="3"  Style="{StaticResource BotonSalir}" Name="botonDiscord" Click="botonDiscord_Click">
-                    <Button.Content>
-                        <Image x:Name="gifImageButton" Width="100" Height="50"/>
-                    </Button.Content>
+                <!--BOTÓN KO-FI-->
+                <Button Width="210" Height="60" HorizontalAlignment="Center" Margin="0,20,0,0"  Style="{StaticResource BotonKoFi}"
+                        Grid.Row="3" Name="botonKoFi" Click="botonKoFi_Click" BorderBrush="#794bc4" Cursor="Hand">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Source="https://storage.ko-fi.com/cdn/cup-border.png" Width="30" Height="30" Margin="0,0,10,0"/>
+                        <TextBlock Text="Support on Ko-fi" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                    </StackPanel>
                 </Button>
+
             </Grid>
         </StackPanel>
         

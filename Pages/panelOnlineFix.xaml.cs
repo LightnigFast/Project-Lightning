@@ -775,7 +775,15 @@ namespace Project_Lightning.Pages
         }
 
 
-
+        //EVENTO PARA EL BOTON DE KO-FI
+        private void botonKoFi_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://ko-fi.com/lightningfast",
+                UseShellExecute = true
+            });
+        }
 
 
     }

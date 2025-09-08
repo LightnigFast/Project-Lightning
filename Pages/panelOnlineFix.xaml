@@ -181,7 +181,48 @@
             </Setter>
         </Style>
 
-
+        <!--ESTILO PARA BOTÓN KO-FI-->
+        <Style x:Key="BotonKoFi" TargetType="Button">
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Background" Value="#794bc4"/>
+            <Setter Property="BorderBrush" Value="#794bc4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderThickness="0">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Image Source="https://storage.ko-fi.com/cdn/cup-border.png" Width="30" Height="30" Margin="0,0,10,0"/>
+                                <TextBlock Text="Support on Ko-fi" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!--HOVER-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#794bc4"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.05" ScaleY="1.05"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                            </Trigger>
+                            <!--CLICK-->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#794bc4"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Page.Resources>
 
     <Grid Background="Transparent" Name="gridPrincipal">
@@ -197,6 +238,7 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
             <!--BOTON HOME-->
@@ -208,9 +250,18 @@
             <!--TEXTO PREDEFINIDO-->
             <TextBlock Text="Select a game " FontSize="30" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}"
                        Grid.Column="1" VerticalAlignment="Center"/>
+            
+            <!--PARA EL BOTON DE KOFI-->
+            <Button Width="210" Height="40" HorizontalAlignment="Right" Margin="0,0,0,0"  Style="{StaticResource BotonKoFi}"
+                    Grid.Column="2" Name="botonKoFi" Click="botonKoFi_Click" BorderBrush="#794bc4" Cursor="Hand">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Image Source="https://storage.ko-fi.com/cdn/cup-border.png" Width="30" Height="30" Margin="0,0,10,0"/>
+                    <TextBlock Text="Support on Ko-fi" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
 
             <!--PARTE PARA LA BARRA DE BUSQUEDA-->
-            <StackPanel Grid.Column="2" Orientation="Horizontal" Margin="20,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="20,20,10,0" VerticalAlignment="Top" HorizontalAlignment="Right">
                 <TextBox x:Name="txtBuscar" Width="300" Height="30" Margin="0,0,50,0" VerticalAlignment="Center" TextChanged="txtBuscar_TextChanged"
                              Style="{StaticResource DarkMinimalistSearchBox}" Cursor="Hand"/>
             </StackPanel>
