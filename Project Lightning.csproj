@@ -152,6 +152,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Classes\Actualizador.cs" />
+    <Compile Include="Classes\ExpandTextConverter.cs" />
     <Compile Include="Pages\panelBypass.xaml.cs">
       <DependentUpon>panelBypass.xaml</DependentUpon>
     </Compile>
