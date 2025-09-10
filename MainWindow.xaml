@@ -19,13 +19,13 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="HorizontalContentAlignment" Value="Left"/>
-            <Setter Property="Padding" Value="10,0"/>
+            <Setter Property="Padding" Value="0,0"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="6">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6" >
                             <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Left"/>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -78,7 +78,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="145"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
@@ -109,9 +109,9 @@
                 </Grid>
                 
                 <!--PARTE PARA PANEL LATERAL DE NAVEGACION-->
-                <Border x:Name="Sidebar" Grid.RowSpan="2" Grid.Column="0"
+                <Border x:Name="Sidebar" Grid.RowSpan="2" Grid.Column="0" 
                         Background="#1E1E1E" CornerRadius="8" Padding="10"
-                        Width="60" HorizontalAlignment="Left"> 
+                        Width="60" HorizontalAlignment="Left">
                     <Border.Style>
                         <Style TargetType="Border">
                             <Style.Triggers>
@@ -121,7 +121,7 @@
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetProperty="Width"
-                                                 To="200" Duration="0:0:0.3"/>
+                                                 To="300" Duration="0:0:0.3"/>
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </Trigger.EnterActions>
@@ -146,46 +146,77 @@
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
-                        <!--Botones superiores-->
+                        <!--BOTONES SUPERIORES-->
                         <StackPanel Orientation="Vertical" Grid.Row="0">
-                            <Button Style="{StaticResource BotonLateral}" Tag="Inicio">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/home.png" Width="24" Height="24"/>
-                                    <TextBlock Text="Inicio" Margin="10,0,0,0"
-                               Foreground="White" Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
-                                </StackPanel>
-                            </Button>
+                            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
+                                <Button Style="{StaticResource BotonLateral}" Tag="Inicio" Width="130">
+                                    <StackPanel Orientation="Horizontal">
+                                        <!--ICONO DE INICIO-->
+                                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
+                                        <TextBlock Text="Home" Margin="10,0,0,0" VerticalAlignment="Center"
+                                                   Foreground="White"
+                                                   Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
 
-                            <Button Style="{StaticResource BotonLateral}" Tag="Biblioteca">
-                                <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/library.png" Width="24" Height="24"/>
-                                    <TextBlock Text="Biblioteca" Margin="10,0,0,0"
-                               Foreground="White" Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
-                                </StackPanel>
-                            </Button>
 
-                            <Button Style="{StaticResource BotonLateral}" Tag="Tienda">
+                            <!--PARA LA BIBLIOTECA-->
+                            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
+                                <Button Style="{StaticResource BotonLateral}" Width="115" >
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="8,10,0,10"/>
+                                        <TextBlock Text="Library" Margin="10,0,0,0" VerticalAlignment="Center"
+                                                   Foreground="White"
+                                                   Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+
+                            <!--PARA PARA LOS BYPASS-->
+                            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
+                                <Button Style="{StaticResource BotonLateral}" Tag="Bypass" Width="130">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
+                                        <TextBlock Text="Bypass" Margin="10,0,0,0" VerticalAlignment="Center"
+                                                   Foreground="White"
+                                                   Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                            
+                            <!--PARA EL ONLINE FIX-->
+                            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
+                                <Button Style="{StaticResource BotonLateral}" Tag="OnlineFix" Width="130">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
+
+                                        <TextBlock Text="OnlineFix" Margin="10,0,0,0" VerticalAlignment="Center"
+                                                   Foreground="White"
+                                                   Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+
+                        </StackPanel>
+
+                        <!--BOTON DE AJUSTES QUE ESTA ABAJO-->
+                        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Left" >
+                            <Button Grid.Row="1" Style="{StaticResource BotonLateral}" Width="130">
                                 <StackPanel Orientation="Horizontal">
-                                    <Image Source="/Resources/shop.png" Width="24" Height="24"/>
-                                    <TextBlock Text="Tienda" Margin="10,0,0,0"
-                               Foreground="White" Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
+                                    <!--ICONO DE AJUSTES-->
+                                    <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
+                                    <TextBlock Text="Ajustes" Margin="10,0,0,0" VerticalAlignment="Center"
+                                               Foreground="White"
+                                               Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
 
-                        <!--Botón Ajustes (Abajo del todo)-->
-                        <Button Grid.Row="1" Style="{StaticResource BotonLateral}">
-                            <StackPanel Orientation="Horizontal">
-                                <Image Source="/Resources/settings.png" Width="24" Height="24"/>
-                                <TextBlock Text="Ajustes" Margin="10,0,0,0"
-                           Foreground="White" Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
-                            </StackPanel>
-                        </Button>
                     </Grid>
                 </Border>
-
-
-
+                
+                
 
             </Grid>
         </Border>
