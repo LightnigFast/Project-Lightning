@@ -94,16 +94,17 @@
 
     </Page.Resources>
 
-    <Grid>
+    <Grid HorizontalAlignment="Center">
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="55"/>
             <RowDefinition Height="auto"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="botonVolver" Content="🡸" FontSize="30"  Style="{StaticResource MinimalButtonStyle}" Click="volverClick" 
+        <!--        <Button x:Name="botonVolver" Content="🡸" FontSize="30"  Style="{StaticResource MinimalButtonStyle}" Click="volverClick" 
                 HorizontalAlignment="Left" Height="55" Width="90" Margin="20,0,0,0"/>
-        
+        -->
+
         <TextBlock Text="Select an app to get started" Foreground="White" FontSize="50"
                    FontFamily="{StaticResource FuenteJohnInclinada}"
                    Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"

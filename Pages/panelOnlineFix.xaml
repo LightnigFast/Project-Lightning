@@ -242,14 +242,16 @@
             </Grid.ColumnDefinitions>
 
             <!--BOTON HOME-->
+            <!--
             <Button x:Name="home_button" Background="Transparent" Grid.Column="0" Style="{StaticResource MinimalButtonStyle}"
                     Click="home_click" Width="40" HorizontalAlignment="Left" Margin="10,0,20,0">
                 <Image Source="/res/media/logos/originals/home.png"  Height="60" RenderOptions.BitmapScalingMode="HighQuality"/>
             </Button>
-
+            -->
+            
             <!--TEXTO PREDEFINIDO-->
             <TextBlock Text="Select a game " FontSize="30" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}"
-                       Grid.Column="1" VerticalAlignment="Center"/>
+                       Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0"/>
             
             <!--PARA EL BOTON DE KOFI-->
             <Button Width="210" Height="40" HorizontalAlignment="Right" Margin="0,0,0,0"  Style="{StaticResource BotonKoFi}"
@@ -261,7 +263,7 @@
             </Button>
 
             <!--PARTE PARA LA BARRA DE BUSQUEDA-->
-            <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="20,20,10,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="20,5,10,0" VerticalAlignment="Top" HorizontalAlignment="Right">
                 <TextBox x:Name="txtBuscar" Width="300" Height="30" Margin="0,0,50,0" VerticalAlignment="Center" TextChanged="txtBuscar_TextChanged"
                              Style="{StaticResource DarkMinimalistSearchBox}" Cursor="Hand"/>
             </StackPanel>

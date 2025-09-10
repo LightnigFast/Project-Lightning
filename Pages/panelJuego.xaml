@@ -344,13 +344,13 @@
                         <TextBlock Grid.Column="1" FontSize="40" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
                                    VerticalAlignment="Center" Text="Any errors?? Check this:" Margin="0,15,0,0"/>
                         <TextBlock Grid.Column="1" FontSize="20" Foreground="White" FontFamily="{StaticResource FuenteJohn}" 
-                                   VerticalAlignment="Center" Text="" Margin="0,15,0,0" Name="txtErrors"/>
+                                   VerticalAlignment="Center" Text="" Margin="0,15,0,0" Name="txtErrors" TextWrapping="Wrap"/>
                         
                         <!--PARTE PARA LOS COMENTARIOS-->
                         <TextBlock Grid.Column="1" FontSize="40" Foreground="White" FontFamily="{StaticResource FuenteJohnInclinada}" 
                                    VerticalAlignment="Center" Text="Comments:" Margin="0,15,0,0"/>
                         <TextBlock Grid.Column="1" FontSize="20" Foreground="White" FontFamily="{StaticResource FuenteJohn}" 
-                                   VerticalAlignment="Center" Text="" Margin="0,15,0,10" Name="txtComentarios"/>
+                                   VerticalAlignment="Center" Text="" Margin="0,15,0,10" Name="txtComentarios" />
 
 
                     </StackPanel>

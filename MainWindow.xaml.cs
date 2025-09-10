@@ -179,7 +179,42 @@ namespace Project_Lightning
         }
 
 
-        
+        //EVENTOS PARA LOS BOTONES DEL SLIDEBAR
+
+
+        //EVENTO PARA EL BOTON DE LA BIBLIOTECA
+
+
+        //EVENTO PARA EL BOTON DE BYPASS
+        private void bypassButtonClick(object sender, RoutedEventArgs e)
+        {
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
+
+            if (ventanaPrincipal != null)
+            {
+
+                //CAMBIAR EL CONTENIDO DEL FRAME
+                ventanaPrincipal.framePrincipal.Navigate(new panelBypass(ventanaPrincipal));
+            }
+
+        }
+
+        //EVENTO PARA EL BOTON DE ONLINEFIX
+        private void onlineFixButtonClick(object sender, RoutedEventArgs e)
+        {
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
+
+            if (ventanaPrincipal != null)
+            {
+
+                //CAMBIAR EL CONTENIDO DEL FRAME
+                ventanaPrincipal.framePrincipal.Navigate(new panelOnlineFix(ventanaPrincipal));
+                ocultarCabecera();
+            }
+
+        }
+
+        //EVENTO PARA EL BOTON DE AJUSTES
 
 
     }

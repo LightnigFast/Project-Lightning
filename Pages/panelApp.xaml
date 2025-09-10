@@ -219,8 +219,8 @@
 
         </Grid>
 
-        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1">
-            <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto">
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto"  Grid.Row="1">
+            <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto" HorizontalAlignment="Center">
                 
                 
 

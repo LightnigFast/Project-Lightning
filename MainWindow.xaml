@@ -9,8 +9,8 @@
         mc:Ignorable="d"
         Icon="/res/media/icons/ico.ico"
         WindowStartupLocation="CenterScreen"
-        Title="⚡Project Lightning⚡" Height="760" Width="1280"
-        MinHeight="740" MinWidth="1000">
+        Title="⚡Project Lightning⚡" Height="840" Width="1420"
+        MinHeight="740" MinWidth="1060">
 
     <Window.Resources>
         <!--ESTILO PARA LOS BOTONES DEL PANEL LATERAL-->
@@ -78,7 +78,7 @@
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="145"/>
+                    <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
@@ -121,7 +121,7 @@
                                         <BeginStoryboard>
                                             <Storyboard>
                                                 <DoubleAnimation Storyboard.TargetProperty="Width"
-                                                 To="300" Duration="0:0:0.3"/>
+                                                 To="145" Duration="0:0:0.3"/>
                                             </Storyboard>
                                         </BeginStoryboard>
                                     </Trigger.EnterActions>
@@ -147,11 +147,12 @@
                         </Grid.RowDefinitions>
 
                         <!--BOTONES SUPERIORES-->
+                        
+                        <!--PARA EL BOTON DE INICIO-->
                         <StackPanel Orientation="Vertical" Grid.Row="0">
                             <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
-                                <Button Style="{StaticResource BotonLateral}" Tag="Inicio" Width="130">
+                                <Button Style="{StaticResource BotonLateral}" Tag="Inicio" Width="130" Click="boton_home_presionado">
                                     <StackPanel Orientation="Horizontal">
-                                        <!--ICONO DE INICIO-->
                                         <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
                                         <TextBlock Text="Home" Margin="10,0,0,0" VerticalAlignment="Center"
                                                    Foreground="White"
@@ -175,7 +176,7 @@
 
                             <!--PARA PARA LOS BYPASS-->
                             <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
-                                <Button Style="{StaticResource BotonLateral}" Tag="Bypass" Width="130">
+                                <Button Style="{StaticResource BotonLateral}" Tag="Bypass" Width="130" Click="bypassButtonClick">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
                                         <TextBlock Text="Bypass" Margin="10,0,0,0" VerticalAlignment="Center"
@@ -187,10 +188,9 @@
                             
                             <!--PARA EL ONLINE FIX-->
                             <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
-                                <Button Style="{StaticResource BotonLateral}" Tag="OnlineFix" Width="130">
+                                <Button Style="{StaticResource BotonLateral}" Tag="OnlineFix" Width="130" Click="onlineFixButtonClick">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
-
                                         <TextBlock Text="OnlineFix" Margin="10,0,0,0" VerticalAlignment="Center"
                                                    Foreground="White"
                                                    Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
