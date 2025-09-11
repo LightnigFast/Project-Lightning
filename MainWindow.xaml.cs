@@ -26,6 +26,7 @@ namespace Project_Lightning
     /// </summary>
     public partial class MainWindow : Window
     {
+        public Canvas NotificationCanvasPublic => NotificationCanvas;
         public MainWindow()
         {
 
@@ -215,7 +216,22 @@ namespace Project_Lightning
         }
 
         //EVENTO PARA EL BOTON DE AJUSTES
+        private void AjustesButtonClick(object sender, RoutedEventArgs e)
+        {
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
 
+            if (ventanaPrincipal != null)
+            {
+
+                //CAMBIAR EL CONTENIDO DEL FRAME
+                ventanaPrincipal.framePrincipal.Navigate(new panelAjustes(ventanaPrincipal));
+                ocultarCabecera();
+            }
+
+        }
+
+
+        
 
     }
 }

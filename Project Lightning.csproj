@@ -153,6 +153,10 @@
     </ApplicationDefinition>
     <Compile Include="Classes\Actualizador.cs" />
     <Compile Include="Classes\ExpandTextConverter.cs" />
+    <Compile Include="Classes\NotificationManager.cs" />
+    <Compile Include="Pages\panelAjustes.xaml.cs">
+      <DependentUpon>panelAjustes.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\panelBypass.xaml.cs">
       <DependentUpon>panelBypass.xaml</DependentUpon>
     </Compile>
@@ -183,6 +187,10 @@
     <Compile Include="Windows\QuickGuide.xaml.cs">
       <DependentUpon>QuickGuide.xaml</DependentUpon>
     </Compile>
+    <Page Include="Pages\panelAjustes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\panelBypass.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

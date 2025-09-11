@@ -202,11 +202,11 @@
 
                         <!--BOTON DE AJUSTES QUE ESTA ABAJO-->
                         <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Left" >
-                            <Button Grid.Row="1" Style="{StaticResource BotonLateral}" Width="130">
+                            <Button Grid.Row="1" Style="{StaticResource BotonLateral}" Width="130" Click="AjustesButtonClick">
                                 <StackPanel Orientation="Horizontal">
                                     <!--ICONO DE AJUSTES-->
                                     <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
-                                    <TextBlock Text="Ajustes" Margin="10,0,0,0" VerticalAlignment="Center"
+                                    <TextBlock Text="Settings" Margin="10,0,0,0" VerticalAlignment="Center"
                                                Foreground="White"
                                                Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
                                 </StackPanel>
@@ -220,5 +220,13 @@
 
             </Grid>
         </Border>
+
+        <!--Canvas para notificaciones -->
+        <Canvas x:Name="NotificationCanvas"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Margin="0,10,10,0"
+            IsHitTestVisible="False"/>
+
     </Grid>
 </Window>
