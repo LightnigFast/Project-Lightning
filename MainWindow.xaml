@@ -151,7 +151,7 @@
                         <!--PARA EL BOTON DE INICIO-->
                         <StackPanel Orientation="Vertical" Grid.Row="0">
                             <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
-                                <Button Style="{StaticResource BotonLateral}" Tag="Inicio" Width="130" Click="boton_home_presionado">
+                                <Button Style="{StaticResource BotonLateral}" Tag="Inicio" Width="125" Click="boton_home_presionado">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
                                         <TextBlock Text="Home" Margin="10,0,0,0" VerticalAlignment="Center"
@@ -164,7 +164,7 @@
 
                             <!--PARA LA BIBLIOTECA-->
                             <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
-                                <Button Style="{StaticResource BotonLateral}" Width="115" >
+                                <Button Style="{StaticResource BotonLateral}" Width="125" Click="BibliotecaButtonClick">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                                         <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="8,10,0,10"/>
                                         <TextBlock Text="Library" Margin="10,0,0,0" VerticalAlignment="Center"
@@ -176,7 +176,7 @@
 
                             <!--PARA PARA LOS BYPASS-->
                             <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
-                                <Button Style="{StaticResource BotonLateral}" Tag="Bypass" Width="130" Click="bypassButtonClick">
+                                <Button Style="{StaticResource BotonLateral}" Tag="Bypass" Width="125" Click="bypassButtonClick">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
                                         <TextBlock Text="Bypass" Margin="10,0,0,0" VerticalAlignment="Center"
@@ -188,7 +188,7 @@
                             
                             <!--PARA EL ONLINE FIX-->
                             <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
-                                <Button Style="{StaticResource BotonLateral}" Tag="OnlineFix" Width="130" Click="onlineFixButtonClick">
+                                <Button Style="{StaticResource BotonLateral}" Tag="OnlineFix" Width="125" Click="onlineFixButtonClick">
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
                                         <TextBlock Text="OnlineFix" Margin="10,0,0,0" VerticalAlignment="Center"
@@ -202,7 +202,7 @@
 
                         <!--BOTON DE AJUSTES QUE ESTA ABAJO-->
                         <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Left" >
-                            <Button Grid.Row="1" Style="{StaticResource BotonLateral}" Width="130" Click="AjustesButtonClick">
+                            <Button Grid.Row="1" Style="{StaticResource BotonLateral}" Width="125" Click="AjustesButtonClick">
                                 <StackPanel Orientation="Horizontal">
                                     <!--ICONO DE AJUSTES-->
                                     <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>

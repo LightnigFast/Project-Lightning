@@ -157,6 +157,9 @@
     <Compile Include="Pages\panelAjustes.xaml.cs">
       <DependentUpon>panelAjustes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\panelBiblioteca.xaml.cs">
+      <DependentUpon>panelBiblioteca.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\panelBypass.xaml.cs">
       <DependentUpon>panelBypass.xaml</DependentUpon>
     </Compile>
@@ -188,6 +191,10 @@
       <DependentUpon>QuickGuide.xaml</DependentUpon>
     </Compile>
     <Page Include="Pages\panelAjustes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\panelBiblioteca.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

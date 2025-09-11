@@ -184,7 +184,19 @@ namespace Project_Lightning
 
 
         //EVENTO PARA EL BOTON DE LA BIBLIOTECA
+        private void BibliotecaButtonClick(object sender, RoutedEventArgs e)
+        {
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
 
+            if (ventanaPrincipal != null)
+            {
+
+                //CAMBIAR EL CONTENIDO DEL FRAME
+                ventanaPrincipal.framePrincipal.Navigate(new panelBiblioteca(ventanaPrincipal));
+                ocultarCabecera();
+            }
+
+        }
 
         //EVENTO PARA EL BOTON DE BYPASS
         private void bypassButtonClick(object sender, RoutedEventArgs e)
