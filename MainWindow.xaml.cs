@@ -208,6 +208,7 @@ namespace Project_Lightning
 
                 //CAMBIAR EL CONTENIDO DEL FRAME
                 ventanaPrincipal.framePrincipal.Navigate(new panelBypass(ventanaPrincipal));
+                ocultarCabecera();
             }
 
         }
