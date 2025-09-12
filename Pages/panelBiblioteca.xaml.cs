@@ -153,39 +153,18 @@ namespace Project_Lightning.Pages
 
                                 Dispatcher.Invoke(() =>
                                 {
-                                    using (var conn = new SQLiteConnection(ConnectionString))
+
+                                    int? metacriticScore = ObtenerMetacriticDesdeBD(appIdInt);
+
+                                    //AGREGAMOS UN NUEVO JUEGO A LA LISTA OBSERVABLE
+                                    Juegos.Add(new JuegoViewModel
                                     {
-                                        conn.Open();
-                                        string sql = "SELECT MetacriticScore, MetacriticUrl, EdadPais FROM Juegos WHERE AppId=@AppId LIMIT 1;";
-                                        using (var cmd = new SQLiteCommand(sql, conn))
-                                        {
-                                            cmd.Parameters.AddWithValue("@AppId", appIdInt);
-                                            using (var reader = cmd.ExecuteReader())
-                                            {
-                                                int? metacriticScore = null;
-                                                string metacriticUrl = null;
-                                                string edadPais = null;
-
-                                                if (reader.Read())
-                                                {
-                                                    if (reader["MetacriticScore"] != DBNull.Value)
-                                                        metacriticScore = Convert.ToInt32(reader["MetacriticScore"]);
-                                                    metacriticUrl = reader["MetacriticUrl"] as string;
-                                                    edadPais = reader["EdadPais"] as string;
-                                                }
-
-                                                Juegos.Add(new JuegoViewModel
-                                                {
-                                                    AppId = appIdInt,
-                                                    Imagen = bitmap,
-                                                    MetacriticScore = metacriticScore,
-                                                    MetacriticUrl = metacriticUrl,
-                                                    EdadPais = edadPais
-                                                });
-                                            }
-                                        }
-                                    }
+                                        AppId = appIdInt,
+                                        Imagen = bitmap,
+                                        MetacriticScore = metacriticScore
+                                    });
                                 });
+
 
 
                             });
@@ -202,38 +181,13 @@ namespace Project_Lightning.Pages
         }
 
 
-        public class JuegoViewModel : INotifyPropertyChanged
+        public class JuegoViewModel
         {
             public int AppId { get; set; }
             public BitmapImage Imagen { get; set; }
-
-            private int? metacriticScore;
-            public int? MetacriticScore
-            {
-                get => metacriticScore;
-                set { metacriticScore = value; OnPropertyChanged(nameof(MetacriticScore)); }
-            }
-
-            private string metacriticUrl;
-            public string MetacriticUrl
-            {
-                get => metacriticUrl;
-                set { metacriticUrl = value; OnPropertyChanged(nameof(MetacriticUrl)); }
-            }
-
-            private string edadPais;
-            public string EdadPais
-            {
-                get => edadPais;
-                set { edadPais = value; OnPropertyChanged(nameof(EdadPais)); }
-            }
-
-            public event PropertyChangedEventHandler PropertyChanged;
-            protected void OnPropertyChanged(string propertyName)
-            {
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-            }
+            public int? MetacriticScore { get; set; } //NUEVO
         }
+
 
 
 
@@ -264,18 +218,18 @@ namespace Project_Lightning.Pages
                 if (!Directory.Exists(appFolder))
                     return;
 
-                //BUSCAR DENTRO DE LAS CARPETAS
+                // BUSCAR DENTRO DE LAS CARPETAS
                 var subfolders = Directory.GetDirectories(appFolder, "*", SearchOption.AllDirectories)
                                           .Concat(new[] { appFolder });
 
                 foreach (var folder in subfolders)
                 {
-                    //PROBAR PRIMERO CON library_header.jpg
+                    // PROBAR PRIMERO CON library_header.jpg
                     string headerPath = System.IO.Path.Combine(folder, "library_header.jpg");
                     if (!File.Exists(headerPath))
                         headerPath = System.IO.Path.Combine(folder, "header.jpg");
 
-                    //PONER IMAGEN
+                    // PONER IMAGEN
                     if (File.Exists(headerPath))
                     {
                         BitmapImage bitmap = new BitmapImage();
@@ -287,32 +241,50 @@ namespace Project_Lightning.Pages
 
                         HeaderImage.Source = bitmap;
 
-
-                        //PONER EL NOMBRE DEL JUEGO
+                        // PONER EL NOMBRE DEL JUEGO
+                        //PONER EL NOMBRE DEL JUEGO Y EL METACRITIC
                         using (var conn = new SQLiteConnection(ConnectionString))
                         {
                             conn.Open();
-                            string sql = "SELECT Nombre FROM Juegos WHERE AppId=@AppId LIMIT 1;";
+                            string sql = "SELECT Nombre, MetacriticScore FROM Juegos WHERE AppId=@AppId LIMIT 1;";
                             using (var cmd = new SQLiteCommand(sql, conn))
                             {
                                 cmd.Parameters.AddWithValue("@AppId", juego.AppId);
-                                var result = cmd.ExecuteScalar();
-                                if (result != null)
+                                using (var reader = cmd.ExecuteReader())
                                 {
-                                    nombreJuego.Text = result.ToString(); // Asumiendo que HeaderGameName es tu TextBlock
+                                    if (reader.Read()) // SOLO SI HAY FILA
+                                    {
+                                        nombreJuego.Text = reader["Nombre"].ToString();
+
+                                        if (reader["MetacriticScore"] != DBNull.Value)
+                                        {
+                                            int score = Convert.ToInt32(reader["MetacriticScore"]);
+                                            SetMetacriticScore(score); // Llama a tu método de círculo
+                                        }
+                                        else
+                                        {
+                                            metacriticScore.Text = "N/A";
+                                            ScoreArc.Data = null;
+                                        }
+                                    }
+                                    else
+                                    {
+                                        // NO HAY JUEGO EN LA BD
+                                        nombreJuego.Text = "Desconocido";
+                                        metacriticScore.Text = "N/A";
+                                        ScoreArc.Data = null;
+                                    }
                                 }
+
                             }
                         }
 
-
                         break;
                     }
-
-                    
-
                 }
             }
         }
+
 
 
 
@@ -338,30 +310,34 @@ namespace Project_Lightning.Pages
         //CREAR LA CARPETA SI NO EXISTE
         private void InicializarBD()
         {
+            //SI NO EXISTE EL DIRECTORIO BASE, LO CREAMOS
             if (!Directory.Exists(BasePath))
                 Directory.CreateDirectory(BasePath);
 
             using (var conn = new SQLiteConnection(ConnectionString))
             {
                 conn.Open();
+
+                //CREAMOS LA TABLA JUEGOS SI NO EXISTE, ahora con MetacriticScore
                 string sql = @"
-                    CREATE TABLE IF NOT EXISTS Juegos (
-                        AppId INTEGER PRIMARY KEY,
-                        Nombre TEXT NOT NULL,
-                        Windows BOOLEAN NOT NULL,
-                        Mac BOOLEAN NOT NULL,
-                        Linux BOOLEAN NOT NULL,
-                        EdadPais TEXT,                  
-                        MetacriticScore INTEGER,  
-                        MetacriticUrl TEXT,  
-                        FechaGuardado DATETIME DEFAULT CURRENT_TIMESTAMP
-                    );";
+            CREATE TABLE IF NOT EXISTS Juegos (
+                AppId INTEGER PRIMARY KEY,
+                Nombre TEXT NOT NULL,
+                Windows BOOLEAN NOT NULL,
+                Mac BOOLEAN NOT NULL,
+                Linux BOOLEAN NOT NULL,
+                FechaGuardado DATETIME DEFAULT CURRENT_TIMESTAMP,
+                MetacriticScore INTEGER
+            );";
+
                 using (var cmd = new SQLiteCommand(sql, conn))
                 {
-                    cmd.ExecuteNonQuery();
+                    cmd.ExecuteNonQuery(); //EJECUTAMOS LA CONSULTA DE CREACIÓN
                 }
             }
         }
+
+
 
 
 
@@ -373,40 +349,30 @@ namespace Project_Lightning.Pages
                 {
                     string url = $"https://store.steampowered.com/api/appdetails?appids={appId}";
                     var response = await httpClient.GetStringAsync(url);
-
                     var json = JObject.Parse(response);
-                    var appJson = json[appId.ToString()];
 
+                    var appJson = json[appId.ToString()];
                     if (appJson != null && appJson["success"].Value<bool>())
                     {
                         var data = appJson["data"];
+
                         string nombre = data["name"].Value<string>();
                         bool windows = data["platforms"]["windows"].Value<bool>();
                         bool mac = data["platforms"]["mac"].Value<bool>();
                         bool linux = data["platforms"]["linux"].Value<bool>();
 
-                        //EDAD DEL PAÍS
-                        string edadPais = null;
-                        if (data["ratings"]?["agcom"] != null)
-                        {
-                            edadPais = data["ratings"]["agcom"]["rating"]?.Value<string>();
-                        }
-
-                        //METACRIT
                         int? metacriticScore = null;
-                        string metacriticUrl = null;
-                        if (data["metacritic"] != null)
-                        {
-                            metacriticScore = data["metacritic"]["score"]?.Value<int>();
-                            metacriticUrl = data["metacritic"]["url"]?.Value<string>();
-                        }
+                        if (data["metacritic"] != null && data["metacritic"]["score"] != null)
+                            metacriticScore = data["metacritic"]["score"].Value<int>();
 
                         using (var conn = new SQLiteConnection(ConnectionString))
                         {
                             conn.Open();
+
                             string sql = @"
-                    INSERT OR REPLACE INTO Juegos (AppId, Nombre, Windows, Mac, Linux, EdadPais, MetacriticScore, MetacriticUrl)
-                    VALUES (@AppId, @Nombre, @Windows, @Mac, @Linux, @EdadPais, @MetacriticScore, @MetacriticUrl);";
+                    INSERT OR REPLACE INTO Juegos 
+                    (AppId, Nombre, Windows, Mac, Linux, MetacriticScore) 
+                    VALUES (@AppId, @Nombre, @Windows, @Mac, @Linux, @MetacriticScore);";
 
                             using (var cmd = new SQLiteCommand(sql, conn))
                             {
@@ -415,24 +381,23 @@ namespace Project_Lightning.Pages
                                 cmd.Parameters.AddWithValue("@Windows", windows ? 1 : 0);
                                 cmd.Parameters.AddWithValue("@Mac", mac ? 1 : 0);
                                 cmd.Parameters.AddWithValue("@Linux", linux ? 1 : 0);
-                                cmd.Parameters.AddWithValue("@EdadPais", (object)edadPais ?? DBNull.Value);
                                 cmd.Parameters.AddWithValue("@MetacriticScore", (object)metacriticScore ?? DBNull.Value);
-                                cmd.Parameters.AddWithValue("@MetacriticUrl", (object)metacriticUrl ?? DBNull.Value);
 
                                 cmd.ExecuteNonQuery();
                             }
                         }
                     }
 
-                    return; // ✅ éxito
+                    return; //✅ éxito
                 }
                 catch (HttpRequestException ex) when (ex.Message.Contains("429"))
                 {
                     Console.WriteLine($"Steam dijo 429 (Too Many Requests) para {appId}. Reintentando...");
-                    await Task.Delay(2000); // espera antes de reintentar
+                    await Task.Delay(2000);
                 }
             }
         }
+
 
 
         //METODO PARA VARIOS RETRY
@@ -479,6 +444,75 @@ namespace Project_Lightning.Pages
                 }
             }
         }
+
+
+        //METODO PARA SACAR EL METASCORE THE LA BD
+        private int? ObtenerMetacriticDesdeBD(int appId)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+
+                string sql = "SELECT MetacriticScore FROM Juegos WHERE AppId = @AppId;";
+                using (SQLiteCommand cmd = new SQLiteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AppId", appId);
+
+                    var result = cmd.ExecuteScalar();
+                    if (result != null && result != DBNull.Value)
+                        return Convert.ToInt32(result);
+                }
+            }
+
+            return null;
+        }
+
+
+
+        private void SetMetacriticScore(int score)
+        {
+            metacriticScore.Text = score.ToString();
+
+            // DEFINIR COLOR SEGÚN EL SCORE
+            SolidColorBrush color;
+            if (score >= 75)
+                color = new SolidColorBrush(Colors.LightGreen);
+            else if (score >= 50)
+                color = new SolidColorBrush(Colors.Gold);
+            else
+                color = new SolidColorBrush(Colors.OrangeRed);
+
+            ScoreArc.Stroke = color;
+
+            // DIBUJAR EL ARCO
+            double angle = score * 360.0 / 100.0; // Ángulo proporcional al score
+            double radius = 26; // RADIO AJUSTADO (60/2 - StrokeThickness/2)
+            double centerX = 30; // Mitad del ancho
+            double centerY = 30; // Mitad del alto
+
+            double radians = (Math.PI / 180) * (angle - 90); // -90 para empezar arriba
+            double x = centerX + radius * Math.Cos(radians);
+            double y = centerY + radius * Math.Sin(radians);
+
+            bool isLargeArc = angle > 180;
+
+            PathFigure figure = new PathFigure();
+            figure.StartPoint = new Point(centerX, centerY - radius); // Punto arriba
+            ArcSegment arc = new ArcSegment();
+            arc.Point = new Point(x, y);
+            arc.Size = new Size(radius, radius);
+            arc.SweepDirection = SweepDirection.Clockwise;
+            arc.IsLargeArc = isLargeArc;
+
+            figure.Segments.Clear();
+            figure.Segments.Add(arc);
+
+            PathGeometry geometry = new PathGeometry();
+            geometry.Figures.Add(figure);
+
+            ScoreArc.Data = geometry;
+        }
+
 
 
     }

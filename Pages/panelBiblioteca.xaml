@@ -188,7 +188,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+
                     </Grid.ColumnDefinitions>
 
                     <!--IMAGEN HEADER DEL JUEGO-->
@@ -199,21 +199,22 @@
                     <TextBlock  Name="nombreJuego" Grid.Column="1" Foreground="White" FontSize="26" Margin="10,0,0,0" HorizontalAlignment="Left" TextAlignment="Center"
                             VerticalAlignment="Center" TextWrapping="Wrap"/>
                     
+                    
                     <!--PARTE PARA LA NOTA DE METACRITIC-->
-                    <Border Grid.Column="2"
-                            Width="50" Height="50"
-                            CornerRadius="25"
-                            Background="{Binding MetacriticScore, Converter={StaticResource ScoreToColorConverter}}"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            ToolTip="{Binding MetacriticScore, StringFormat='Metacritic Score: {0}'}">
-                                            <TextBlock Text="{Binding MetacriticScore}" 
-                                   Foreground="White" 
-                                   FontWeight="Bold"
-                                   FontSize="16" 
-                                   HorizontalAlignment="Center" 
-                                   VerticalAlignment="Center"/>
-                    </Border>
+                    <Grid Width="60" Height="60" Grid.Column="2">
+                        <!-- CÍRCULO DE FONDO -->
+                        <Ellipse Stroke="Gray" StrokeThickness="8" Fill="Transparent"/>
+
+                        <!-- ARC CIRCULAR (Foreground) -->
+                        <Path x:Name="ScoreArc" StrokeThickness="8" Fill="Transparent" Stroke="#02B31B" />
+
+                        <!-- TEXTO DEL SCORE -->
+                        <TextBlock x:Name="metacriticScore" Text="0" FontSize="20" FontWeight="Bold"
+                                     HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                    </Grid>
+
+
+
 
                     <!--BOTON PARA BORRAR EL JUEGO DE STEAM-->
                     <Button x:Name="btnEliminar" Grid.Column="4" Content="Delete game" FontSize="16" Width="160" Height="36" HorizontalAlignment="Right"
