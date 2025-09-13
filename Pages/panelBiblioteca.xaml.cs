@@ -209,7 +209,11 @@ namespace Project_Lightning.Pages
 
         //METODO PARA CUANDO HACES CLICK EN UN JUEGO
         private void Juego_Click(object sender, MouseButtonEventArgs e)
+
         {
+            //PONGO LA PUNTUACION DE METACRITIC VISIBLE
+            metacriticGrid.Visibility = Visibility.Visible;
+
             if (sender is Image img && img.DataContext is JuegoViewModel juego)
             {
                 string cacheFolder = System.IO.Path.Combine(steamPath, "appcache", "librarycache");
@@ -229,7 +233,7 @@ namespace Project_Lightning.Pages
                     if (!File.Exists(headerPath))
                         headerPath = System.IO.Path.Combine(folder, "header.jpg");
 
-                    // PONER IMAGEN
+                    //PONER IMAGEN
                     if (File.Exists(headerPath))
                     {
                         BitmapImage bitmap = new BitmapImage();
@@ -246,7 +250,7 @@ namespace Project_Lightning.Pages
                         using (var conn = new SQLiteConnection(ConnectionString))
                         {
                             conn.Open();
-                            string sql = "SELECT Nombre, MetacriticScore FROM Juegos WHERE AppId=@AppId LIMIT 1;";
+                            string sql = "SELECT Nombre, MetacriticScore, EdadMinima FROM Juegos WHERE AppId=@AppId LIMIT 1;";
                             using (var cmd = new SQLiteCommand(sql, conn))
                             {
                                 cmd.Parameters.AddWithValue("@AppId", juego.AppId);
@@ -254,18 +258,31 @@ namespace Project_Lightning.Pages
                                 {
                                     if (reader.Read()) // SOLO SI HAY FILA
                                     {
+                                        // NOMBRE DEL JUEGO
                                         nombreJuego.Text = reader["Nombre"].ToString();
 
+                                        // METACRITIC
                                         if (reader["MetacriticScore"] != DBNull.Value)
                                         {
                                             int score = Convert.ToInt32(reader["MetacriticScore"]);
-                                            SetMetacriticScore(score); // Llama a tu método de círculo
+                                            SetMetacriticScore(score); // Actualiza el círculo
                                         }
                                         else
                                         {
                                             metacriticScore.Text = "N/A";
                                             ScoreArc.Data = null;
                                         }
+
+                                        //EDAD MÍNIMA
+                                        if (reader["EdadMinima"] != DBNull.Value)
+                                        {
+                                            SetEdadMinima(Convert.ToInt32(reader["EdadMinima"]));
+                                        }
+                                        else
+                                        {
+                                            SetEdadMinima(null);
+                                        }
+
                                     }
                                     else
                                     {
@@ -273,14 +290,19 @@ namespace Project_Lightning.Pages
                                         nombreJuego.Text = "Desconocido";
                                         metacriticScore.Text = "N/A";
                                         ScoreArc.Data = null;
+                                        edadMinimaText.Text = "N/A";
                                     }
                                 }
+
 
                             }
                         }
 
                         break;
                     }
+
+                    
+
                 }
             }
         }
@@ -320,15 +342,16 @@ namespace Project_Lightning.Pages
 
                 //CREAMOS LA TABLA JUEGOS SI NO EXISTE, ahora con MetacriticScore
                 string sql = @"
-            CREATE TABLE IF NOT EXISTS Juegos (
-                AppId INTEGER PRIMARY KEY,
-                Nombre TEXT NOT NULL,
-                Windows BOOLEAN NOT NULL,
-                Mac BOOLEAN NOT NULL,
-                Linux BOOLEAN NOT NULL,
-                FechaGuardado DATETIME DEFAULT CURRENT_TIMESTAMP,
-                MetacriticScore INTEGER
-            );";
+                    CREATE TABLE IF NOT EXISTS Juegos (
+                        AppId INTEGER PRIMARY KEY,
+                        Nombre TEXT NOT NULL,
+                        Windows BOOLEAN NOT NULL,
+                        Mac BOOLEAN NOT NULL,
+                        Linux BOOLEAN NOT NULL,
+                        FechaGuardado DATETIME DEFAULT CURRENT_TIMESTAMP,
+                        MetacriticScore INTEGER,
+                        EdadMinima INTEGER
+                    );";
 
                 using (var cmd = new SQLiteCommand(sql, conn))
                 {
@@ -361,18 +384,54 @@ namespace Project_Lightning.Pages
                         bool mac = data["platforms"]["mac"].Value<bool>();
                         bool linux = data["platforms"]["linux"].Value<bool>();
 
+                        //PARA LA NOTA DE METACRITIC
                         int? metacriticScore = null;
                         if (data["metacritic"] != null && data["metacritic"]["score"] != null)
                             metacriticScore = data["metacritic"]["score"].Value<int>();
+
+
+                        //PARA LA EDAD DEL JUEGO
+                        int? edadMinima = null;
+
+                        var ratings = data["ratings"];
+                        if (ratings != null)
+                        {
+                            // Primero intenta 'steam_germany'
+                            JToken ratingToken = ratings["steam_germany"];
+
+                            if (ratingToken == null && ratings.HasValues)
+                            {
+                                var firstProp = ratings.First as JProperty;
+                                if (firstProp != null)
+                                    ratingToken = firstProp.Value;
+                            }
+
+                            if (ratingToken != null)
+                            {
+                                string ageStr = ratingToken["required_age"]?.Value<string>()
+                                                ?? ratingToken["rating"]?.Value<string>();
+
+                                if (!string.IsNullOrEmpty(ageStr))
+                                {
+                                    // QUITAMOS CUALQUIER CARACTER NO NUMÉRICO
+                                    ageStr = new string(ageStr.Where(char.IsDigit).ToArray());
+
+                                    if (int.TryParse(ageStr, out int age))
+                                        edadMinima = age;
+                                }
+                            }
+                        }
+
+
 
                         using (var conn = new SQLiteConnection(ConnectionString))
                         {
                             conn.Open();
 
                             string sql = @"
-                    INSERT OR REPLACE INTO Juegos 
-                    (AppId, Nombre, Windows, Mac, Linux, MetacriticScore) 
-                    VALUES (@AppId, @Nombre, @Windows, @Mac, @Linux, @MetacriticScore);";
+                                INSERT OR REPLACE INTO Juegos 
+                                (AppId, Nombre, Windows, Mac, Linux, MetacriticScore, EdadMinima) 
+                                VALUES (@AppId, @Nombre, @Windows, @Mac, @Linux, @MetacriticScore, @EdadMinima);";
 
                             using (var cmd = new SQLiteCommand(sql, conn))
                             {
@@ -382,9 +441,11 @@ namespace Project_Lightning.Pages
                                 cmd.Parameters.AddWithValue("@Mac", mac ? 1 : 0);
                                 cmd.Parameters.AddWithValue("@Linux", linux ? 1 : 0);
                                 cmd.Parameters.AddWithValue("@MetacriticScore", (object)metacriticScore ?? DBNull.Value);
+                                cmd.Parameters.AddWithValue("@EdadMinima", (object)edadMinima ?? DBNull.Value);
 
                                 cmd.ExecuteNonQuery();
                             }
+
                         }
                     }
 
@@ -468,7 +529,7 @@ namespace Project_Lightning.Pages
         }
 
 
-
+        //CAMBIAR EL COLOR DEL METACRITIC
         private void SetMetacriticScore(int score)
         {
             metacriticScore.Text = score.ToString();
@@ -512,6 +573,59 @@ namespace Project_Lightning.Pages
 
             ScoreArc.Data = geometry;
         }
+
+
+        //CAMBIAR EL COLOR DE LA EDAD MINIMA
+        private void SetEdadMinima(int? edad)
+        {
+            if (edad.HasValue)
+            {
+                //VALORES OFICIALES PEGI
+                int[] pegis = { 3, 7, 12, 16, 18 };
+
+                //SI LLEGA +6 O +17 → BUSCAMOS EL MÁS CERCANO
+                int edadFinal = pegis.OrderBy(p => Math.Abs(p - edad.Value)).First();
+
+                edadMinimaText.Text = $"+{edadFinal}";
+
+                string hexColor;
+                switch (edadFinal)
+                {
+                    case 3:
+                        hexColor = "#9aca3c";
+                        break;
+                    case 7:
+                        hexColor = "#9aca3c";
+                        break;
+                    case 12:
+                        hexColor = "#f6a31c";
+                        break;
+                    case 16:
+                        hexColor = "#f3a700";
+                        break;
+                    case 18:
+                        hexColor = "#e3021e";
+                        break;
+                    default:
+                        hexColor = "#808080"; 
+                        break;
+                }
+
+                //FONDO DEL CONTENEDOR
+                fondoPegi.Background = (Brush)new BrushConverter().ConvertFrom(hexColor);
+
+                //TEXTO EN BLANCO PARA CONTRASTE
+                edadMinimaText.Foreground = Brushes.White;
+            }
+            else
+            {
+                edadMinimaText.Text = "N/A";
+                fondoPegi.Background = (Brush)new BrushConverter().ConvertFrom("#808080"); //GRIS
+                edadMinimaText.Foreground = Brushes.White;
+            }
+        }
+
+
 
 
 

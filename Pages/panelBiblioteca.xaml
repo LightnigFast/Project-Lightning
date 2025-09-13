@@ -186,8 +186,8 @@
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto"/>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
 
                     </Grid.ColumnDefinitions>
 
@@ -198,20 +198,31 @@
                     <!--NOMBRE DEL JUEGO-->
                     <TextBlock  Name="nombreJuego" Grid.Column="1" Foreground="White" FontSize="26" Margin="10,0,0,0" HorizontalAlignment="Left" TextAlignment="Center"
                             VerticalAlignment="Center" TextWrapping="Wrap"/>
-                    
-                    
-                    <!--PARTE PARA LA NOTA DE METACRITIC-->
-                    <Grid Width="60" Height="60" Grid.Column="2">
-                        <!-- CÍRCULO DE FONDO -->
-                        <Ellipse Stroke="Gray" StrokeThickness="8" Fill="Transparent"/>
 
-                        <!-- ARC CIRCULAR (Foreground) -->
-                        <Path x:Name="ScoreArc" StrokeThickness="8" Fill="Transparent" Stroke="#02B31B" />
 
-                        <!-- TEXTO DEL SCORE -->
-                        <TextBlock x:Name="metacriticScore" Text="0" FontSize="20" FontWeight="Bold"
-                                     HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                    <Grid Grid.Column="2" Name="metacriticGrid" Visibility="Hidden" HorizontalAlignment="Left" Margin="0,0,40,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <!-- Para el círculo -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!-- Para la edad -->
+                        </Grid.ColumnDefinitions>
+
+                        <!-- CÍRCULO DE METACRITIC -->
+                        <Grid Width="60" Height="60">
+                            <Ellipse Stroke="Gray" StrokeThickness="8" Fill="Transparent"/>
+                            <Path x:Name="ScoreArc" StrokeThickness="8" Fill="Transparent" Stroke="#02B31B"/>
+                            <TextBlock x:Name="metacriticScore" Text="0" FontSize="20" FontWeight="Bold"
+                                       HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White"/>
+                        </Grid>
+
+                        <!-- EDAD MÍNIMA -->
+                        <Border Grid.Column="1" x:Name="fondoPegi" Background="#FF1E1E1E" CornerRadius="5" Padding="5" Margin="10,0,0,0"
+                                VerticalAlignment="Center" Width="50" Height="50">
+                            <TextBlock x:Name="edadMinimaText" Text="+0" FontSize="20" FontWeight="Bold" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
                     </Grid>
+
 
 
 
