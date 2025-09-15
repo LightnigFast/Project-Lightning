@@ -188,6 +188,27 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
+                
+                <!--PARTE PARA ARRASTRAR LOS ARCHIVOS A MI APP E IMPORTAR LOS LUA-->
+                <TextBlock x:Name="RelojMinimalista"
+                           Grid.Column="1"
+                           FontSize="140"
+                           
+                           FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold"
+                           Foreground="White"
+                           HorizontalAlignment="Center"
+                           TextAlignment="Center"
+                           VerticalAlignment="Center"
+                           Opacity="0"/>
+
+
+                <!--PARTE PARA EL RELOJ-->
+                
+                
+                <!--PARTE PARA EL BUSCADOR DE APPIDS DE JUEGOS Y AÑADIRLOS A LA BIBLIOTECA-->
+                
+                
+                
 
             </Grid>
 
@@ -219,7 +240,7 @@
                             <!--PARA EL PEGI-->
                             <ColumnDefinition Width="Auto"/>
                             <!--PARA LAS PLATAFORMAS SOPORTADAS-->
-                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="130"/>
                         </Grid.ColumnDefinitions>
 
                         <!-- CÍRCULO DE METACRITIC -->

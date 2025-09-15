@@ -308,6 +308,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="res\fonts\SFPRODISPLAYBOLD.OTF" />
+    <Resource Include="res\fonts\SFPRODISPLAYMEDIUM.OTF" />
+    <Resource Include="res\fonts\SFPRODISPLAYREGULAR.OTF" />
     <Resource Include="res\fonts\Muro.otf" />
     <Resource Include="res\fonts\Muroslant.otf" />
   </ItemGroup>

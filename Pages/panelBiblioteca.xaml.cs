@@ -22,6 +22,7 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace Project_Lightning.Pages
 {
@@ -38,10 +39,15 @@ namespace Project_Lightning.Pages
 
         private static readonly HttpClient httpClient = new HttpClient();
 
+        private DispatcherTimer timer;
 
         public panelBiblioteca(MainWindow ventanaPrincipal)
         {
             InitializeComponent();
+
+            //CARGAR RELOJ
+            cargarReloj();
+
             this.DataContext = this;
             Juegos = new ObservableCollection<JuegoViewModel>();
 
@@ -49,6 +55,7 @@ namespace Project_Lightning.Pages
             _ventanaPrincipal = ventanaPrincipal;
             notifier = new Project_Lightning.Classes.NotificationManager(_ventanaPrincipal.NotificationCanvasPublic);
 
+            
 
             CargarRutaSteam();
 
@@ -57,7 +64,11 @@ namespace Project_Lightning.Pages
 
             CargarBibliotecaConOverlay();
 
+            
+
         }
+
+        
 
         private async void CargarBibliotecaConOverlay()
         {
@@ -653,6 +664,35 @@ namespace Project_Lightning.Pages
         }
 
 
+        //PARTE PARA EL RELOJ
+        private void cargarReloj()
+        {
+            //ACTUALIZAMOS EL RELOJ INMEDIATAMENTE
+            Timer_Tick();
+
+            //ANIMACIÓN DE APARICIÓN (FADE-IN)
+            var fadeIn = new System.Windows.Media.Animation.DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(1),
+                FillBehavior = System.Windows.Media.Animation.FillBehavior.HoldEnd
+            };
+            RelojMinimalista.BeginAnimation(OpacityProperty, fadeIn);
+
+            //CREAR Y CONFIGURAR EL TIMER
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(1);
+            timer.Tick += (s, e) => Timer_Tick();
+            timer.Start();
+        }
+
+
+        //ACTUALIZA LA HORA CADA SEGUNDO
+        private void Timer_Tick()
+        {
+            RelojMinimalista.Text = DateTime.Now.ToString("HH:mm");
+        }
 
     }
 }
