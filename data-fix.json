@@ -1,4 +1,124 @@
 {
+   "1721110":{
+      "name":"Abyssus",
+      "nombre_fix":"Abyssus - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1721110/c8f4bb314508824f54e12973b3ff4cac7c155aef/capsule_616x353.jpg?t=1756285045"
+   },
+   "945360":{
+      "name":"Among Us",
+      "nombre_fix":"Among Us - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/945360/capsule_616x353.jpg?t=1757444903"
+   },
+   "3060170":{
+      "name":"Chained in the Backrooms",
+      "nombre_fix":"Chained in the Backrooms - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3060170/6fac8457a47931a6c5e8e93aca1a2b779d612165/capsule_616x353.jpg?t=1751031312"
+   },
+   "1158160":{
+      "name":"Coral Island",
+      "nombre_fix":"Coral Island - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1158160/510f5cd946c40e220b27a6c537c026ab70eb0a25/capsule_616x353.jpg?t=1755197548"
+   },
+   "1929610":{
+      "name":"Demonologist",
+      "nombre_fix":"Demonologist - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1929610/capsule_616x353.jpg?t=1751279240"
+   },
+   "427520":{
+      "name":"Factorio",
+      "nombre_fix":"Factorio - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427520/capsule_616x353.jpg?t=1730307306"
+   },
+   "1151340":{
+      "name":"Fallout 76",
+      "nombre_fix":"Fallout 76 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1151340/e201d057ed4e1d6e1496cfd0f104d04d20f3fc69/capsule_616x353.jpg?t=1756832490"
+   },
+   "2523720":{
+      "name":"Gears of War: Reloaded",
+      "nombre_fix":"Gears of War: Reloaded - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2523720/779c1934da3b39c307d91195ff764502f2ce1063/capsule_616x353.jpg?t=1757024702"
+   },
+   "2215430":{
+      "name":"Ghost of Tsushima DIRECTOR'S CUT",
+      "nombre_fix":"Ghost of Tsushima DIRECTOR'S CUT - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2215430/capsule_616x353.jpg?t=1750948552"
+   },
+   "477160":{
+      "name":"Human Fall Flat",
+      "nombre_fix":"Human Fall Flat - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/477160/7d70a1c0d0f748b169ceed8ef6c6b1afe8caf269/capsule_616x353.jpg?t=1756985755"
+   },
+   "2456420":{
+      "name":"HUNTER×HUNTER NEN×IMPACT",
+      "nombre_fix":"HUNTER×HUNTER NEN×IMPACT - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2456420/capsule_616x353.jpg?t=1752725510"
+   },
+   "1001270":{
+      "name":"Kebab Chefs! - Restaurant Simulator",
+      "nombre_fix":"Kebab Chefs! - Restaurant Simulator - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1001270/7fb021fa800d22eaaee601f57a285b7d75cbffb4/capsule_616x353.jpg?t=1754673197"
+   },
+   "582010":{
+      "name":"Monster Hunter: World",
+      "nombre_fix":"Monster Hunter: World - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/582010/capsule_616x353.jpg?t=1734656748"
+   },
+   "495140":{
+      "name":"NARUTO: Ultimate Ninja STORM",
+      "nombre_fix":"NARUTO: Ultimate Ninja STORM - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/495140/capsule_616x353.jpg?t=1701305352"
+   },
+   "275850":{
+      "name":"No Man's Sky",
+      "nombre_fix":"No Man's Sky - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/275850/d3d1550cec60e9d6b3d1ec00dbb6190e314683b2/capsule_616x353.jpg?t=17563231795"
+   },
+   "1913370":{
+      "name":"OPERATOR",
+      "nombre_fix":"OPERATOR - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1913370/d4fd109d043ffede976f0f42a7ab07a34695c8e6/capsule_616x353.jpg?t=1750774478"
+   },
+   "632360":{
+      "name":"Risk of Rain 2",
+      "nombre_fix":"Risk of Rain 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/632360/capsule_616x353.jpg?t=1751308044"
+   },
+   "312660":{
+      "name":"Sniper Elite 4",
+      "nombre_fix":"Sniper Elite 4 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/312660/capsule_616x353.jpg?t=1681207252"
+   },
+   "1329500":{
+      "name":"SpiderHeck",
+      "nombre_fix":"SpiderHeck - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1329500/capsule_616x353.jpg?t=1752529495"
+   },
+   "105600":{
+      "name":"Terraria",
+      "nombre_fix":"Terraria - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/105600/capsule_616x353.jpg?t=1731252354"
+   },
+   "1017180":{
+      "name":"The Long Drive",
+      "nombre_fix":"The Long Drive - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1017180/capsule_616x353.jpg?t=1751568928"
+   },
+   "585420":{
+      "name":"Trailmakers",
+      "nombre_fix":"Trailmakers - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/585420/9363a927b4f1329597e90122f51f2ce1a53801cc/capsule_616x353.jpg?t=1750164940"
+   },
+   "892970":{
+      "name":"Valheim",
+      "nombre_fix":"Valheim - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/892970/36a52fe644b589a70b05e476a4b319a6d9e02cfe/capsule_616x353.jpg?t=1757486247"
+   },
+   "3146520":{
+      "name":"WEBFISHING",
+      "nombre_fix":"WEBFISHING - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3146520/capsule_616x353.jpg?t=1728673229"
+   },
    "1619310":{
       "name":"SWAT Commander",
       "nombre_fix":"SWAT Commander - fix",
