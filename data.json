@@ -1,5 +1,21 @@
 {
   "UBISOFT": {
+    "241560": {
+      "name": "The Crew",
+      "launch_steam": true,
+      "launch_exe": false,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
+        "The game only works when launched through Steam."
+      ],
+      "nombre_fix": "The Crew - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/d2500d51d3ed0791852f4ea4b4a2cf03.png",
+        "background": "https://cdn2.steamgriddb.com/hero/bc6e1826a881c674f2400c75e79bdfbb.png"
+      }
+    },
     "33230": {
       "name": "Assassin's Creed II",
       "launch_steam": true,
