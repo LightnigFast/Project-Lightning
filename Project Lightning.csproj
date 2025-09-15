@@ -159,6 +159,7 @@
     <Compile Include="Classes\Actualizador.cs" />
     <Compile Include="Classes\ExpandTextConverter.cs" />
     <Compile Include="Classes\NotificationManager.cs" />
+    <Compile Include="Classes\NullToVisibilityConverter.cs" />
     <Compile Include="Classes\ScoreToColorConverter.cs" />
     <Compile Include="Pages\panelAjustes.xaml.cs">
       <DependentUpon>panelAjustes.xaml</DependentUpon>
@@ -345,6 +346,7 @@
     <Resource Include="res\icons\linux.png" />
     <Resource Include="res\icons\mac.png" />
     <Resource Include="res\icons\windows.png" />
+    <Resource Include="res\icons\steam.png" />
     <Content Include="res\media\backgrounds\background.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

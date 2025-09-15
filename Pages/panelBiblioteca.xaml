@@ -162,6 +162,8 @@
 
         <classes:ScoreToColorConverter x:Key="ScoreToColorConverter"/>
 
+        <classes:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+
     </Page.Resources>
 
 
@@ -190,25 +192,56 @@
 
                 
                 <!--PARTE PARA ARRASTRAR LOS ARCHIVOS A MI APP E IMPORTAR LOS LUA-->
-                <TextBlock x:Name="RelojMinimalista"
-                           Grid.Column="1"
-                           FontSize="140"
-                           
-                           FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold"
-                           Foreground="White"
-                           HorizontalAlignment="Center"
-                           TextAlignment="Center"
-                           VerticalAlignment="Center"
-                           Opacity="0"/>
+                
 
 
                 <!--PARTE PARA EL RELOJ-->
-                
+                <TextBlock x:Name="RelojMinimalista" Grid.Column="1" FontSize="140" Foreground="White" Opacity="0" TextAlignment="Center"
+                           FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
                 
                 <!--PARTE PARA EL BUSCADOR DE APPIDS DE JUEGOS Y AÑADIRLOS A LA BIBLIOTECA-->
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--PARTE PARA EL BOTON DE REINICIAR STEAM-->
+                    <Button x:Name="btnBuscarSteam" Grid.Column="1" Width="150" Height="40" Background="#3A3A3A" BorderThickness="0"  Cursor="Hand" ToolTip="Select folder"
+                            HorizontalAlignment="Center" VerticalAlignment="Bottom" Style="{StaticResource ModernButton}" Click="ReiniciarSteam" Margin="0,0,0,5">
+
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                            <!-- ICONO -->
+                            <Image Source="/res/icons/steam.png" Width="25" Height="25" Margin="0,0,10,0"/>
+                            <!-- TEXTO -->
+                            <TextBlock Text="Restart Steam" Foreground="White" FontSize="16" VerticalAlignment="Center"/>
+                        </StackPanel>
+                        
+                    </Button>
+
+
+
+                    <!--PARTE PARA EL BUSCADOR-->
+                    <Border Grid.Row="1" Name="gridAñadirJuego" CornerRadius="8" Background="#2A2A2A" Padding="8" VerticalAlignment="Top" Effect="{DynamicResource DropShadowEffect}" 
+                            Width="315" Height="55" Margin="0,5,0,0">
+                        
+                        <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
+                            <TextBox x:Name="AppIdTextBox" Width="180" Height="30" Padding="10,0" Background="#1E1E1E" Foreground="White" 
+                                      FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="0,0,5,0"/>
+                            <Button x:Name="btnAgregarAppId" Content="Add Game" Width="110" Height="35" Background="#3A3A3A" Foreground="White" FontSize="14" 
+                                    Cursor="Hand" BorderThickness="0" Style="{StaticResource ModernButton}" Click="AgregarAppId_Click"/>
+                        </StackPanel>
+                        
+                    </Border>
+                    
+
+
+                </Grid>
                 
                 
-                
+
+
+
 
             </Grid>
 
@@ -293,8 +326,13 @@
 
                     <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <Image Width="110" Height="165" Margin="8" Stretch="UniformToFill" MouseLeftButtonUp="Juego_Click"
-                                   Source="{Binding Imagen}" Style="{DynamicResource GameImageStyle}"/>
+                            <Grid>
+                                <Image Width="110" Height="165" Margin="8" Stretch="UniformToFill" MouseLeftButtonUp="Juego_Click"
+                                       Source="{Binding Imagen}" Style="{DynamicResource GameImageStyle}" Visibility="{Binding Imagen, Converter={StaticResource NullToVisibilityConverter}}"/>
+                                <TextBlock Text="{Binding NombreError}" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center"
+                                           FontSize="21" Margin="0,80,0,0" TextWrapping="Wrap" TextAlignment="Center"
+                                           Visibility="{Binding NombreError, Converter={StaticResource NullToVisibilityConverter}}"/>
+                            </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>

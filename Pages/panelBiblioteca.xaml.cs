@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
@@ -110,14 +111,37 @@ namespace Project_Lightning.Pages
                 if (!Directory.Exists(pluginFolder))
                 {
                     notifier.Show("❌ The \"stplug-in\" directory was not found.", isError: true);
-                    Juegos.Clear(); // Limpiar la colección
+
+                    gridAñadirJuego.Visibility = Visibility.Collapsed;
+                    string mensaje = "Before using the library, you must install LightningTools. Go to the settings and install it.";
+                    Juegos.Clear();
+                    Juegos.Add(new JuegoViewModel
+                    {
+                        AppId = -1, // AppId ficticio
+                        Imagen = null,
+                        MetacriticScore = null,
+                        NombreError = mensaje
+                    });
+
                     return;
                 }
 
                 if (!Directory.Exists(cacheFolder))
                 {
                     notifier.Show("❌ The \"librarycache\" directory was not found.", isError: true);
+
+                    gridAñadirJuego.Visibility = Visibility.Collapsed;
+                    string mensaje = "This error occurs due to a faulty Steam installation or because you haven’t logged in yet." +
+                        "\nIf you haven’t signed in to your account, please do so, and if it still doesn’t work, reinstall Steam.";
                     Juegos.Clear();
+                    Juegos.Add(new JuegoViewModel
+                    {
+                        AppId = -1, // AppId ficticio
+                        Imagen = null,
+                        MetacriticScore = null,
+                        NombreError = mensaje
+                    });
+
                     return;
                 }
 
@@ -157,8 +181,9 @@ namespace Project_Lightning.Pages
                             {
                                 BitmapImage bitmap = new BitmapImage();
                                 bitmap.BeginInit();
-                                bitmap.UriSource = new Uri(imagePath, UriKind.Absolute);
+                                bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
                                 bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                                bitmap.DecodePixelWidth = 110; //AJUSTA EL ANCHO
                                 bitmap.EndInit();
                                 bitmap.Freeze();
 
@@ -197,6 +222,9 @@ namespace Project_Lightning.Pages
             public int AppId { get; set; }
             public BitmapImage Imagen { get; set; }
             public int? MetacriticScore { get; set; }
+
+            // NUEVO: Mensaje de error opcional
+            public string NombreError { get; set; }
         }
 
 
@@ -654,7 +682,7 @@ namespace Project_Lightning.Pages
 
             return new Border
             {
-                Background = (Brush)new BrushConverter().ConvertFrom("#FF1E1E1E"), // oscuro a juego
+                Background = (Brush)new BrushConverter().ConvertFrom("#FF1E1E1E"),
                 CornerRadius = new CornerRadius(5),
                 Padding = new Thickness(5),
                 Margin = new Thickness(3, 0, 0, 0),
@@ -693,6 +721,187 @@ namespace Project_Lightning.Pages
         {
             RelojMinimalista.Text = DateTime.Now.ToString("HH:mm");
         }
+
+
+
+
+
+
+
+
+
+
+
+        //PARTE PARA LA DESCARGA DE APPIDS
+        private readonly string[] REPOS = new string[]
+        {
+            "https://github.com/LightnigFast/ProjectLightningManifests",
+            "https://github.com/sojorepo/sojogames",
+            "https://github.com/SteamAutoCracks/ManifestHub"
+        };
+
+
+        private async Task BuscarYAgregarAppIdAsync(string appId)
+        {
+            string pluginFolder = System.IO.Path.Combine(steamPath, "config", "stplug-in");
+            string depotCacheFolder = System.IO.Path.Combine(steamPath, "config", "depotcache");
+
+            Directory.CreateDirectory(pluginFolder);
+            Directory.CreateDirectory(depotCacheFolder);
+
+            bool encontrado = false;
+
+            // Revisar cada repositorio
+            foreach (var repo in REPOS)
+            {
+                string zipUrl = $"{repo}/archive/refs/heads/{appId}.zip";
+
+                try
+                {
+                    using (var client = new HttpClient())
+                    {
+                        var response = await client.GetAsync(zipUrl);
+                        if (!response.IsSuccessStatusCode)
+                            continue;
+
+                        // Descarga el ZIP en memoria
+                        using (var ms = new MemoryStream(await response.Content.ReadAsByteArrayAsync()))
+                        {
+                            using (var zip = new System.IO.Compression.ZipArchive(ms))
+                            {
+                                foreach (var entry in zip.Entries)
+                                {
+                                    string fileName = System.IO.Path.GetFileName(entry.FullName);
+
+                                    if (string.IsNullOrEmpty(fileName))
+                                        continue;
+
+                                    // REPO 2 y 3 -> SOLO LUA y filtrar líneas con "addappid"
+                                    if ((repo.Contains("sojorepo") || repo.Contains("SteamAutoCracks")) && fileName.EndsWith(".lua"))
+                                    {
+                                        string destino = System.IO.Path.Combine(pluginFolder, fileName);
+
+                                        using (var entryStream = entry.Open())
+                                        using (var reader = new StreamReader(entryStream))
+                                        using (var writer = new StreamWriter(destino, false)) // sobrescribe si existe
+                                        {
+                                            while (!reader.EndOfStream)
+                                            {
+                                                string line = reader.ReadLine();
+                                                if (line.TrimStart().StartsWith("addappid"))
+                                                {
+                                                    writer.WriteLine(line);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    // REPO 3 -> ARCHIVOS CON MANIFEST
+                                    else if (repo.Contains("ProjectLightningManifests") && (fileName.EndsWith(".lua") || fileName.EndsWith(".manifest")))
+                                    {
+                                        string destino = fileName.EndsWith(".lua")
+                                            ? System.IO.Path.Combine(pluginFolder, fileName)
+                                            : System.IO.Path.Combine(depotCacheFolder, fileName);
+
+                                        using (var entryStream = entry.Open())
+                                        {
+                                            using (var fileStream = File.Create(destino))
+                                            {
+                                                await entryStream.CopyToAsync(fileStream);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    encontrado = true;
+                    break; //NO HACE FALTA SEGUIR BUSCANDO
+                }
+                catch
+                {
+                    continue; //INTENTAMOS EL SIGUIENTE REPO
+                }
+            }
+
+            if (encontrado)
+                notifier.Show("✅ Game added successfully, restart Steam and then this library to be able to see the game.", isError: false, 4000);
+                //MessageBox.Show($"✅ AppID {appId} agregado correctamente");
+            else
+                notifier.Show("❌ Appid not found, you'll have to wait a little longer until I add it.", isError: true, 4000);
+                //MessageBox.Show($"❌ AppID {appId} no se encontró en los repositorios");
+        }
+
+
+        //EVETO DEL BOTON DE AGREGAR
+        private async void AgregarAppId_Click(object sender, RoutedEventArgs e)
+        {
+            string appId = AppIdTextBox.Text.Trim();
+            if (string.IsNullOrEmpty(appId))
+            {
+                notifier.Show("❌ You need to write an appid.", isError: true);
+                //MessageBox.Show("Introduce un AppID válido");
+                return;
+            }
+
+            LoadingOverlay.Visibility = Visibility.Visible;
+            await BuscarYAgregarAppIdAsync(appId);
+            LoadingOverlay.Visibility = Visibility.Hidden;
+
+            BibliotecaButtonClick();
+
+
+        }
+
+        //RECARGAR LA INTERFAZ DE LA BIBLIOTECA
+        private void BibliotecaButtonClick()
+        {
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
+
+            if (ventanaPrincipal != null)
+            {
+
+                //CAMBIAR EL CONTENIDO DEL FRAME
+                ventanaPrincipal.framePrincipal.Navigate(new panelBiblioteca(ventanaPrincipal));
+            }
+
+        }
+
+
+        //BOTON PARA REINICIAR STEAM
+        private void ReiniciarSteam(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                //CERRAR PROCESOS DE STEAM SI EXISTEN
+                var procesos = Process.GetProcessesByName("steam");
+                foreach (var p in procesos)
+                {
+                    try { p.Kill(); }
+                    catch { }
+                }
+
+                //ESPERAR A QUE SE CIERREN
+                foreach (var p in procesos)
+                {
+                    try { p.WaitForExit(5000); } //ESPERA 5 SEGUNDOS
+                    catch { }
+                }
+
+                Thread.Sleep(1000); //UN PEQUEÑO DELAY EXTRA
+
+                //INICIAR STEAM DE NUEVO EN SEGUNDO PLANO
+                Process.Start("steam://open/minigameslist");
+            }
+            catch
+            {
+                //SI FALLA, ABRIR NORMAL
+                Process.Start("steam://open/main");
+            }
+        }
+
+
 
     }
 }
