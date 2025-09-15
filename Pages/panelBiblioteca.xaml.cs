@@ -185,7 +185,7 @@ namespace Project_Lightning.Pages
         {
             public int AppId { get; set; }
             public BitmapImage Imagen { get; set; }
-            public int? MetacriticScore { get; set; } //NUEVO
+            public int? MetacriticScore { get; set; }
         }
 
 
@@ -209,7 +209,6 @@ namespace Project_Lightning.Pages
 
         //METODO PARA CUANDO HACES CLICK EN UN JUEGO
         private void Juego_Click(object sender, MouseButtonEventArgs e)
-
         {
             //PONGO LA PUNTUACION DE METACRITIC VISIBLE
             metacriticGrid.Visibility = Visibility.Visible;
@@ -228,44 +227,41 @@ namespace Project_Lightning.Pages
 
                 foreach (var folder in subfolders)
                 {
-                    // PROBAR PRIMERO CON library_header.jpg
                     string headerPath = System.IO.Path.Combine(folder, "library_header.jpg");
                     if (!File.Exists(headerPath))
                         headerPath = System.IO.Path.Combine(folder, "header.jpg");
 
-                    //PONER IMAGEN
                     if (File.Exists(headerPath))
                     {
+                        // CARGAR IMAGEN
                         BitmapImage bitmap = new BitmapImage();
                         bitmap.BeginInit();
                         bitmap.UriSource = new Uri(headerPath, UriKind.Absolute);
                         bitmap.CacheOption = BitmapCacheOption.OnLoad;
                         bitmap.EndInit();
                         bitmap.Freeze();
-
                         HeaderImage.Source = bitmap;
 
-                        // PONER EL NOMBRE DEL JUEGO
-                        //PONER EL NOMBRE DEL JUEGO Y EL METACRITIC
+                        // LEER DE LA BD
                         using (var conn = new SQLiteConnection(ConnectionString))
                         {
                             conn.Open();
-                            string sql = "SELECT Nombre, MetacriticScore, EdadMinima FROM Juegos WHERE AppId=@AppId LIMIT 1;";
+                            string sql = "SELECT Nombre, MetacriticScore, EdadMinima, Windows, Mac, Linux FROM Juegos WHERE AppId=@AppId LIMIT 1;";
                             using (var cmd = new SQLiteCommand(sql, conn))
                             {
                                 cmd.Parameters.AddWithValue("@AppId", juego.AppId);
                                 using (var reader = cmd.ExecuteReader())
                                 {
-                                    if (reader.Read()) // SOLO SI HAY FILA
+                                    if (reader.Read())
                                     {
-                                        // NOMBRE DEL JUEGO
+                                        // NOMBRE
                                         nombreJuego.Text = reader["Nombre"].ToString();
 
                                         // METACRITIC
                                         if (reader["MetacriticScore"] != DBNull.Value)
                                         {
                                             int score = Convert.ToInt32(reader["MetacriticScore"]);
-                                            SetMetacriticScore(score); // Actualiza el círculo
+                                            SetMetacriticScore(score);
                                         }
                                         else
                                         {
@@ -273,39 +269,35 @@ namespace Project_Lightning.Pages
                                             ScoreArc.Data = null;
                                         }
 
-                                        //EDAD MÍNIMA
+                                        // PEGI
                                         if (reader["EdadMinima"] != DBNull.Value)
-                                        {
                                             SetEdadMinima(Convert.ToInt32(reader["EdadMinima"]));
-                                        }
                                         else
-                                        {
                                             SetEdadMinima(null);
-                                        }
 
+                                        // PLATAFORMAS
+                                        bool windows = Convert.ToBoolean(reader["Windows"]);
+                                        bool mac = Convert.ToBoolean(reader["Mac"]);
+                                        bool linux = Convert.ToBoolean(reader["Linux"]);
+                                        SetPlataformas(windows, mac, linux);
                                     }
                                     else
                                     {
-                                        // NO HAY JUEGO EN LA BD
                                         nombreJuego.Text = "Desconocido";
                                         metacriticScore.Text = "N/A";
                                         ScoreArc.Data = null;
                                         edadMinimaText.Text = "N/A";
+                                        plataformasPanel.Children.Clear();
                                     }
                                 }
-
-
                             }
                         }
-
                         break;
                     }
-
-                    
-
                 }
             }
         }
+
 
 
 
@@ -626,6 +618,39 @@ namespace Project_Lightning.Pages
         }
 
 
+        //PARA PONER LOS BOTONES DE LAS PLATAFORMAS
+        private void SetPlataformas(bool windows, bool mac, bool linux)
+        {
+            plataformasPanel.Children.Clear();
+
+            if (windows)
+                plataformasPanel.Children.Add(CreatePlataformaIcon("pack://application:,,,/res/icons/windows.png", "Windows"));
+            if (mac)
+                plataformasPanel.Children.Add(CreatePlataformaIcon("pack://application:,,,/res/icons/mac.png", "MacOS"));
+            if (linux)
+                plataformasPanel.Children.Add(CreatePlataformaIcon("pack://application:,,,/res/icons/linux.png", "Linux"));
+        }
+        //PONER EL ICONO DE CADA PLATAFORMA
+        private Border CreatePlataformaIcon(string iconPath, string tooltip)
+        {
+            var img = new Image
+            {
+                Source = new BitmapImage(new Uri(iconPath, UriKind.Absolute)),
+                Width = 24,
+                Height = 24,
+                Stretch = Stretch.Uniform
+            };
+
+            return new Border
+            {
+                Background = (Brush)new BrushConverter().ConvertFrom("#FF1E1E1E"), // oscuro a juego
+                CornerRadius = new CornerRadius(5),
+                Padding = new Thickness(5),
+                Margin = new Thickness(3, 0, 0, 0),
+                Child = img,
+                ToolTip = tooltip
+            };
+        }
 
 
 

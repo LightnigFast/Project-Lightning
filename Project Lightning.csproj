@@ -339,6 +339,9 @@
     <Resource Include="res\media\logos\originals\Other_games_logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="res\icons\linux.png" />
+    <Resource Include="res\icons\mac.png" />
+    <Resource Include="res\icons\windows.png" />
     <Content Include="res\media\backgrounds\background.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

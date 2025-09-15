@@ -147,6 +147,18 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <!--PARA LOS TOOLTIP-->
+        <Style TargetType="ToolTip">
+            <Setter Property="Background" Value="#222222"/>
+            <!-- FONDO OSCURO -->
+            <Setter Property="Foreground" Value="White"/>
+            <!-- TEXTO BLANCO -->
+            <Setter Property="BorderBrush" Value="#444444"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="6"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
 
         <classes:ScoreToColorConverter x:Key="ScoreToColorConverter"/>
 
@@ -202,14 +214,16 @@
 
                     <Grid Grid.Column="2" Name="metacriticGrid" Visibility="Hidden" HorizontalAlignment="Left" Margin="0,0,40,0">
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60"/>
-                            <!-- Para el círculo -->
+                            <!--PARA METACRITIC-->
+                            <ColumnDefinition Width="AUTO"/>
+                            <!--PARA EL PEGI-->
                             <ColumnDefinition Width="Auto"/>
-                            <!-- Para la edad -->
+                            <!--PARA LAS PLATAFORMAS SOPORTADAS-->
+                            <ColumnDefinition Width="Auto"/>
                         </Grid.ColumnDefinitions>
 
                         <!-- CÍRCULO DE METACRITIC -->
-                        <Grid Width="60" Height="60">
+                        <Grid Width="60" Height="60" ToolTip="Metacritic Score" Margin="10,0,10,0">
                             <Ellipse Stroke="Gray" StrokeThickness="8" Fill="Transparent"/>
                             <Path x:Name="ScoreArc" StrokeThickness="8" Fill="Transparent" Stroke="#02B31B"/>
                             <TextBlock x:Name="metacriticScore" Text="0" FontSize="20" FontWeight="Bold"
@@ -217,10 +231,15 @@
                         </Grid>
 
                         <!-- EDAD MÍNIMA -->
-                        <Border Grid.Column="1" x:Name="fondoPegi" Background="#FF1E1E1E" CornerRadius="5" Padding="5" Margin="10,0,0,0"
+                        <Border Grid.Column="1" x:Name="fondoPegi" Background="#FF1E1E1E" CornerRadius="5" Padding="5" ToolTip="PEGI" Margin="10,0,10,0"
                                 VerticalAlignment="Center" Width="50" Height="50">
                             <TextBlock x:Name="edadMinimaText" Text="+0" FontSize="20" FontWeight="Bold" Foreground="White" TextAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
+
+
+                        <!-- PLATAFORMAS -->
+                        <StackPanel Grid.Column="2" x:Name="plataformasPanel" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,10,0"/>
+
                     </Grid>
 
 
