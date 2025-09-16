@@ -3,7 +3,7 @@
     "241560": {
       "name": "The Crew",
       "launch_steam": true,
-      "launch_exe": false,
+      "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
       "errores": [
