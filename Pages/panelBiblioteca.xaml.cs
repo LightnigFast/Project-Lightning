@@ -8,6 +8,7 @@ using System.ComponentModel;
 using System.Data.SQLite;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -113,6 +114,7 @@ namespace Project_Lightning.Pages
                     notifier.Show("❌ The \"stplug-in\" directory was not found.", isError: true);
 
                     gridAñadirJuego.Visibility = Visibility.Collapsed;
+                    componenteArrastrar.Visibility = Visibility.Collapsed;
                     string mensaje = "Before using the library, you must install LightningTools. Go to the settings and install it.";
                     Juegos.Clear();
                     Juegos.Add(new JuegoViewModel
@@ -131,6 +133,7 @@ namespace Project_Lightning.Pages
                     notifier.Show("❌ The \"librarycache\" directory was not found.", isError: true);
 
                     gridAñadirJuego.Visibility = Visibility.Collapsed;
+                    componenteArrastrar.Visibility= Visibility.Collapsed;
                     string mensaje = "This error occurs due to a faulty Steam installation or because you haven’t logged in yet." +
                         "\nIf you haven’t signed in to your account, please do so, and if it still doesn’t work, reinstall Steam.";
                     Juegos.Clear();
@@ -165,7 +168,7 @@ namespace Project_Lightning.Pages
                     string appFolder = System.IO.Path.Combine(cacheFolder, appId);
                     if (!Directory.Exists(appFolder))
                     {
-                        notifier.Show($"❌ The appid {appId} was not found, please restart Steam.", isError: true);
+                        notifier.Show($"❌ The appid {appId} was not found, please restart Steam.", isError: true, 4000);
                         continue;
                     }
 
@@ -249,8 +252,9 @@ namespace Project_Lightning.Pages
         //METODO PARA CUANDO HACES CLICK EN UN JUEGO
         private void Juego_Click(object sender, MouseButtonEventArgs e)
         {
-            //PONGO LA PUNTUACION DE METACRITIC VISIBLE
-            metacriticGrid.Visibility = Visibility.Visible;
+            //PONGO TODA LA BARRA DE CADA JUEGO INDEPENDIENTE VISIBLE
+            //metacriticGrid.Visibility = Visibility.Visible;
+            juegoIndependiente.Opacity = 1;
 
             if (sender is Image img && img.DataContext is JuegoViewModel juego)
             {
@@ -319,6 +323,9 @@ namespace Project_Lightning.Pages
                                         bool mac = Convert.ToBoolean(reader["Mac"]);
                                         bool linux = Convert.ToBoolean(reader["Linux"]);
                                         SetPlataformas(windows, mac, linux);
+
+                                        //PONER TAG AL BOTON DE ELIMINMAR
+                                        btnEliminar.Tag = juego.AppId;
                                     }
                                     else
                                     {
@@ -338,6 +345,42 @@ namespace Project_Lightning.Pages
         }
 
 
+
+        //METODO PARA ELIMINAR UN JUEGO DE LA BIBLIOTECA
+        private void btnEliminar_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("hola");
+
+            if (sender is Button btn && int.TryParse(btn.Tag?.ToString(), out int appId))
+            {
+                MessageBox.Show("adios"); // 🔹 Ahora se mostrará correctamente
+
+                try
+                {
+                    string pluginFolder = System.IO.Path.Combine(steamPath, "config", "stplug-in");
+                    string luaPath = System.IO.Path.Combine(pluginFolder, $"{appId}.lua");
+
+                    if (File.Exists(luaPath))
+                    {
+                        File.Delete(luaPath);
+                        notifier.Show($"✅ Game {appId} deleted successfully.", isError: false);
+
+                        // ELIMINAR DE LA LISTA VISIBLE
+                        var juego = Juegos.FirstOrDefault(j => j.AppId == appId);
+                        if (juego != null)
+                            Juegos.Remove(juego);
+                    }
+                    else
+                    {
+                        notifier.Show($"⚠️ File for {appId} not found in stplug-in.", isError: true);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    notifier.Show($"❌ Error deleting {appId}: {ex.Message}", isError: true);
+                }
+            }
+        }
 
 
 
@@ -491,7 +534,6 @@ namespace Project_Lightning.Pages
         }
 
 
-
         //METODO PARA VARIOS RETRY
         private async Task GuardarJuegosEnBD(IEnumerable<int> appIds)
         {
@@ -536,6 +578,13 @@ namespace Project_Lightning.Pages
                 }
             }
         }
+
+        
+
+
+
+
+
 
 
         //METODO PARA SACAR EL METASCORE THE LA BD
@@ -690,6 +739,13 @@ namespace Project_Lightning.Pages
                 ToolTip = tooltip
             };
         }
+
+
+
+
+
+
+
 
 
         //PARTE PARA EL RELOJ
@@ -900,6 +956,134 @@ namespace Project_Lightning.Pages
                 Process.Start("steam://open/main");
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        //PARTE PARA ARRASTRAR Y SOLTAR ARCHIVOS
+        private void DropArea_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effects = DragDropEffects.Copy;
+
+                //RESALTAR EL BORDER AL ARRASTRAR
+                if (sender is Border border)
+                    border.BorderBrush = Brushes.DeepSkyBlue;
+            }
+            else
+            {
+                e.Effects = DragDropEffects.None;
+            }
+        }
+
+        private void DropArea_DragLeave(object sender, DragEventArgs e)
+        {
+            if (sender is Border border)
+                border.BorderBrush = Brushes.Gray;
+        }
+
+        private void DropArea_Drop(object sender, DragEventArgs e)
+        {
+            if (sender is Border border)
+                border.BorderBrush = Brushes.Gray;
+
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+
+                //RUTAS DE DESTINO
+                string pluginFolder = System.IO.Path.Combine(steamPath, "config", "stplug-in");
+                string depotCacheFolder = System.IO.Path.Combine(steamPath, "config", "depotcache");
+
+                //ASEGURARSE DE QUE EXISTEN
+                Directory.CreateDirectory(pluginFolder);
+                Directory.CreateDirectory(depotCacheFolder);
+
+                //PARA COMRPOBAR SI NO HA HABIDO ERRORES
+                bool allCopied = true;
+
+                foreach (var file in files)
+                {
+                    string ext = System.IO.Path.GetExtension(file).ToLower();
+                    string fileName = System.IO.Path.GetFileName(file);
+
+                    try
+                    {
+                        if (ext == ".lua")
+                        {
+                            string destPath = System.IO.Path.Combine(pluginFolder, fileName);
+                            File.Copy(file, destPath, overwrite: true);
+                            //MessageBox.Show($"Archivo .lua copiado a:\n{destPath}");
+                        }
+                        else if (ext == ".manifest")
+                        {
+                            string destPath = System.IO.Path.Combine(depotCacheFolder, fileName);
+                            File.Copy(file, destPath, overwrite: true);
+                            //MessageBox.Show($"Archivo .manifest copiado a:\n{destPath}");
+                        }
+                        else if (ext == ".zip")
+                        {
+                            using (ZipArchive archive = ZipFile.OpenRead(file))
+                            {
+                                foreach (var entry in archive.Entries)
+                                {
+                                    string entryExt = System.IO.Path.GetExtension(entry.FullName).ToLower();
+                                    string entryName = System.IO.Path.GetFileName(entry.FullName);
+
+                                    if (string.IsNullOrEmpty(entryExt)) continue; //IGNORAR CARPETAS VACÍAS
+
+                                    if (entryExt == ".lua")
+                                    {
+                                        string destPath = System.IO.Path.Combine(pluginFolder, entryName);
+                                        entry.ExtractToFile(destPath, overwrite: true);
+                                    }
+                                    else if (entryExt == ".manifest")
+                                    {
+                                        string destPath = System.IO.Path.Combine(depotCacheFolder, entryName);
+                                        entry.ExtractToFile(destPath, overwrite: true);
+                                    }
+                                    else
+                                    {
+                                        //IGNORAR OTROS ARCHIVOS
+                                        allCopied = false;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            //IGNORAR OTROS ARCHIVOS
+                            //MessageBox.Show($"Archivo ignorado: {fileName}");
+                            allCopied = false;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        allCopied = false;
+                        notifier.Show($"Error copying {fileName}:\n{ex.Message}", isError: true, 3000);
+                    }
+                }
+
+                //SOLO LO MUESTRO SI NO HAY ERRORES
+                if (allCopied)
+                {
+                    notifier.Show("✅ Game added successfully, restart Steam and then this library to be able to see the game.", isError: false, 4000);
+
+                    BibliotecaButtonClick();
+                }
+            }
+        }
+
+
 
 
 
