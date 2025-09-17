@@ -57,7 +57,14 @@ namespace Project_Lightning.Pages
             _ventanaPrincipal = ventanaPrincipal;
             notifier = new Project_Lightning.Classes.NotificationManager(_ventanaPrincipal.NotificationCanvasPublic);
 
-            
+            //PONER QUE EL PLACEHOLDER DESAPAREZCA AL ESCRIBIR ALGO
+            AppIdTextBox.TextChanged += (s, e) =>
+            {
+                PlaceholderText.Visibility = string.IsNullOrEmpty(AppIdTextBox.Text)
+                    ? Visibility.Visible
+                    : Visibility.Collapsed;
+            };
+
 
             CargarRutaSteam();
 
@@ -349,12 +356,9 @@ namespace Project_Lightning.Pages
         //METODO PARA ELIMINAR UN JUEGO DE LA BIBLIOTECA
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("hola");
 
             if (sender is Button btn && int.TryParse(btn.Tag?.ToString(), out int appId))
             {
-                MessageBox.Show("adios"); // 🔹 Ahora se mostrará correctamente
-
                 try
                 {
                     string pluginFolder = System.IO.Path.Combine(steamPath, "config", "stplug-in");

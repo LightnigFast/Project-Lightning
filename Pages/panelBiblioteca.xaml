@@ -232,8 +232,15 @@
                             Width="255" Height="55" Margin="0,5,0,0">
                         
                         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
-                            <TextBox x:Name="AppIdTextBox" Width="120" Height="30" Padding="10,0" Background="#1E1E1E" Foreground="White" 
-                                      FontSize="14" VerticalContentAlignment="Center" HorizontalContentAlignment="Left" Margin="0,0,5,0"/>
+                            <Grid Width="120" Height="30">
+                                <!--EL TEXTBOX REAL-->
+                                <TextBox x:Name="AppIdTextBox" Background="#1E1E1E" Foreground="White" FontSize="14" VerticalContentAlignment="Center" 
+                                         HorizontalContentAlignment="Left" Padding="10,0"/>
+
+                                <!--EL PLACEHOLDER-->
+                                <TextBlock Text="Enter AppID" Foreground="Gray" FontSize="14" Margin="10,0,0,0" VerticalAlignment="Center" IsHitTestVisible="False"
+                                           x:Name="PlaceholderText"/>
+                            </Grid>
                             <Button x:Name="btnAgregarAppId" Content="Add Game" Width="110" Height="35" Background="#3A3A3A" Foreground="White" FontSize="14" 
                                     Cursor="Hand" BorderThickness="0" Style="{StaticResource ModernButton}" Click="AgregarAppId_Click"/>
                         </StackPanel>
