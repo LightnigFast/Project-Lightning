@@ -52,6 +52,8 @@ namespace Project_Lightning.Pages
 
             this.DataContext = this;
             Juegos = new ObservableCollection<JuegoViewModel>();
+            juegosView = CollectionViewSource.GetDefaultView(Juegos);
+            juegosView.Filter = FiltroJuegos;
 
             //INICIAR LAS NOTIFICAIONES
             _ventanaPrincipal = ventanaPrincipal;
@@ -82,6 +84,7 @@ namespace Project_Lightning.Pages
         private async void CargarBibliotecaConOverlay()
         {
             LoadingOverlay.Visibility = Visibility.Visible; // MOSTRAR OVERLAY
+            juegoIndependiente.Opacity = 0;
             StartSpinner();
 
             await Task.Delay(50); // PERMITE QUE LA UI PINTA EL OVERLAY ANTES DE EMPEZAR
@@ -373,6 +376,11 @@ namespace Project_Lightning.Pages
                         var juego = Juegos.FirstOrDefault(j => j.AppId == appId);
                         if (juego != null)
                             Juegos.Remove(juego);
+
+                        txtBuscar.Text = "";
+                        CargarBibliotecaConOverlay();
+
+
                     }
                     else
                     {
@@ -952,7 +960,7 @@ namespace Project_Lightning.Pages
                 Thread.Sleep(1000); //UN PEQUEÑO DELAY EXTRA
 
                 //INICIAR STEAM DE NUEVO EN SEGUNDO PLANO
-                Process.Start("steam://open/minigameslist");
+                Process.Start("steam://open/main");
             }
             catch
             {
@@ -962,7 +970,22 @@ namespace Project_Lightning.Pages
         }
 
 
-
+        //BOTON PARA ABRIR STEAMDB
+        private void AbrirSteamDB(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = "https://steamdb.info/",
+                    UseShellExecute = true 
+                });
+            }
+            catch (Exception ex)
+            {
+                notifier.Show($"❌ Error opening SteamDB: {ex.Message}");
+            }
+        }
 
 
 
@@ -1036,6 +1059,9 @@ namespace Project_Lightning.Pages
                         }
                         else if (ext == ".zip")
                         {
+                            bool hasLua = false;
+                            bool hasManifest = false;
+
                             using (ZipArchive archive = ZipFile.OpenRead(file))
                             {
                                 foreach (var entry in archive.Entries)
@@ -1049,18 +1075,22 @@ namespace Project_Lightning.Pages
                                     {
                                         string destPath = System.IO.Path.Combine(pluginFolder, entryName);
                                         entry.ExtractToFile(destPath, overwrite: true);
+                                        hasLua = true;
                                     }
                                     else if (entryExt == ".manifest")
                                     {
                                         string destPath = System.IO.Path.Combine(depotCacheFolder, entryName);
                                         entry.ExtractToFile(destPath, overwrite: true);
-                                    }
-                                    else
-                                    {
-                                        //IGNORAR OTROS ARCHIVOS
-                                        allCopied = false;
+                                        hasManifest = true;
                                     }
                                 }
+                            }
+
+                            //👉 Solo mostrar error si no había ninguno de los dos
+                            if (!hasLua && !hasManifest)
+                            {
+                                MessageBox.Show("El ZIP no contiene ni .lua ni .manifest");
+                                allCopied = false;
                             }
                         }
                         else
@@ -1088,6 +1118,50 @@ namespace Project_Lightning.Pages
         }
 
 
+
+
+
+
+
+
+
+        //PARTE PARA EL BUSCADOR DE JUEGOS DENTRO DE LA LIBRERIA
+
+        private ICollectionView juegosView;
+        public ICollectionView JuegosView
+        {
+            get { return juegosView; }
+        }
+
+
+        private bool FiltroJuegos(object item)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscar.Text))
+                return true;
+
+            var juego = item as JuegoViewModel;
+
+            // OBTENEMOS EL NOMBRE DESDE LA BD
+            using (var conn = new SQLiteConnection(ConnectionString))
+            {
+                conn.Open();
+                string sql = "SELECT Nombre FROM Juegos WHERE AppId=@AppId LIMIT 1;";
+                using (var cmd = new SQLiteCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@AppId", juego.AppId);
+                    var nombre = cmd.ExecuteScalar()?.ToString() ?? string.Empty;
+                    return nombre.IndexOf(txtBuscar.Text, StringComparison.OrdinalIgnoreCase) >= 0;
+                }
+            }
+        }
+
+
+        private void txtBuscar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            juegosView.Refresh();
+
+
+        }
 
 
 
