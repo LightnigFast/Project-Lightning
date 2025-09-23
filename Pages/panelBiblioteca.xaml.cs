@@ -14,6 +14,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Content.Area._3D;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -801,12 +802,7 @@ namespace Project_Lightning.Pages
 
 
         //PARTE PARA LA DESCARGA DE APPIDS
-        private readonly string[] REPOS = new string[]
-        {
-            "https://github.com/LightnigFast/ProjectLightningManifests",
-            "https://github.com/sojorepo/sojogames",
-            "https://github.com/SteamAutoCracks/ManifestHub"
-        };
+        private readonly string[] REPOS = Repos.GetRectangle3D();
 
 
         private async Task BuscarYAgregarAppIdAsync(string appId)
