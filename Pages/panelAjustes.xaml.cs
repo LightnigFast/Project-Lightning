@@ -118,14 +118,14 @@ namespace Project_Lightning.Pages
         //BOTON PARA INSTALAR LIGHTNING TOOLS
         private void btnInstallarLightningTools_Click(object sender, RoutedEventArgs e)
         {
-            string url = "https://download947.mediafire.com/4j027xfk6plgsxUV783Xp70nN7PEb9LBXSnOk1Mc2T7HmmT3mpUY5CnIsCMJrxo7YFmG2pQoy50ZhylMl_fhs-XEm9nLJLRUpdDPCjlXQ3UxeS65YEyTuhqz-6vZANA7FF-nB9O-qsVnEZZ3KxQKbMYAVXR9WjkSRN3_QCIAotvr/7qfayq6djmy9cnv/hid.dll";
+            string url = "https://www.dropbox.com/scl/fi/3pfqpenurej36rxu5j6d2/hid.dll?rlkey=39k6pjfueqddwrcyh8w2zi6pb&st=hcdyupyw&dl=1";
+                          
 
             string rutaUsuario = txtRutaSteam.Text;
 
             if (string.IsNullOrWhiteSpace(rutaUsuario) || !Directory.Exists(rutaUsuario))
             {
-                var notifier = new Project_Lightning.Classes.NotificationManager(_ventanaPrincipal.NotificationCanvasPublic);
-                notifier.Show("❌ Please select a valid folder first", isError: true);
+                notifier.Show("❌ Please select a valid folder first", isError: true, 4000);
                 return;
             }
 
@@ -134,8 +134,7 @@ namespace Project_Lightning.Pages
 
             if (!Directory.Exists(configFolder))
             {
-                var notifier = new Project_Lightning.Classes.NotificationManager(_ventanaPrincipal.NotificationCanvasPublic);
-                notifier.Show("❌ The config folder does not exist in the selected path.", isError: true);
+                notifier.Show("❌ The config folder does not exist in the selected path.", isError: true, 4000);
                 return;
             }
 
@@ -161,13 +160,11 @@ namespace Project_Lightning.Pages
                     client.DownloadFile(url, destino);
                 }
 
-                var notifierOk = new Project_Lightning.Classes.NotificationManager(_ventanaPrincipal.NotificationCanvasPublic);
-                notifierOk.Show($"✅ Lightning Tools installed successfully!\nDLL saved at: {destino}");
+                notifier.Show($"✅ Lightning Tools installed successfully!", isError: false, 4000);
             }
             catch (Exception ex)
             {
-                var notifierError = new Project_Lightning.Classes.NotificationManager(_ventanaPrincipal.NotificationCanvasPublic);
-                notifierError.Show($"❌ Error downloading DLL: {ex.Message}", isError: true);
+                notifier.Show($"❌ Error downloading Lightning Tools: {ex.Message}", isError: true, 4000);
             }
         }
 
@@ -177,16 +174,77 @@ namespace Project_Lightning.Pages
         //BOTON PARA BORRAR TODOS LOS JUEGOS INSTALADOS CON STEAMTOOLS
         private void btnBorrarJuegos_Click(object sender, RoutedEventArgs e)
         {
+            string rutaUsuario = txtRutaSteam.Text;
 
+            if (string.IsNullOrWhiteSpace(rutaUsuario) || !Directory.Exists(rutaUsuario))
+            {
+                notifier.Show("❌ Please select a valid folder first", isError: true, 4000);
+                return;
+            }
 
+            string stPluginFolder = System.IO.Path.Combine(rutaUsuario, "config", "stplug-in");
+
+            if (!Directory.Exists(stPluginFolder))
+            {
+                notifier.Show("❌ The stplug-in folder does not exist.", isError: true, 4000);
+                return;
+            }
+
+            try
+            {
+                // Borra todos los archivos
+                foreach (string file in Directory.GetFiles(stPluginFolder))
+                {
+                    File.Delete(file);
+                }
+
+                // Borra todas las subcarpetas y su contenido
+                foreach (string dir in Directory.GetDirectories(stPluginFolder))
+                {
+                    Directory.Delete(dir, true);
+                }
+
+                notifier.Show("✅ All games have been deleted successfully!", isError: false, 4000);
+            }
+            catch (Exception ex)
+            {
+                notifier.Show($"❌ Error deleting files: {ex.Message}", isError: true, 4000);
+            }
         }
+
+
 
         //BOTON PARA DESINSTALAR LIGHTNINGTOOLS
         private void btnDesinstalar_Click(object sender, RoutedEventArgs e)
         {
+            string rutaUsuario = txtRutaSteam.Text;
 
+            if (string.IsNullOrWhiteSpace(rutaUsuario) || !Directory.Exists(rutaUsuario))
+            {
+                notifier.Show("❌ Please select a valid folder first", isError: true, 4000);
+                return;
+            }
 
+            string dllPath = System.IO.Path.Combine(rutaUsuario, "hid.dll");
+
+            if (!File.Exists(dllPath))
+            {
+                notifier.Show("❌ LightningTools not found.", isError: true, 4000);
+                return;
+            }
+
+            try
+            {
+                File.Delete(dllPath);
+
+                notifier.Show("✅ LightningTools has been uninstalled successfully!", isError: false, 4000);
+            }
+            catch (Exception ex)
+            {
+                notifier.Show($"❌ Error deleting Lightning Tools: {ex.Message}", isError: true, 4000);
+            }
         }
+
 
 
 

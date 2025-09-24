@@ -24,7 +24,7 @@ namespace Project_Lightning.Classes
                 Padding = new Thickness(10),
                 Margin = new Thickness(0, 0, 0, 10),
                 MinWidth = 50,
-                Background = isError ? new SolidColorBrush(Color.FromRgb(255, 50, 50)) : new SolidColorBrush(Color.FromRgb(50, 200, 50)),
+                Background = isError ? new SolidColorBrush(Color.FromRgb(255, 50, 50)) : new SolidColorBrush(Color.FromRgb(30, 133, 30)),
                 BorderBrush = isError ? Brushes.Red : Brushes.Green,
                 BorderThickness = new Thickness(2),
                 Opacity = 0,
