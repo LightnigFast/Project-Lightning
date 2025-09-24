@@ -112,7 +112,7 @@ namespace Project_Lightning.Pages
         //METODO PARA CARGAR LA BIBLIOTECA
         private async Task CargarBiblioteca(string steamPath)
         {
-            LoadingOverlay.Visibility = Visibility.Visible; // MOSTRAR OVERLAY
+            LoadingOverlay.Visibility = Visibility.Visible;
             StartSpinner();
 
             try
@@ -122,113 +122,101 @@ namespace Project_Lightning.Pages
 
                 if (!Directory.Exists(pluginFolder))
                 {
-                    notifier.Show("❌ The \"stplug-in\" directory was not found.", isError: true);
-
-                    gridAñadirJuego.Visibility = Visibility.Collapsed;
-                    componenteArrastrar.Visibility = Visibility.Collapsed;
-                    string mensaje = "Before using the library, you must install LightningTools. Go to the settings and install it.";
-                    Juegos.Clear();
-                    Juegos.Add(new JuegoViewModel
-                    {
-                        AppId = -1, // AppId ficticio
-                        Imagen = null,
-                        MetacriticScore = null,
-                        NombreError = mensaje
-                    });
-
+                    MostrarError("❌ The \"stplug-in\" directory was not found.",
+                                 "Before using the library, you must install LightningTools. Go to the settings and install it.");
                     return;
                 }
 
                 if (!Directory.Exists(cacheFolder))
                 {
-                    notifier.Show("❌ The \"librarycache\" directory was not found.", isError: true);
-
-                    gridAñadirJuego.Visibility = Visibility.Collapsed;
-                    componenteArrastrar.Visibility= Visibility.Collapsed;
-                    string mensaje = "This error occurs due to a faulty Steam installation or because you haven’t logged in yet." +
-                        "\nIf you haven’t signed in to your account, please do so, and if it still doesn’t work, reinstall Steam.";
-                    Juegos.Clear();
-                    Juegos.Add(new JuegoViewModel
-                    {
-                        AppId = -1, // AppId ficticio
-                        Imagen = null,
-                        MetacriticScore = null,
-                        NombreError = mensaje
-                    });
-
+                    MostrarError("❌ The \"librarycache\" directory was not found.",
+                                 "This error occurs due to a faulty Steam installation or because you haven’t logged in yet.\nIf you haven’t signed in to your account, please do so, and if it still doesn’t work, reinstall Steam.");
                     return;
                 }
 
-                Juegos.Clear(); // Limpiar la colección antes de agregar nuevos elementos
+                Juegos.Clear();
 
                 var luaFiles = Directory.GetFiles(pluginFolder, "*.lua");
+                var juegosTemp = new List<JuegoViewModel>();
 
-                foreach (var luaFile in luaFiles)
+                await Task.Run(() =>
                 {
-                    string appId = System.IO.Path.GetFileNameWithoutExtension(luaFile);
-
-                    if (int.TryParse(appId, out int appIdInt))
+                    foreach (var luaFile in luaFiles)
                     {
+                        string appId = System.IO.Path.GetFileNameWithoutExtension(luaFile);
+                        if (!int.TryParse(appId, out int appIdInt)) continue;
+
                         if (!EstaEnBD(appIdInt))
-                            await GuardarJuegosEnBD(luaFiles
-                                .Select(f => int.TryParse(System.IO.Path.GetFileNameWithoutExtension(f), out int id) ? id : -1)
-                                .Where(id => id > 0));
-
-                    }
-
-                    string appFolder = System.IO.Path.Combine(cacheFolder, appId);
-                    if (!Directory.Exists(appFolder))
-                    {
-                        notifier.Show($"❌ The appid {appId} was not found, please restart Steam.", isError: true, 4000);
-                        continue;
-                    }
-
-                    var subfolders = Directory.GetDirectories(appFolder, "*", SearchOption.AllDirectories)
-                                              .Concat(new[] { appFolder });
-
-                    foreach (var folder in subfolders)
-                    {
-                        string imagePath = System.IO.Path.Combine(folder, "library_600x900.jpg");
-                        if (File.Exists(imagePath))
                         {
-                            await Task.Run(() =>
+                            var ids = luaFiles
+                                .Select(f => int.TryParse(System.IO.Path.GetFileNameWithoutExtension(f), out int id) ? id : -1)
+                                .Where(id => id > 0);
+                            GuardarJuegosEnBD(ids).Wait();
+                        }
+
+                        string appFolder = System.IO.Path.Combine(cacheFolder, appId);
+                        if (!Directory.Exists(appFolder))
+                        {
+                            Dispatcher.Invoke(() =>
+                                notifier.Show($"❌ The appid {appId} was not found, please restart Steam.", isError: true, 4000));
+                            continue;
+                        }
+
+                        var subfolders = Directory.GetDirectories(appFolder, "*", SearchOption.AllDirectories)
+                                                  .Concat(new[] { appFolder });
+
+                        foreach (var folder in subfolders)
+                        {
+                            string imagePath = System.IO.Path.Combine(folder, "library_600x900.jpg");
+                            if (!File.Exists(imagePath)) continue;
+
+                            BitmapImage bitmap = new BitmapImage();
+                            bitmap.BeginInit();
+                            bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
+                            bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                            bitmap.DecodePixelWidth = 110;
+                            bitmap.DecodePixelHeight = 165;
+                            bitmap.EndInit();
+                            bitmap.Freeze();
+
+                            int? metacriticScore = ObtenerMetacriticDesdeBD(appIdInt);
+
+                            juegosTemp.Add(new JuegoViewModel
                             {
-                                BitmapImage bitmap = new BitmapImage();
-                                bitmap.BeginInit();
-                                bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
-                                bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                                bitmap.DecodePixelWidth = 110; //AJUSTA EL ANCHO
-                                bitmap.EndInit();
-                                bitmap.Freeze();
-
-                                Dispatcher.Invoke(() =>
-                                {
-
-                                    int? metacriticScore = ObtenerMetacriticDesdeBD(appIdInt);
-
-                                    //AGREGAMOS UN NUEVO JUEGO A LA LISTA OBSERVABLE
-                                    Juegos.Add(new JuegoViewModel
-                                    {
-                                        AppId = appIdInt,
-                                        Imagen = bitmap,
-                                        MetacriticScore = metacriticScore
-                                    });
-                                });
-
-
-
+                                AppId = appIdInt,
+                                Imagen = bitmap,
+                                MetacriticScore = metacriticScore
                             });
 
                             break;
                         }
                     }
-                }
+                });
+
+                foreach (var juego in juegosTemp)
+                    Juegos.Add(juego);
             }
             finally
             {
-                LoadingOverlay.Visibility = Visibility.Collapsed; // OCULTAR OVERLAY
+                LoadingOverlay.Visibility = Visibility.Collapsed;
             }
         }
+
+        private void MostrarError(string titulo, string mensaje)
+        {
+            notifier.Show(titulo, isError: true);
+            gridAñadirJuego.Visibility = Visibility.Collapsed;
+            componenteArrastrar.Visibility = Visibility.Collapsed;
+            Juegos.Clear();
+            Juegos.Add(new JuegoViewModel
+            {
+                AppId = -1,
+                Imagen = null,
+                MetacriticScore = null,
+                NombreError = mensaje
+            });
+        }
+
 
 
         public class JuegoViewModel

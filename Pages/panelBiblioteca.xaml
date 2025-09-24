@@ -426,7 +426,7 @@
                 </StackPanel>
 
                 <!--PARTE PARA LOS JUEGOS-->
-                <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1" CacheMode="BitmapCache">
                     <ItemsControl Name="panelJuegos" ItemsSource="{Binding JuegosView}" HorizontalAlignment="Center">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
