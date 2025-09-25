@@ -41,10 +41,42 @@ namespace Project_Lightning.Pages
 
             //CARGO LA RUTA EN EL TEXTBOX SIEMPRE QUE EXISTA
             CargarRutaSteam();
+            comprobarRutaSteam();
+            comprobarLightningToolsInstalado();
         }
 
+        //METODO PARA COMPROBAR SI LA RUTA CORRESPONDE A STEAM
+        private void comprobarRutaSteam()
+        {
+            string ruta = txtRutaSteam.Text;
+            string steamExe = System.IO.Path.Combine(ruta, "steam.exe");
+            if (!File.Exists(steamExe))
+            {
+                componeneteInstalacion.IsEnabled = false;
+                return;
+            }
 
-        // Cargar ruta al iniciar la página
+            componeneteInstalacion.IsEnabled = true;
+        }
+
+        //METODO PARA COMPROBAR SI LIGHTNINGTOOLS ESTA INSTALADO (PARA CAMBIAR EL ESTILO DE BOTON DE INSTALAR)
+        private void comprobarLightningToolsInstalado()
+        {
+            string ruta = txtRutaSteam.Text;
+            string lightningTools = System.IO.Path.Combine(ruta, "hid.dll");
+            if (!File.Exists(lightningTools))
+            {
+                btnInstallarLightningTools.Tag = "NotInstalled";
+                btnInstallText.Text = "Install";
+                return;
+            }
+
+            btnInstallarLightningTools.Tag = "Installed";
+            btnInstallText.Text = "Installed";
+
+        }
+
+        //Cargar ruta al iniciar la página
         private void CargarRutaSteam()
         {
             string folder = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Project_Lightning");
@@ -94,6 +126,10 @@ namespace Project_Lightning.Pages
             //MOSTRAR NOTIFICACIÓN DE ÉXITO
             var notifierOk = new Project_Lightning.Classes.NotificationManager(_ventanaPrincipal.NotificationCanvasPublic);
             notifierOk.Show("Saved changes ✅.");
+
+            //HABILITAR EL CUADRO DE DESCARGA
+            comprobarRutaSteam();
+            comprobarLightningToolsInstalado();
         }
 
 
@@ -129,7 +165,7 @@ namespace Project_Lightning.Pages
                 return;
             }
 
-            // Carpeta config dentro de la ruta del usuario
+            //Carpeta config dentro de la ruta del usuario
             string configFolder = System.IO.Path.Combine(rutaUsuario, "config");
 
             if (!Directory.Exists(configFolder))
@@ -138,7 +174,7 @@ namespace Project_Lightning.Pages
                 return;
             }
 
-            // Verificar y crear stplug-in y depotcache si no existen
+            //Verificar y crear stplug-in y depotcache si no existen
             string stPluginFolder = System.IO.Path.Combine(configFolder, "stplug-in");
             string depotcacheFolder = System.IO.Path.Combine(configFolder, "depotcache");
 
@@ -149,7 +185,7 @@ namespace Project_Lightning.Pages
                 Directory.CreateDirectory(depotcacheFolder);
 
 
-            // Mantener el nombre original del DLL
+            //Mantener el nombre original del DLL
             string fileName = System.IO.Path.GetFileName(new Uri(url).LocalPath);
             string destino = System.IO.Path.Combine(rutaUsuario, fileName);
 
@@ -161,6 +197,7 @@ namespace Project_Lightning.Pages
                 }
 
                 notifier.Show($"✅ Lightning Tools installed successfully!", isError: false, 4000);
+                comprobarLightningToolsInstalado();
             }
             catch (Exception ex)
             {
@@ -238,6 +275,7 @@ namespace Project_Lightning.Pages
                 File.Delete(dllPath);
 
                 notifier.Show("✅ LightningTools has been uninstalled successfully!", isError: false, 4000);
+                comprobarLightningToolsInstalado();
             }
             catch (Exception ex)
             {
