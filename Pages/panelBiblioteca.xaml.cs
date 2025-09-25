@@ -119,6 +119,14 @@ namespace Project_Lightning.Pages
             {
                 string pluginFolder = System.IO.Path.Combine(steamPath, "config", "stplug-in");
                 string cacheFolder = System.IO.Path.Combine(steamPath, "appcache", "librarycache");
+                string lightningTools = System.IO.Path.Combine(steamPath, "hid.dll");
+
+                if (!File.Exists(lightningTools))
+                {
+                    MostrarError("❌ \"LightningTools\" is not installed.",
+                                 "This error occurs because LightningTools is not installed. Please go to Settings and install it before using the library.");
+                    return;
+                }
 
                 if (!Directory.Exists(pluginFolder))
                 {
