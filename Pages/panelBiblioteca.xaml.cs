@@ -281,6 +281,9 @@ namespace Project_Lightning.Pages
                     if (!File.Exists(headerPath))
                         headerPath = System.IO.Path.Combine(folder, "header.jpg");
 
+                    if (!File.Exists(headerPath))
+                        headerPath = System.IO.Path.Combine(folder, "library_600x900.jpg");
+
                     if (File.Exists(headerPath))
                     {
                         // CARGAR IMAGEN
