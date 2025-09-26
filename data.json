@@ -861,6 +861,32 @@
     }
   },
   "OTHERS": {
+    "7940": {
+      "name": "Call of Duty 4: Modern Warfare (2007)",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 9", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 9 and VC Redist",
+        "If the game doesn't launch with steam, go to the main game path and open the exe iw3sp.exe."
+      ],
+      "nombre_fix": "Call of Duty 4 Modern Warfare - bypass",
+      "custom_images": {}
+    },
+    "10180": {
+      "name": "Call of Duty: Modern Warfare 2 (2009)",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 9", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 9 and VC Redist",
+        "If the game doesn't launch with steam, go to the main game path and open the exe iw4sp.exe."
+      ],
+      "nombre_fix": "Call of Duty Modern Warfare 2 - bypass",
+      "custom_images": {}
+    },
     "42700": {
       "name": "Call of Duty: Black Ops",
       "launch_steam": true,
@@ -872,6 +898,20 @@
         "If the game doesn't launch, go to the main folder of the game, open the localization.txt file, and change it to the language."
       ],
       "nombre_fix": "Call of Duty Black Ops - bypass",
+      "custom_images": {}
+    },
+    "115300": {
+      "name": "Call of Duty®: Modern Warfare® 3 (2011)",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 10", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 10 and VC Redist",
+        "If the game doesn't launch with steam, go to the main folder of the game, and launch iw5sp.exe.",
+        "For play online, execute the exe iw5mp.exe"
+      ],
+      "nombre_fix": "Call of Duty Modern Warfare 3 - bypass",
       "custom_images": {}
     },
     "202970": {
@@ -888,6 +928,70 @@
       "custom_images": {
         "background": "https://cdn2.steamgriddb.com/hero/8f14179f61cad1a80133387187c01092.jpg"
       }
+    },
+    "209160": {
+      "name": "Call of Duty: Ghosts",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 10", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 10 and VC Redist",
+        "Open the game with iw6-mod.exe or with alterware-launcher.exe"
+      ],
+      "nombre_fix": "Call of Duty Ghosts - bypass",
+      "custom_images": {}
+    },
+    "292730": {
+      "name": "Call of Duty: Infinite Warfare",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 11", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 11 and VC Redist",
+        "Open the game with iw7-mod.exe"
+      ],
+      "nombre_fix": "Call of Duty Infinite Warfare - bypass",
+      "custom_images": {}
+    },
+    "476600": {
+      "name": "Call of Duty: WWII",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 11", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 11 and VC Redist"
+      ],
+      "nombre_fix": "Call of Duty WWII - bypass",
+      "custom_images": {}
+    },
+    "2000950": {
+      "name": "Call of Duty®: Modern Warfare®",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
+        "Before open the game, read the file README.txt in the main game folder"
+      ],
+      "nombre_fix": "Call of Duty Modern Warfare (2019) - bypass",
+      "custom_images": {}
+    },
+    "1985810": {
+      "name": "Call of Duty®: Black Ops Cold War",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
+        "This game have problems in the last windows 11 update, be careful"
+      ],
+      "nombre_fix": "Call of Duty Black Ops Cold War - bypass",
+      "custom_images": {}
     },
     "1659040": {
       "name": "HITMAN World of Assassination",
