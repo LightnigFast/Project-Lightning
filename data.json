@@ -982,13 +982,14 @@
     },
     "1985810": {
       "name": "Call of Duty®: Black Ops Cold War",
-      "launch_steam": true,
+      "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX 12", "VC Redist"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
-        "This game have problems in the last windows 11 update, be careful"
+        "Open the game with BlackOpsColdWar.exe",
+        "When the game starts for the first time, it usually takes a long time, wait 5 minutes and if it continues loading, close the game and reopen it."
       ],
       "nombre_fix": "Call of Duty Black Ops Cold War - bypass",
       "custom_images": {}
