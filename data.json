@@ -412,7 +412,10 @@
         "If updated, send a new DenuvoTicket and repeat steps."
       ],
       "nombre_fix": "EA SPORTS FC 26 - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/b447514189ba0925aa3969913019fefe.png",
+        "background": "https://i.imgur.com/nz7fmoI.png"
+      }
     },
     "2669320": {
       "name": "EA SPORTS FC 25",
