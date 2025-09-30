@@ -1,4 +1,109 @@
 {
+   "427410":{
+      "name":"Abiotic Factor",
+      "nombre_fix":"Abiotic Factor - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/427410/ea0a048c538cabb9391f2c4f12a8939123f6d0a5/capsule_616x353.jpg?t=1759166018"
+   },
+   "2141730":{
+      "name":"Backrooms: Escape Together",
+      "nombre_fix":"Backrooms: Escape Together - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2141730/512f1323feb843c8cc3a67e3f6f23290a9f8ecd6/capsule_616x353.jpg?t=1758244961"
+   },
+   "729040":{
+      "name":"Borderlands GOTY Enhanced",
+      "nombre_fix":"Borderlands GOTY Enhanced - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/729040/capsule_616x353.jpg?t=1750080828"
+   },
+   "49520":{
+      "name":"Borderlands 2",
+      "nombre_fix":"Borderlands 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/49520/a31378d171ddc282073952ada2b9514668f82106/capsule_616x353.jpg?t=1751931279"
+   },
+   "261640":{
+      "name":"Borderlands: The Pre-Sequel",
+      "nombre_fix":"Borderlands: The Pre-Sequel - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261640/capsule_616x353.jpg?t=1750081341"
+   },
+   "397540":{
+      "name":"Borderlands 3",
+      "nombre_fix":"Borderlands 3 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/397540/capsule_616x353.jpg?t=1750802377"
+   },
+   "2933080":{
+      "name":"Crime Boss: Rockay City",
+      "nombre_fix":"Crime Boss: Rockay City - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2933080/dd0f5b3b52637aa6e3f924dbb90d7938239f9520/capsule_616x353.jpg?t=1758877805"
+   },
+   "1274570":{
+      "name":"DEVOUR",
+      "nombre_fix":"DEVOUR - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1274570/capsule_616x353.jpg?t=1743335491"
+   },
+   "678950":{
+      "name":"DRAGON BALL FighterZ",
+      "nombre_fix":"DRAGON BALL FighterZ - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/678950/capsule_616x353.jpg?t=1733508969"
+   },
+   "1943950":{
+      "name":"Escape the Backrooms",
+      "nombre_fix":"Escape the Backrooms - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1943950/6d97c7e6d9dad547c3a46c580a5db89e3c796144/capsule_616x353.jpg?t=1758195724"
+   },
+   "1757300":{
+      "name":"Jump Space",
+      "nombre_fix":"Jump Space - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1757300/a008e9002a04ce87c85f0e042054b50361a81e91/capsule_616x353.jpg?t=1758713482"
+   },
+   "1966720":{
+      "name":"Lethal Company",
+      "nombre_fix":"Lethal Company - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1966720/capsule_616x353.jpg?t=1750273815"
+   },
+   "728880":{
+      "name":"Overcooked! 2",
+      "nombre_fix":"Overcooked! 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/728880/capsule_616x353.jpg?t=1758210340"
+   },
+   "2695940":{
+      "name":"PANICORE",
+      "nombre_fix":"PANICORE - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2695940/19b04c20b8b8c4df6c3b9a2ce4fd441ec25c08a8/capsule_616x353.jpg?t=1747322023"
+   },
+   "246620":{
+      "name":"Plague Inc: Evolved",
+      "nombre_fix":"Plague Inc: Evolved - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/246620/capsule_616x353.jpg?t=1758815671"
+   },
+   "617290":{
+      "name":"Remnant: From the Ashes",
+      "nombre_fix":"Remnant: From the Ashes - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/617290/capsule_616x353.jpg?t=1758242004"
+   },
+   "1650010":{
+      "name":"RIDE 5",
+      "nombre_fix":"RIDE 5 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1650010/capsule_616x353.jpg?t=1743007038"
+   },
+   "387990":{
+      "name":"Scrap Mechanic",
+      "nombre_fix":"Scrap Mechanic - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/387990/capsule_616x353.jpg?t=1727183889"
+   },
+   "250900":{
+      "name":"The Binding of Isaac: Rebirth",
+      "nombre_fix":"The Binding of Isaac: Rebirth - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/250900/capsule_616x353.jpg?t=1731977365"
+   },
+   "2828860":{
+      "name":"The Forever Winter",
+      "nombre_fix":"The Forever Winter - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2828860/af3202ee767ae0e1bbab199663b9e1099a11be91/capsule_616x353.jpg?t=1757579547"
+   },
+   "2976900":{
+      "name":"Unpossess",
+      "nombre_fix":"Unpossess - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2976900/db61a11da4e17fc2979fa829605be0a9a306e09a/capsule_616x353.jpg?t=1757099127"
+   },
    "3008130":{
       "name":"Dying Light: The Beast",
       "nombre_fix":"Dying Light: The Beast - fix",
