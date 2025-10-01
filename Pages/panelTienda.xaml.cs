@@ -32,7 +32,7 @@ namespace Project_Lightning.Pages
         {
             InitializeComponent();
             this.ventanaPrincipal = ventanaPrincipal;
-
+            gridCabecera.Visibility = Visibility.Hidden;
 
             ponerJuegos();
 
@@ -201,6 +201,7 @@ namespace Project_Lightning.Pages
                 }
                 else
                 {
+                    MessageBox.Show("dfsf");
                     gridCabecera.Background = null;
                 }
 
@@ -219,8 +220,7 @@ namespace Project_Lightning.Pages
                     imgLogo.Source = null; //POR SI NO TIENE LOGO
                 }
 
-                gridPrecios.Visibility = Visibility.Visible;
-                gridIrADisocrd.Visibility = Visibility.Visible;
+                gridCabecera.Visibility = Visibility.Visible;
 
                 //PRECIO NORMAL
                 percioNormal.Text = $" {juego.precioNormal} LC";

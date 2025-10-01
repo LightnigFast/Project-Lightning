@@ -165,7 +165,7 @@
                 <Image x:Name="imgLogo" Grid.Column="0" Grid.Row="0" Width="300"/>
 
                 <!--PARA EL NOMBRE DEL JUEGO Y LOS PRECIOS-->
-                <Border x:Name="gridPrecios" Grid.Column="1" Grid.Row="0" CornerRadius="8" Background="#AA2a2a2a" Padding="8" Margin="0" Height="70" Visibility="Hidden">
+                <Border x:Name="gridPrecios" Grid.Column="1" Grid.Row="0" CornerRadius="8" Background="#AA2a2a2a" Padding="8" Margin="0" Height="70">
 
                     <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center" Visibility="Visible">
                         <!--PRECIO NORMAL-->
@@ -184,7 +184,7 @@
                 
                 <!--BOTON DE ABAJO DE COMPRAR-->
                 <Border Grid.ColumnSpan="2" Grid.Row="1" CornerRadius="8" Padding="8" Margin="20,0,0,10" Height="70" Style="{StaticResource botonIrDiscord}"
-                        MouseDown="irADiscord" Name="gridIrADisocrd" Visibility="Hidden">
+                        MouseDown="irADiscord" Name="gridIrADisocrd">
                     <!-- CONTENIDO -->
                     <StackPanel x:Name="gridBuy" Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center" Visibility="Visible">
                         <TextBlock Text="GO TO DISCORD" Foreground="White" FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold" FontSize="30" HorizontalAlignment="Center"/>
