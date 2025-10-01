@@ -9,6 +9,23 @@
       Title="panelTienda">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
         
+        <!--PARTE PARA ALGUN BANNER-->
+        
+        
+        <!--PARTE PARA LOS JUEGOS-->
+        <ScrollViewer x:Name="scrollViewerJuegos" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,0,0,0">
+            <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto" Margin="10,0,10,0" HorizontalAlignment="Center">
+
+
+
+            </WrapPanel>
+        </ScrollViewer>
+
+
     </Grid>
 </Page>

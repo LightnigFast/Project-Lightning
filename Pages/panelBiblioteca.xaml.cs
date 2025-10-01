@@ -176,7 +176,16 @@ namespace Project_Lightning.Pages
                         foreach (var folder in subfolders)
                         {
                             string imagePath = System.IO.Path.Combine(folder, "library_600x900.jpg");
-                            if (!File.Exists(imagePath)) continue;
+
+                            if (!File.Exists(imagePath))
+                            {
+                                //SI NO EXISTE 600x900, PRUEBO CON CAPSULE
+                                imagePath = System.IO.Path.Combine(folder, "library_capsule.jpg");
+
+                                if (!File.Exists(imagePath))
+                                    continue; //SI TAMPOCO EXISTE, ME LO SALTO
+                            }
+
 
                             BitmapImage bitmap = new BitmapImage();
                             bitmap.BeginInit();
