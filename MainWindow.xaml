@@ -173,6 +173,18 @@
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
+                            
+                            <!---PARA LA TIENDA-->
+                            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
+                                <Button Style="{StaticResource BotonLateral}" Width="125" Click="TiendaButtonClick">
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="5,10,0,10"/>
+                                        <TextBlock Text="Store" Margin="10,0,0,0" VerticalAlignment="Center"
+                                                   Foreground="White"
+                                                   Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
 
                             <!--PARA PARA LOS BYPASS-->
                             <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >

@@ -198,6 +198,22 @@ namespace Project_Lightning
 
         }
 
+        //EVENTO PARA EL BOTON DE LA TIENDA
+        private void TiendaButtonClick(object sender, RoutedEventArgs e)
+        {
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
+
+            if (ventanaPrincipal != null)
+            {
+
+                //CAMBIAR EL CONTENIDO DEL FRAME
+                ventanaPrincipal.framePrincipal.Navigate(new panelTienda(ventanaPrincipal));
+                ocultarCabecera();
+            }
+
+        }
+
+
         //EVENTO PARA EL BOTON DE BYPASS
         private void bypassButtonClick(object sender, RoutedEventArgs e)
         {
