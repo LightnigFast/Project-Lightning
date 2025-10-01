@@ -14,6 +14,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -28,11 +29,15 @@ namespace Project_Lightning.Pages
     {
         MainWindow ventanaPrincipal;
         private Dictionary<string, Juego> todosLosJuegos = new Dictionary<string, Juego>();
+        private readonly string gamesImagesFolder = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Project_Lightning", "gamesImages");
+
+
         public panelTienda(MainWindow ventanaPrincipal)
         {
             InitializeComponent();
             this.ventanaPrincipal = ventanaPrincipal;
             gridCabecera.Visibility = Visibility.Hidden;
+            bordeJuegos.Visibility = Visibility.Hidden;
 
             ponerJuegos();
 
@@ -52,13 +57,76 @@ namespace Project_Lightning.Pages
             public int descuento { get; set; }
         }
 
+        //METODO PARA PRECARGAR LAS IMAGENES
+        private async Task PreloadAllImages(Dictionary<string, Juego> todosLosJuegos)
+        {
+            var tasks = new List<Task>();
+
+            foreach (var kvp in todosLosJuegos)
+            {
+                string appid = kvp.Key;
+                Juego juego = kvp.Value;
+
+                // Descarga las tres imágenes en paralelo
+                tasks.Add(GetGameImageAsync(appid, juego.imgVertical, "library_600x900"));
+                tasks.Add(GetGameImageAsync(appid, juego.imgCabecera, "library_hero"));
+                tasks.Add(GetGameImageAsync(appid, juego.imgLogo, "logo"));
+            }
+
+            await Task.WhenAll(tasks);
+        }
 
 
+        //METODO PARA OBTENER UNA IMAGEN: DESCARGA SI NO EXISTE
+        private async Task<BitmapImage> GetGameImageAsync(string appid, string url, string imageName)   
+        {
+            try
+            {
+                //CARPETA DEL JUEGO
+                string appFolder = System.IO.Path.Combine(gamesImagesFolder, appid);
+                if (!Directory.Exists(appFolder))
+                    Directory.CreateDirectory(appFolder);
+
+                string localPath = System.IO.Path.Combine(appFolder, imageName + ".jpg");
+
+                //DESCARGAR SI NO EXISTE
+                if (!File.Exists(localPath) && !string.IsNullOrEmpty(url))
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        var bytes = await client.GetByteArrayAsync(url);
+                        File.WriteAllBytes(localPath, bytes);
+                    }
+                }
+
+                //CARGAR IMAGEN
+                if (File.Exists(localPath))
+                {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(localPath, UriKind.Absolute);
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.EndInit();
+                    return bitmap;
+                }
+            }
+            catch
+            {
+                //SI FALLA, DEVUELVE NULL
+            }
+
+            return null;
+        }
 
         private async void ponerJuegos()
         {
             todosLosJuegos = await sacarJuegosDeApp();
-            colocarJuegos(todosLosJuegos);
+            overlayCarga.Visibility = Visibility.Visible;
+            // Pre-cargar todas las imágenes
+            await PreloadAllImages(todosLosJuegos);
+            overlayCarga.Visibility = Visibility.Collapsed;
+            await colocarJuegos(todosLosJuegos);
+            await FadeInAsync(bordeJuegos, 0.5);
 
         }
 
@@ -129,7 +197,7 @@ namespace Project_Lightning.Pages
 
 
         //METODO PARA COLOCAR LOS JUEGOS EN EL PANEL
-        private void colocarJuegos(Dictionary<string, Juego> todosLosJuegos)
+        private async Task colocarJuegos(Dictionary<string, Juego> todosLosJuegos)
         {
 
             //LIMPIAR EL PANEL ANTES
@@ -139,110 +207,86 @@ namespace Project_Lightning.Pages
             {
                 Juego juego = kvp.Value;
 
-                //CREAR IMAGEN
-                Image img = new Image
+                //CREAR BORDER CON BORDES REDONDEADOS
+                Border border = new Border
                 {
                     Width = 150,
                     Height = 225,
                     Margin = new Thickness(5),
-                    Stretch = Stretch.UniformToFill,
-                    Cursor = Cursors.Hand, //PARA QUE SE VEA INTERACTIVO
-                    Tag = kvp.Key //GUARDAMOS EL APPID
+                    Cursor = Cursors.Hand,
+                    Tag = kvp.Key
                 };
 
-                try
+                //CREAR IMAGEN
+                Image img = new Image
                 {
-                    BitmapImage bitmap = new BitmapImage();
-                    bitmap.BeginInit();
-                    bitmap.UriSource = new Uri(juego.imgVertical, UriKind.Absolute);
-                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                    bitmap.EndInit();
-                    img.Source = bitmap;
-                }
-                catch
+                    Stretch = Stretch.UniformToFill
+                };
+
+                //CARGAR IMAGEN LOCAL O DESCARGAR
+                BitmapImage bitmap = await GetGameImageAsync(kvp.Key, juego.imgVertical, "library_600x900");
+                img.Source = bitmap;
+
+                //CLIP PARA REDONDEAR BORDES
+                img.Clip = new RectangleGeometry
                 {
-                    //SI FALLA LA CARGA, PONGO UN RECTÁNGULO O TEXTO EN LUGAR DE IMAGEN
-                    img.Source = null;
-                }
+                    Rect = new Rect(0, 0, border.Width, border.Height),
+                    RadiusX = 12,
+                    RadiusY = 12
+                };
+
+                border.Child = img;
 
                 //EVENTO CLICK
-                img.MouseLeftButtonUp += (s, e) =>
+                border.MouseLeftButtonUp += async (s, e) =>
                 {
-                    ponerEnCabecera(juego);
+                    await PonerEnCabeceraAsync(juego, kvp.Key);
                 };
 
-                //AÑADIR AL WRAPPANEL
-                panelJuegos.Children.Add(img);
+                panelJuegos.Children.Add(border);
             }
+
+
 
 
         }
 
         //METODO PARA CAMBIAR LA CABECERA DE LA PAGINA
-        private void ponerEnCabecera(Juego juego)
+        private async Task PonerEnCabeceraAsync(Juego juego, string key)
         {
             try
             {
-                //FONDO DE LA CABECERA
-                if (!string.IsNullOrEmpty(juego.imgCabecera))
+                //FONDO CABECERA
+                BitmapImage fondo = await GetGameImageAsync(key, juego.imgCabecera, "library_hero");
+                if (fondo != null)
                 {
-                    BitmapImage fondo = new BitmapImage();
-                    fondo.BeginInit();
-                    fondo.UriSource = new Uri(juego.imgCabecera, UriKind.Absolute);
-                    fondo.CacheOption = BitmapCacheOption.OnLoad;
-                    fondo.EndInit();
-
                     gridCabecera.Background = new ImageBrush(fondo)
                     {
-                        Stretch = Stretch.UniformToFill, //CUBRE EL GRID
+                        Stretch = Stretch.UniformToFill,
                         AlignmentX = AlignmentX.Center,
                         AlignmentY = AlignmentY.Center
                     };
                 }
                 else
-                {
-                    MessageBox.Show("dfsf");
                     gridCabecera.Background = null;
-                }
 
                 //LOGO
-                if (!string.IsNullOrEmpty(juego.imgLogo))
-                {
-                    BitmapImage logo = new BitmapImage();
-                    logo.BeginInit();
-                    logo.UriSource = new Uri(juego.imgLogo, UriKind.Absolute);
-                    logo.CacheOption = BitmapCacheOption.OnLoad;
-                    logo.EndInit();
-                    imgLogo.Source = logo;
-                }
-                else
-                {
-                    imgLogo.Source = null; //POR SI NO TIENE LOGO
-                }
+                BitmapImage logo = await GetGameImageAsync(key, juego.imgLogo, "logo");
+                imgLogo.Source = logo;
 
-                gridCabecera.Visibility = Visibility.Visible;
-
-                //PRECIO NORMAL
+                //PRECIOS
                 percioNormal.Text = $" {juego.precioNormal} LC";
-
-                //PRECIO DONADOR
                 percioDonador.Text = $" {juego.precioDonadores} LC";
+                percioNormal.TextDecorations = juego.descuento > 0 ? TextDecorations.Strikethrough : null;
 
-                //SI HAY DESCUENTO
-                if (juego.descuento > 0)
-                {
-                    percioNormal.TextDecorations = TextDecorations.Strikethrough;
-                }
-                else
-                {
-                    percioNormal.TextDecorations = null;
-                }
+                await FadeInAsync(gridCabecera, 0.5);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al mostrar el juego: " + ex.Message);
             }
         }
+
 
 
 
@@ -263,6 +307,63 @@ namespace Project_Lightning.Pages
             {
                 MessageBox.Show("No se pudo abrir el enlace: " + ex.Message);
             }
+        }
+
+
+
+
+
+
+
+        // FADE IN: Aumenta Opacity de 0 a 1
+        public static Task FadeInAsync(UIElement element, double durationSeconds = 0.3)
+        {
+            if (element == null) return Task.CompletedTask;
+
+            element.Visibility = Visibility.Visible; // Aseguramos que se vea
+            element.Opacity = 0; // Empezamos desde 0
+
+            var tcs = new TaskCompletionSource<bool>();
+
+            DoubleAnimation fadeIn = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(durationSeconds),
+                FillBehavior = FillBehavior.HoldEnd
+            };
+
+            fadeIn.Completed += (s, e) => tcs.SetResult(true);
+
+            element.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+
+            return tcs.Task;
+        }
+
+        // FADE OUT: Disminuye Opacity de 1 a 0
+        public static Task FadeOutAsync(UIElement element, double durationSeconds = 0.3)
+        {
+            if (element == null) return Task.CompletedTask;
+
+            var tcs = new TaskCompletionSource<bool>();
+
+            DoubleAnimation fadeOut = new DoubleAnimation
+            {
+                From = element.Opacity,
+                To = 0,
+                Duration = TimeSpan.FromSeconds(durationSeconds),
+                FillBehavior = FillBehavior.HoldEnd
+            };
+
+            fadeOut.Completed += (s, e) =>
+            {
+                element.Visibility = Visibility.Collapsed; // Ocultamos al terminar
+                tcs.SetResult(true);
+            };
+
+            element.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+
+            return tcs.Task;
         }
 
 

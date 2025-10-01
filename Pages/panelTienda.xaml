@@ -90,7 +90,7 @@
         
         <!--EFECTO DEL BOTON DE IR A DISCORD-->
         <Style x:Key="botonIrDiscord" TargetType="Border">
-            <Setter Property="Background" Value="#AA2a2a2a"/>
+            <Setter Property="Background" Value="#CC2a2a2a"/>
             <Setter Property="Cursor" Value="Hand"/>
             <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
             <Setter Property="RenderTransform">
@@ -126,7 +126,7 @@
                             <Storyboard>
                                 <ColorAnimation 
                                     Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
-                                    To="#AA2a2a2a" Duration="0:0:0.2"/>
+                                    To="#CC2a2a2a" Duration="0:0:0.2"/>
                                 <DoubleAnimation 
                                     Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleX)" 
                                     To="1" Duration="0:0:0.2"/>
@@ -165,7 +165,7 @@
                 <Image x:Name="imgLogo" Grid.Column="0" Grid.Row="0" Width="300"/>
 
                 <!--PARA EL NOMBRE DEL JUEGO Y LOS PRECIOS-->
-                <Border x:Name="gridPrecios" Grid.Column="1" Grid.Row="0" CornerRadius="8" Background="#AA2a2a2a" Padding="8" Margin="0" Height="70">
+                <Border x:Name="gridPrecios" Grid.Column="1" Grid.Row="0" CornerRadius="8" Background="#CC2a2a2a" Padding="8" Margin="5" Height="70" VerticalAlignment="Bottom">
 
                     <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center" Visibility="Visible">
                         <!--PRECIO NORMAL-->
@@ -196,7 +196,7 @@
         </Border>
         
         <!--PARTE PARA LOS JUEGOS-->
-        <Border Grid.Row="1" CornerRadius="8" Background="#2A2A2A" Padding="8" Effect="{DynamicResource DropShadowEffect}" Margin="10">
+        <Border x:Name="bordeJuegos" Grid.Row="1" CornerRadius="8" Background="#AA2A2A2A" Padding="8" Effect="{DynamicResource DropShadowEffect}" Margin="10">
             <ScrollViewer x:Name="scrollViewerJuegos" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,0,0,0">
                 <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto" Margin="10,0,10,0" HorizontalAlignment="Center">
 
@@ -205,6 +205,36 @@
                 </WrapPanel>
             </ScrollViewer>
         </Border>
+
+
+        <Grid x:Name="overlayCarga" Background="#AA000000" Visibility="Collapsed" 
+              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+              Grid.RowSpan="2">
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock Text="Loading games..." Foreground="White" FontSize="28" FontWeight="Bold" HorizontalAlignment="Center"/>
+
+                <!-- Spinner circular -->
+                <Canvas Width="60" Height="60" Margin="0,20,0,0">
+                    <Ellipse Width="60" Height="60" Stroke="White" StrokeThickness="5" StrokeDashArray="2,4" RenderTransformOrigin="0.5,0.5">
+                        <Ellipse.RenderTransform>
+                            <RotateTransform x:Name="spinnerRotate" Angle="0"/>
+                        </Ellipse.RenderTransform>
+                        <Ellipse.Triggers>
+                            <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                                <BeginStoryboard>
+                                    <Storyboard RepeatBehavior="Forever">
+                                        <DoubleAnimation Storyboard.TargetName="spinnerRotate"
+                                                 Storyboard.TargetProperty="Angle"
+                                                 From="0" To="360" Duration="0:0:1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Ellipse.Triggers>
+                    </Ellipse>
+                </Canvas>
+            </StackPanel>
+        </Grid>
+
 
     </Grid>
 </Page>
