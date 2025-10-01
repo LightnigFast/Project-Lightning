@@ -8,24 +8,203 @@
       d:DesignHeight="840" d:DesignWidth="1420"
       Title="panelTienda">
 
+    <Page.Resources>
+        <!--ESTILO DEL SCROLLVIEW-->
+        <Style TargetType="ScrollBar">
+            <Setter Property="Width" Value="3"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ScrollBar">
+                        <Grid Background="Transparent">
+                            <Track Name="PART_Track" IsDirectionReversed="True">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="ScrollBar.LineUpCommand" Visibility="Collapsed"/>
+                                </Track.DecreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb>
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="Thumb">
+                                                <Border Background="#555" CornerRadius="3"/>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="ScrollBar.LineDownCommand" Visibility="Collapsed"/>
+                                </Track.IncreaseRepeatButton>
+                            </Track>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--Sombra-->
+        <DropShadowEffect x:Key="DropShadowEffect"
+                          Color="Black"
+                          BlurRadius="8"
+                          ShadowDepth="2"
+                          Opacity="0.5"/>
+
+        <!--BOTON MODERNO GENERICO-->
+        <Style x:Key="ModernButton" TargetType="Button">
+            <Setter Property="Background" Value="#3A3A3A"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="6"/>
+            <Setter Property="Effect" Value="{StaticResource DropShadowEffect}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="PART_Border"
+                                 Background="{TemplateBinding Background}" 
+                                 CornerRadius="6">          
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="PART_Border" Property="Background" Value="#555"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="PART_Border" Property="Background" Value="#0078D7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--PARA LOS TOOLTIP-->
+        <Style TargetType="ToolTip">
+            <Setter Property="Background" Value="#222222"/>
+            <!-- FONDO OSCURO -->
+            <Setter Property="Foreground" Value="White"/>
+            <!-- TEXTO BLANCO -->
+            <Setter Property="BorderBrush" Value="#444444"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="6"/>
+            <Setter Property="FontSize" Value="13"/>
+        </Style>
+        
+        <!--EFECTO DEL BOTON DE IR A DISCORD-->
+        <Style x:Key="botonIrDiscord" TargetType="Border">
+            <Setter Property="Background" Value="#AA2a2a2a"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                </Setter.Value>
+            </Setter>
+
+            <Style.Triggers>
+                <!-- Cuando el mouse entra -->
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Trigger.EnterActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <!-- Cambio de color -->
+                                <ColorAnimation 
+                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
+                                    To="#FF444444" Duration="0:0:0.2"/>
+                                <!-- Zoom -->
+                                <DoubleAnimation 
+                                    Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleX)" 
+                                    To="1.05" Duration="0:0:0.2"/>
+                                <DoubleAnimation 
+                                    Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleY)" 
+                                    To="1.05" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.EnterActions>
+
+                    <!-- Cuando el mouse sale -->
+                    <Trigger.ExitActions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation 
+                                    Storyboard.TargetProperty="(Border.Background).(SolidColorBrush.Color)" 
+                                    To="#AA2a2a2a" Duration="0:0:0.2"/>
+                                <DoubleAnimation 
+                                    Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleX)" 
+                                    To="1" Duration="0:0:0.2"/>
+                                <DoubleAnimation 
+                                    Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleY)" 
+                                    To="1" Duration="0:0:0.2"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </Trigger.ExitActions>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Page.Resources>
+    
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="7*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
         
         <!--PARTE PARA ALGUN BANNER-->
-        
+        <Border Grid.Row="0" Name="gridCabecera" CornerRadius="8" Background="#2A2A2A" Padding="0" Effect="{DynamicResource DropShadowEffect}" Margin="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <!--PARA EL LOGO DEL JUEGO-->
+                <Image x:Name="imgLogo" Grid.Column="0" Grid.Row="0" Width="300"/>
+
+                <!--PARA EL NOMBRE DEL JUEGO Y LOS PRECIOS-->
+                <Border x:Name="gridPrecios" Grid.Column="1" Grid.Row="0" CornerRadius="8" Background="#AA2a2a2a" Padding="8" Margin="0" Height="70" Visibility="Hidden">
+
+                    <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center" Visibility="Visible">
+                        <!--PRECIO NORMAL-->
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="PRIZE:" Foreground="White" FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold" FontSize="30"/>
+                            <TextBlock x:Name="percioNormal" Foreground="White" FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold" FontSize="30"/>
+                        </StackPanel>
+                        <!--PRECIO DONADOR-->
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="DONATOR:" Foreground="#09c83b" FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold" FontSize="25"/>
+                            <TextBlock x:Name="percioDonador" Foreground="White" FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold"  FontSize="25"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                
+                <!--BOTON DE ABAJO DE COMPRAR-->
+                <Border Grid.ColumnSpan="2" Grid.Row="1" CornerRadius="8" Padding="8" Margin="20,0,0,10" Height="70" Style="{StaticResource botonIrDiscord}"
+                        MouseDown="irADiscord" Name="gridIrADisocrd" Visibility="Hidden">
+                    <!-- CONTENIDO -->
+                    <StackPanel x:Name="gridBuy" Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center" Visibility="Visible">
+                        <TextBlock Text="GO TO DISCORD" Foreground="White" FontFamily="pack://application:,,,/res/fonts/#SF Pro Display Bold" FontSize="30" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </Border>
+
+
+            </Grid>
+        </Border>
         
         <!--PARTE PARA LOS JUEGOS-->
-        <ScrollViewer x:Name="scrollViewerJuegos" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,0,0,0">
-            <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto" Margin="10,0,10,0" HorizontalAlignment="Center">
+        <Border Grid.Row="1" CornerRadius="8" Background="#2A2A2A" Padding="8" Effect="{DynamicResource DropShadowEffect}" Margin="10">
+            <ScrollViewer x:Name="scrollViewerJuegos" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,0,0,0">
+                <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto" Margin="10,0,10,0" HorizontalAlignment="Center">
 
 
 
-            </WrapPanel>
-        </ScrollViewer>
-
+                </WrapPanel>
+            </ScrollViewer>
+        </Border>
 
     </Grid>
 </Page>

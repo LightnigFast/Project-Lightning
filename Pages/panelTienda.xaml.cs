@@ -2,6 +2,8 @@
 using Project_Lightning.Windows;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -15,7 +17,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.IO;
 
 
 namespace Project_Lightning.Pages
@@ -130,10 +131,138 @@ namespace Project_Lightning.Pages
         //METODO PARA COLOCAR LOS JUEGOS EN EL PANEL
         private void colocarJuegos(Dictionary<string, Juego> todosLosJuegos)
         {
-            
+
+            //LIMPIAR EL PANEL ANTES
+            panelJuegos.Children.Clear();
+
+            foreach (var kvp in todosLosJuegos)
+            {
+                Juego juego = kvp.Value;
+
+                //CREAR IMAGEN
+                Image img = new Image
+                {
+                    Width = 150,
+                    Height = 225,
+                    Margin = new Thickness(5),
+                    Stretch = Stretch.UniformToFill,
+                    Cursor = Cursors.Hand, //PARA QUE SE VEA INTERACTIVO
+                    Tag = kvp.Key //GUARDAMOS EL APPID
+                };
+
+                try
+                {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(juego.imgVertical, UriKind.Absolute);
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.EndInit();
+                    img.Source = bitmap;
+                }
+                catch
+                {
+                    //SI FALLA LA CARGA, PONGO UN RECTÁNGULO O TEXTO EN LUGAR DE IMAGEN
+                    img.Source = null;
+                }
+
+                //EVENTO CLICK
+                img.MouseLeftButtonUp += (s, e) =>
+                {
+                    ponerEnCabecera(juego);
+                };
+
+                //AÑADIR AL WRAPPANEL
+                panelJuegos.Children.Add(img);
+            }
+
+
+        }
+
+        //METODO PARA CAMBIAR LA CABECERA DE LA PAGINA
+        private void ponerEnCabecera(Juego juego)
+        {
+            try
+            {
+                //FONDO DE LA CABECERA
+                if (!string.IsNullOrEmpty(juego.imgCabecera))
+                {
+                    BitmapImage fondo = new BitmapImage();
+                    fondo.BeginInit();
+                    fondo.UriSource = new Uri(juego.imgCabecera, UriKind.Absolute);
+                    fondo.CacheOption = BitmapCacheOption.OnLoad;
+                    fondo.EndInit();
+
+                    gridCabecera.Background = new ImageBrush(fondo)
+                    {
+                        Stretch = Stretch.UniformToFill, //CUBRE EL GRID
+                        AlignmentX = AlignmentX.Center,
+                        AlignmentY = AlignmentY.Center
+                    };
+                }
+                else
+                {
+                    gridCabecera.Background = null;
+                }
+
+                //LOGO
+                if (!string.IsNullOrEmpty(juego.imgLogo))
+                {
+                    BitmapImage logo = new BitmapImage();
+                    logo.BeginInit();
+                    logo.UriSource = new Uri(juego.imgLogo, UriKind.Absolute);
+                    logo.CacheOption = BitmapCacheOption.OnLoad;
+                    logo.EndInit();
+                    imgLogo.Source = logo;
+                }
+                else
+                {
+                    imgLogo.Source = null; //POR SI NO TIENE LOGO
+                }
+
+                gridPrecios.Visibility = Visibility.Visible;
+                gridIrADisocrd.Visibility = Visibility.Visible;
+
+                //PRECIO NORMAL
+                percioNormal.Text = $" {juego.precioNormal} LC";
+
+                //PRECIO DONADOR
+                percioDonador.Text = $" {juego.precioDonadores} LC";
+
+                //SI HAY DESCUENTO
+                if (juego.descuento > 0)
+                {
+                    percioNormal.TextDecorations = TextDecorations.Strikethrough;
+                }
+                else
+                {
+                    percioNormal.TextDecorations = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al mostrar el juego: " + ex.Message);
+            }
+        }
 
 
 
+
+        //EVENTO PARA CUANDO HAGA CLICK EN EL BOTON DE IR A DISCORD
+        private void irADiscord(object sender, MouseButtonEventArgs e)
+        {
+            string url = "https://discord.com/channels/1399694698783703193/1405153983995187352";
+            try
+            {
+                Process.Start(new ProcessStartInfo
+                {
+                    FileName = url,
+                    UseShellExecute = true //NECESARIO EN .NET CORE / .NET 5+
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo abrir el enlace: " + ex.Message);
+            }
         }
 
 

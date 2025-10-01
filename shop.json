@@ -1,12 +1,82 @@
 {
   "1285190": {
     "name": "Borderlands® 4",
-    "activo": "true",
+    "activo": "false",
     "imgCabecera": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1285190/259223bf2ee8cc57227b92d1373f4b2b142427a3/library_hero.jpg?t=1758555255",
     "imgLogo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1285190/14bce8f9f2d61cade5eb018040a29b4c053e2478/logo.png",
     "imgVertical": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1285190/e68c1eeacfc21e61e5a03ae81a20694856665af4/library_600x900.jpg",
     "precioNormal": "12000",
     "precioDonadores": "9000",
+    "descuento": "0"
+  },
+  "3017860": {
+    "name": "DOOM: The Dark Ages",
+    "activo": "true",
+    "imgCabecera": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3017860/cb7f48519b32b084790349feefe924cdeaa6d027/library_hero.jpg",
+    "imgLogo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3017860/d6c3a9628e5444927b8614af5398a0c587b476ad/logo.png",
+    "imgVertical": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3017860/e670b2a17acb4bfd60dfb8fb6d4d8cb5b1d5c07c/library_600x900.jpg",
+    "precioNormal": "12000",
+    "precioDonadores": "9000",
+    "descuento": "0"
+  },
+  "2358720": {
+    "name": "Black Myth: Wukong",
+    "activo": "true",
+    "imgCabecera": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_hero.jpg",
+    "imgLogo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/logo.png",
+    "imgVertical": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2358720/library_600x900.jpg",
+    "precioNormal": "11000",
+    "precioDonadores": "8250",
+    "descuento": "0"
+  },
+  "1285190": {
+    "name": "Borderlands",
+    "activo": "true",
+    "imgCabecera": "dsada",
+    "imgLogo": "asddsad",
+    "imgVertical": "dsada",
+    "precioNormal": "12000",
+    "precioDonadores": "9000",
+    "descuento": "0"
+  },
+  "3489700": {
+    "name": "Stellar Blade™",
+    "activo": "true",
+    "imgCabecera": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3489700/7f886b630308135ac990fefd005787729fec685f/library_hero_2x.jpg",
+    "imgLogo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3489700/291969d6747b765f62141bd170b42c7d9c4c238d/logo.png",
+    "imgVertical": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3489700/6f2bbe8f34fc283f42acbe4ab184e9a40f76ad51/library_600x900.jpg",
+    "precioNormal": "10000",
+    "precioDonadores": "7500",
+    "descuento": "0"
+  },
+  "1687950": {
+    "name": "Persona 5 Royal",
+    "activo": "true",
+    "imgCabecera": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/library_hero.jpg",
+    "imgLogo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/logo.png",
+    "imgVertical": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1687950/library_600x900.jpg",
+    "precioNormal": "9000",
+    "precioDonadores": "6750",
+    "descuento": "0"
+  },
+  "1490890": {
+    "name": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
+    "activo": "true",
+    "imgCabecera": "https://cdn2.steamgriddb.com/hero/222768daf052ac21011033265af61211.png",
+    "imgLogo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1490890/logo.png",
+    "imgVertical": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1490890/library_600x900.jpg",
+    "precioNormal": "8000",
+    "precioDonadores": "6000",
+    "descuento": "0"
+  },
+  "990080": {
+    "name": "Hogwarts Legacy",
+    "activo": "true",
+    "imgCabecera": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/05e32b7d3b2de0acc5459e040f4a085fe12be7ab/library_hero.jpg",
+    "imgLogo": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/3e898ad444f111a76db36476e920c5e41da2b1b1/logo.png",
+    "imgVertical": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/990080/941d5ed2debf633890dc5d9af39f2e22b404c177/library_600x900.jpg",
+    "precioNormal": "1000",
+    "precioDonadores": "750",
     "descuento": "0"
   }
 }
