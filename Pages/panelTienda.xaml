@@ -40,13 +40,6 @@
             </Setter>
         </Style>
 
-        <!--Sombra-->
-        <DropShadowEffect x:Key="DropShadowEffect"
-                          Color="Black"
-                          BlurRadius="8"
-                          ShadowDepth="2"
-                          Opacity="0.5"/>
-
         <!--BOTON MODERNO GENERICO-->
         <Style x:Key="ModernButton" TargetType="Button">
             <Setter Property="Background" Value="#3A3A3A"/>
@@ -54,7 +47,6 @@
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Padding" Value="6"/>
-            <Setter Property="Effect" Value="{StaticResource DropShadowEffect}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -149,7 +141,7 @@
         </Grid.RowDefinitions>
         
         <!--PARTE PARA ALGUN BANNER-->
-        <Border Grid.Row="0" Name="gridCabecera" CornerRadius="8" Background="#2A2A2A" Padding="0" Effect="{DynamicResource DropShadowEffect}" Margin="10">
+        <Border Grid.Row="0" Name="gridCabecera" CornerRadius="8" Background="#2A2A2A" Padding="0" Margin="10">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="auto"/>
@@ -196,7 +188,7 @@
         </Border>
         
         <!--PARTE PARA LOS JUEGOS-->
-        <Border x:Name="bordeJuegos" Grid.Row="1" CornerRadius="8" Background="#AA2A2A2A" Padding="8" Effect="{DynamicResource DropShadowEffect}" Margin="10">
+        <Border x:Name="bordeJuegos" Grid.Row="1" CornerRadius="8" Background="#AA2A2A2A" Padding="8" Margin="10">
             <ScrollViewer x:Name="scrollViewerJuegos" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" Grid.Row="1" Margin="0,0,0,0">
                 <WrapPanel Name="panelJuegos" Width="Auto" Height="Auto" Margin="10,0,10,0" HorizontalAlignment="Center">
 

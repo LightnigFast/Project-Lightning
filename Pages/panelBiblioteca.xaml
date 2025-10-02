@@ -41,12 +41,6 @@
             </Setter>
         </Style>
 
-        <!--Sombra-->
-        <DropShadowEffect x:Key="DropShadowEffect"
-              Color="Black"
-              BlurRadius="8"
-              ShadowDepth="2"
-              Opacity="0.5"/>
         
         <!--EFECTO DE LAS IMAGENES-->
         <Style TargetType="Image" x:Key="GameImageStyle">
@@ -90,7 +84,6 @@
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Padding" Value="6"/>
-            <Setter Property="Effect" Value="{StaticResource DropShadowEffect}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -312,7 +305,7 @@
                     
 
                     <!--PARTE PARA EL BUSCADOR-->
-                    <Border Grid.Row="1" Name="gridAñadirJuego" CornerRadius="8" Background="#2A2A2A" Padding="8" VerticalAlignment="Top" Effect="{DynamicResource DropShadowEffect}" 
+                    <Border Grid.Row="1" Name="gridAñadirJuego" CornerRadius="8" Background="#2A2A2A" Padding="8" VerticalAlignment="Top"  
                             Width="280" Height="50" Margin="0,5,0,0">
                         
                         <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center" >
@@ -343,7 +336,7 @@
             </Grid>
 
             <!--PARTE DE ABAJO, (IMAGEN DEL JUEGO, NOMBRE DEL JUEGO, BUSCAODR DE LA BIBLIOTECA)-->
-            <Border Grid.Row="1" Name="juegoIndependiente" CornerRadius="8" Background="#2A2A2A" Padding="8" Effect="{DynamicResource DropShadowEffect}" Margin="10,0,10,0" Opacity="0">
+            <Border Grid.Row="1" Name="juegoIndependiente" CornerRadius="8" Background="#2A2A2A" Padding="8" Margin="10,0,10,0" Opacity="0">
                 <Grid >
 
                     <Grid.ColumnDefinitions>
@@ -412,7 +405,7 @@
         
         
         <!--PARTE PARA LA BIBLIOTECA DEL USUARIO-->
-        <Border Grid.Row="1" CornerRadius="8" Background="#2A2A2A" Padding="8" Effect="{DynamicResource DropShadowEffect}" Margin="10">
+        <Border Grid.Row="1" CornerRadius="8" Background="#2A2A2A" Padding="8" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>

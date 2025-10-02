@@ -10,11 +10,7 @@
 
     <Page.Resources>
         <!--Sombra-->
-        <DropShadowEffect x:Key="DropShadowEffect"
-                      Color="Black"
-                      BlurRadius="8"
-                      ShadowDepth="2"
-                      Opacity="0.5"/>
+        
 
         <!--BOTON MODERNO GENERICO-->
         <Style x:Key="ModernButton" TargetType="Button">
@@ -23,7 +19,6 @@
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Padding" Value="6"/>
-            <Setter Property="Effect" Value="{StaticResource DropShadowEffect}"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
@@ -51,7 +46,6 @@
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="BorderThickness" Value="0"/>
             <Setter Property="Padding" Value="6"/>
-            <Setter Property="Effect" Value="{StaticResource DropShadowEffect}"/>
             <Setter Property="Background" Value="#3A3A3A"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -194,7 +188,7 @@
                 <TextBlock Text="⚙️ Settings" FontSize="32" FontWeight="Bold" Foreground="#E5E5E5" Margin="0,0,0,10"/>
 
                 <!--RUTA DE STEAM-->
-                <Border CornerRadius="8" Background="#2A2A2A" Padding="8" Effect="{DynamicResource DropShadowEffect}">
+                <Border CornerRadius="8" Background="#2A2A2A" Padding="8"  CacheMode="BitmapCache">
                     <StackPanel Orientation="Vertical" >
                         <TextBlock Text="Steam installation path" FontSize="26" Foreground="#CFCFCF" FontWeight="SemiBold" Margin="10,0,0,5"/>
                         <TextBlock FontSize="14" Foreground="#878787" FontWeight="SemiBold" Margin="10,0,0,5"
@@ -226,7 +220,8 @@
 
 
                 <!--PARA INSTALAR LIGHTNINGTOOLS-->
-                <Border CornerRadius="8" Name="componeneteInstalacion" Background="#2A2A2A" Padding="8" Effect="{DynamicResource DropShadowEffect}" Margin="0,30,0,0">
+                <Border CornerRadius="8" Name="componeneteInstalacion" Background="#2A2A2A" Padding="8"  CacheMode="BitmapCache"
+                        Margin="0,30,0,0">
                     <Border.Style>
                         <Style TargetType="Border">
                             <Style.Triggers>
