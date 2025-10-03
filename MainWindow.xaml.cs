@@ -153,13 +153,15 @@ namespace Project_Lightning
         //METODO PARA RESTAURAR LA CABECERA
         public void ocultarCabecera()
         {
-            Cabecera.Height = 0;
+            //Cabecera.Height = 0;
+            Cabecera.Visibility = Visibility.Collapsed;
         }
 
         //METODO PARA OCULTAR LA CABECERA
         public void mostrarCabecera()
         {
-            Cabecera.Height = 70;
+            //Cabecera.Height = 70;
+            Cabecera.Visibility = Visibility.Visible;
         }
 
 

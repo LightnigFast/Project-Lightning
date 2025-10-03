@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Project_Lightning.Windows;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -12,11 +14,10 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Newtonsoft.Json;
-using Project_Lightning.Windows;
 
 namespace Project_Lightning.Pages
 {
@@ -29,11 +30,16 @@ namespace Project_Lightning.Pages
         MainWindow ventanaPrincipal;
         string nombreApp;
         private Dictionary<string, Juego> juegosCargados = new Dictionary<string, Juego>();
+        //CARPETA BASE PARA LAS IMÁGENES
+        private readonly string gamesImagesFolder = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "Project_Lightning", "gamesImages");
+
 
         public panelApp(String nomApp, MainWindow mainWindow)
         {
             InitializeComponent();
             
+            gridPrincipal.Visibility = Visibility.Hidden;
+
             //CAMBIO EL NOMBRE DE LA ETIQUETA
             txtApp.Text = nomApp;
             //CAMBIO DE COLOR DE LA ETIQUETA
@@ -68,16 +74,96 @@ namespace Project_Lightning.Pages
             public string nombre_fix { get; set; }
             public Dictionary<string, string> custom_images { get; set; }
         }
-        
+
+
+        //METODO PARA PRECARGAR LAS IMAGENES
+        private async Task PreloadAllImages(Dictionary<string, Juego> todosLosJuegos)
+        {
+            var tasks = new List<Task>();
+
+            foreach (var kvp in todosLosJuegos)
+            {
+                string appid = kvp.Key;
+                Juego juego = kvp.Value;
+
+                if (juego.custom_images != null)
+                {
+                    foreach (var img in juego.custom_images)
+                    {
+                        //img.Key = "hero_image", "background", etc
+                        //img.Value = URL de la imagen
+                        tasks.Add(GetGameImageAsync(appid, img.Value, img.Key));
+                    }
+                }
+                else
+                {
+                    // OPCIONAL: descarga la imagen estándar de Steam
+                    string urlDefault = $"https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/{appid}/library_600x900.jpg";
+                    tasks.Add(GetGameImageAsync(appid, urlDefault, "library_600x900"));
+                }
+            }
+
+            await Task.WhenAll(tasks);
+        }
+
+
+
+        //METODO PARA OBTENER UNA IMAGEN: DESCARGA SI NO EXISTE
+        private async Task<BitmapImage> GetGameImageAsync(string appid, string url, string imageName)
+        {
+            try
+            {
+                //CARPETA DEL JUEGO
+                string appFolder = System.IO.Path.Combine(gamesImagesFolder, appid);
+                if (!Directory.Exists(appFolder))
+                    Directory.CreateDirectory(appFolder);
+
+                string localPath = System.IO.Path.Combine(appFolder, imageName + ".jpg");
+
+                //DESCARGAR SI NO EXISTE
+                if (!File.Exists(localPath) && !string.IsNullOrEmpty(url))
+                {
+                    using (HttpClient client = new HttpClient())
+                    {
+                        var bytes = await client.GetByteArrayAsync(url);
+                        File.WriteAllBytes(localPath, bytes);
+                    }
+                }
+
+                //CARGAR IMAGEN
+                if (File.Exists(localPath))
+                {
+                    BitmapImage bitmap = new BitmapImage();
+                    bitmap.BeginInit();
+                    bitmap.UriSource = new Uri(localPath, UriKind.Absolute);
+                    bitmap.CacheOption = BitmapCacheOption.OnLoad;
+                    bitmap.EndInit();
+                    return bitmap;
+                }
+            }
+            catch
+            {
+                //SI FALLA, DEVUELVE NULL
+            }
+
+            return null;
+        }
+
 
         private async void ponerJuegos(string nomApp)
         {
             //var juegosApp = await sacarJuegosDeApp(nomApp);
             //colocarBotones(juegosApp);
             juegosCargados = await sacarJuegosDeApp(nomApp); //GUARDAMOS LA LISTA ORIGINAL
-            colocarBotones(juegosCargados);
+            ventanaPrincipal.ocultarCabecera();
+            //PRECARGO IMÁGENES (primera vez)
+            overlayCarga.Visibility = Visibility.Visible;
+            await PreloadAllImages(juegosCargados);
+            await colocarBotones(juegosCargados);
+            overlayCarga.Visibility = Visibility.Collapsed;
+            ventanaPrincipal.mostrarCabecera();
+            await FadeInAsync(gridPrincipal, 0.5);
             
-
             //descargarJuego(juegosApp.First());
 
         }
@@ -151,27 +237,22 @@ namespace Project_Lightning.Pages
 
 
         //ESTE METODO BUSCA CREAR TODOS LOS BOTONES, COLCOAR SU IMAGEN Y SU RESPECTIVO METODO DE CLICK
-        private void colocarBotones(Dictionary<string, Juego> juegosApp)
+        private async Task colocarBotones(Dictionary<string, Juego> juegosApp)
         {
             panelJuegos.Children.Clear();
 
             if (juegosApp.Count != 0)
             {
-                //BUCLE PARA SACAR TODOS LOS JUEGOS
                 foreach (var juego in juegosApp)
                 {
-                    //CREO LOS BOTONES DE CADA JUEGO Y LE ASIGNO EL TAMAÑO PREDEFINIDO
                     Button botonJuego = new Button
                     {
                         Width = 198,
                         Height = 298,
                         Margin = new Thickness(17),
+                        Style = (Style)FindResource("Boton_juego")
                     };
 
-                    //APLICO EL ESTILO QUE HE HECHO EN EL XAML
-                    botonJuego.Style = (Style)FindResource("Boton_juego");
-
-                    //CREO LA IMAGEN QUE IRA EN CADA BOTON
                     Image imagenJuego = new Image
                     {
                         Width = 198,
@@ -179,45 +260,48 @@ namespace Project_Lightning.Pages
                         Stretch = Stretch.Fill
                     };
 
-                    string imagenPersonalizada = null;
+                    BitmapImage bitmap = null;
 
-                    if (juego.Value != null &&
-                        juego.Value.custom_images.TryGetValue("hero_image", out imagenPersonalizada) &&
-                        !string.IsNullOrWhiteSpace(imagenPersonalizada))
+                    if (juego.Value.custom_images != null &&
+                        juego.Value.custom_images.TryGetValue("hero_image", out string urlPersonalizada) &&
+                        !string.IsNullOrWhiteSpace(urlPersonalizada))
                     {
-                        //SI HAY IMAGEN PERSONALIZADA, LA USO
-                        imagenJuego.Source = new BitmapImage(new Uri(imagenPersonalizada));
+                        //📂 GUARDAR Y CARGAR DESDE CACHE LOCAL
+                        bitmap = await GetGameImageAsync(juego.Key, urlPersonalizada, "hero_image");
                     }
                     else
                     {
-                        //INTENTO CARGAR LA IMAGEN ORIGINAL DE STEAM
-                        imagenJuego.Source = new BitmapImage(new Uri("https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/library_600x900.jpg"));
-
-                        //SI FALLA LA CARGA, PONGO UNA IMAGEN DE RESPALDO
-                        imagenJuego.ImageFailed += (sender, e) =>
-                        {
-                            imagenJuego.Stretch = Stretch.Uniform;
-                            imagenJuego.Source = new BitmapImage(new Uri("https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/" + juego.Key + "/capsule_184x69.jpg?t=1739176298"));
-                        };
+                        //📂 IMAGEN POR DEFECTO DE STEAM
+                        string urlDefault = $"https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/{juego.Key}/library_600x900.jpg";
+                        bitmap = await GetGameImageAsync(juego.Key, urlDefault, "library_600x900");
                     }
 
-                    //AGREGO LA IMAGEN AL BOTON
+                    //SI EXISTE, LA ASIGNO
+                    if (bitmap != null)
+                    {
+                        imagenJuego.Source = bitmap;
+                    }
+                    else
+                    {
+                        //⚠️ IMAGEN DE RESPALDO (capsule pequeña de Steam)
+                        imagenJuego.Stretch = Stretch.Uniform;
+                        imagenJuego.Source = new BitmapImage(new Uri(
+                            $"https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/{juego.Key}/capsule_184x69.jpg"));
+                    }
+
                     botonJuego.Content = imagenJuego;
 
-                    //EVENTO CUANDO SE HACE CLICK EN UN BOTÓN
                     botonJuego.Click += (sender, e) =>
                     {
-
                         ventanaPrincipal.framePrincipal.Navigate(new panelJuego(nombreApp, juego, this, ventanaPrincipal));
                     };
 
-                    //POR ÚLTIMO, LOS AGREGO AL PANEL DE JUEGOS
                     panelJuegos.Children.Add(botonJuego);
                 }
             }
             else
             {
-
+                //SI NO HAY JUEGOS, MENSAJE DE VACÍO
                 TextBlock textBlock = new TextBlock
                 {
                     TextAlignment = TextAlignment.Center,
@@ -226,36 +310,13 @@ namespace Project_Lightning.Pages
                     Padding = new Thickness(20)
                 };
 
-                //TEXTO NORMAL
-                textBlock.Inlines.Add(new Run
-                {
-                    Text = "THERE ARE NO GAMES ",
-                    Foreground = Brushes.White
-                });
+                textBlock.Inlines.Add(new Run { Text = "THERE ARE NO GAMES ", Foreground = Brushes.White });
+                textBlock.Inlines.Add(new Run { Text = "FOR NOW", Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6A0DAD")) });
+                textBlock.Inlines.Add(new Run { Text = "🚧", Foreground = Brushes.Yellow });
 
-                //TEXTO PARA EL FOR NOW
-                textBlock.Inlines.Add(new Run
-                {
-                    Text = "FOR NOW",
-                    Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#6A0DAD"))
-
-                });
-
-                //TEXTO PARA EL EMOJI
-                textBlock.Inlines.Add(new Run
-                {
-                    Text = "🚧",
-                    Foreground = Brushes.Yellow
-                });
-
-                //CREO EL BINDING DEL ANCHO
-                Binding binding = new Binding("ActualWidth")
-                {
-                    Source = panelJuegos
-                };
+                Binding binding = new Binding("ActualWidth") { Source = panelJuegos };
                 textBlock.SetBinding(FrameworkElement.WidthProperty, binding);
 
-                //CREO EL BORDER
                 Border border = new Border
                 {
                     Background = Brushes.Transparent,
@@ -264,19 +325,18 @@ namespace Project_Lightning.Pages
                 };
 
                 panelJuegos.Children.Add(border);
-
             }
-            
         }
 
+
         //EVENTO DEL BUSCADOR
-        private void txtBuscador_TextChanged(object sender, TextChangedEventArgs e)
+        private async void txtBuscador_TextChanged(object sender, TextChangedEventArgs e)
         {
             string filtro = txtBuscador.Text.Trim().ToLower();
 
             if (string.IsNullOrWhiteSpace(filtro))
             {
-                colocarBotones(juegosCargados); //MOSTRAR TODOS
+                await colocarBotones(juegosCargados); //MOSTRAR TODOS
             }
             else
             {
@@ -284,11 +344,63 @@ namespace Project_Lightning.Pages
                     .Where(j => j.Value.name != null && j.Value.name.ToLower().Contains(filtro))
                     .ToDictionary(j => j.Key, j => j.Value);
 
-                colocarBotones(filtrados);
+                await colocarBotones(filtrados);
             }
         }
 
 
+
+
+        //FADE IN: Aumenta Opacity de 0 a 1
+        public static Task FadeInAsync(UIElement element, double durationSeconds = 0.3)
+        {
+            if (element == null) return Task.CompletedTask;
+
+            element.Visibility = Visibility.Visible; // Aseguramos que se vea
+            element.Opacity = 0; // Empezamos desde 0
+
+            var tcs = new TaskCompletionSource<bool>();
+
+            DoubleAnimation fadeIn = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(durationSeconds),
+                FillBehavior = FillBehavior.HoldEnd
+            };
+
+            fadeIn.Completed += (s, e) => tcs.SetResult(true);
+
+            element.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+
+            return tcs.Task;
+        }
+
+        //FADE OUT: Disminuye Opacity de 1 a 0
+        public static Task FadeOutAsync(UIElement element, double durationSeconds = 0.3)
+        {
+            if (element == null) return Task.CompletedTask;
+
+            var tcs = new TaskCompletionSource<bool>();
+
+            DoubleAnimation fadeOut = new DoubleAnimation
+            {
+                From = element.Opacity,
+                To = 0,
+                Duration = TimeSpan.FromSeconds(durationSeconds),
+                FillBehavior = FillBehavior.HoldEnd
+            };
+
+            fadeOut.Completed += (s, e) =>
+            {
+                element.Visibility = Visibility.Collapsed; // Ocultamos al terminar
+                tcs.SetResult(true);
+            };
+
+            element.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+
+            return tcs.Task;
+        }
 
     }
 }
