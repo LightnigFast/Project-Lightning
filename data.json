@@ -563,6 +563,20 @@
       "nombre_fix": "Unravel 2 - bypass",
       "custom_images": {}
     },
+    "1222700": {
+      "name": "A Way Out",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2013", "VC Redist 2013"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA Play, VC Redist 2013 and VC Redist 2015.",
+        "It's important to launch the game using the executable named 'A Way Out.exe'.",
+        "You need to have the EA app installed, or the game won't launch."
+      ],
+      "nombre_fix": "A Way Out - bypass",
+      "custom_images": {}
+    },
     "2001120": {
       "name": "Split Fiction",
       "launch_steam": true,
@@ -868,6 +882,18 @@
         "If the game shows errors when opening, you need to install DirectX and VC Redist."
       ],
       "nombre_fix": "Sniper Elite 4 - bypass",
+      "custom_images": {}
+    },
+    "234140": {
+      "name": "Mad Max",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "Mad Max - bypass",
       "custom_images": {}
     }
   },
