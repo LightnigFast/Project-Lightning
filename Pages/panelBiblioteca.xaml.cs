@@ -357,6 +357,10 @@ namespace Project_Lightning.Pages
                                 }
                             }
                         }
+                        FadeInAsync(HeaderImage, 0.7);
+                        FadeInAsync(nombreJuego, 0.7);
+                        FadeInAsync(metacriticGrid, 0.7);
+
                         break;
                     }
                 }
@@ -1167,6 +1171,59 @@ namespace Project_Lightning.Pages
 
         }
 
+
+
+
+        //FADE IN: Aumenta Opacity de 0 a 1
+        public static Task FadeInAsync(UIElement element, double durationSeconds = 0.3)
+        {
+            if (element == null) return Task.CompletedTask;
+
+            element.Visibility = Visibility.Visible; // Aseguramos que se vea
+            element.Opacity = 0; // Empezamos desde 0
+
+            var tcs = new TaskCompletionSource<bool>();
+
+            DoubleAnimation fadeIn = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(durationSeconds),
+                FillBehavior = FillBehavior.HoldEnd
+            };
+
+            fadeIn.Completed += (s, e) => tcs.SetResult(true);
+
+            element.BeginAnimation(UIElement.OpacityProperty, fadeIn);
+
+            return tcs.Task;
+        }
+
+        //FADE OUT: Disminuye Opacity de 1 a 0
+        public static Task FadeOutAsync(UIElement element, double durationSeconds = 0.3)
+        {
+            if (element == null) return Task.CompletedTask;
+
+            var tcs = new TaskCompletionSource<bool>();
+
+            DoubleAnimation fadeOut = new DoubleAnimation
+            {
+                From = element.Opacity,
+                To = 0,
+                Duration = TimeSpan.FromSeconds(durationSeconds),
+                FillBehavior = FillBehavior.HoldEnd
+            };
+
+            fadeOut.Completed += (s, e) =>
+            {
+                element.Visibility = Visibility.Collapsed; // Ocultamos al terminar
+                tcs.SetResult(true);
+            };
+
+            element.BeginAnimation(UIElement.OpacityProperty, fadeOut);
+
+            return tcs.Task;
+        }
 
 
     }

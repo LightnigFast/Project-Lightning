@@ -220,7 +220,8 @@ namespace Project_Lightning.Pages
                 //CREAR IMAGEN
                 Image img = new Image
                 {
-                    Stretch = Stretch.UniformToFill
+                    Stretch = Stretch.UniformToFill,
+                    Style = (Style)FindResource("GameImageStyle") //APLICAR ESTILO
                 };
 
                 //CARGAR IMAGEN LOCAL O DESCARGAR
@@ -256,6 +257,8 @@ namespace Project_Lightning.Pages
         {
             try
             {
+
+                await FadeOutAsync(gridCabecera, 0.3);
                 //FONDO CABECERA
                 BitmapImage fondo = await GetGameImageAsync(key, juego.imgCabecera, "library_hero");
                 if (fondo != null)
@@ -279,7 +282,7 @@ namespace Project_Lightning.Pages
                 percioDonador.Text = $" {juego.precioDonadores} LC";
                 percioNormal.TextDecorations = juego.descuento > 0 ? TextDecorations.Strikethrough : null;
 
-                await FadeInAsync(gridCabecera, 0.5);
+                await FadeInAsync(gridCabecera, 0.3);
             }
             catch (Exception ex)
             {
@@ -315,7 +318,7 @@ namespace Project_Lightning.Pages
 
 
 
-        // FADE IN: Aumenta Opacity de 0 a 1
+        //FADE IN: Aumenta Opacity de 0 a 1
         public static Task FadeInAsync(UIElement element, double durationSeconds = 0.3)
         {
             if (element == null) return Task.CompletedTask;
@@ -340,7 +343,7 @@ namespace Project_Lightning.Pages
             return tcs.Task;
         }
 
-        // FADE OUT: Disminuye Opacity de 1 a 0
+        //FADE OUT: Disminuye Opacity de 1 a 0
         public static Task FadeOutAsync(UIElement element, double durationSeconds = 0.3)
         {
             if (element == null) return Task.CompletedTask;
