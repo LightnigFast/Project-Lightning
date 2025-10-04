@@ -1020,13 +1020,13 @@
     },
     "2000950": {
       "name": "Call of Duty®: Modern Warfare®",
-      "launch_steam": true,
+      "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX 12", "VC Redist"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
-        "Before open the game, read the file README.txt in the main game folder"
+        "For open the game, use the exe called ModernWarfare_Lightning"
       ],
       "nombre_fix": "Call of Duty Modern Warfare (2019) - bypass",
       "custom_images": {}
