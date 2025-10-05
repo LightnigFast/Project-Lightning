@@ -52,15 +52,15 @@
 
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="#FF3B0056" Offset="1.0" />
-                <GradientStop Color="#FF1F002E" Offset="0.8" />
+                <GradientStop Color="#801717" Offset="1.0" />
+                <GradientStop Color="#400D0D" Offset="0.8" />
                 <GradientStop Color="#FF000000" Offset="0.0" />
             </LinearGradientBrush>
         </Grid.Background>
 
         <!--FONDO CON GRADIENTE-->
         <MediaElement Name="BackgroundVideo" 
-                      Source="res/media/backgrounds/sunset-waves.mp4"
+                      Source="res/media/backgrounds/red_porsche.mp4"
                       LoadedBehavior="Manual" 
                       UnloadedBehavior="Manual" 
                       IsMuted="True" 

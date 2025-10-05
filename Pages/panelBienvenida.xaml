@@ -114,7 +114,7 @@
                         <RowDefinition Height="4*"/>
                     </Grid.RowDefinitions>
 
-                    <TextBlock Text="Welcome to" Foreground="White" FontSize="100"
+                    <TextBlock Text="Welcome toaaaaa" Foreground="White" FontSize="100"
                            FontFamily="{StaticResource FuenteJohnInclinada}"
                            Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
 

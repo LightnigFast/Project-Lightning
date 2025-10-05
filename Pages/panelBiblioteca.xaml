@@ -244,7 +244,7 @@
 
                 
                 <!--PARTE PARA ARRASTRAR LOS ARCHIVOS A MI APP E IMPORTAR LOS LUA-->
-                <Border Grid.Column="0" Grid.Row="0" Name="componenteArrastrar" Margin="50" CornerRadius="8" BorderThickness="2" BorderBrush="Gray" Background="#2A2A2A" 
+                <Border Grid.Column="0" Grid.Row="0" Name="componenteArrastrar" Margin="50" CornerRadius="8" BorderThickness="2" BorderBrush="Gray" Background="#BB2A2A2A" 
                         AllowDrop="True" DragEnter="DropArea_DragEnter" DragLeave="DropArea_DragLeave" Drop="DropArea_Drop">
 
                     <TextBlock Text="Drag and drop your .lua, .manifest or .zip files here" Foreground="White" FontSize="16" HorizontalAlignment="Center" 
@@ -405,7 +405,7 @@
         
         
         <!--PARTE PARA LA BIBLIOTECA DEL USUARIO-->
-        <Border Grid.Row="1" CornerRadius="8" Background="#2A2A2A" Padding="8" Margin="10">
+        <Border Grid.Row="1" CornerRadius="8" Background="#BB2A2A2A" Padding="8" Margin="10">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>

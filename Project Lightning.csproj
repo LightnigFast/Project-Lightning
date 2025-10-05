@@ -363,11 +363,15 @@
     </Content>
     <Resource Include="res\media\logos\originals\onlineFix_logo.png" />
     <Resource Include="res\media\logos\originals\bypass_logo.png" />
+    <Content Include="res\media\backgrounds\red_porsche.mp4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\media\backgrounds\sunset-waves.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Resource Include="res\media\logos\originals\advertencia.gif" />
     <Resource Include="res\media\logos\originals\Electricity.gif" />
+    <Resource Include="res\media\letters\Project-Lightning-font3.png" />
     <Content Include="res\media\sponsors\steam-force-sponsor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
