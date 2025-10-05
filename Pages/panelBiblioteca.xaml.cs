@@ -117,61 +117,73 @@ namespace Project_Lightning.Pages
 
             try
             {
+                // --- 1. CONFIGURACIÓN Y VERIFICACIONES (SÍNCRONO) ---
                 string pluginFolder = System.IO.Path.Combine(steamPath, "config", "stplug-in");
                 string cacheFolder = System.IO.Path.Combine(steamPath, "appcache", "librarycache");
                 string lightningTools = System.IO.Path.Combine(steamPath, "hid.dll");
 
-                if (!File.Exists(lightningTools))
+                if (!File.Exists(lightningTools) || !Directory.Exists(pluginFolder) || !Directory.Exists(cacheFolder))
                 {
-                    MostrarError("❌ \"LightningTools\" is not installed.",
-                                 "This error occurs because LightningTools is not installed. Please go to Settings and install it before using the library.");
+                    // Si falta alguno de los elementos, llama a MostrarError y regresa.
+                    if (!File.Exists(lightningTools))
+                    {
+                        MostrarError("❌ \"LightningTools\" is not installed.", "This error occurs because LightningTools is not installed. Please go to Settings and install it before using the library.");
+                    }
+                    else if (!Directory.Exists(pluginFolder))
+                    {
+                        MostrarError("❌ The \"stplug-in\" directory was not found.", "Before using the library, you must install LightningTools. Go to the settings and install it.");
+                    }
+                    else
+                    {
+                        MostrarError("❌ The \"librarycache\" directory was not found.", "This error occurs due to a faulty Steam installation or because you haven’t logged in yet.\nIf you haven’t signed in to your account, please do so, and if it still doesn’t work, reinstall Steam.");
+                    }
                     return;
                 }
 
-                if (!Directory.Exists(pluginFolder))
-                {
-                    MostrarError("❌ The \"stplug-in\" directory was not found.",
-                                 "Before using the library, you must install LightningTools. Go to the settings and install it.");
-                    return;
-                }
-
-                if (!Directory.Exists(cacheFolder))
-                {
-                    MostrarError("❌ The \"librarycache\" directory was not found.",
-                                 "This error occurs due to a faulty Steam installation or because you haven’t logged in yet.\nIf you haven’t signed in to your account, please do so, and if it still doesn’t work, reinstall Steam.");
-                    return;
-                }
-
-                Juegos.Clear();
-
+                // Obtenemos todos los AppIds de los archivos .lua
                 var luaFiles = Directory.GetFiles(pluginFolder, "*.lua");
+                var todosAppIds = luaFiles
+                                    .Select(f => int.TryParse(System.IO.Path.GetFileNameWithoutExtension(f), out int id) ? id : -1)
+                                    .Where(id => id > 0)
+                                    .ToList();
+
+
+                // --- 2. ACTUALIZAR LA BD (ASÍNCRONO - Fuera del bucle principal) ---
+                // Identificar solo los IDs que NO están en la BD para evitar trabajo innecesario.
+                var appIdsNuevos = todosAppIds.Where(id => !EstaEnBD(id)).ToList();
+
+                if (appIdsNuevos.Any())
+                {
+                    // Ejecutamos la carga de datos de Steam/Metacritic a la BD.
+                    // Esto es asíncrono y no bloquea.
+                    await GuardarJuegosEnBD(appIdsNuevos);
+                }
+
+                // --- 3. CARGAR JUEGOS EN WRAPPANEL (ASÍNCRONO) ---
+                Juegos.Clear();
                 var juegosTemp = new List<JuegoViewModel>();
 
                 await Task.Run(() =>
                 {
-                    foreach (var luaFile in luaFiles)
+                    // Ahora iteramos sobre TODOS los IDs. Sabemos que están en el disco
+                    // y que sus metadatos (Metacritic, Nombre, etc.) están en la BD.
+                    foreach (var appIdInt in todosAppIds)
                     {
-                        string appId = System.IO.Path.GetFileNameWithoutExtension(luaFile);
-                        if (!int.TryParse(appId, out int appIdInt)) continue;
-
-                        if (!EstaEnBD(appIdInt))
-                        {
-                            var ids = luaFiles
-                                .Select(f => int.TryParse(System.IO.Path.GetFileNameWithoutExtension(f), out int id) ? id : -1)
-                                .Where(id => id > 0);
-                            GuardarJuegosEnBD(ids).Wait();
-                        }
+                        string appId = appIdInt.ToString();
 
                         string appFolder = System.IO.Path.Combine(cacheFolder, appId);
+
+                        // No verificamos Directory.Exists(appFolder) aquí si ya lo hicimos antes, 
+                        // pero lo mantenemos para el flujo de notificaciones.
                         if (!Directory.Exists(appFolder))
                         {
                             Dispatcher.Invoke(() =>
-                                notifier.Show($"❌ The appid {appId} was not found, please restart Steam.", isError: true, 4000));
+                                 notifier.Show($"❌ The appid {appId} was not found, please restart Steam.", isError: true, 4000));
                             continue;
                         }
 
                         var subfolders = Directory.GetDirectories(appFolder, "*", SearchOption.AllDirectories)
-                                                  .Concat(new[] { appFolder });
+                                                    .Concat(new[] { appFolder });
 
                         foreach (var folder in subfolders)
                         {
@@ -179,14 +191,14 @@ namespace Project_Lightning.Pages
 
                             if (!File.Exists(imagePath))
                             {
-                                //SI NO EXISTE 600x900, PRUEBO CON CAPSULE
                                 imagePath = System.IO.Path.Combine(folder, "library_capsule.jpg");
 
                                 if (!File.Exists(imagePath))
-                                    continue; //SI TAMPOCO EXISTE, ME LO SALTO
+                                    continue;
                             }
 
-
+                            // *** Lógica de creación de BitmapImage (IO intensiva) ***
+                            // Dado que estamos en Task.Run, el hilo de la UI no se bloquea.
                             BitmapImage bitmap = new BitmapImage();
                             bitmap.BeginInit();
                             bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
@@ -196,6 +208,7 @@ namespace Project_Lightning.Pages
                             bitmap.EndInit();
                             bitmap.Freeze();
 
+                            // Lectura de Metacritic desde la BD (operación rápida)
                             int? metacriticScore = ObtenerMetacriticDesdeBD(appIdInt);
 
                             juegosTemp.Add(new JuegoViewModel
@@ -205,11 +218,13 @@ namespace Project_Lightning.Pages
                                 MetacriticScore = metacriticScore
                             });
 
-                            break;
+                            break; // Imagen encontrada, pasa al siguiente juego
                         }
                     }
                 });
 
+                // --- 4. ACTUALIZAR UI (HILO DE LA UI) ---
+                // Agregar todos los juegos de la lista temporal a la ObservableCollection
                 foreach (var juego in juegosTemp)
                     Juegos.Add(juego);
             }
@@ -474,22 +489,36 @@ namespace Project_Lightning.Pages
                     var json = JObject.Parse(response);
 
                     var appJson = json[appId.ToString()];
-                    if (appJson != null && appJson["success"].Value<bool>())
+
+                    // 1. Verificar éxito y que el nodo 'data' existe.
+                    if (appJson != null &&
+                        appJson["success"]?.Value<bool>() == true)
                     {
-                        var data = appJson["data"];
+                        var data = appJson["data"] as JObject; // Intentar obtener 'data' como un JObject
 
-                        string nombre = data["name"].Value<string>();
-                        bool windows = data["platforms"]["windows"].Value<bool>();
-                        bool mac = data["platforms"]["mac"].Value<bool>();
-                        bool linux = data["platforms"]["linux"].Value<bool>();
+                        if (data == null) // Si 'data' no existe o no es un objeto, salimos.
+                        {
+                            Console.WriteLine($"Advertencia: 'data' no encontrado o inválido para AppId: {appId}");
+                            return;
+                        }
 
-                        //PARA LA NOTA DE METACRITIC
+                        // 2. Extracción de Datos: Usar el operador de navegación segura (?.) y coalescencia (??)
+
+                        string nombre = data["name"]?.Value<string>() ?? $"App Desconocida ({appId})";
+
+                        // Plataformas: Acceso seguro con ?., usando ?? false si el nodo no existe.
+                        bool windows = data["platforms"]?["windows"]?.Value<bool>() ?? false;
+                        bool mac = data["platforms"]?["mac"]?.Value<bool>() ?? false;
+                        bool linux = data["platforms"]?["linux"]?.Value<bool>() ?? false;
+
+                        // PARA LA NOTA DE METACRITIC
                         int? metacriticScore = null;
-                        if (data["metacritic"] != null && data["metacritic"]["score"] != null)
+                        // Acceso seguro: data["metacritic"]?["score"]
+                        if (data["metacritic"]?["score"] != null)
                             metacriticScore = data["metacritic"]["score"].Value<int>();
 
 
-                        //PARA LA EDAD DEL JUEGO
+                        // PARA LA EDAD DEL JUEGO
                         int? edadMinima = null;
 
                         var ratings = data["ratings"];
@@ -498,6 +527,7 @@ namespace Project_Lightning.Pages
                             // Primero intenta 'steam_germany'
                             JToken ratingToken = ratings["steam_germany"];
 
+                            // Si no está, intenta obtener el primer rating disponible.
                             if (ratingToken == null && ratings.HasValues)
                             {
                                 var firstProp = ratings.First as JProperty;
@@ -505,10 +535,12 @@ namespace Project_Lightning.Pages
                                     ratingToken = firstProp.Value;
                             }
 
-                            if (ratingToken != null)
+                            // Asegurarse de que el token es un objeto (o tiene propiedades accsesibles)
+                            if (ratingToken is JToken token)
                             {
-                                string ageStr = ratingToken["required_age"]?.Value<string>()
-                                                ?? ratingToken["rating"]?.Value<string>();
+                                // Acceso seguro: token["required_age"]?.Value<string>()
+                                string ageStr = token["required_age"]?.Value<string>()
+                                                    ?? token["rating"]?.Value<string>();
 
                                 if (!string.IsNullOrEmpty(ageStr))
                                 {
@@ -521,16 +553,15 @@ namespace Project_Lightning.Pages
                             }
                         }
 
-
-
+                        // 3. Guardar en Base de Datos (sin cambios, ya que los valores ya son seguros)
                         using (var conn = new SQLiteConnection(ConnectionString))
                         {
                             conn.Open();
 
                             string sql = @"
-                                INSERT OR REPLACE INTO Juegos 
-                                (AppId, Nombre, Windows, Mac, Linux, MetacriticScore, EdadMinima) 
-                                VALUES (@AppId, @Nombre, @Windows, @Mac, @Linux, @MetacriticScore, @EdadMinima);";
+                        INSERT OR REPLACE INTO Juegos 
+                        (AppId, Nombre, Windows, Mac, Linux, MetacriticScore, EdadMinima) 
+                        VALUES (@AppId, @Nombre, @Windows, @Mac, @Linux, @MetacriticScore, @EdadMinima);";
 
                             using (var cmd = new SQLiteCommand(sql, conn))
                             {
@@ -547,13 +578,24 @@ namespace Project_Lightning.Pages
 
                         }
                     }
+                    else
+                    {
+                        // Si 'success' es false o appJson es null, no es un error de código, sino de datos de Steam.
+                        Console.WriteLine($"Advertencia: Steam no devolvió datos exitosos para AppId: {appId}");
+                    }
 
-                    return; //✅ éxito
+                    return; // ✅ éxito o manejo de advertencia.
                 }
                 catch (HttpRequestException ex) when (ex.Message.Contains("429"))
                 {
                     Console.WriteLine($"Steam dijo 429 (Too Many Requests) para {appId}. Reintentando...");
                     await Task.Delay(2000);
+                }
+                catch (Exception ex)
+                {
+                    // Capturar cualquier otro error inesperado (como un JSON que no se puede parsear bien)
+                    Console.WriteLine($"Error general al procesar AppId {appId}: {ex.Message}");
+                    return; // Evita el bucle si es un error de parsing o datos no recuperable.
                 }
             }
         }
