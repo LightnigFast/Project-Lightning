@@ -193,13 +193,17 @@
             </Grid.ColumnDefinitions>
 
             <TextBlock Text="Welcome to" Grid.Column="0" Foreground="White" FontSize="100" FontFamily="{StaticResource FuenteJohnInclinada}"
-                        Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        Grid.Row="0" TextAlignment="Left" VerticalAlignment="Center"/>
 
-            <Image Grid.Column="0" Source="/res/media/letters/Project-Lightning-font3.png" Grid.Row="1" Height="50" RenderOptions.BitmapScalingMode="HighQuality"/>
+            <TextBlock Text="⚡Project lightning⚡" Grid.Column="0" Foreground="#d80044" FontSize="55" FontFamily="{StaticResource FuenteJohnInclinada}"
+                        Grid.Row="1" TextAlignment="Left" VerticalAlignment="Center"/>
 
+            <!--
+            <Image Grid.Column="0" Source="/res/media/letters/project_lightning_text.png" Grid.Row="1" Height="50" RenderOptions.BitmapScalingMode="HighQuality"/>
+-->
 
             <!-- TARJETA ESTILO "UNIRSE A DISCORD" -->
-            <Border Grid.Column="1" Grid.RowSpan="2" Background="#2B2D31" CornerRadius="12" Padding="12" Margin="30,0,20,20" Width="250" Height="120">
+            <Border Grid.Column="1" Grid.RowSpan="2" Background="#2B2D31" CornerRadius="12" Padding="12" Margin="30,30,20,0" Width="250" Height="120">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
@@ -247,7 +251,7 @@
         </Grid>
         
         <!--GRID PARA SELECCIONAR LA CATEGORIA A LA QUE QUEREMOS ACCEDER-->
-        <Grid Grid.Row="1">
+        <Grid Grid.Row="1" Margin="0,30,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -279,7 +283,7 @@
                 </Button>
                 -->
 
-                <Border Grid.Column="1" Grid.RowSpan="2" Background="#2B2D31" CornerRadius="12" Padding="12" Width="750" Height="200">
+                <Border Grid.Column="1" Grid.RowSpan="2" Background="#2B2D31" CornerRadius="12" Padding="12" Width="840" Height="220">
                     
                 </Border>
 
@@ -290,7 +294,7 @@
         </Grid>
 
         <!--GRID PARA LAS OPCIONES DE LA APP Y MAS ABAJO, LOS SPONSORS-->
-        <Grid Grid.Row="2" HorizontalAlignment="Left">
+        <Grid Grid.Row="2" HorizontalAlignment="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="*"/>
