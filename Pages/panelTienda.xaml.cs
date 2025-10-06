@@ -212,18 +212,21 @@ namespace Project_Lightning.Pages
                 {
                     Width = 150,
                     Height = 225,
-                    Margin = new Thickness(5),
+                    Margin = new Thickness(10),
                     //SI EL JUEGO ESTA INACTIVO, NO PONGO LA MANO
                     Cursor = juego.activo ? Cursors.Hand : Cursors.Arrow,
                     Tag = kvp.Key
                 };
 
                 //CREAR IMAGEN
-                Image img = new Image
+                Image img = new Image();
+
+                if (juego.activo)
                 {
-                    Stretch = Stretch.UniformToFill,
-                    Style = (Style)FindResource("GameImageStyle") //APLICAR ESTILO
-                };
+                    img.Stretch = Stretch.UniformToFill;
+                    img.Style = (Style)FindResource("GameImageStyle");
+                }
+
 
                 //CARGAR IMAGEN LOCAL O DESCARGAR
                 BitmapImage bitmap = await GetGameImageAsync(kvp.Key, juego.imgVertical, "library_600x900");
@@ -232,10 +235,22 @@ namespace Project_Lightning.Pages
                 //SI EL JUEGO ESTA INACTIVO, LO PONEMOS DE GRIS
                 if (!juego.activo)
                 {
-                    border.Opacity = 0.5;
+                    if (img.Source is BitmapSource originalImage)
+                    {
+                        //CONVERTIMOS A ESCALA DE GRISES
+                        var grayImage = new FormatConvertedBitmap();
+                        grayImage.BeginInit();
+                        grayImage.Source = originalImage;
+                        grayImage.DestinationFormat = PixelFormats.Gray32Float;
+                        grayImage.EndInit();
 
-                    border.ToolTip = "Este juego está inactivo en la tienda actualmente.";
+                        img.Source = grayImage;
+                    }
+
+                    
+                    border.ToolTip = "This game is currently inactive on the store.";
                 }
+
 
                 //CLIP PARA REDONDEAR BORDES
                 img.Clip = new RectangleGeometry
