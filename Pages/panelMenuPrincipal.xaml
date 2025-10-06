@@ -283,8 +283,12 @@
                 </Button>
                 -->
 
-                <Border Grid.Column="1" Grid.RowSpan="2" Background="#2B2D31" CornerRadius="12" Padding="12" Width="840" Height="220">
-                    
+                <Border Grid.Column="1" Grid.RowSpan="2" Background="Transparent" CornerRadius="12" Width="840" Height="220">
+                    <Image x:Name="imagenPromo" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5">
+                        <Image.RenderTransform>
+                            <ScaleTransform ScaleX="1" ScaleY="1"/>
+                        </Image.RenderTransform>
+                    </Image>
                 </Border>
 
 
