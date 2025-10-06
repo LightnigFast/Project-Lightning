@@ -84,15 +84,15 @@ namespace Project_Lightning.Pages
 
         private async void CargarBibliotecaConOverlay()
         {
-            LoadingOverlay.Visibility = Visibility.Visible; // MOSTRAR OVERLAY
+            LoadingOverlay.Visibility = Visibility.Visible; //MOSTRAR OVERLAY
             juegoIndependiente.Opacity = 0;
             StartSpinner();
 
-            await Task.Delay(50); // PERMITE QUE LA UI PINTA EL OVERLAY ANTES DE EMPEZAR
+            await Task.Delay(50); //PERMITE QUE LA UI PINTA EL OVERLAY ANTES DE EMPEZAR
 
-            await CargarBiblioteca(steamPath); // LLAMADA AL MÉTODO ASYNC DE CARGA
+            await CargarBiblioteca(steamPath); //LLAMADA AL MÉTODO ASYNC DE CARGA
 
-            LoadingOverlay.Visibility = Visibility.Collapsed; // OCULTAR OVERLAY
+            LoadingOverlay.Visibility = Visibility.Collapsed; //OCULTAR OVERLAY
         }
 
 
@@ -117,14 +117,13 @@ namespace Project_Lightning.Pages
 
             try
             {
-                // --- 1. CONFIGURACIÓN Y VERIFICACIONES (SÍNCRONO) ---
                 string pluginFolder = System.IO.Path.Combine(steamPath, "config", "stplug-in");
                 string cacheFolder = System.IO.Path.Combine(steamPath, "appcache", "librarycache");
                 string lightningTools = System.IO.Path.Combine(steamPath, "hid.dll");
 
                 if (!File.Exists(lightningTools) || !Directory.Exists(pluginFolder) || !Directory.Exists(cacheFolder))
                 {
-                    // Si falta alguno de los elementos, llama a MostrarError y regresa.
+                    //Si falta alguno de los elementos, llamo a MostrarError y regreso
                     if (!File.Exists(lightningTools))
                     {
                         MostrarError("❌ \"LightningTools\" is not installed.", "This error occurs because LightningTools is not installed. Please go to Settings and install it before using the library.");
@@ -140,7 +139,7 @@ namespace Project_Lightning.Pages
                     return;
                 }
 
-                // Obtenemos todos los AppIds de los archivos .lua
+                //Obtengo todos los AppIds de los archivos .lua
                 var luaFiles = Directory.GetFiles(pluginFolder, "*.lua");
                 var todosAppIds = luaFiles
                                     .Select(f => int.TryParse(System.IO.Path.GetFileNameWithoutExtension(f), out int id) ? id : -1)
@@ -148,33 +147,28 @@ namespace Project_Lightning.Pages
                                     .ToList();
 
 
-                // --- 2. ACTUALIZAR LA BD (ASÍNCRONO - Fuera del bucle principal) ---
-                // Identificar solo los IDs que NO están en la BD para evitar trabajo innecesario.
+                //ACTUALIZAO LA BD
+                //Identifico solo los IDs que NO están en la BD para evitar trabajo innecesario.
                 var appIdsNuevos = todosAppIds.Where(id => !EstaEnBD(id)).ToList();
 
                 if (appIdsNuevos.Any())
                 {
-                    // Ejecutamos la carga de datos de Steam/Metacritic a la BD.
-                    // Esto es asíncrono y no bloquea.
                     await GuardarJuegosEnBD(appIdsNuevos);
                 }
 
-                // --- 3. CARGAR JUEGOS EN WRAPPANEL (ASÍNCRONO) ---
+                //CARGO LOS JUEGOS EN WRAPPANEL
                 Juegos.Clear();
                 var juegosTemp = new List<JuegoViewModel>();
 
                 await Task.Run(() =>
                 {
-                    // Ahora iteramos sobre TODOS los IDs. Sabemos que están en el disco
-                    // y que sus metadatos (Metacritic, Nombre, etc.) están en la BD.
+                    
                     foreach (var appIdInt in todosAppIds)
                     {
                         string appId = appIdInt.ToString();
 
                         string appFolder = System.IO.Path.Combine(cacheFolder, appId);
 
-                        // No verificamos Directory.Exists(appFolder) aquí si ya lo hicimos antes, 
-                        // pero lo mantenemos para el flujo de notificaciones.
                         if (!Directory.Exists(appFolder))
                         {
                             Dispatcher.Invoke(() =>
@@ -197,8 +191,6 @@ namespace Project_Lightning.Pages
                                     continue;
                             }
 
-                            // *** Lógica de creación de BitmapImage (IO intensiva) ***
-                            // Dado que estamos en Task.Run, el hilo de la UI no se bloquea.
                             BitmapImage bitmap = new BitmapImage();
                             bitmap.BeginInit();
                             bitmap.UriSource = new Uri(imagePath, UriKind.RelativeOrAbsolute);
@@ -208,7 +200,7 @@ namespace Project_Lightning.Pages
                             bitmap.EndInit();
                             bitmap.Freeze();
 
-                            // Lectura de Metacritic desde la BD (operación rápida)
+                            //Leo Metacritic desde la BD
                             int? metacriticScore = ObtenerMetacriticDesdeBD(appIdInt);
 
                             juegosTemp.Add(new JuegoViewModel
@@ -218,13 +210,12 @@ namespace Project_Lightning.Pages
                                 MetacriticScore = metacriticScore
                             });
 
-                            break; // Imagen encontrada, pasa al siguiente juego
+                            break; //Imagen encontrada, pasa al siguiente juego
                         }
                     }
                 });
 
-                // --- 4. ACTUALIZAR UI (HILO DE LA UI) ---
-                // Agregar todos los juegos de la lista temporal a la ObservableCollection
+                //Agrego todos los juegos de la lista temporal a la ObservableCollection
                 foreach (var juego in juegosTemp)
                     Juegos.Add(juego);
             }
