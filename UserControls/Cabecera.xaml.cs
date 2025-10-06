@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Project_Lightning.Windows;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +14,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Project_Lightning.Windows;
 using WpfAnimatedGif;
 
 namespace Project_Lightning.UserControls
@@ -44,7 +45,7 @@ namespace Project_Lightning.UserControls
             image.UriSource = new Uri(gifPath, UriKind.Relative);
             image.EndInit();
 
-            ImageBehavior.SetAnimatedSource(gifImage, image);
+            
         }
 
         //HOME CLICK
@@ -98,6 +99,26 @@ namespace Project_Lightning.UserControls
             ventanaDonacion.Show();
         }
 
+
+        //EVENTO PARA EL BOTON DE KO-FI
+        private void botonKoFi_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://ko-fi.com/lightningfast",
+                UseShellExecute = true
+            });
+        }
+
+        //EVENTO PARA EL BOTON DE REVOLUT
+        private void botonRevolut_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://revolut.me/lightning_fast",
+                UseShellExecute = true
+            });
+        }
 
     }
 }

@@ -191,7 +191,20 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="8" BorderThickness="0">
+                        <Border  CornerRadius="8" BorderThickness="0">
+
+                            <Border.Background>
+                                <!-- DEGRADADO HORIZONTAL -->
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="#45BAA9" Offset="0"/>
+                                    <!-- Azul -->
+                                    <GradientStop Color="#BA45B4" Offset="1"/>
+                                    <!-- Violeta -->
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+
+
                             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                 <Image Source="https://storage.ko-fi.com/cdn/cup-border.png" Width="30" Height="30" Margin="0,0,10,0"/>
                                 <TextBlock Text="Support on Ko-fi" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
@@ -211,6 +224,63 @@
                             <!--CLICK-->
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Background" Value="#794bc4"/>
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!--ESTILO PARA BOTÓN REVOLUT-->
+        <Style x:Key="BotonRevolut" TargetType="Button">
+            <Setter Property="Width" Value="170"/>
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="8" BorderThickness="0">
+                            <Border.Background>
+                                <!-- DEGRADADO HORIZONTAL -->
+                                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                    <GradientStop Color="Black" Offset="0"/>
+                                    <!-- Azul -->
+                                    <GradientStop Color="#7A5AF8" Offset="1"/>
+                                    <!-- Violeta -->
+                                </LinearGradientBrush>
+                            </Border.Background>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Viewbox Height="30" Margin="0,0,10,0">
+                                    <Path Fill="White" Data="M20.9133 6.9566C20.9133 3.1208 17.7898 0 13.9503 0H2.424v3.8605h10.9782c1.7376 0 3.177 1.3651 3.2087 3.043 0.016 0.84 -0.2994 1.633 -0.8878 2.2324 -0.5886 0.5998 -1.375 0.9303 -2.2144 0.9303H9.2322a0.2756 0.2756 0 0 0 -0.2755 0.2752v3.431c0 0.0585 0.018 0.1142 0.052 0.1612L16.2646 24h5.3114l-7.2727 -10.094c3.6625 -0.1838 6.61 -3.2612 6.61 -6.9494zM6.8943 5.9229H2.424V24h4.4704z"/>
+                                </Viewbox>
+
+                                <TextBlock Text="Support on Revolut" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <!--HOVER-->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <ScaleTransform ScaleX="1.05" ScaleY="1.05"/>
+                                    </Setter.Value>
+                                </Setter>
+                                <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+                            </Trigger>
+
+                            <!--CLICK-->
+                            <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="RenderTransform">
                                     <Setter.Value>
                                         <ScaleTransform ScaleX="0.95" ScaleY="0.95"/>
@@ -254,16 +324,22 @@
                        Grid.Column="1" VerticalAlignment="Center" Margin="20,0,0,0"/>
             
             <!--PARA EL BOTON DE KOFI-->
-            <Button Width="210" Height="40" HorizontalAlignment="Right" Margin="0,0,0,0"  Style="{StaticResource BotonKoFi}"
-                    Grid.Column="2" Name="botonKoFi" Click="botonKoFi_Click" BorderBrush="#794bc4" Cursor="Hand">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="https://storage.ko-fi.com/cdn/cup-border.png" Width="30" Height="30" Margin="0,0,10,0"/>
-                    <TextBlock Text="Support on Ko-fi" FontSize="18" FontWeight="Bold" Foreground="White" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Button>
+            <StackPanel Orientation="Horizontal" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!--BOTÓN KO-FI-->
+                <Button Width="215" Height="40" HorizontalAlignment="Center" Margin="10,10,10,0"  Style="{StaticResource BotonKoFi}"
+                        Grid.Row="3" Name="botonKoFi" Click="botonKoFi_Click" BorderBrush="#794bc4" Cursor="Hand">
+
+                </Button>
+
+                <!--BOTON REVOLUT-->
+                <Button Width="215"  Height="40" HorizontalAlignment="Center" Margin="10,10,10,0" Style="{StaticResource BotonRevolut}"
+                        Grid.Row="3" Name="botonRevolut" Click="botonRevolut_Click" BorderBrush="#794bc3" Cursor="Hand">
+
+                </Button>
+            </StackPanel>
 
             <!--PARTE PARA LA BARRA DE BUSQUEDA-->
-            <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="20,5,10,0" VerticalAlignment="Top" HorizontalAlignment="Right">
+            <StackPanel Grid.Column="3" Orientation="Horizontal" Margin="20,5,10,0" VerticalAlignment="Center" HorizontalAlignment="Right">
                 <TextBox x:Name="txtBuscar" Width="300" Height="30" Margin="0,0,50,0" VerticalAlignment="Center" TextChanged="txtBuscar_TextChanged"
                              Style="{StaticResource DarkMinimalistSearchBox}" Cursor="Hand"/>
             </StackPanel>

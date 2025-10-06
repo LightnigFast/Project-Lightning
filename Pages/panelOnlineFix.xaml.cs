@@ -785,6 +785,15 @@ namespace Project_Lightning.Pages
             });
         }
 
+        //EVENTO PARA EL BOTON DE REVOLUT
+        private void botonRevolut_Click(object sender, RoutedEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "https://revolut.me/lightning_fast",
+                UseShellExecute = true
+            });
+        }
 
     }
 
