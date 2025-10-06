@@ -1,28 +1,28 @@
-﻿using System;
+﻿using Microsoft.WindowsAPICodePack.Dialogs;
+using Newtonsoft.Json;
+using SharpCompress.Archives;
+using SharpCompress.Common;
+using SharpCompress.Readers;
+using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using TokenProvider;
 using System.Windows.Shapes;
-using System.IO.Compression;
-using Newtonsoft.Json;
-using SharpCompress.Archives;
-using SharpCompress.Common;
-using SharpCompress.Readers;
-using System.Windows.Forms;
-using Microsoft.WindowsAPICodePack.Dialogs;
-
+using TokenProvider;
 using static Project_Lightning.Pages.panelApp;
 
 namespace Project_Lightning.Pages
@@ -238,6 +238,7 @@ namespace Project_Lightning.Pages
             try
             {
                 HttpClient client = new HttpClient();
+                client.Timeout = TimeSpan.FromHours(4); //TIEMPO DE ESPERA DE 4 HORAS (SI NO PUEDES DESCARGAR 11 GB EN 4 HORAS, COMPRATE OTRO WIFI BRO)
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
                 client.DefaultRequestHeaders.Authorization =
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
