@@ -372,6 +372,9 @@
     <Resource Include="res\media\logos\originals\advertencia.gif" />
     <Resource Include="res\media\logos\originals\Electricity.gif" />
     <Resource Include="res\media\letters\project_lightning_text.png" />
+    <Content Include="res\media\promos\promo1.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\media\sponsors\steam-force-sponsor.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
