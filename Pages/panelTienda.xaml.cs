@@ -213,7 +213,8 @@ namespace Project_Lightning.Pages
                     Width = 150,
                     Height = 225,
                     Margin = new Thickness(5),
-                    Cursor = Cursors.Hand,
+                    //SI EL JUEGO ESTA INACTIVO, NO PONGO LA MANO
+                    Cursor = juego.activo ? Cursors.Hand : Cursors.Arrow,
                     Tag = kvp.Key
                 };
 
@@ -228,6 +229,14 @@ namespace Project_Lightning.Pages
                 BitmapImage bitmap = await GetGameImageAsync(kvp.Key, juego.imgVertical, "library_600x900");
                 img.Source = bitmap;
 
+                //SI EL JUEGO ESTA INACTIVO, LO PONEMOS DE GRIS
+                if (!juego.activo)
+                {
+                    border.Opacity = 0.5;
+
+                    border.ToolTip = "Este juego está inactivo en la tienda actualmente.";
+                }
+
                 //CLIP PARA REDONDEAR BORDES
                 img.Clip = new RectangleGeometry
                 {
@@ -238,11 +247,14 @@ namespace Project_Lightning.Pages
 
                 border.Child = img;
 
-                //EVENTO CLICK
-                border.MouseLeftButtonUp += async (s, e) =>
+                //EVENTO CLICK (SOLO SI EL JUEGO ESTA ACTIVO)
+                if (juego.activo)
                 {
-                    await PonerEnCabeceraAsync(juego, kvp.Key);
-                };
+                    border.MouseLeftButtonUp += async (s, e) =>
+                    {
+                        await PonerEnCabeceraAsync(juego, kvp.Key);
+                    };
+                }
 
                 panelJuegos.Children.Add(border);
             }
