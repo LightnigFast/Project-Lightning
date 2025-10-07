@@ -38,6 +38,7 @@ namespace Project_Lightning.Pages
         private string steamPath;
         private MainWindow _ventanaPrincipal;
         private NotificationManager notifier;
+        private bool steamEncontrado = false;
         public ObservableCollection<JuegoViewModel> Juegos { get; set; }
 
         private static readonly HttpClient httpClient = new HttpClient();
@@ -71,10 +72,14 @@ namespace Project_Lightning.Pages
 
             CargarRutaSteam();
 
-            //INICIALIZAR BASE DE DATOS
-            InicializarBD();
+            if (steamEncontrado)
+            {
+                //INICIALIZAR BASE DE DATOS
+                InicializarBD();
 
-            CargarBibliotecaConOverlay();
+                CargarBibliotecaConOverlay();
+            }
+            
 
             
 
@@ -264,9 +269,14 @@ namespace Project_Lightning.Pages
 
             if (File.Exists(configFile))
             {
+                steamEncontrado = true;
                 var config = JsonConvert.DeserializeObject<Dictionary<string, string>>(File.ReadAllText(configFile));
                 if (config != null && config.ContainsKey("SteamPath"))
                     steamPath = config["SteamPath"];
+            }
+            else
+            {
+                MostrarError("❌ Steam folder not found.", "This error occurs because you haven't specified the correct path to Steam. \n Go to Settings and enter the path where Steam is installed.\r\n");
             }
         }
 
