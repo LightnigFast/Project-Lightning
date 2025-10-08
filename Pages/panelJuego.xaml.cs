@@ -308,10 +308,19 @@ namespace Project_Lightning.Pages
                         //Lógica de eliminación de archivos existentes
                         if (File.Exists(rutaDestino))
                         {
-                            try { File.Delete(rutaDestino); await Task.Delay(100); }
+                            try
+                            {
+                                // INTENTO ELIMINAR EL ARCHIVO, SI SE ESTÁ USANDO, ESPERO ANTES DE ELIMINAR
+                                File.Delete(rutaDestino);
+                                await Task.Delay(100);
+                            }
                             catch (IOException ioEx)
                             {
-                                try { File.Delete(rutaDestino); }
+                                try
+                                {
+                                    // FUERZO ELIMINACIÓN
+                                    File.Delete(rutaDestino);
+                                }
                                 catch (IOException)
                                 {
                                     var ventanaError4 = new Windows.ErrorDialog("Error trying to delete the file: " + ioEx.Message, Brushes.Red);
@@ -322,27 +331,57 @@ namespace Project_Lightning.Pages
                             }
                         }
 
+                        // Definir el objeto Progress que actualiza el UI
                         var fileProgress = new Progress<long>(bytesLeidosDelArchivo =>
                         {
-                            //Progreso total = (Bytes_YA_Descargados + Bytes_Leídos_AHORA) / Total_Absoluto
+                            // Progreso total = (Bytes_YA_Descargados + Bytes_Leídos_AHORA) / Total_Absoluto
                             long totalActual = totalBytesDescargadosHastaAhora + bytesLeidosDelArchivo;
                             double porcentaje = (double)totalActual / totalBytesADescargar * 100;
 
-                            //Actualizar UI
-                            System.Windows.Application.Current.Dispatcher.Invoke(() =>
+                            // CÁLCULO DE VELOCIDAD
+                            DateTime currentTime = DateTime.Now;
+                            // Bytes transferidos desde la última actualización
+                            long bytesSinceLastUpdate = totalActual - lastBytesRead;
+                            // Tiempo transcurrido en segundos
+                            double timeElapsedSeconds = (currentTime - lastUpdateTime).TotalSeconds;
+
+                            // Solo calcula y actualiza si ha pasado suficiente tiempo y hay transferencia de datos
+                            if (timeElapsedSeconds > 0.1 && bytesSinceLastUpdate > 0)
                             {
-                                progressBar.Value = porcentaje;
-                                progressText.Text = $"{porcentaje:0.0}%";
-                            });
+                                // Velocidad en bytes por segundo (B/s)
+                                double speedBps = bytesSinceLastUpdate / timeElapsedSeconds;
+                                string speedString = FormatSpeed(speedBps); // Usamos la función auxiliar para formatear
+
+                                // Actualizar variables de estado
+                                lastBytesRead = totalActual;
+                                lastUpdateTime = currentTime;
+
+                                // Actualizar UI
+                                System.Windows.Application.Current.Dispatcher.Invoke(() =>
+                                {
+                                    progressBar.Value = porcentaje;
+                                    progressText.Text = $"{porcentaje:0.0}%";
+                                    speedText.Text = speedString; // Actualiza la velocidad
+                                });
+                            }
+                            else
+                            {
+                                // Actualización de progreso si el cálculo de velocidad es muy rápido/cero
+                                System.Windows.Application.Current.Dispatcher.Invoke(() =>
+                                {
+                                    progressBar.Value = porcentaje;
+                                    progressText.Text = $"{porcentaje:0.0}%";
+                                });
+                            }
                         });
 
-                        //Llamar al método auxiliar para la descarga con progreso
+                        // Llamar al método auxiliar para la descarga con progreso
                         await DownloadFileWithProgress(client, archivo.download_url, rutaDestino, fileProgress);
 
-                        //Una vez terminado el archivo, actualizo el contador global de bytes
+                        // Una vez terminado el archivo, actualizo el contador global de bytes
                         totalBytesDescargadosHastaAhora += archivo.size;
 
-                        //GUARDAR RUTA DEL ZIP
+                        // GUARDAR RUTA DEL ZIP
                         if (archivo.name.EndsWith(".zip") && rutaZipExtraer == null)
                             rutaZipExtraer = rutaDestino;
                     }
@@ -350,6 +389,7 @@ namespace Project_Lightning.Pages
                     //Ajuste final del progreso al 100% (antes de la extracción)
                     progressBar.Value = 100;
                     progressText.Text = "100%";
+                    speedText.Text = "0 KB/s";
                     textoDescargando.Text = "Extracting...";
 
                     //EXTRAIGO EL ZIP SI EXISTE
@@ -416,6 +456,7 @@ namespace Project_Lightning.Pages
                     ventanaError.ShowDialog();
                     progressBar.Value = 0;
                     progressText.Text = "";
+                    speedText.Text = "";
                     progressBar.Visibility = Visibility.Collapsed;
                     textoDescargando.Text = "";
                     fixButton.IsEnabled = true;
@@ -435,6 +476,10 @@ namespace Project_Lightning.Pages
             }
         }
 
+
+        // Variables para el cálculo de velocidad
+        private long lastBytesRead = 0;
+        private DateTime lastUpdateTime = DateTime.Now;
 
         //METODO AUXILIAR PARA QUE LA DESCARGA DE JUEGOS Y VER SUS BYTES
         private async Task DownloadFileWithProgress(HttpClient client, string url, string destinationPath, IProgress<long> progress)
@@ -468,7 +513,22 @@ namespace Project_Lightning.Pages
 
 
 
+        ///METODO PARA CONVERTIR LOS BYTES POR SEFUNDO A UN FORMATO MAS AMABLE PARA EL USER (MB/s - KB/s)
+        private string FormatSpeed(double bytesPerSecond)
+        {
+            string[] suffixes = { "B/s", "KB/s", "MB/s", "GB/s", "TB/s" };
+            int suffixIndex = 0;
 
+            double speed = bytesPerSecond;
+
+            while (speed >= 1024 && suffixIndex < suffixes.Length - 1)
+            {
+                speed /= 1024;
+                suffixIndex++;
+            }
+
+            return $"{speed:0.#} {suffixes[suffixIndex]}";
+        }
 
 
 
