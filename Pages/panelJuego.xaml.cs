@@ -238,14 +238,13 @@ namespace Project_Lightning.Pages
             try
             {
                 HttpClient client = new HttpClient();
-                client.Timeout = TimeSpan.FromHours(4); //TIEMPO DE ESPERA DE 4 HORAS (SI NO PUEDES DESCARGAR 11 GB EN 4 HORAS, COMPRATE OTRO WIFI BRO)
+                client.Timeout = TimeSpan.FromHours(4);
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
                 client.DefaultRequestHeaders.Authorization =
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
 
-          
                 string json = await client.GetStringAsync(apiUrl);
-  
+
                 if (string.IsNullOrEmpty(json))
                 {
                     var ventanaError = new Windows.ErrorDialog("Failed to authenticate with GitHub. Please check your token.", Brushes.Red);
@@ -259,42 +258,27 @@ namespace Project_Lightning.Pages
                 //CommonOpenFileDialog PARA SELECCIONAR EL SELECTOR DE FICHEROS DE WINDOWS
                 var folderDialog = new CommonOpenFileDialog();
                 folderDialog.IsFolderPicker = true;
-                folderDialog.Title = "Select the game folder of " + juego.Value.name + ":";
+                folderDialog.Title = "Select the game folder of " + keyValuePair.Value.name + ":";
 
                 if (folderDialog.ShowDialog() == CommonFileDialogResult.Ok)
                 {
                     string carpetaDestino = folderDialog.FileName;
 
-                    //VERIFICAR QUE LA CARPETA SELCCIONADA ESTE DENTRO DE "steamapps/common"
-                    string carpetaSteamApps = System.IO.Path.Combine(carpetaDestino, "steamapps");
-                    string carpetaCommon = System.IO.Path.Combine(carpetaSteamApps, "common");
+                    string carpetaCommon = System.IO.Path.Combine(carpetaDestino, "steamapps", "common");
 
-                    //VERIFICAR QUE LA CARPETA SELCCIONADA ESTE DENTRO DE "steamapps/common"
-                    if (!carpetaDestino.Contains("steamapps\\common"))
+                    if (!carpetaDestino.Contains("steamapps\\common") || System.IO.Path.GetFileName(carpetaDestino).Equals("common", StringComparison.OrdinalIgnoreCase))
                     {
-                        var ventanaError3 = new Windows.ErrorDialog("You must select the game folder of " + juego.Value.name + ":", Brushes.Red);
+                        var ventanaError3 = new Windows.ErrorDialog("You must select the *game folder* inside 'steamapps\\common' for " + keyValuePair.Value.name + ".", Brushes.Red);
                         ventanaError3.ShowDialog();
                         fixButton.IsEnabled = true;
-
                         return;
                     }
 
-                    //COMPRUEBO SI LA CARPETA SELECCIONADA ES COMMON
-                    if (System.IO.Path.GetFileName(carpetaDestino).Equals("common", StringComparison.OrdinalIgnoreCase))
-                    {
-                        var ventanaError2 = new Windows.ErrorDialog("You must select the game folder of " + juego.Value.name + ":", Brushes.Red);
-                        ventanaError2.ShowDialog();
-                        fixButton.IsEnabled = true;
-                        return;
-                    }
-
-                    //SI LLEGAMOS HASTA AQUI, LA CARPETA SELCCIONADA ES CORRECTA Y ESTA DENTRO DE "STEAMAPPS/COMMON"
-
-                    //VERIFICAR QUE LA SUBCARPETA DEL JUEGO DENTRO DE 'COMMON' NO EXISTA, SI EXISTE LA ELIMINAMOS
-                    string carpetaJuego = System.IO.Path.Combine(carpetaCommon, "game"); 
+                    //VERIFICO Y ELIMINO LA CARPETA DEL JUEGO SI EXISTE
+                    string carpetaJuego = System.IO.Path.Combine(carpetaCommon, "game");
                     if (Directory.Exists(carpetaJuego))
                     {
-                        Directory.Delete(carpetaJuego, true);  //ELIMINO LA CARPETA DEL JUEGO SI YA EXISTE
+                        Directory.Delete(carpetaJuego, true);
                     }
 
                     string rutaZipExtraer = null;
@@ -306,60 +290,67 @@ namespace Project_Lightning.Pages
                         Directory.CreateDirectory(carpetaTemporal);
                     }
 
-                    //PARA LA BARRA DE PROGRESO
+
+                    //Filtrar solo los archivos y calcular el tamaño total
+                    var archivosADescargar = archivos.Where(a => a.type == "file").ToList();
+                    long totalBytesADescargar = archivosADescargar.Sum(a => a.size);
+                    long totalBytesDescargadosHastaAhora = 0;
+
                     progressBar.Value = 0;
-                    int totalArchivos = archivos.Count;
-                    int archivosProcesados = 0;
                     progressBar.Visibility = Visibility.Visible;
                     textoDescargando.Text = "Downloading...";
 
-                    //DESCARGAR TODO
-                    foreach (var archivo in archivos)
+                    //DESCARGAR CADA ARCHIVO Y ACTUALIZAR EL PROGRESO GLOBAL
+                    foreach (var archivo in archivosADescargar)
                     {
-                        if (archivo.type == "file")
-                        {
-                            string rutaDestino = System.IO.Path.Combine(carpetaDestino, archivo.name);
+                        string rutaDestino = System.IO.Path.Combine(carpetaDestino, archivo.name);
 
-                            //VERIFICAR SI EL ARCHIVO YA EXISTE Y ELIMINARLO ANTES
-                            if (File.Exists(rutaDestino))
+                        //Lógica de eliminación de archivos existentes
+                        if (File.Exists(rutaDestino))
+                        {
+                            try { File.Delete(rutaDestino); await Task.Delay(100); }
+                            catch (IOException ioEx)
                             {
-                                try
-                                {
-                                    //INTENTO ELIMINAR EL ARCHIVO, SI SE ESTÁ USANDO, ESPERO ANTES DE ELIMINAR
-                                    File.Delete(rutaDestino);
-                                    await Task.Delay(100);  //ESPERO POR SI EL ARCHIVO SE ESTA USANDO
-                                }
+                                try { File.Delete(rutaDestino); }
                                 catch (IOException)
                                 {
-                                    try
-                                    {
-                                        //FUERZO ELIMINAICION
-                                        File.Delete(rutaDestino);
-                                    }
-                                    catch (IOException ioEx)
-                                    {
-                                        var ventanaError4 = new Windows.ErrorDialog("Error trying to delete the file: " + ioEx.Message, Brushes.Red);
-                                        ventanaError4.ShowDialog();
-                                        fixButton.IsEnabled = true;
-                                        //System.Windows.MessageBox.Show("Error trying to delete the file: " + ioEx.Message);
-                                        return;
-                                    }
+                                    var ventanaError4 = new Windows.ErrorDialog("Error trying to delete the file: " + ioEx.Message, Brushes.Red);
+                                    ventanaError4.ShowDialog();
+                                    fixButton.IsEnabled = true;
+                                    return;
                                 }
                             }
-
-                            byte[] datos = await client.GetByteArrayAsync(archivo.download_url);
-                            File.WriteAllBytes(rutaDestino, datos);
-
-                            //GUARDO LA RUTA AL PRIMER ZIP ENCONTRADO PARA EXTRAERLO DESPUÉS
-                            if (archivo.name.EndsWith(".zip") && rutaZipExtraer == null)
-                                rutaZipExtraer = rutaDestino;
-
-                            archivosProcesados++;
-                            progressBar.Value = (double)archivosProcesados / totalArchivos * 100;
-                            progressText.Text = $"{(int)((double)archivosProcesados / totalArchivos * 100)}%";
                         }
+
+                        var fileProgress = new Progress<long>(bytesLeidosDelArchivo =>
+                        {
+                            //Progreso total = (Bytes_YA_Descargados + Bytes_Leídos_AHORA) / Total_Absoluto
+                            long totalActual = totalBytesDescargadosHastaAhora + bytesLeidosDelArchivo;
+                            double porcentaje = (double)totalActual / totalBytesADescargar * 100;
+
+                            //Actualizar UI
+                            System.Windows.Application.Current.Dispatcher.Invoke(() =>
+                            {
+                                progressBar.Value = porcentaje;
+                                progressText.Text = $"{porcentaje:0.0}%";
+                            });
+                        });
+
+                        //Llamar al método auxiliar para la descarga con progreso
+                        await DownloadFileWithProgress(client, archivo.download_url, rutaDestino, fileProgress);
+
+                        //Una vez terminado el archivo, actualizo el contador global de bytes
+                        totalBytesDescargadosHastaAhora += archivo.size;
+
+                        //GUARDAR RUTA DEL ZIP
+                        if (archivo.name.EndsWith(".zip") && rutaZipExtraer == null)
+                            rutaZipExtraer = rutaDestino;
                     }
 
+                    //Ajuste final del progreso al 100% (antes de la extracción)
+                    progressBar.Value = 100;
+                    progressText.Text = "100%";
+                    textoDescargando.Text = "Extracting...";
 
                     //EXTRAIGO EL ZIP SI EXISTE
                     if (rutaZipExtraer != null)
@@ -372,18 +363,17 @@ namespace Project_Lightning.Pages
                                 if (!entry.IsDirectory)
                                 {
                                     string filePath = System.IO.Path.Combine(carpetaTemporal, entry.Key);
-                                    Directory.CreateDirectory(System.IO.Path.GetDirectoryName(filePath)); //CREAR DIRECTORIOS SI NO EXISTEN
+                                    Directory.CreateDirectory(System.IO.Path.GetDirectoryName(filePath));
 
-                                    //EXTRAIGO EL ARCHIVO
                                     using (var fileStream = File.Create(filePath))
                                     {
-                                        entry.WriteTo(fileStream);  //EXTRAIGO EL CONTENIDO DEL ARCHIVO
+                                        entry.WriteTo(fileStream);
                                     }
                                 }
                             }
                         }
 
-                        //MUEVO EL CONTENIDO EXTRAÍDO A LA CARPETA FINAL (REEMPLAZAR SI YA EXISTEN)
+                        //MUEVO EL CONTENIDO EXTRAÍDO A LA CARPETA FINAL
                         foreach (var archivoExtraido in Directory.GetFiles(carpetaTemporal, "*", SearchOption.AllDirectories))
                         {
                             string nombreRelativo = archivoExtraido.Substring(carpetaTemporal.Length + 1);
@@ -391,7 +381,6 @@ namespace Project_Lightning.Pages
 
                             Directory.CreateDirectory(System.IO.Path.GetDirectoryName(rutaFinal));
 
-                            //SI EL ARCHIVO YA EXISTE LO REMPLAZO
                             if (File.Exists(rutaFinal))
                             {
                                 File.Delete(rutaFinal);
@@ -400,7 +389,7 @@ namespace Project_Lightning.Pages
                             File.Move(archivoExtraido, rutaFinal);
                         }
 
-                        //ELIMINO ARCHIVOS TEMPORALES
+                        //ELIMINO ARCHIVOS TEMPORALES Y ZIP
                         Directory.Delete(carpetaTemporal, true);
                         File.Delete(rutaZipExtraer);
 
@@ -408,14 +397,11 @@ namespace Project_Lightning.Pages
                         string zipBaseName = System.IO.Path.GetFileNameWithoutExtension(rutaZipExtraer);
                         string zipDir = System.IO.Path.GetDirectoryName(rutaZipExtraer);
                         var fragmentos = Directory.GetFiles(zipDir, zipBaseName + ".*")
-                                                  .Where(f => !f.EndsWith(".zip", StringComparison.OrdinalIgnoreCase));
+                                                 .Where(f => !f.EndsWith(".zip", StringComparison.OrdinalIgnoreCase));
 
                         foreach (var frag in fragmentos)
                         {
-                            try
-                            {
-                                File.Delete(frag);
-                            }
+                            try { File.Delete(frag); }
                             catch (Exception ex)
                             {
                                 var ventanaError5 = new Windows.ErrorDialog("Could not delete fragment file: " + ex.Message, Brushes.Red);
@@ -433,14 +419,12 @@ namespace Project_Lightning.Pages
                     progressBar.Visibility = Visibility.Collapsed;
                     textoDescargando.Text = "";
                     fixButton.IsEnabled = true;
-                    //System.Windows.MessageBox.Show("Download and extraction completed: " + carpetaDestino);
                 }
                 else
                 {
                     var ventanaError = new Windows.ErrorDialog("No folder selected.", Brushes.Red);
                     ventanaError.ShowDialog();
                     fixButton.IsEnabled = true;
-                    //System.Windows.MessageBox.Show("No folder selected.");
                 }
             }
             catch (Exception ex)
@@ -448,12 +432,35 @@ namespace Project_Lightning.Pages
                 var ventanaError = new Windows.ErrorDialog("ERROR: " + ex.Message, Brushes.Red);
                 ventanaError.ShowDialog();
                 fixButton.IsEnabled = true;
-                //System.Windows.MessageBox.Show("ERROR: " + ex.Message);
             }
         }
 
 
+        //METODO AUXILIAR PARA QUE LA DESCARGA DE JUEGOS Y VER SUS BYTES
+        private async Task DownloadFileWithProgress(HttpClient client, string url, string destinationPath, IProgress<long> progress)
+        {
+            using (var response = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
+            {
+                response.EnsureSuccessStatusCode();
 
+                using (var contentStream = await response.Content.ReadAsStreamAsync())
+                using (var fileStream = new FileStream(destinationPath, FileMode.Create, FileAccess.Write, FileShare.None, 8192, true))
+                {
+                    var buffer = new byte[8192];
+                    long totalRead = 0;
+                    int bytesRead;
+
+                    while ((bytesRead = await contentStream.ReadAsync(buffer, 0, buffer.Length)) > 0)
+                    {
+                        await fileStream.WriteAsync(buffer, 0, bytesRead);
+                        totalRead += bytesRead;
+
+                        //Reporto el progreso por bytes para este archivo
+                        progress?.Report(totalRead);
+                    }
+                }
+            }
+        }
 
 
 
@@ -471,6 +478,7 @@ namespace Project_Lightning.Pages
             public string name { get; set; }
             public string path { get; set; }
             public string type { get; set; }
+            public long size { get; set; }
             public string download_url { get; set; }
         }
     }

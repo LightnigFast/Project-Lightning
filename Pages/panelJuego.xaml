@@ -301,8 +301,8 @@
                                 <ProgressBar x:Name="progressBar" Grid.Column="0" Grid.Row="1" Minimum="0" Maximum="100" Value="0" Foreground="LimeGreen" 
                                              Background="#FF1E1E1E" BorderBrush="Gray" BorderThickness="1" Style="{StaticResource MinimalProgressBarStyle}"/>
 
-                                <TextBlock x:Name="progressText" Grid.Column="1" Grid.Row="1" Text="" HorizontalAlignment="Center" VerticalAlignment="Center"
-                                             Foreground="White" FontWeight="Bold" FontSize="14"/>          
+                                <TextBlock x:Name="progressText" Grid.Column="1" Grid.Row="1" Text="" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                             Foreground="White" FontWeight="Bold" FontSize="14" />          
                             </Grid>
 
 
