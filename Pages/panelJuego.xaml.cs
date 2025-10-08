@@ -233,15 +233,36 @@ namespace Project_Lightning.Pages
             string repo = "gamesFixes";
             string token = TokenManager.GetGithubToken();
 
-            string apiUrl = $"https://api.github.com/repos/{user}/{repo}/contents/{appId}";
+            //ESTABLEZCO EL BRANCH POR DEFECTO
+            string branchToUse = "main";
+
+            //DEFININO LA URL BASE DEL REPOSITORIO
+            string repoBaseUrl = $"https://api.github.com/repos/{user}/{repo}";
+
 
             try
             {
                 HttpClient client = new HttpClient();
-                client.Timeout = TimeSpan.FromHours(4);
+                client.Timeout = TimeSpan.FromHours(4); //TIEMPO DE ESPERA DE 4 HORAS (SI NO PUEDES DESCARGAR 11 GB EN 4 HORAS, COMPRATE OTRO WIFI BRO)
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
                 client.DefaultRequestHeaders.Authorization =
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
+
+                //URL para consultar la información del branch específico
+                string branchCheckUrl = $"{repoBaseUrl}/branches/{appId}";
+
+                //Intento obtener la respuesta HTTP completa para evitar excepción si el branch no existe (404)
+                HttpResponseMessage response = await client.GetAsync(branchCheckUrl);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    //SI EL BRANCH EXISTE (código 200), USAMOS EL APPID
+                    branchToUse = appId;
+                    System.Windows.MessageBox.Show("existe");
+                }
+
+                //CONSTRUYO LA URL DE CONTENIDO, ESPECIFICANDO EL 'ref' (branch) A USAR
+                string apiUrl = $"{repoBaseUrl}/contents?ref={branchToUse}";
 
                 string json = await client.GetStringAsync(apiUrl);
 
