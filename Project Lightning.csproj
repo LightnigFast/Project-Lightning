@@ -204,6 +204,9 @@
     <Compile Include="Windows\OnlineFixWarning.xaml.cs">
       <DependentUpon>OnlineFixWarning.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ProgresoDescarga.xaml.cs">
+      <DependentUpon>ProgresoDescarga.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\QuickGuide.xaml.cs">
       <DependentUpon>QuickGuide.xaml</DependentUpon>
     </Compile>
@@ -296,6 +299,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Windows\OnlineFixWarning.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ProgresoDescarga.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
