@@ -257,7 +257,7 @@
 
                                 <!--BOTON PARA BORRAR TODOS LOS JUEGOS AGREGADOS CON STEAMTOOLS-->
                                 <Button x:Name="btnBorrarJuegos" Grid.Column="1" Width="180" Height="40" Background="#3A3A3A" BorderThickness="0" Margin="10,10,5,5"
-                                        Cursor="Hand" ToolTip="Delete all games from steamtools" HorizontalAlignment="Left" Style="{StaticResource ModernButton}" Click="btnBorrarJuegos_Click">
+                                        Cursor="Hand" ToolTip="Delete all games from LightningTools" HorizontalAlignment="Left" Style="{StaticResource ModernButton}" Click="btnBorrarJuegos_Click">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
                                         <Viewbox Width="20" Height="20" Margin="0,0,4,0">
                                             <Canvas Width="98" Height="137">

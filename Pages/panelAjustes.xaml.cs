@@ -2,6 +2,7 @@
 using Microsoft.WindowsAPICodePack.Dialogs;
 using Newtonsoft.Json;
 using Project_Lightning.Classes;
+using Project_Lightning.Windows;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
@@ -125,7 +126,7 @@ namespace Project_Lightning.Pages
 
             //MOSTRAR NOTIFICACIÓN DE ÉXITO
             var notifierOk = new Project_Lightning.Classes.NotificationManager(_ventanaPrincipal.NotificationCanvasPublic);
-            notifierOk.Show("Saved changes ✅.");
+            notifierOk.Show("✅ Saved changes.");
 
             //HABILITAR EL CUADRO DE DESCARGA
             comprobarRutaSteam();
@@ -227,15 +228,25 @@ namespace Project_Lightning.Pages
                 return;
             }
 
+
+            ConfirmationDialog confirmWindow = new ConfirmationDialog();
+            bool? result = confirmWindow.ShowDialog();
+            //SI HA DICHO QUE NO, SALGO DEL METODO
+            if (result != true)
+            {
+                return;
+            }
+
+
             try
             {
-                // Borra todos los archivos
+                //Borra todos los archivos
                 foreach (string file in Directory.GetFiles(stPluginFolder))
                 {
                     File.Delete(file);
                 }
 
-                // Borra todas las subcarpetas y su contenido
+                //Borra todas las subcarpetas y su contenido
                 foreach (string dir in Directory.GetDirectories(stPluginFolder))
                 {
                     Directory.Delete(dir, true);

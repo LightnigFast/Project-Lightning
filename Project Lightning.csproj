@@ -186,6 +186,9 @@
     <Compile Include="Windows\ChangeLog.xaml.cs">
       <DependentUpon>ChangeLog.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Windows\ConfirmationDialog.xaml.cs">
+      <DependentUpon>ConfirmationDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Windows\DMCA_Window.xaml.cs">
       <DependentUpon>DMCA_Window.xaml</DependentUpon>
     </Compile>
@@ -269,6 +272,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Windows\ChangeLog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ConfirmationDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
