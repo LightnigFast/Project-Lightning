@@ -447,6 +447,7 @@ namespace Project_Lightning.Pages
         //CREAR LA CARPETA SI NO EXISTE
         private void InicializarBD()
         {
+
             //SI NO EXISTE EL DIRECTORIO BASE, LO CREAMOS
             if (!Directory.Exists(BasePath))
                 Directory.CreateDirectory(BasePath);
