@@ -120,6 +120,7 @@ namespace Project_Lightning.Pages
 
 
         //METODO PARA CARGAR LOS SPONSOR
+        //METODO PARA CARGAR LOS SPONSOR
         private void cargarSponsors()
         {
             string rutaSponsors = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "res", "media", "sponsors");
@@ -147,19 +148,25 @@ namespace Project_Lightning.Pages
                 {
                     string nombreArchivo = System.IO.Path.GetFileName(archivo);
 
-                    BitmapImage imagen = new BitmapImage();
-                    imagen.BeginInit();
-                    imagen.UriSource = new Uri(archivo, UriKind.Absolute);
-                    imagen.CacheOption = BitmapCacheOption.OnLoad;
-                    imagen.EndInit();
-
-                    string url = mapaEnlaces.ContainsKey(nombreArchivo) ? mapaEnlaces[nombreArchivo] : null;
-
-                    listaSponsors.Add(new Sponsor
+                    // ⚡ CAMBIO CLAVE: Solo cargamos la imagen si el nombre del archivo (con extensión .png)
+                    // está presente en el diccionario 'mapaEnlaces', asegurando que tenga un link activo.
+                    if (mapaEnlaces.ContainsKey(nombreArchivo))
                     {
-                        Imagen = imagen,
-                        Url = url
-                    });
+                        BitmapImage imagen = new BitmapImage();
+                        imagen.BeginInit();
+                        imagen.UriSource = new Uri(archivo, UriKind.Absolute);
+                        imagen.CacheOption = BitmapCacheOption.OnLoad;
+                        imagen.EndInit();
+
+                        string url = mapaEnlaces[nombreArchivo];
+
+                        listaSponsors.Add(new Sponsor
+                        {
+                            Imagen = imagen,
+                            Url = url
+                        });
+                    }
+                    // Si el archivo .png no está en sponsors.txt, simplemente se ignora y no se añade a la lista.
                 }
 
                 if (listaSponsors.Count > 0)
