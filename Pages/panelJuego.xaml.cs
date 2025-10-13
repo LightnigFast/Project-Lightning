@@ -235,6 +235,8 @@ namespace Project_Lightning.Pages
 
             //ESTABLEZCO EL BRANCH POR DEFECTO
             string branchToUse = "main";
+            //VARIABLE PARA ALMACENAR LA RUTA DENTRO DEL REPOSITORIO (por defecto: raíz)
+            string contentPath = string.Empty;
 
             //DEFININO LA URL BASE DEL REPOSITORIO
             string repoBaseUrl = $"https://api.github.com/repos/{user}/{repo}";
@@ -243,7 +245,7 @@ namespace Project_Lightning.Pages
             try
             {
                 HttpClient client = new HttpClient();
-                client.Timeout = TimeSpan.FromHours(4); //TIEMPO DE ESPERA DE 4 HORAS (SI NO PUEDES DESCARGAR 11 GB EN 4 HORAS, COMPRATE OTRO WIFI BRO)
+                client.Timeout = TimeSpan.FromHours(4);
                 client.DefaultRequestHeaders.UserAgent.ParseAdd("request");
                 client.DefaultRequestHeaders.Authorization =
                     new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", token);
@@ -256,13 +258,22 @@ namespace Project_Lightning.Pages
 
                 if (response.IsSuccessStatusCode)
                 {
-                    //SI EL BRANCH EXISTE (código 200), USAMOS EL APPID
+                    //SI EL BRANCH EXISTE (código 200), USO EL APPID como branch, y la ruta de contenido es la raíz
                     branchToUse = appId;
-                    System.Windows.MessageBox.Show("existe");
+                    contentPath = string.Empty; //Contenido está en la raíz del branch
+                }
+                else
+                {
+                    //SI EL BRANCH NO EXISTE (código 404), USAMOS EL BRANCH 'main'
+                    branchToUse = "main";
+                    //CAMBIO CLAVE: El contenido debe estar en una carpeta con el nombre del appId dentro de 'main'
+                    contentPath = appId;
                 }
 
-                //CONSTRUYO LA URL DE CONTENIDO, ESPECIFICANDO EL 'ref' (branch) A USAR
-                string apiUrl = $"{repoBaseUrl}/contents?ref={branchToUse}";
+                //CONSTRUYO LA URL DE CONTENIDO, ESPECIFICANDO EL 'ref' (branch) Y LA RUTA DE CONTENIDO A USAR
+                //Si contentPath es vacío, la URL será .../contents?ref=... (raíz)
+                // i contentPath es "appid", la URL será .../contents/appid?ref=... (subcarpeta)
+                string apiUrl = $"{repoBaseUrl}/contents/{contentPath}?ref={branchToUse}";
 
                 string json = await client.GetStringAsync(apiUrl);
 
@@ -316,6 +327,10 @@ namespace Project_Lightning.Pages
                     var archivosADescargar = archivos.Where(a => a.type == "file").ToList();
                     long totalBytesADescargar = archivosADescargar.Sum(a => a.size);
                     long totalBytesDescargadosHastaAhora = 0;
+
+                    //ACCIÓN: Calcular y mostrar el tamaño total del juego
+                    string totalSizeFormatted = FormatBytes(totalBytesADescargar);
+                    gameSizeText.Text = totalSizeFormatted;
 
                     progressBar.Value = 0;
                     progressBar.Visibility = Visibility.Visible;
@@ -478,6 +493,7 @@ namespace Project_Lightning.Pages
                     progressBar.Value = 0;
                     progressText.Text = "";
                     speedText.Text = "";
+                    gameSizeText.Text = "";
                     progressBar.Visibility = Visibility.Collapsed;
                     textoDescargando.Text = "";
                     fixButton.IsEnabled = true;
@@ -551,6 +567,21 @@ namespace Project_Lightning.Pages
             return $"{speed:0.#} {suffixes[suffixIndex]}";
         }
 
+        //METODO PARA TRANSFORMAR LOS BYTES EN MB, GB ETC PARA QUE SEA LEGIBLE EL PESO TOTAL DEL FIX
+        private static string FormatBytes(long bytes)
+        {
+            string[] suffixes = { "B", "KB", "MB", "GB", "TB" };
+            int suffixIndex = 0;
+            double currentBytes = bytes;
+
+            while (currentBytes >= 1024 && suffixIndex < suffixes.Length - 1)
+            {
+                currentBytes /= 1024;
+                suffixIndex++;
+            }
+
+            return $"{currentBytes:0.0} {suffixes[suffixIndex]}";
+        }
 
 
         //CLASE AUXILIAR PARA DESERIALIZAR LA RESPUESTA DE GITHUB API
