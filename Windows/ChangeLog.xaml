@@ -125,6 +125,34 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
                 <StackPanel>
 
+                    <!--v3.0.0.0-->
+                    <TextBlock Text="v3.0.0.0" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Foreground="White" FontSize="16" FontWeight="Normal" Margin="0,0,0,10" TextAlignment="Left" TextWrapping="Wrap" Text="
+* New Library Management (SteamTools Integration):&#x0a;
+    * Added a new Library panel to view games added by SteamTools. (Note: &#x0a;        This only shows SteamTools games, not your entire Steam library).&#x0a;
+    * Users can now search for and add games to the library using the &#x0a;        AppID.&#x0a;
+    * Added functionality to remove SteamTools-added games from the &#x0a;        library.&#x0a;
+    * Added an 'Settings' button to the main menu for configuration.&#x0a;
+    * In Settings, users can specify the Steam installation path and install &#x0a;        LightningTools.&#x0a;&#x0a;
+* Discord Shop added as a section in the app: &#x0a;
+    * I've added the Dsicord store to the app with cached images and full &#x0a;        prices.&#x0a;&#x0a;
+* Download &amp; Performance Improvements:&#x0a;
+    * Implemented local image caching for Bypasses, Online Fixes, and the &#x0a;        Library to reduce network load on slow connections. Images are now &#x0a;        loaded from a dedicated local folder.&#x0a;
+    * Improved download branch logic in Game Fixes.&#x0a;&#x0a;
+* UI &amp; Download Experience:&#x0a;
+    * Added a side panel for smoother navigation between main application &#x0a;        sections.&#x0a;
+    * Adaptive layout implemented for better compatibility with small &#x0a;        screens.&#x0a;
+    * Download speed is now displayed during Fixes download.&#x0a;
+    * Total fix size (weight) is now displayed during download.&#x0a;
+    * Download progress bar accuracy has been significantly improved.&#x0a;&#x0a;
+* Stability &amp; Fixes:&#x0a;
+    * Addressed and investigated the recurring 'Task was cancelled' error, &#x0a;       often reported in the Arabian region.&#x0a;
+    * The Auto-Update system has been refined to only display the update &#x0a;        message after the new version has finished downloading.&#x0a;&#x0a;
+* Support:&#x0a;
+    * Added slightly changed the Ko-Fi button and added another one for &#x0a;        Revolut for greater payment compatibility.
+"/>
+
                     <!--v2.3.0.0-->
                     <TextBlock Text="v2.3.0.0" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
 
