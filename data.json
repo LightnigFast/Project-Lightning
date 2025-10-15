@@ -855,7 +855,8 @@
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": [ "DirectX", "VC Redist"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+        "If the game shows errors when opening, you need to install DirectX and VC Redist.",
+        "The fix is made in the Spanish language. If you want to play in English, you must access: Engine\\Binaries\\ThirdParty\\Steamworks\\Steamv141\\Win64 and open the .ini file that is in the folder. Inside the file, change the language line and put this: Language=English."
       ],
       "nombre_fix": "DRAGON BALL FighterZ - bypass",
       "custom_images": {}
