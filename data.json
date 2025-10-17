@@ -639,6 +639,31 @@
       ],
       "nombre_fix": "Battlefield V - bypass",
       "custom_images": {}
+    },
+    "17410": {
+      "name": "Mirror's Edge",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 10", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 10, EA Play and VC Redist."
+      ],
+      "nombre_fix": "Mirror's Edge - bypass",
+      "custom_images": {}
+    },
+    "1233570": {
+      "name": "Mirror's Edge™ Catalyst",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 11", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 11, EA Play and VC Redist.",
+	"If the game dont launch, open the game with the exe in the folder called MirrorsEdgeCatalyst.exe"
+      ],
+      "nombre_fix": "Mirror's Edge Catalyst - bypass",
+      "custom_images": {}
     }
   },
   "ROCKSTAR": {
