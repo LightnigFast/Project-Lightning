@@ -16,6 +16,19 @@
         "background": "https://i.imgur.com/e6oKqqV.jpeg"
       }
     },
+    "646910": {
+      "name": "The Crew 2",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
+	"If you cant open the game with steam, try to open it with the exe in the folder called TheCrew2_BE.exe"
+      ],
+      "nombre_fix": "The Crew 2 - bypass",
+      "custom_images": {}
+    },
     "33230": {
       "name": "Assassin's Creed II",
       "launch_steam": true,
