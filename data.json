@@ -690,7 +690,7 @@
         "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
         "errores": [
           "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX.",
-          "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+          "The game is not compatible with Steam, it needs to be launched using the executable called Launcher.exe inside the game folder.",
           "It is very important to launch the game using the Launcher.exe executable.",
           "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
         ],
