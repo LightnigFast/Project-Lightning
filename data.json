@@ -654,7 +654,7 @@
     },
     "1233570": {
       "name": "Mirror's Edge™ Catalyst",
-      "launch_steam": true,
+      "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["EA App", "DirectX 11", "VC Redist 2022"],
