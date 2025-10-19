@@ -897,8 +897,9 @@ namespace Project_Lightning.Pages
                                         continue;
 
                                     // REPO 2 y 3 -> SOLO LUA y filtrar líneas con "addappid"
-                                    if ((repo.Contains("sojorepo") || repo.Contains("SteamAutoCracks")) && fileName.EndsWith(".lua"))
+                                    if ((repo.Contains("dvahana2424-web") || repo.Contains("SteamAutoCracks")) && fileName.EndsWith(".lua"))
                                     {
+
                                         string destino = System.IO.Path.Combine(pluginFolder, fileName);
 
                                         using (var entryStream = entry.Open())
