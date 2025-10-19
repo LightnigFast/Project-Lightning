@@ -660,7 +660,8 @@
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["EA App", "DirectX 10", "VC Redist"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX 10, EA Play and VC Redist."
+        "If the game shows errors when opening, you need to install DirectX 10, EA Play and VC Redist.",
+		"If the game doesn’t start or crashes on launch, right-click on MirrorsEdge.exe, go to Properties → Compatibility, and enable Run this program in compatibility mode for: Windows XP (Service Pack 3)."
       ],
       "nombre_fix": "Mirror's Edge - bypass",
       "custom_images": {}
