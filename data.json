@@ -24,7 +24,7 @@
       "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
-	"If you cant open the game with steam, try to open it with the exe in the folder called TheCrew2_BE.exe"
+	"If you cant open the game with steam, try to open it with the exe in the folder called TheCrew2.exe"
       ],
       "nombre_fix": "The Crew 2 - bypass",
       "custom_images": {}
