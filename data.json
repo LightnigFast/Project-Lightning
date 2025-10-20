@@ -18,7 +18,7 @@
     },
     "646910": {
       "name": "The Crew 2",
-      "launch_steam": true,
+      "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
