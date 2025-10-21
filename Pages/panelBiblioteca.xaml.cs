@@ -871,7 +871,6 @@ namespace Project_Lightning.Pages
 
             bool encontrado = false;
 
-            // Revisar cada repositorio
             foreach (var repo in REPOS)
             {
                 string zipUrl = $"{repo}/archive/refs/heads/{appId}.zip";
@@ -884,53 +883,73 @@ namespace Project_Lightning.Pages
                         if (!response.IsSuccessStatusCode)
                             continue;
 
-                        // Descarga el ZIP en memoria
                         using (var ms = new MemoryStream(await response.Content.ReadAsByteArrayAsync()))
+                        using (var zip = new System.IO.Compression.ZipArchive(ms))
                         {
-                            using (var zip = new System.IO.Compression.ZipArchive(ms))
+                            foreach (var entry in zip.Entries)
                             {
-                                foreach (var entry in zip.Entries)
+                                string fileName = System.IO.Path.GetFileName(entry.FullName);
+                                if (string.IsNullOrEmpty(fileName))
+                                    continue;
+
+                                //🔹 REPO 1: ProjectLightningManifests
+                                //Incluye .lua y .manifest, sin filtrar
+                                if (repo.Contains("ProjectLightningManifests") &&
+                                    (fileName.EndsWith(".lua") || fileName.EndsWith(".manifest")))
                                 {
-                                    string fileName = System.IO.Path.GetFileName(entry.FullName);
+                                    string destino = fileName.EndsWith(".lua")
+                                        ? System.IO.Path.Combine(pluginFolder, fileName)
+                                        : System.IO.Path.Combine(depotCacheFolder, fileName);
 
-                                    if (string.IsNullOrEmpty(fileName))
-                                        continue;
-
-                                    // REPO 2 y 3 -> SOLO LUA y filtrar líneas con "addappid"
-                                    if ((repo.Contains("dvahana2424-web") || repo.Contains("SteamAutoCracks")) && fileName.EndsWith(".lua"))
+                                    using (var entryStream = entry.Open())
+                                    using (var fileStream = File.Create(destino))
                                     {
-
-                                        string destino = System.IO.Path.Combine(pluginFolder, fileName);
-
-                                        using (var entryStream = entry.Open())
-                                        using (var reader = new StreamReader(entryStream))
-                                        using (var writer = new StreamWriter(destino, false)) // sobrescribe si existe
-                                        {
-                                            while (!reader.EndOfStream)
-                                            {
-                                                string line = reader.ReadLine();
-                                                if (line.TrimStart().StartsWith("addappid"))
-                                                {
-                                                    writer.WriteLine(line);
-                                                }
-                                            }
-                                        }
+                                        await entryStream.CopyToAsync(fileStream);
                                     }
+                                }
 
-                                    // REPO 3 -> ARCHIVOS CON MANIFEST
-                                    else if (repo.Contains("ProjectLightningManifests") && (fileName.EndsWith(".lua") || fileName.EndsWith(".manifest")))
+                                //SOLO LÍNEAS QUE EMPIECEN CON "addappid"
+                                else if (repo.Contains("SPIN0ZAi") && fileName.EndsWith(".lua"))
+                                {
+                                    string destino = System.IO.Path.Combine(pluginFolder, fileName);
+
+                                    using (var entryStream = entry.Open())
+                                    using (var reader = new StreamReader(entryStream))
+                                    using (var writer = new StreamWriter(destino, false))
                                     {
-                                        string destino = fileName.EndsWith(".lua")
-                                            ? System.IO.Path.Combine(pluginFolder, fileName)
-                                            : System.IO.Path.Combine(depotCacheFolder, fileName);
-
-                                        using (var entryStream = entry.Open())
+                                        while (!reader.EndOfStream)
                                         {
-                                            using (var fileStream = File.Create(destino))
-                                            {
-                                                await entryStream.CopyToAsync(fileStream);
-                                            }
+                                            string line = reader.ReadLine();
+                                            if (line.TrimStart().StartsWith("addappid("))
+                                                writer.WriteLine(line);
                                         }
+
+                                        // Firma
+                                        writer.WriteLine();
+                                        writer.WriteLine("-- Made with love by LightningFast⚡💜");
+                                    }
+                                }
+
+                                //SOLO LUA y se eliminan "setManifestid"
+                                else if ((repo.Contains("dvahana2424-web") || repo.Contains("sojorepo") || repo.Contains("SteamAutoCracks"))
+                                         && fileName.EndsWith(".lua"))
+                                {
+                                    string destino = System.IO.Path.Combine(pluginFolder, fileName);
+
+                                    using (var entryStream = entry.Open())
+                                    using (var reader = new StreamReader(entryStream))
+                                    using (var writer = new StreamWriter(destino, false))
+                                    {
+                                        while (!reader.EndOfStream)
+                                        {
+                                            string line = reader.ReadLine();
+                                            if (!line.Contains("setManifestid"))
+                                                writer.WriteLine(line);
+                                        }
+
+                                        //Firma
+                                        writer.WriteLine();
+                                        writer.WriteLine("-- Made with love by LightningFast⚡💜");
                                     }
                                 }
                             }
@@ -938,7 +957,7 @@ namespace Project_Lightning.Pages
                     }
 
                     encontrado = true;
-                    break; //NO HACE FALTA SEGUIR BUSCANDO
+                    break; //✅ NO HACE FALTA SEGUIR BUSCANDO
                 }
                 catch
                 {
@@ -948,11 +967,10 @@ namespace Project_Lightning.Pages
 
             if (encontrado)
                 notifier.Show("✅ Game added successfully, restart Steam and then this library to be able to see the game.", isError: false, 4000);
-                //MessageBox.Show($"✅ AppID {appId} agregado correctamente");
             else
                 notifier.Show("❌ Appid not found, you'll have to wait a little longer until I add it.", isError: true, 4000);
-                //MessageBox.Show($"❌ AppID {appId} no se encontró en los repositorios");
         }
+
 
 
         //EVETO DEL BOTON DE AGREGAR
