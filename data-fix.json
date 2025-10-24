@@ -1,4 +1,109 @@
 {
+   "1715280":{
+      "name":"AirportSim",
+      "nombre_fix":"AirportSim - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1715280/capsule_616x353.jpg?t=1729256349"
+   },
+   "1540210":{
+      "name":"Arizona Sunshine® 2",
+      "nombre_fix":"Arizona Sunshine® 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1540210/capsule_616x353.jpg?t=1741616398"
+   },
+   "244210":{
+      "name":"Assetto Corsa",
+      "nombre_fix":"Assetto Corsa - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/244210/9d5338914376791adcf247efdc3cbd2135deb804/capsule_616x353.jpg?t=1754985171"
+   },
+   "3558400":{
+      "name":"Backseat Drivers",
+      "nombre_fix":"Backseat Drivers - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3558400/ccca6ae58e6d817e350284dd9df932713261910b/capsule_616x353.jpg?t=1760040570"
+   },
+   "552100":{
+      "name":"Brick Rigs",
+      "nombre_fix":"Brick Rigs - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/552100/capsule_616x353.jpg?t=1760697291"
+   },
+   "440900":{
+      "name":"Conan Exiles",
+      "nombre_fix":"Conan Exiles - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/440900/b7c8d9df66918b538912a98e0ab5c5ef1deb7496/capsule_616x353.jpg?t=1759761326"
+   },
+   "2592220":{
+      "name":"CUFFBUST",
+      "nombre_fix":"CUFFBUST - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2592220/capsule_616x353.jpg?t=1760535283"
+   },
+   "2208570":{
+      "name":"Dark Hours",
+      "nombre_fix":"Dark Hours - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2208570/00df7d4efc5238d49c6fd07d74443ffc1b479cf2/capsule_616x353.jpg?t=1761240047"
+   },
+   "556050":{
+      "name":"Hyper Jam",
+      "nombre_fix":"Hyper Jam - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/556050/capsule_616x353.jpg?t=1667005878"
+   },
+   "1426210":{
+      "name":"It Takes Two",
+      "nombre_fix":"It Takes Two - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1426210/capsule_616x353.jpg?t=1749142249"
+   },
+   "261550":{
+      "name":"Mount & Blade II: Bannerlord",
+      "nombre_fix":"Mount & Blade II: Bannerlord - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/261550/capsule_616x353.jpg?t=1751538727"
+   },
+   "967050":{
+      "name":"Pacify",
+      "nombre_fix":"Pacify - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/967050/capsule_616x353.jpg?t=1737656285"
+   },
+   "1260320":{
+      "name":"Party Animals",
+      "nombre_fix":"Party Animals - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1260320/capsule_616x353.jpg?t=1758512007"
+   },
+   "2968420":{
+      "name":"PowerWash Simulator 2",
+      "nombre_fix":"PowerWash Simulator 2 - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2968420/374fc7a0419c7361cda3ae7fa6fe4e383f206e5d/capsule_616x353.jpg?t=1761227779"
+   },
+   "3949040":{
+      "name":"RV There Yet?",
+      "nombre_fix":"RV There Yet? - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3949040/fc6856c47b9c695c24a2e64c60b619d7762b9717/capsule_616x353.jpg?t=1761050176"
+   },
+   "413150":{
+      "name":"Stardew Valley",
+      "nombre_fix":"Stardew Valley - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/413150/capsule_616x353.jpg?t=1754692865"
+   },
+   "573090":{
+      "name":"Stormworks: Build and Rescue",
+      "nombre_fix":"Stormworks: Build and Rescue - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/573090/capsule_616x353.jpg?t=1754155514"
+   },
+   "2670630":{
+      "name":"Supermarket Simulator",
+      "nombre_fix":"Supermarket Simulator - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2670630/88bc3b48af8c5136e59e7d63cfbc37d14fad64f7/capsule_616x353.jpg?t=1760015194"
+   },
+   "1604030":{
+      "name":"V Rising",
+      "nombre_fix":"V Rising - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1604030/a141ab624e5c7948ae9faf5def7a47c4c2d77056/capsule_616x353.jpg?t=1756736833"
+   },
+   "1911610":{
+      "name":"Windblown",
+      "nombre_fix":"Windblown - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/1911610/98bef28ff8cf3702ed9e7e4f501131f352a80093/capsule_616x353.jpg?t=1761236309"
+   },
+   "2212330":{
+      "name":"Your Only Move Is HUSTLE",
+      "nombre_fix":"Your Only Move Is HUSTLE - fix",
+      "custom_images":"https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2212330/capsule_616x353.jpg?t=1702425086"
+   },
    "2780980":{
       "name":"LOCKDOWN Protocol",
       "nombre_fix":"LOCKDOWN Protocol - fix",
