@@ -975,6 +975,19 @@
     }
   },
   "OTHERS": {
+    "3654560": {
+      "name": "Plants vs. Zombies™: Replanted",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist",
+        "If the game doesn't launch with steam, go to the main game path and open the exe Replanted.exe."
+      ],
+      "nombre_fix": "Plants vs Zombies Replanted - bypass",
+      "custom_images": {}
+    },
     "7940": {
       "name": "Call of Duty 4: Modern Warfare (2007)",
       "launch_steam": true,
