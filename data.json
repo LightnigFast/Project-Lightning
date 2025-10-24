@@ -223,6 +223,28 @@
       "nombre_fix": "Assassin's Creed Mirage - bypass",
       "custom_images": {}
     },
+    "3159330": {
+      "name": "Assassin's Creed Shadows",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "Ubisoft Play", "VC C++ 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC C++ 2022",
+        "1. Install the game using files from 'Assassin's Creed Shadows - GET HERE'. If already installed, update via this app.",
+        "2. Open Project Lightning, select Assassin's Creed Shadows, and apply the fix to the game folder.",
+        "3. Run FC25.exe to generate the Denuvo ticket.",
+        "4. Send 'Token_req' file via tokens zone in the server (short message first).",
+        "5. Download that txt and paste in the game folder, thats all.",
+        "6. SGo to steam, and launch the game, the game should launch successfully.",
+        "Game requires my manifest version to work.",
+        "Support only via AnyDesk.",
+        "Disable Windows/driver updates to avoid issues.",
+        "If updated, send a new Token_req and repeat steps."
+      ],
+      "nombre_fix": "Assassin's Creed Shadows - bypass",
+      "custom_images": {}
+    },
     "220240": {
       "name": "Far Cry 3",
       "launch_steam": true,
@@ -393,12 +415,13 @@
     },
     "460930": {
       "name": "Tom Clancy's Ghost Recon Wildlands",
-      "launch_steam": true,
+      "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX, .NET 4.0 and Ubisoft Play."
+        "If the game shows errors when opening, you need to install DirectX, .NET 4.0 and Ubisoft Play.",
+        "If the game dont open with steam, open it wih the exe in the folder called GRW.exe"
       ],
       "nombre_fix": "Tom Clancy's Ghost Recon Wildlands - bypass",
       "custom_images": {}
