@@ -570,6 +570,21 @@
       "nombre_fix": "Need for Speed Payback - bypass",
       "custom_images": {}
     },
+	"3654560": {
+      "name": "Plants vs. Zombies™: Replanted",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist",
+        "If the game doesn't launch with steam, go to the main game path and open the exe Replanted.exe."
+      ],
+      "nombre_fix": "Plants vs Zombies Replanted - bypass",
+      "custom_images": {
+        "hero_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3654560/4239904dc76eae613171cd3dec950b9e0abfbd5f/library_600x900.jpg"
+      }
+    },
     "1225560": {
       "name": "Unravel",
       "launch_steam": false,
@@ -975,21 +990,6 @@
     }
   },
   "OTHERS": {
-    "3654560": {
-      "name": "Plants vs. Zombies™: Replanted",
-      "launch_steam": true,
-      "launch_exe": true,
-      "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": ["DirectX", "VC Redist"],
-      "errores": [
-        "If the game shows errors when opening, you need to install DirectX and VC Redist",
-        "If the game doesn't launch with steam, go to the main game path and open the exe Replanted.exe."
-      ],
-      "nombre_fix": "Plants vs Zombies Replanted - bypass",
-      "custom_images": {
-        "hero_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3654560/4239904dc76eae613171cd3dec950b9e0abfbd5f/library_600x900.jpg"
-      }
-    },
     "7940": {
       "name": "Call of Duty 4: Modern Warfare (2007)",
       "launch_steam": true,
