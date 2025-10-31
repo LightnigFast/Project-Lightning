@@ -761,6 +761,18 @@
       "nombre_fix": "Grand Theft Auto San Andreas - The Definitive Edition - bypass",
       "custom_images": {}
     },
+    "1546990": {
+      "name": "Grand Theft Auto: Vice City - The Definitive Edition",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX."
+      ],
+      "nombre_fix": "Grand Theft Auto: Vice City - The Definitive Edition - bypass",
+      "custom_images": {}
+    },
     "1546970": {
       "name": "Grand Theft Auto III - The Definitive Edition",
       "launch_steam": true,
@@ -821,6 +833,18 @@
         "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
       ],
       "nombre_fix": "Max Payne 3 - bypass",
+      "custom_images": {}
+    },
+    "12200": {
+      "name": "Bully: Scholarship Edition",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX."
+      ],
+      "nombre_fix": "Bully: Scholarship Edition - bypass",
       "custom_images": {}
     }
   },
