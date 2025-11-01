@@ -623,6 +623,7 @@
       "errores": [
         "If the game shows errors when opening, you need to install DirectX, EA Play, VC Redist 2013 and VC Redist 2015.",
         "It's important to launch the game using the executable named 'A Way Out.exe'.",
+		"There is no longer an online solution for this game, but if you want to play with a friend, you can. You just need the Parsec application; with it, your friend can play from their PC as if they were connecting a controller to your home computer.",
         "You need to have the EA app installed, or the game won't launch."
       ],
       "nombre_fix": "A Way Out - bypass",
