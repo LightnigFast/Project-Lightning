@@ -570,7 +570,22 @@
       "nombre_fix": "Need for Speed Payback - bypass",
       "custom_images": {}
     },
-	"3654560": {
+    "1222680": {
+      "name": "Need for Speed™ Heat",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2017", "VC Redist 2019"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and EA Play.",
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+        "You need to have the EA app installed, or the game won't launch.",
+        "Make sure you have the last CPU drivers"
+      ],
+      "nombre_fix": "Need for Speed Payback - bypass",
+      "custom_images": {}
+    },
+    "3654560": {
       "name": "Plants vs. Zombies™: Replanted",
       "launch_steam": true,
       "launch_exe": true,
