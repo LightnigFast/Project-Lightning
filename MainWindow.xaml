@@ -210,6 +210,19 @@
                                 </Button>
                             </StackPanel>
 
+                            <!--PARA EL STEAMLESS-->
+                            <StackPanel Orientation="Vertical" Grid.Row="0" HorizontalAlignment="Left" >
+                                <Button Style="{StaticResource BotonLateral}" Tag="SteamLess" Width="125" Click="steamlessButtonClick">
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="" FontFamily="Segoe MDL2 Assets" FontSize="30" Foreground="White" Margin="7,10,0,10"/>
+
+                                        <TextBlock Text="SteamLess" Margin="10,0,0,0" VerticalAlignment="Center"
+                                                   Foreground="White"
+                                                   Visibility="{Binding Width, ElementName=Sidebar, Converter={StaticResource ExpandTextConverter}}"/>
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+
                         </StackPanel>
 
                         <!--BOTON DE AJUSTES QUE ESTA ABAJO-->

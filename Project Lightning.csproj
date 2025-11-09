@@ -180,6 +180,9 @@
     <Compile Include="Pages\panelOnlineFix.xaml.cs">
       <DependentUpon>panelOnlineFix.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\panelSteamLess.xaml.cs">
+      <DependentUpon>panelSteamLess.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\panelTienda.xaml.cs">
       <DependentUpon>panelTienda.xaml</DependentUpon>
     </Compile>
@@ -239,6 +242,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\panelOnlineFix.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\panelSteamLess.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -372,6 +379,12 @@
     <Resource Include="res\icons\mac.png" />
     <Resource Include="res\icons\windows.png" />
     <Resource Include="res\icons\steam.png" />
+    <Content Include="res\dlls\steam_api.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="res\dlls\steam_api64.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="res\media\backgrounds\background.mp4">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

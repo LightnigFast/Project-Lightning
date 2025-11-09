@@ -125,6 +125,16 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,10,0,0">
                 <StackPanel>
 
+                    <!--v3.0.1.0-->
+                    <TextBlock Text="v3.0.1.0" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
+
+                    <TextBlock Foreground="White" FontSize="16" FontWeight="Normal" Margin="0,0,0,10" TextAlignment="Left" TextWrapping="Wrap" Text="
+* Feature to automatically replace files to be able to launch the game &#x0a;    without steam.&#x0a;
+* Notifications for successful replacement or errors.&#x0a;
+* Simple and intuitive interface for selecting the game folder.&#x0a;
+* Instructions for running Steam games directly from their executable after &#x0a;   DLL replacement.&#x0a;
+* Support for most Steam game installations (Steam\steamapps &#x0a;    \common).;"/>
+
                     <!--v3.0.0.0-->
                     <TextBlock Text="v3.0.0.0" Foreground="White" FontSize="22" FontWeight="Bold" Margin="0,0,0,10" HorizontalAlignment="Center"/>
 

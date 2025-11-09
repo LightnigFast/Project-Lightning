@@ -246,6 +246,21 @@ namespace Project_Lightning
 
         }
 
+        //EVENTO PARA EL BOTON DE STEAMLESS
+        private void steamlessButtonClick(object sender, RoutedEventArgs e)
+        {
+            var ventanaPrincipal = Application.Current.MainWindow as MainWindow;
+
+            if (ventanaPrincipal != null)
+            {
+
+                //CAMBIAR EL CONTENIDO DEL FRAME
+                ventanaPrincipal.framePrincipal.Navigate(new panelSteamLess(ventanaPrincipal));
+                ocultarCabecera();
+            }
+
+        }
+
         //EVENTO PARA EL BOTON DE AJUSTES
         private void AjustesButtonClick(object sender, RoutedEventArgs e)
         {
