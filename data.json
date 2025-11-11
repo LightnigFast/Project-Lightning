@@ -1124,6 +1124,19 @@
       "nombre_fix": "Call of Duty Infinite Warfare - bypass",
       "custom_images": {}
     },
+    "311210": {
+      "name": "Call of Duty: Black Ops III",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 11", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 11 and VC Redist",
+        "Open the game with t7x.exe, only works with that exe"
+      ],
+      "nombre_fix": "Call of Duty Black Ops III - bypass",
+      "custom_images": {}
+    },
     "476600": {
       "name": "Call of Duty: WWII",
       "launch_steam": true,
