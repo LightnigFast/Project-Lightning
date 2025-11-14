@@ -893,6 +893,18 @@
       "nombre_fix": "Resident Evil 4 Remake - bypass",
       "custom_images": {}
     },
+    "493340": {
+      "name": "Planet Coaster",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2015", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2015 and DirectX.",
+      ],
+      "nombre_fix": "Planet Coaster - bypass",
+      "custom_images": {}
+    },
     "225540": {
       "name": "Just Cause 3",
       "launch_steam": true,
