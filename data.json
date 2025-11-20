@@ -582,7 +582,22 @@
         "You need to have the EA app installed, or the game won't launch.",
         "Make sure you have the last CPU drivers"
       ],
-      "nombre_fix": "Need for Speed Payback - bypass",
+      "nombre_fix": "Need for Speed Heat - bypass",
+      "custom_images": {}
+    },
+    "1328660": {
+      "name": "Need for Speed™ Hot Pursuit Remastered",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2017", "VC Redist 2019"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and EA Play.",
+        "The game is not compatible with Steam, it needs to be launched using the executable inside the game folder.",
+        "You need to have the EA app installed, or the game won't launch.",
+        "Make sure you have the last CPU drivers"
+      ],
+      "nombre_fix": "Need for Speed Hot Pursuit Remastered - bypass",
       "custom_images": {}
     },
     "3654560": {
