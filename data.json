@@ -722,6 +722,20 @@
       "nombre_fix": "Battlefield V - bypass",
       "custom_images": {}
     },
+    "2807960": {
+      "name": "Battlefield™ 6",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022.",
+        "The game does not work if you open it with Steam, you must open it with the exe called bf6.exe that is inside the main folder of the game",
+	"It will only work if you use my game manifests"
+      ],
+      "nombre_fix": "Battlefield 6 - bypass",
+      "custom_images": {}
+    },
     "17410": {
       "name": "Mirror's Edge",
       "launch_steam": true,
