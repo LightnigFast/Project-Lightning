@@ -734,7 +734,9 @@
 	"It will only work if you use my game manifests"
       ],
       "nombre_fix": "Battlefield 6 - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/82e43901d337d05ef3ae610442c8606b.png"
+      }
     },
     "17410": {
       "name": "Mirror's Edge",
