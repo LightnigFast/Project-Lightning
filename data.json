@@ -735,7 +735,8 @@
       ],
       "nombre_fix": "Battlefield 6 - bypass",
       "custom_images": {
-        "hero_image": "https://cdn2.steamgriddb.com/grid/82e43901d337d05ef3ae610442c8606b.png"
+        "hero_image": "https://cdn2.steamgriddb.com/grid/82e43901d337d05ef3ae610442c8606b.png",
+		"background": "https://cdn2.steamgriddb.com/hero/004f80e7f7de9dfcf83c20e0174e41cd.png"
       }
     },
     "17410": {
