@@ -710,18 +710,6 @@
       "nombre_fix": "Battlefield 1 - bypass",
       "custom_images": {}
     },
-    "1238810": {
-      "name": "Battlefield™ V",
-      "launch_steam": true,
-      "launch_exe": true,
-      "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
-      "errores": [
-        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022."
-      ],
-      "nombre_fix": "Battlefield V - bypass",
-      "custom_images": {}
-    },
     "2807960": {
       "name": "Battlefield™ 6",
       "launch_steam": false,
