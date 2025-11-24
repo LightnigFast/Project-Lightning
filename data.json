@@ -956,7 +956,8 @@
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": [ "DirectX", "VC Redist"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+        "If the game shows errors when opening, you need to install DirectX and VC Redist.",
+		"When I launched it for the first time through Steam, it closed, but the second time it opened fine. If the game doesn’t open for you, try launching it using the executable located at: LIS2/Binaries/Win64/LIS2-Win64-Shipping.exe"
       ],
       "nombre_fix": "Life is Strange 2 - bypass",
       "custom_images": {}
