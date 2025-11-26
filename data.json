@@ -423,7 +423,8 @@
       "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX, .NET 4.0 and Ubisoft Play.",
-        "If the game dont open with steam, open it wih the exe in the folder called GRW.exe"
+        "The game takes a long time to load (10-15 min), just be patient.",
+	    "It’s very likely that your antivirus will delete some files. Mark the game’s folder as an exception and apply the fix again if you encounter any related errors."
       ],
       "nombre_fix": "Tom Clancy's Ghost Recon Wildlands - bypass",
       "custom_images": {}
