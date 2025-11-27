@@ -1237,18 +1237,6 @@
       "nombre_fix": "Hitman: Absolution - bypass",
       "custom_images": {}
     },
-    "275850": {
-      "name": "No Man's Sky",
-      "launch_steam": true,
-      "launch_exe": true,
-      "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": ["DirectX", "VC Redist 2022"],
-      "errores": [
-        "If the game shows errors when opening, you need to install DirectX and VC Redist 2022"
-      ],
-      "nombre_fix": "No Man's Sky - bypass",
-      "custom_images": {}
-    },
     "50130": {
       "name": "Mafia II (Classic)",
       "launch_steam": true,
