@@ -703,12 +703,13 @@
     },
     "1238840": {
       "name": "Battlefield™ 1",
-      "launch_steam": true,
+      "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2022"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022."
+        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022.",
+		"The game does not work if you open it with Steam, you must open it with the exe called bf1.exe that is inside the main folder of the game"
       ],
       "nombre_fix": "Battlefield 1 - bypass",
       "custom_images": {}
@@ -722,7 +723,7 @@
       "errores": [
         "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2022.",
         "The game does not work if you open it with Steam, you must open it with the exe called bf6.exe that is inside the main folder of the game",
-	"It will only work if you use my game manifests"
+		"It will only work if you use my game manifests"
       ],
       "nombre_fix": "Battlefield 6 - bypass",
       "custom_images": {
