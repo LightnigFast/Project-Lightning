@@ -1194,7 +1194,8 @@
       "programas_necesarios": ["DirectX 12", "VC Redist"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
-        "For open the game, use the exe called ModernWarfare_Lightning"
+        "For open the game, use the bat called !start_cod.bat",
+		"The bypass does not have saved game for now, I am working on it"
       ],
       "nombre_fix": "Call of Duty Modern Warfare (2019) - bypass",
       "custom_images": {}
