@@ -941,6 +941,30 @@
       "nombre_fix": "Planet Coaster - bypass",
       "custom_images": {}
     },
+	"1113000": {
+      "name": "Persona 4 Golden",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2010", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2010 and DirectX.",
+      ],
+      "nombre_fix": "Persona 4 Golden - bypass",
+      "custom_images": {}
+    },
+	"1382330": {
+      "name": "Persona 5 Strikers",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
+      ],
+      "nombre_fix": "Persona 5 Strikers - bypass",
+      "custom_images": {}
+    },
     "225540": {
       "name": "Just Cause 3",
       "launch_steam": true,
