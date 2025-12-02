@@ -615,6 +615,28 @@
       "nombre_fix": "Need for Speed Hot Pursuit Remastered - bypass",
       "custom_images": {}
     },
+	"1846380": {
+      "name": "Need for Speed™ Unbound",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2017", "VC Redist 2019"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist",
+        "1. Install the game using files from 'Need for Speed Unbound - GET HERE'. If already installed, update via SteamTools.",
+        "2. Open Project Lightning, select Need for Speed Unbound, and apply the fix to the game folder.",
+        "3. Run NeedForSpeedUnbound.exe to generate the Denuvo ticket.",
+        "4. Send 'DenuvoTicket' file via request zone in my server (short message first).",
+        "5. Replace 'DenuvoToken' in anadius.cfg with the token I send you. Keep the quotes.",
+        "6. Save the config and launch NeedForSpeedUnbound.exe.",
+        "Game requires my manifest version to work.",
+        "Support only via AnyDesk.",
+        "Disable Windows/driver updates to avoid issues.",
+        "If updated, send a new DenuvoTicket and repeat steps."
+      ],
+      "nombre_fix": "Need for Speed Unbound - bypass",
+      "custom_images": {}
+    },
     "3654560": {
       "name": "Plants vs. Zombies™: Replanted",
       "launch_steam": true,
