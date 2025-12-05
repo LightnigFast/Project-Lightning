@@ -319,6 +319,20 @@
       "nombre_fix": "Far Cry 6 - bypass",
       "custom_images": {}
     },
+	"916440": {
+      "name": "Anno 1800",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC Redist.",
+		"The game only works with my version of manifest, download it from my bot or from the library here in the app",
+		"Possibly the antivirus deletes files, if that happens, mark the game folder as an exception and apply the fix again"
+      ],
+      "nombre_fix": "Anno 1800 - bypass",
+      "custom_images": {}
+    },
     "488790": {
       "name": "South Park The Fractured But Whole",
       "launch_steam": true,
