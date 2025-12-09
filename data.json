@@ -290,7 +290,9 @@
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist 2012", ".NET 4.0"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, VC Redist 2012 and .NET 4.0."
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, VC Redist 2012 and .NET 4.0.",
+		"It’s very likely that your antivirus will delete some files. Mark the game’s folder as an exception and apply the fix again if you encounter any related errors.",
+		"The game only works with my version of manifest, download it from my bot or from the library here in the app"
       ],
       "nombre_fix": "Far Cry 5 - bypass",
       "custom_images": {}
