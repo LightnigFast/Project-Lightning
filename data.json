@@ -1289,7 +1289,9 @@
 		"If the screen gets stuck on the Launching screen, you just need to press ESC."
       ],
       "nombre_fix": "Call of Duty: Modern Warfare II - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/5cef43602bc7486da26ba5fbf4483f43.png"
+      }
     },
     "1659040": {
       "name": "HITMAN World of Assassination",
