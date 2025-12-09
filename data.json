@@ -1276,6 +1276,21 @@
       "nombre_fix": "Call of Duty Black Ops Cold War - bypass",
       "custom_images": {}
     },
+	"3595230": {
+      "name": "Call of Duty®: Modern Warfare® II",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
+        "Open the game with _MWII Lightning Launcher_.exe",
+		"Possibly the antivirus deletes files, if that happens, mark the game folder as an exception and apply the fix again",
+		"If the screen gets stuck on the Launching screen, you just need to press ESC."
+      ],
+      "nombre_fix": "Call of Duty: Modern Warfare II - bypass",
+      "custom_images": {}
+    },
     "1659040": {
       "name": "HITMAN World of Assassination",
       "launch_steam": true,
