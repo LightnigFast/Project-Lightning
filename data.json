@@ -1295,7 +1295,9 @@
 		"To play Zombie mode, you must enter Multiplayer and, once inside Local Multiplayer, press Right Control + Z"
       ],
       "nombre_fix": "Call of Duty: Modern Warfare III - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/37e4af3db354d3552585983bc5a823f8.png"
+      }
     },
     "1659040": {
       "name": "HITMAN World of Assassination",
