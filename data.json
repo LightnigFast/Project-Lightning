@@ -1281,6 +1281,24 @@
         "hero_image": "https://cdn2.steamgriddb.com/grid/5cef43602bc7486da26ba5fbf4483f43.png"
       }
     },
+	"3595270": {
+      "name": "Call of Duty®: Modern Warfare® III",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
+        "Open the game with _MWIII Lightning Launcher_.exe",
+		"Possibly the antivirus deletes files, if that happens, mark the game folder as an exception and apply the fix again",
+		"If the screen gets stuck on the Launching screen, you just need to press ESC.",
+		"To play Zombie mode, you must enter Multiplayer and, once inside Local Multiplayer, press Right Control + Z"
+      ],
+      "nombre_fix": "Call of Duty: Modern Warfare III - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/5cef43602bc7486da26ba5fbf4483f43.png"
+      }
+    },
     "1659040": {
       "name": "HITMAN World of Assassination",
       "launch_steam": true,
