@@ -1112,6 +1112,19 @@
       ],
       "nombre_fix": "Mad Max - bypass",
       "custom_images": {}
+    },
+	"39140": {
+      "name": "FINAL FANTASY VII",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist.",
+		"The game only works with my version of manifest, download it from my bot or from the library here in the app"
+      ],
+      "nombre_fix": "FINAL FANTASY VII - bypass",
+      "custom_images": {}
     }
   },
   "PlayStation": {
