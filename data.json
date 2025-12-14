@@ -991,6 +991,18 @@
       "nombre_fix": "Persona 5 Strikers - bypass",
       "custom_images": {}
     },
+	"1687950": {
+      "name": "Persona 5 Royale",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
+      ],
+      "nombre_fix": "Persona 5 Royale - bypass",
+      "custom_images": {}
+    },
     "225540": {
       "name": "Just Cause 3",
       "launch_steam": true,
