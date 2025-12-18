@@ -1324,6 +1324,25 @@
         "hero_image": "https://cdn2.steamgriddb.com/grid/37e4af3db354d3552585983bc5a823f8.png"
       }
     },
+	"3595270": {
+      "name": "Call of Duty®: Black Ops 6",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
+        "Open the game with _BO6 Lightning Launcher_.exe",
+		"Possibly the antivirus deletes files, if that happens, mark the game folder as an exception and apply the fix again",
+		"The game its a DLC, and the fix is applied to the Call of Duty HQ folder",
+		"It's only necessary to select Call of duty black ops 6 campaign DLC in the game Call of duty",
+		"If the screen gets stuck on the Launching screen, you just need to press ESC."
+      ],
+      "nombre_fix": "Call of Duty Black Ops 6 - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/37e4af3db354d3552585983bc5a823f8.png"
+      }
+    },
     "1659040": {
       "name": "HITMAN World of Assassination",
       "launch_steam": true,
