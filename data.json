@@ -530,6 +530,32 @@
       "nombre_fix": "STAR WARS Jedi La Orden caída - bypass",
       "custom_images": {}
     },
+	"1134570": {
+      "name": "F1 2021",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist 2020"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist 2020",
+		"The game only works with my version of manifest, download it from my bot or from the library here in the app"
+      ],
+      "nombre_fix": "F1 2021 - bypass",
+      "custom_images": {}
+    },
+	"1692250": {
+      "name": "F1® 22",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist 2021"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist 2021",
+		"The game only works with my version of manifest, download it from my bot or from the library here in the app"
+      ],
+      "nombre_fix": "F1 2022 - bypass",
+      "custom_images": {}
+    },
     "47870": {
       "name": "Need for Speed: Hot Pursuit",
       "launch_steam": true,
