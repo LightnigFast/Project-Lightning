@@ -576,7 +576,9 @@
         "If updated, send a new DenuvoTicket and repeat steps."
       ],
       "nombre_fix": "F1 25 - bypass",
-      "custom_images": {}
+      "custom_images": {
+		  "hero_image": "https://cdn2.steamgriddb.com/grid/0cee0119ca5c721f1d76d6a425516299.png"
+	  }
     },
     "47870": {
       "name": "Need for Speed: Hot Pursuit",
