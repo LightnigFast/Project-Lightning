@@ -1109,7 +1109,8 @@
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": [ "DirectX 12", "VC Redist 2022"],
       "errores": [
-        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist 2022."
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist 2022.",
+		"When you start the game, a runtime error appears. Just click Ignore All and that’s it."
       ],
       "nombre_fix": "Jurassic World Evolution 2 - bypass",
       "custom_images": {}
