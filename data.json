@@ -482,7 +482,7 @@
       "nombre_fix": "EA SPORTS FC 25 - bypass",
       "custom_images": {}
     },
-	  "1313860": {
+  	"1313860": {
       "name": "EA SPORTS FIFA 21",
       "launch_steam": false,
       "launch_exe": true,
@@ -492,6 +492,18 @@
         "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist"
       ],
       "nombre_fix": "EA SPORTS FIFA 21 - bypass",
+      "custom_images": {}
+    },
+	"1506830": {
+      "name": "EA SPORTS FIFA 22",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist"
+      ],
+      "nombre_fix": "FIFA 21 - bypass",
       "custom_images": {}
     },
     "1237950": {
