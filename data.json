@@ -957,7 +957,8 @@
       "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX 12"],
       "errores": [
         "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX 12.",
-        "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start."
+        "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start.",
+		"It is very important to launch the game using the PlayGTAV.exe executable."
       ],
       "nombre_fix": "Grand Theft Auto V Enhanced -  bypass",
       "custom_images": {}
