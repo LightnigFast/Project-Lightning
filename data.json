@@ -1128,6 +1128,18 @@
       "nombre_fix": "Jurassic World Evolution 2 - bypass",
       "custom_images": {}
     },
+	"779340": {
+      "name": "Total War: THREE KINGDOMS",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX 12", "VC Redist 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist 2022."
+      ],
+      "nombre_fix": "Total War: THREE KINGDOMS - bypass",
+      "custom_images": {}
+    },
     "1904540": {
       "name": "Football Manager 2023",
       "launch_steam": true,
