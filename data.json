@@ -506,6 +506,18 @@
       "nombre_fix": "EA SPORTS FIFA 21 - bypass",
       "custom_images": {}
     },
+	"1693980": {
+      "name": "Dead Space",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist"
+      ],
+      "nombre_fix": "Dead Space - bypass",
+      "custom_images": {}
+    },
     "1237950": {
       "name": "STAR WARS™ Battlefront™ II",
       "launch_steam": false,
