@@ -1444,6 +1444,18 @@
       "nombre_fix": "Microsoft Flight Simulator (2020) - bypass",
       "custom_images": {}
     },
+	"2399420": {
+      "name": "Le Mans Ultimate",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
+      ],
+      "nombre_fix": "Le Mans Ultimate - bypass",
+      "custom_images": {}
+    },
     "1659040": {
       "name": "HITMAN World of Assassination",
       "launch_steam": true,
