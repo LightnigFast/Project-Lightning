@@ -1456,6 +1456,18 @@
       "nombre_fix": "DOOM Eternal - bypass",
       "custom_images": {}
     },
+	"1466860": {
+      "name": "Age of Empires IV: Anniversary Edition",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
+      ],
+      "nombre_fix": "Age of Empires IV: Anniversary Edition - bypass",
+      "custom_images": {}
+    },
 	"2399420": {
       "name": "Le Mans Ultimate",
       "launch_steam": true,
