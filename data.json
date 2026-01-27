@@ -1480,6 +1480,19 @@
       "nombre_fix": "Le Mans Ultimate - bypass",
       "custom_images": {}
     },
+	"1401590": {
+      "name": "Disney Dreamlight Valley",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
+		"To start the game for the first time, you must enter the game's main folder and delete the steam.txt file, or you will not be able to start the game"
+      ],
+      "nombre_fix": "Disney Dreamlight Valley - bypass",
+      "custom_images": {}
+    },
     "1659040": {
       "name": "HITMAN World of Assassination",
       "launch_steam": true,
@@ -1502,6 +1515,18 @@
         "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
       ],
       "nombre_fix": "Hitman: Absolution - bypass",
+      "custom_images": {}
+    },
+	"1498570": {
+      "name": "THE KING OF FIGHTERS XV",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
+      ],
+      "nombre_fix": "THE KING OF FIGHTERS XV - bypass",
       "custom_images": {}
     },
     "50130": {
