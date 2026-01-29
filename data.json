@@ -1042,6 +1042,18 @@
       "nombre_fix": "Planet Coaster - bypass",
       "custom_images": {}
     },
+	"1237320": {
+      "name": "Sonic Frontiers",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX.",
+      ],
+      "nombre_fix": "Sonic Frontiers - bypass",
+      "custom_images": {}
+    },
 	"1113000": {
       "name": "Persona 4 Golden",
       "launch_steam": true,
