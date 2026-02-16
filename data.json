@@ -1053,6 +1053,18 @@
       "nombre_fix": "Sonic Frontiers - bypass",
       "custom_images": {}
     },
+	"356190": {
+      "name": "Middle-earth™: Shadow of War™",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX.",
+      ],
+      "nombre_fix": "Middle-earth™: Shadow of War™ - bypass",
+      "custom_images": {}
+    },
 	"1222690": {
       "name": "Dragon Age™ Inquisition",
       "launch_steam": false,
