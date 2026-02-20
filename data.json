@@ -1466,6 +1466,18 @@
         "hero_image": "https://cdn2.steamgriddb.com/grid/1981baaee6f2be15f26b1af0e88bf46c.png"
       }
     },
+	"752590": {
+      "name": "A Plague Tale: Innocence",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist"
+      ],
+      "nombre_fix": "A Plague Tale: Innocence - bypass",
+      "custom_images": {}
+    },
 	"1250410": {
       "name": "Microsoft Flight Simulator (2020)",
       "launch_steam": true,
