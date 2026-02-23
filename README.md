@@ -1,4 +1,4 @@
-# ⚡ Project Lightning
+# ⚡ Project Lightning - by ♡B̷y̷D̷r̷a̷X̷x̷♡
 
 ![Project Lightning Banner](./Banner_Project_Lightning.png)  
 
