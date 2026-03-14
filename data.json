@@ -1028,7 +1028,9 @@
 		"ADD THE GAME FOLDER AS AN EXCEPTION BEFORE APPLYING THIS FIX, OR YOUR ANTIVIRUS WILL BLOCK IT."
       ],
       "nombre_fix": "Resident Evil Requiem - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/c532c72b7c2e87dbc1cba5ce235450ef.png"
+      }
     },
     "2050650": {
       "name": "Resident Evil 4",
