@@ -1019,7 +1019,7 @@
     },
 	"3764200": {
       "name": "Resident Evil Requiem",
-      "launch_steam": false,
+      "launch_steam": true,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
