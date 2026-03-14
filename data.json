@@ -1017,6 +1017,19 @@
       "nombre_fix": "Hogwarts Legacy - bypass",
       "custom_images": {}
     },
+	"3764200": {
+      "name": "Resident Evil Requiem",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "THIS IS NOT A BYPASS, THESE ARE ONLY THE NECESSARY FILES, IT IS STILL REQUIRED TO OPEN THE TICKET IN THE RESIDENT EVIL AREA, AND ACTIVATION IS STILL DONE THROUGH ANYDESK.",
+		"ADD THE GAME FOLDER AS AN EXCEPTION BEFORE APPLYING THIS FIX, OR YOUR ANTIVIRUS WILL BLOCK IT."
+      ],
+      "nombre_fix": "Resident Evil Requiem - bypass",
+      "custom_images": {}
+    },
     "2050650": {
       "name": "Resident Evil 4",
       "launch_steam": true,
