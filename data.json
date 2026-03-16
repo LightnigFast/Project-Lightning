@@ -1044,16 +1044,16 @@
       "nombre_fix": "Resident Evil 4 Remake - bypass",
       "custom_images": {}
     },
-    "493340": {
-      "name": "Planet Coaster",
+	"3017860": {
+      "name": "DOOM: The Dark Ages",
       "launch_steam": true,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
-      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2015", "DirectX"],
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
       "errores": [
-        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2015 and DirectX.",
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX.",
       ],
-      "nombre_fix": "Planet Coaster - bypass",
+      "nombre_fix": "DOOM: The Dark Ages - bypass",
       "custom_images": {}
     },
 	"1237320": {
@@ -1126,6 +1126,18 @@
         "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2019 and DirectX.",
       ],
       "nombre_fix": "Persona 5 Royale - bypass",
+      "custom_images": {}
+    },
+	"493340": {
+      "name": "Planet Coaster",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2015", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2015 and DirectX.",
+      ],
+      "nombre_fix": "Planet Coaster - bypass",
       "custom_images": {}
     },
     "225540": {
