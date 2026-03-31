@@ -29,6 +29,19 @@
       "nombre_fix": "The Crew 2 - bypass",
       "custom_images": {}
     },
+	"242550": {
+      "name": "Rayman Legends",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
+		"I recommend marking the game folder as an exception in your antivirus so that it does not delete your files."
+      ],
+      "nombre_fix": "Rayman Legends - bypass",
+      "custom_images": {}
+    },
     "33230": {
       "name": "Assassin's Creed II",
       "launch_steam": true,
