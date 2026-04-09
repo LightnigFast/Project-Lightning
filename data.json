@@ -40,7 +40,10 @@
 		"I recommend marking the game folder as an exception in your antivirus so that it does not delete your files."
       ],
       "nombre_fix": "Rayman Legends - bypass",
-      "custom_images": {}
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/aa01df8e6c2526116e1a7eab3f634de8.png",
+        "background": "https://cdn2.steamgriddb.com/hero/f0ac7bfbd398770a71003c2aced6a951.jpg"
+      }
     },
     "33230": {
       "name": "Assassin's Creed II",
