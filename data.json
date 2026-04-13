@@ -731,6 +731,20 @@
       "nombre_fix": "Need for Speed Unbound - bypass",
       "custom_images": {}
     },
+	"1222670": {
+      "name": "The Sims 4",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX", "VC Redist 2012"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA Play and VC Redist 2014.",
+        "The game must be launched from the executable in the game folder named 'TS4_x64.exe'. If you launch it from Steam, it won’t work.",
+        "You need to have the EA app installed, or the game won't launch."
+      ],
+      "nombre_fix": "The Sims 4 - bypass",
+      "custom_images": {}
+    },
     "3654560": {
       "name": "Plants vs. Zombies™: Replanted",
       "launch_steam": true,
