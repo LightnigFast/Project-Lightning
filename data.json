@@ -1032,6 +1032,21 @@
     }
   },
   "DENUVO": {
+	"3357650": {
+      "name": "PRAGMATA",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "THIS IS NOT A BYPASS, THESE ARE ONLY THE NECESSARY FILES, IT IS STILL REQUIRED TO OPEN THE TICKET IN THE CRIMSON DESERT AREA, AND ACTIVATION IS STILL DONE THROUGH ANYDESK.",
+		"ADD THE GAME FOLDER AS AN EXCEPTION BEFORE APPLYING THIS FIX, OR YOUR ANTIVIRUS WILL BLOCK IT."
+      ],
+      "nombre_fix": "PRAGMATA - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/11eab7be142d22a782ca3f424bbf71aa.png"
+      }
+    },
     "990080": {
       "name": "Hogwarts Legacy",
       "launch_steam": false,
