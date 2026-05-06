@@ -1005,6 +1005,19 @@
       "nombre_fix": "Grand Theft Auto V Enhanced -  bypass",
       "custom_images": {}
     },
+	"110800": {
+      "name": "L.A. Noire",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX.",
+        "You need to launch the game with the exe called LANoire, not with steam"
+      ],
+      "nombre_fix": "L.A. Noire - bypass",
+      "custom_images": {}
+    },
     "204100": {
       "name": "Max Payne 3",
       "launch_steam": false,
