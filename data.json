@@ -1045,6 +1045,18 @@
     }
   },
   "DENUVO": {
+	"3489700": {
+      "name": "Stellar Blade™",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX."
+      ],
+      "nombre_fix": "Stellar Blade - bypass",
+      "custom_images": {}
+    },
 	"2358720": {
       "name": "Black Myth: Wukong",
       "launch_steam": true,
