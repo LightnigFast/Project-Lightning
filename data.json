@@ -999,6 +999,7 @@
       "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX 12"],
       "errores": [
         "If the game shows errors when opening, you need to install Rockstar Games Launcher, Microsoft Visual C++ Redistributable and DirectX 12.",
+		"You will need to mark the game folder as a exception in defender before apply the fix or your antivirus will delete the bypass.",
         "It's very important that your graphics card is compatible with DirectX 12, otherwise the game won't start.",
 		"It is very important to launch the game using the PlayGTAV.exe executable."
       ],
