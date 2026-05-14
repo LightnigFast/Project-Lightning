@@ -1071,14 +1071,13 @@
       "custom_images": {}
     },
 	"3357650": {
-      "name": "PRAGMATA - ACTIVATION",
+      "name": "PRAGMATA",
       "launch_steam": true,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
       "errores": [
-        "THIS IS NOT A BYPASS, THESE ARE ONLY THE NECESSARY FILES, IT IS STILL REQUIRED TO OPEN THE TICKET IN THE PRAGMATA AREA, AND ACTIVATION IS STILL DONE THROUGH ANYDESK.",
-		"ADD THE GAME FOLDER AS AN EXCEPTION BEFORE APPLYING THIS FIX, OR YOUR ANTIVIRUS WILL BLOCK IT."
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX."
       ],
       "nombre_fix": "PRAGMATA - bypass",
       "custom_images": {
