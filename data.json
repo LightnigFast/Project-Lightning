@@ -1359,6 +1359,18 @@
       "nombre_fix": "Sniper Elite 4 - bypass",
       "custom_images": {}
     },
+	"953580": {
+      "name": "Tourist Bus Simulator",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "Tourist Bus Simulator - bypass",
+      "custom_images": {}
+    },
     "234140": {
       "name": "Mad Max",
       "launch_steam": true,
