@@ -1068,7 +1068,9 @@
         "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX."
       ],
       "nombre_fix": "LEGO® Batman™: Legacy of the Dark Knight - bypass",
-      "custom_images": {}
+      "custom_images": {
+		  "hero_image": "https://cdn2.steamgriddb.com/grid/0e4b1c1efa3eae61066f2fefe7bdf487.png"
+	  }
     },
 	"1941540": {
       "name": "Mafia: The Old Country",
