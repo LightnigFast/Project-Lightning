@@ -1058,6 +1058,18 @@
     }
   },
   "DENUVO": {
+	"1941540": {
+      "name": "Mafia: The Old Country",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX."
+      ],
+      "nombre_fix": "Mafia: The Old Country - bypass",
+      "custom_images": {}
+    },
 	"3489700": {
       "name": "Stellar Blade™",
       "launch_steam": true,
