@@ -855,6 +855,19 @@
       "nombre_fix": "Battlefield 4 - bypass",
       "custom_images": {}
     },
+	"1238880": {
+      "name": "Battlefield™ Hardline",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["EA App", "DirectX 12", "VC Redist 2015"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12, EA Play and VC Redist 2015.",
+		"The game does not work if you open it with Steam, you must open it with the exe called bfH.exe that is inside the main folder of the game"
+      ],
+      "nombre_fix": "Battlefield™ Hardline - bypass",
+      "custom_images": {}
+    },
     "1238840": {
       "name": "Battlefield™ 1",
       "launch_steam": false,
