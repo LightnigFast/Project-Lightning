@@ -1071,6 +1071,20 @@
     }
   },
   "DENUVO": {
+	"3768760": {
+      "name": "007 First Light",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX."
+      ],
+      "nombre_fix": "007 First Light - bypass",
+      "custom_images": {
+		  "hero_image": "https://cdn2.steamgriddb.com/grid/9cd0f2a7c17876d6721916f09bce496c.png"
+	  }
+    },
 	"2215200": {
       "name": "LEGO® Batman™: Legacy of the Dark Knight",
       "launch_steam": true,
