@@ -275,6 +275,21 @@
       "nombre_fix": "Far Cry 3 - bypass",
       "custom_images": {}
     },
+	"233270": {
+      "name": "Far Cry® 3 Blood Dragon",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "Ubisoft Play", "Visual C++ 2008", "Visual C++ 2010", ".NET 4.0"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play, Visual C++ 2008, Visual C++ 2010 and .NET 4.0."
+      ],
+      "nombre_fix": "Far Cry® 3 Blood Dragon - bypass",
+      "custom_images": {
+        "hero_image": "https://cdn2.steamgriddb.com/grid/84aaa84129e365590aeb86b57697edb9.png",
+        "background": "https://cdn2.steamgriddb.com/hero/18b16aa4f6882ecd819ad38f21394925.jpg"
+      }
+    },
     "298110": {
       "name": "Far Cry 4",
       "launch_steam": true,
