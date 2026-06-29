@@ -78,7 +78,7 @@ With an intuitive interface and outstanding performance, Project Lightning fixes
 
 ## License
 
-> **Copyright © 2025 LightningFast**  
+> **Copyright © 2026 LightningFast**  
 > **All rights reserved.**  
 > 
 > This source code and all associated files are the exclusive property of the author. No part of this project may be reproduced, distributed, or transmitted in any form or by any means, including copying, modifying, reusing, or publishing any part of the code or associated assets, without the prior written permission of the author.
