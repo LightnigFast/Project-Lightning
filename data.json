@@ -404,7 +404,8 @@
       "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
       "errores": [
         "If the game shows errors when opening, you need to install DirectX, .NET 4.0 and Ubisoft Play.",
-		"Remember to launch the game with exe watch_dogs.exe inside the bin folder"
+		"Remember to launch the game with exe watch_dogs.exe inside the bin folder",
+		"Remember to mark the game folder as an exception before applying the fix"
       ],
       "nombre_fix": "Watch_Dogs - bypass",
       "custom_images": {
