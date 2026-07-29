@@ -1551,7 +1551,10 @@
         "If the game shows errors when opening, you need to install DirectX and VC Redist."
       ],
       "nombre_fix": "Halo: Campaign Evolved - bypass",
-      "custom_images": {}
+      "custom_images": {
+	  	"hero_image": "https://cdn2.steamgriddb.com/grid/9e00a3de909a5e4ada9324bc7aa1fea2.png",
+        "background": "https://cdn2.steamgriddb.com/hero/fd8654430887f3e4af5d65eef1353d91.jpg"
+	  }
     },
     "7940": {
       "name": "Call of Duty 4: Modern Warfare (2007)",
