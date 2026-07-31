@@ -33,6 +33,7 @@
       "name": "Rayman Legends",
       "launch_steam": true,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
       "errores": [
@@ -127,6 +128,7 @@
       "name": "Assassin's Creed Unity",
       "launch_steam": true,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Visual C++", "Ubisoft Play"],
       "errores": [
@@ -218,6 +220,7 @@
       "name": "Assassin's Creed Valhalla",
       "launch_steam": true,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Ubisoft Play", "VC C++ 2019"],
       "errores": [
@@ -308,6 +311,7 @@
       "name": "Far Cry 5",
       "launch_steam": true,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist 2012", ".NET 4.0"],
       "errores": [
@@ -334,6 +338,7 @@
       "name": "Anno 1800",
       "launch_steam": true,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Ubisoft Play", "VC Redist"],
       "errores": [
@@ -447,6 +452,7 @@
       "name": "Tom Clancy's Ghost Recon Wildlands",
       "launch_steam": false,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
       "errores": [
@@ -703,6 +709,7 @@
       "name": "Need for Speed™ Rivals",
       "launch_steam": false,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["EA App", "DirectX"],
       "errores": [
@@ -1218,6 +1225,7 @@
       "name": "Hogwarts Legacy",
       "launch_steam": false,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2019", "DirectX"],
       "errores": [
@@ -1697,6 +1705,7 @@
 	  "disponible": false,
       "launch_steam": false,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX 12", "VC Redist"],
       "errores": [
@@ -1714,6 +1723,7 @@
       "name": "Call of Duty®: Modern Warfare® III",
       "launch_steam": false,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX 12", "VC Redist"],
       "errores": [
@@ -1732,6 +1742,7 @@
       "name": "Call of Duty®: Black Ops 6",
       "launch_steam": false,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX 12", "VC Redist"],
       "errores": [
