@@ -14,7 +14,7 @@
 - [System Requirements](#-system-requirements)
 - [Installation](#-installation)
 - [Official Ecosystem](#-official-ecosystem)
-- [Support](#-support)
+- [Support](#-support-the-project)
 - [License](#-license)
 - [Acknowledgements](#-acknowledgements)
 
