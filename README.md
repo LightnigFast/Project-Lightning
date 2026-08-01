@@ -261,7 +261,7 @@ Every contribution helps keep Project Lightning free and allows me to continue i
 
 Special thanks to:
 
-- ❤️ Instant Gaming for their official partnership.
+- 🧡 Instant Gaming for their official partnership.
 - Electron
 - Supabase
 - WebTorrent
