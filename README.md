@@ -1,82 +1,250 @@
-# ⚡ Project Lightning - by ♡B̷y̷D̷r̷a̷X̷x̷♡
+# ⚡ Project Lightning
 
-![Project Lightning Banner](./Banner_Project_Lightning.png)  
+> **The all-in-one gaming library manager, launcher, and download platform.**
 
-## Table of Contents
-
-- [Description](#description)
-- [Features](#features)
-- [System Requirements](#system-requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Resources and Support](#resources-and-support)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+![Project Lightning Banner](./Banner_Project_Lightning.png)
 
 ---
 
-## Description
+## 📖 Table of Contents
 
-**Project Lightning** is an innovative application designed to deliver **solutions and enhancements to your games quickly and effortlessly**.  
-With an intuitive interface and outstanding performance, Project Lightning fixes bugs, optimizes settings, and manages resources for your favorite titles.  
-**Discover a new way to enjoy your games!**
-
----
-
-## Features
-
-- **Quick and Easy Installation:** A sleek, optimized installer to set up the application effortlessly on any PC.
-- **Automatic Updates:** Stay up-to-date with background notifications and downloads.
-- **Full Compatibility:** Optimized for Windows 10, Windows 11, and systems with .NET Framework 4.8.
+- [Overview](#-overview)
+- [Features](#-features)
+- [Technology Stack](#-technology-stack)
+- [System Requirements](#-system-requirements)
+- [Installation](#-installation)
+- [Official Ecosystem](#-official-ecosystem)
+- [Support](#-support)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
 
 ---
 
-## System Requirements
+# 🚀 Overview
 
-- **Operating System:** Windows 10, Windows 11 (Windows 7/8 may work if .NET Framework 4.8 is installed).
-- **.NET Framework 4.8:** *If not installed, the installer will offer to download and install it automatically.*
-- **Disk Space:** At least 200 MB of free space for installation and updates.
-- **Internet Connection:** Required for updates and fixes downloads.
+**Project Lightning** is a modern all-in-one game manager built with **Electron**, designed to centralize everything you need in a single application.
 
----
+Manage your library, download games from multiple providers, browse the complete **Lightning Nexus** catalog, apply fixes, integrate your games with Steam, and discover the latest gaming deals—all from one place.
 
-## Installation
+The project is built around three core principles:
 
-### Option 1: Automatic Installation (Recommended)
-
-1. **Download the installer** from the [official Project Lightning page](https://github.com/LightnigFast/Project-Lightning/releases).
-2. Run the `ProjectLightningInstaller.exe` file.
-3. Follow the setup wizard instructions to complete the installation.
-4. A desktop shortcut will be created for quick access.
-
-### Option 2: Manual Installation
-
-- Download the installer from the [Project Lightning releases page](https://github.com/LightnigFast/Project-Lightning/releases).
-- Ensure you have installed [.NET Framework 4.8](https://go.microsoft.com/fwlink/?linkid=2088631).
-- Run the installer and follow the on-screen instructions.
+- ⚡ Fast
+- 🎮 Simple
+- 💚 Completely Free
 
 ---
 
-## Usage
+# ✨ Features
 
-1. Launch **Project Lightning** via the desktop shortcut or from the Start Menu.
-2. The main interface will load, displaying available fixes and update options.
-3. Select the game you want to modify or update.
-4. Follow the on-screen instructions to apply the fixes.
-5. After completion, a confirmation message will appear letting you know your game is ready to play.
+## 🎮 Game Library
 
-> **Note:** If you encounter any issues, please refer to the [Resources and Support](#resources-and-support) section.
-
----
-
-## Resources and Support
-
-- **Help Channel:** Join our [Discord/Slack/Telegram](https://discord.gg/JBB2pTNTqK) for real-time support.
-- **Report Issues:** If you find a bug or want to suggest improvements, please open an [issue](https://github.com/LightnigFast/Project-Lightning/issues) on GitHub.
+- Complete game library management
+- Automatic playtime tracking
+- Lightning Launcher
+- Automatic game artwork
+- Steam CDN & Lightning Nexus integration
+- Custom `lightning://` protocol support
+- Automatic desktop shortcuts
 
 ---
 
-## License
+## 🌐 Lightning Nexus
+
+Browse one of the largest gaming catalogs available.
+
+- Search PC and console games
+- Detailed game information
+- Screenshots
+- Release dates
+- Genres
+- Publishers
+- Add games directly to your Project Lightning library
+
+---
+
+## 📥 Advanced Download Manager
+
+Built-in download engine supporting multiple providers.
+
+### Supported providers
+
+- GoFile
+- Buzzheavier
+- MegaDB
+- Rootz
+- WebTorrent (P2P)
+
+### Features
+
+- Download queue
+- Pause & Resume
+- Multi-part downloads
+- Automatic extraction
+- ZIP support
+- RAR support
+- 7Z support
+- Automatic password detection
+
+---
+
+## 🛠️ Built-in Tools
+
+### LightningTools
+
+- Steam library integration
+- Steam manifest support
+- Lua support
+- Automatic Steam compatibility
+- Library synchronization
+
+### Bypass
+
+Dedicated section containing game fixes and compatibility patches.
+
+### OnlineFix
+
+Automatically download and install multiplayer fixes compatible with supported games.
+
+---
+
+## 🎮 Controller Support
+
+Native support for:
+
+- DualShock 4
+- DualSense
+- Xbox Controllers
+
+with automatic controller detection.
+
+---
+
+## 🌍 Multi-language
+
+Available in:
+
+- 🇬🇧 English
+- 🇪🇸 Spanish
+- 🇫🇷 French
+- 🇩🇪 German
+- 🇵🇹 Portuguese
+
+---
+
+## 💻 Cross Platform
+
+Project Lightning is available for both major desktop operating systems.
+
+- Windows
+- Linux
+
+---
+
+# 🛠 Technology Stack
+
+| Component | Technology |
+|------------|------------|
+| Framework | Electron 40 |
+| Runtime | Node.js |
+| UI | HTML, CSS, JavaScript |
+| Database | SQLite (better-sqlite3) |
+| Cloud Backend | Supabase |
+| Downloads | Axios + WebTorrent |
+| Extraction | 7zip-bin & node-unrar-js |
+| Authentication | Cloudflare Turnstile |
+| Website | Vercel |
+
+---
+
+# 📋 System Requirements
+
+| Requirement | Windows | Linux |
+|-------------|----------|--------|
+| Operating System | Windows 10 / 11 (64-bit) | Modern 64-bit Distribution |
+| Architecture | x64 | x64 |
+| Administrator Rights | Not Required | Not Required |
+| Disk Space | 300 MB + Downloads | 300 MB + Downloads |
+| Internet | Required for online features | Required for online features |
+
+---
+
+# 📦 Installation
+
+## 💻 Windows
+
+1. Download the latest installer from the **Releases** page.
+2. Run:
+
+```
+ProjectLightning-Setup-v5.x.x.exe
+```
+
+3. The installer automatically installs into:
+
+```
+%localappdata%
+```
+
+No Administrator permissions are required.
+
+---
+
+## 🐧 Linux
+
+Download the latest AppImage.
+
+Make it executable:
+
+```bash
+chmod +x ProjectLightning.AppImage
+```
+
+Run it:
+
+```bash
+./ProjectLightning.AppImage
+```
+
+No installation or root permissions are required.
+
+---
+
+# 🌐 Official Ecosystem
+
+## 🌍 Website
+
+Visit the official Project Lightning website:
+
+**[PROJECT LIGHTNING WEBSITE](https://project-lightning-web.vercel.app/)**
+
+---
+
+## 💬 Discord Community
+
+Join the official Discord server for:
+
+- Support
+- News
+- Community
+- Beta testing
+- Giveaways
+
+**[JOIN THE DISCORD SERVER](https://discord.gg/JBB2pTNTqK)**
+
+---
+
+# 💜 Support the Project
+
+If you'd like to support the continued development of **Project Lightning**, you can do so in two ways:
+
+- ☕ **[Donate via Ko-fi](https://ko-fi.com/lightningfast)** to help cover development and infrastructure costs.
+- 🎮 **[Purchase any game through the official Instant Gaming store](https://www.instant-gaming.com/?igr=projectlightning)** using my referral link. You'll get great discounts, and every purchase helps support the project at no extra cost to you.
+
+Every contribution helps keep Project Lightning free and allows me to continue improving it. Thank you for your support! ⚡
+
+---
+
+# 📄 License
 
 > **Copyright © 2026 LightningFast**  
 > **All rights reserved.**  
@@ -87,15 +255,25 @@ With an intuitive interface and outstanding performance, Project Lightning fixes
 > 
 > This project is **not open-source** and does not grant any license for reuse or redistribution under any circumstances.
 
+---
+
+# 🙏 Acknowledgements
+
+Special thanks to:
+
+- ❤️ Instant Gaming for their official partnership.
+- Electron
+- Supabase
+- WebTorrent
+- Better SQLite3
+- Cloudflare
+- Flaticon
+- Icons8
 
 ---
 
-## Acknowledgments
+# ⚡ Project Lightning
 
-- Thanks to [Flaticon](https://www.flaticon.com) and [Icons8](https://icons8.com) for providing amazing graphic resources.
-- Thanks to the **GitHub** and **Stack Overflow** communities for the continuous support during development.
-- And of course, thanks to **you** for using Project Lightning!
+> PLAY AS YOU WANT.
 
----
-
-*Download, install, and supercharge your gaming experience with Project Lightning!* 🚀⚡
+**One application. Endless possibilities.**
