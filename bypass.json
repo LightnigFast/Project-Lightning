@@ -412,6 +412,7 @@
       "name": "Watch_Dogs 2",
       "launch_steam": false,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", "Ubisoft Play", ".NET 4.0"],
       "errores": [
