@@ -1057,6 +1057,7 @@
       "name": "Grand Theft Auto V Legacy",
       "launch_steam": true,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["Rockstar Games Launcher", "Microsoft Visual C++ Redistributable", "DirectX 11"],
       "errores": [
