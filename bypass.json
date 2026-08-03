@@ -535,6 +535,7 @@
     },
 	"1811260": {
       "name": "EA SPORTS FIFA 23",
+	  "disponible": false,
       "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
