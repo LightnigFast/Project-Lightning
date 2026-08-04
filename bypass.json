@@ -1,5 +1,17 @@
 {
   "UBISOFT": {
+	"2840770": {
+      "name": "Avatar: Frontiers of Pandora",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Connect"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Connect."
+      ],
+      "nombre_fix": "Avatar: Frontiers of Pandora - bypass",
+      "custom_images": {}
+    },
     "241560": {
       "name": "The Crew",
       "launch_steam": true,
@@ -1124,6 +1136,18 @@
     }
   },
   "DENUVO": {
+	"3321460": {
+      "name": "Crimson Desert",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX."
+      ],
+      "nombre_fix": "Crimson Desert - bypass",
+      "custom_images": {}
+    },
 	"2680010": {
       "name": "The First Berserker: Khazan",
       "launch_steam": true,
