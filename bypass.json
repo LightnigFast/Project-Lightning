@@ -16,6 +16,7 @@
       "name": "The Crew",
       "launch_steam": true,
       "launch_exe": true,
+	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
       "errores": [
