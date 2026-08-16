@@ -269,6 +269,24 @@
       "nombre_fix": "Assassin's Creed Shadows - bypass",
       "custom_images": {}
     },
+	"3751950": {
+      "name": "Assassin's Creed Black Flag Resynced",
+      "launch_steam": false,
+      "launch_exe": true,
+	  "exclusion": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "Ubisoft Play", "VC C++ 2022"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, Ubisoft Play and VC C++ 2022",
+		"Possibly the antivirus deletes files, if that happens, mark the game folder as an exception and apply the fix again"
+      ],
+      "nombre_fix": "Assassin's Creed Black Flag Resynced - bypass",
+      "custom_images": {
+        "cover_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3751950/36a1644b03afce1a648ab90b232196609e827539/library_capsule.jpg",
+		"hero_image_x2": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3751950/09d7b766ce8a26bce32887ec7eaf00fc36552025/library_hero_2x.jpg",
+		"logo_img": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3751950/9928560f0155a0378d1cc915c165a1a09ba5d108/logo.png"
+      }
+    },
     "220240": {
       "name": "Far Cry 3",
       "launch_steam": true,
