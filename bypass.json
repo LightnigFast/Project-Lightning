@@ -498,6 +498,23 @@
     }
   },
   "EA": {
+	"3940610": {
+      "name": "EA SPORTS™ Madden NFL 27",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist",
+		"You need to launch the game with the exe called Madden27.exe"
+      ],
+      "nombre_fix": "EA SPORTS™ Madden NFL 27 - bypass",
+      "custom_images": {
+		"cover_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3940610/265d9223cba1401f91e9cc711ebe3a5f5e3440b8/library_capsule.jpg",
+		"hero_image_x2": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3940610/cc4e39c5595821cc1a1dbbcfa4174921a1af039a/library_hero_2x.jpg?t=1786718387",
+		"logo_img": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/3940610/611efdfb6f3574cd31febfd68e1b24b1f5880c05/logo.png"
+	  }
+    },
 	"4032350": {
       "name": "EA SPORTS™ College Football 27",
       "launch_steam": false,
