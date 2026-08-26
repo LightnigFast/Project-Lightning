@@ -1738,6 +1738,7 @@
     },
     "2000950": {
       "name": "Call of Duty®: Modern Warfare®",
+	  "disponible": false,
       "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
@@ -1785,6 +1786,7 @@
     },
 	"3595270": {
       "name": "Call of Duty®: Modern Warfare® III",
+	  "disponible": false,
       "launch_steam": false,
       "launch_exe": true,
 	  "exclusion": true,
