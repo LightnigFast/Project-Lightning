@@ -1601,6 +1601,22 @@
     }
   },
   "OTHERS": {
+	"3940610": {
+      "name": "NBA 2K27",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist"
+      ],
+      "nombre_fix": "NBA 2K27 - bypass",
+      "custom_images": {
+		"cover_image": "https://cdn2.steamgriddb.com/grid/41f111384c98a213f4b187cf3e952245.png",
+		"hero_image_x2": "https://cdn2.steamgriddb.com/hero/8b780518215423ad12c4b6d2eac04230.png",
+		"logo_img": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4356430/648606aa388d6cf2f2de8d1c55649bd164d8e98a/logo_2x.png"
+	  }
+    },
 	"939850": {
       "name": "The Dark Pictures Anthology: Man of Medan™",
       "launch_steam": false,
