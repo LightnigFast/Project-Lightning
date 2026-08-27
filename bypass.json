@@ -707,6 +707,7 @@
     },
 	"3059520": {
       "name": "F1® 25",
+	  "disponible": false,
       "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
