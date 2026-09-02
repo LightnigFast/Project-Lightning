@@ -1602,6 +1602,20 @@
     }
   },
   "OTHERS": {
+	"2054970": {
+      "name": "Dragon's Dogma 2™",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist.",
+		"VERY IMPORTANT: STEAM MUST BE CLOSED before launching the game, or you will get an error.",
+		"Open the game with DD2.exe"
+      ],
+      "nombre_fix": "Dragon's Dogma 2 - bypass",
+      "custom_images": {}
+    },
 	"4356430": {
       "name": "NBA 2K27",
       "launch_steam": true,
