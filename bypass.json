@@ -1174,6 +1174,18 @@
     }
   },
   "DENUVO": {
+	"1971870": {
+      "name": "Mortal Kombat 1",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX."
+      ],
+      "nombre_fix": "Mortal Kombat 1 - bypass",
+      "custom_images": {}
+    },
 	"3321460": {
       "name": "Crimson Desert",
       "launch_steam": true,
