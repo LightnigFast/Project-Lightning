@@ -1,5 +1,17 @@
 {
   "UBISOFT": {
+	"2842040": {
+      "name": "Star Wars Outlaws",
+      "launch_steam": true,
+      "launch_exe": false,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Connect"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Connect."
+      ],
+      "nombre_fix": "Star Wars Outlaws - bypass",
+      "custom_images": {}
+    },
 	"2840770": {
       "name": "Avatar: Frontiers of Pandora",
       "launch_steam": true,
