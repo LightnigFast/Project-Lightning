@@ -1199,6 +1199,19 @@
     }
   },
   "DENUVO": {
+	"2161700": {
+      "name": "Persona 3 Reload",
+      "launch_steam": true,
+      "launch_exe": true,
+	  "exclusion": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2022", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2022 and DirectX."
+      ],
+      "nombre_fix": "Persona 3 Reload - bypass",
+      "custom_images": {}
+    },
 	"1971870": {
       "name": "Mortal Kombat 1",
       "launch_steam": true,
