@@ -1,5 +1,18 @@
 {
   "UBISOFT": {
+	"2751000": {
+      "name": "Prince of Persia The Lost Crown",
+      "launch_steam": true,
+      "launch_exe": false,
+	  "exclusion": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Connect"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Connect."
+      ],
+      "nombre_fix": "Prince of Persia The Lost Crown - bypass",
+      "custom_images": {}
+    },
 	"2842040": {
       "name": "Star Wars Outlaws",
       "launch_steam": true,
