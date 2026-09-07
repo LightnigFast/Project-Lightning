@@ -731,8 +731,8 @@
       "custom_images": {}
     },
 	"3059520": {
-      "name": "F1® 25",
-	  "disponible": false,
+      "name": "F1® 25 + F1® 26 Season Pack",
+	  "disponible": true,
       "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
@@ -752,7 +752,9 @@
       ],
       "nombre_fix": "F1 25 - bypass",
       "custom_images": {
-		  "hero_image": "https://cdn2.steamgriddb.com/grid/0cee0119ca5c721f1d76d6a425516299.png"
+		"cover_image": "https://cdn2.steamgriddb.com/grid/da8f17df33b392e61af87eedc7a02773.png",
+		"hero_image_x2": "https://cdn2.steamgriddb.com/hero/7a42294ed0341f5e2dc1c218cbb711ab.png",
+		"logo_img": "https://cdn2.steamgriddb.com/logo/59ccc377d175af5b04d0c03dea8a1b9c.png"
 	  }
     },
     "47870": {
