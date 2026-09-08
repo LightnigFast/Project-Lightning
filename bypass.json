@@ -1,9 +1,23 @@
 {
   "UBISOFT": {
+	"2290180": {
+      "name": "Riders Republic - ZEN MODE",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Connect"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Connect.",
+		"To launch the game, you need to use the Start.exe executable included in the game's root folder.",
+		"Only ZEN Mode is available. It is the only offline mode the game has, so please don't ask about the normal mode."
+      ],
+      "nombre_fix": "Riders Republic - bypass",
+      "custom_images": {}
+    },
 	"2751000": {
       "name": "Prince of Persia The Lost Crown",
       "launch_steam": true,
-      "launch_exe": false,
+      "launch_exe": true,
 	  "exclusion": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", ".NET", "Ubisoft Connect"],
@@ -16,7 +30,7 @@
 	"2842040": {
       "name": "Star Wars Outlaws",
       "launch_steam": true,
-      "launch_exe": false,
+      "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": ["DirectX", ".NET", "Ubisoft Connect"],
       "errores": [
