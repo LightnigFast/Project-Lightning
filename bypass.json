@@ -1668,6 +1668,19 @@
     }
   },
   "OTHERS": {
+	"1114150": {
+      "name": "CarX Street™",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist.",
+		"You need to launch the game using the **CarX Street.exe** executable."
+      ],
+      "nombre_fix": "CarX Street - bypass",
+      "custom_images": {}
+    },
 	"2054970": {
       "name": "Dragon's Dogma 2™",
       "launch_steam": false,
