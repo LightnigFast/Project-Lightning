@@ -573,6 +573,32 @@
 		"logo_img": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4032350/58f40804b0aa54fbd62312128ba21a92a8c905ad/logo_2x.png"
 	  }
     },
+	"4080220": {
+      "name": "EA SPORTS FC™ 27",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist",
+        "1. Install the game using files from 'FC 27 - GET HERE'. If already installed, update via SteamTools.",
+        "2. Open Project Lightning, select FC 26, and apply the fix to the game folder.",
+        "3. Run FC27.exe to generate the Denuvo ticket.",
+        "4. Send 'DenuvoTicket' file via request zone in my server (short message first).",
+        "5. Replace 'DenuvoToken' in anadius.cfg with the token I send you. Keep the quotes.",
+        "6. Save the config and launch FC27.exe.",
+        "Game requires my manifest version to work.",
+        "Support only via AnyDesk.",
+        "Disable Windows/driver updates to avoid issues.",
+        "If updated, send a new DenuvoTicket and repeat steps."
+      ],
+      "nombre_fix": "EA SPORTS FC™ 27 - bypass",
+      "custom_images": {
+        "cover_image": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4080220/81210d536b70c14e4cf9725f3f03d82bf64e5e25/library_capsule.jpg",
+		"hero_image_x2": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4080220/98909665528dc40a7d43fd3dd6edc8088ed98c44/library_hero_2x.jpg",
+		"logo_img": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/4080220/b99ce0289769853c76a0562e306a7054ed5f8ab6/logo.png"
+      }
+    },
     "3405690": {
       "name": "EA SPORTS FC 26",
       "launch_steam": false,
