@@ -582,7 +582,7 @@
       "errores": [
         "If the game shows errors when opening, you need to install DirectX, EA App and VC Redist",
         "1. Install the game using files from 'FC 27 - GET HERE'. If already installed, update via SteamTools.",
-        "2. Open Project Lightning, select FC 26, and apply the fix to the game folder.",
+        "2. Open Project Lightning, select FC 27, and apply the fix to the game folder.",
         "3. Run FC27.exe to generate the Denuvo ticket.",
         "4. Send 'DenuvoTicket' file via request zone in my server (short message first).",
         "5. Replace 'DenuvoToken' in anadius.cfg with the token I send you. Keep the quotes.",
