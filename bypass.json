@@ -1255,6 +1255,18 @@
     }
   },
   "DENUVO": {
+	"2055290": {
+      "name": "Sonic Colors: Ultimate™",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET 4.6.2", "Microsoft VC redistributable 2021", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET 4.6.2, Microsoft VC redistributable 2021 and DirectX."
+      ],
+      "nombre_fix": "Sonic Colors: Ultimate™ - bypass",
+      "custom_images": {}
+    },
 	"785260": {
       "name": "Team Sonic Racing™",
       "launch_steam": true,
