@@ -1745,6 +1745,19 @@
     }
   },
   "OTHERS": {
+	"3010850": {
+      "name": "Gears of War: E-Day",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist.",
+		"You need to launch the game using the **GoWEDay-Steam.exe** executable. inside FairlightConcept/Binaries/Win64 folder"
+      ],
+      "nombre_fix": "Gears of War: E-Day - bypass",
+      "custom_images": {}
+    },
 	"1114150": {
       "name": "CarX Street™",
       "launch_steam": false,
