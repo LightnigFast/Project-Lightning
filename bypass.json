@@ -1255,6 +1255,18 @@
     }
   },
   "DENUVO": {
+	"801800": {
+      "name": "Atomfall™",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET", "Microsoft VC redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX."
+      ],
+      "nombre_fix": "Atomfall™ - bypass",
+      "custom_images": {}
+    },
 	"637100": {
       "name": "Sonic Forces™",
       "launch_steam": true,
