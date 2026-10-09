@@ -1,5 +1,17 @@
 {
   "UBISOFT": {
+	"460920": {
+      "name": "Steep - ZEN MODE",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Connect"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Connect."
+      ],
+      "nombre_fix": "Steep - bypass",
+      "custom_images": {}
+    },
 	"2290180": {
       "name": "Riders Republic - ZEN MODE",
       "launch_steam": false,
