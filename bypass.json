@@ -1267,6 +1267,19 @@
     }
   },
   "DENUVO": {
+	"594570": {
+      "name": "Total War: WARHAMMER II",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET", "Microsoft VC redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX.",
+		"I know the fix size it's too big, I've compressed it as much as I could."
+      ],
+      "nombre_fix": "Total War: WARHAMMER II - bypass",
+      "custom_images": {}
+    },
 	"3483510": {
       "name": "The Adventures of Elliot: The Millennium Tales",
       "launch_steam": true,
