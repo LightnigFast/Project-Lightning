@@ -1704,6 +1704,18 @@
       "nombre_fix": "Football Manager 2023 - bypass",
       "custom_images": {}
     },
+	"1100600": {
+      "name": "Football Manager 2020",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX 12", "VC Redist 2020"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist 2020."
+      ],
+      "nombre_fix": "Football Manager 2020 - bypass",
+      "custom_images": {}
+    },
     "678950": {
       "name": "DRAGON BALL FighterZ",
       "launch_steam": true,
