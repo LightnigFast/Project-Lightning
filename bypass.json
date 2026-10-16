@@ -1267,6 +1267,20 @@
     }
   },
   "DENUVO": {
+	"700600": {
+      "name": "Evil Genius 2",
+      "launch_steam": true,
+      "launch_exe": true,
+	  "exclusion": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET", "Microsoft VC redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX.",
+		"Very important, always launch the game using Vulkan, never DirectX 12, or it won't work."
+      ],
+      "nombre_fix": "Evil Genius 2 - bypass",
+      "custom_images": {}
+    },
 	"594570": {
       "name": "Total War: WARHAMMER II",
       "launch_steam": true,
