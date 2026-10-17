@@ -93,6 +93,19 @@
       "nombre_fix": "The Crew 2 - bypass",
       "custom_images": {}
     },
+	"2698940": {
+      "name": "The Crew Motorfest",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", ".NET", "Ubisoft Play"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, .NET, and Ubisoft Play.",
+	    "If you cant open the game with steam, try to open it with the exe in the folder called TheCrewMotorfest_BE.exe"
+      ],
+      "nombre_fix": "The Crew Motorfest - bypass",
+      "custom_images": {}
+    },
 	"242550": {
       "name": "Rayman Legends",
       "launch_steam": true,
