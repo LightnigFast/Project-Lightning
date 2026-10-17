@@ -2132,6 +2132,25 @@
         "hero_image": "https://cdn2.steamgriddb.com/grid/1981baaee6f2be15f26b1af0e88bf46c.png"
       }
     },
+	"4435490": {
+      "name": "Call of Duty®: Modern Warfare® 4",
+      "launch_steam": false,
+      "launch_exe": true,
+	  "exclusion": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX 12", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 12 and VC Redist",
+        "Open the game with !start_sp26",
+		"Possibly the antivirus deletes files, if that happens, mark the game folder as an exception and apply the fix again"
+      ],
+      "nombre_fix": "Call of Duty®: Modern Warfare® 4 - bypass",
+      "custom_images": {
+        "cover_image": "https://cdn2.steamgriddb.com/grid/ba916dda088a492c5557e89d1d321ba6.png",
+		"hero_image_x2": "https://cdn2.steamgriddb.com/hero/c1943baba556c568bfa3f61ad5b6c0e3.png",
+		"logo_img": "https://cdn2.steamgriddb.com/logo/729a2085aa4fa7ac73a1781d25fcbab9.png"
+      }
+    },
 	"2373990": {
       "name": "Solo Leveling: ARISE OVERDRIVE",
       "launch_steam": true,
