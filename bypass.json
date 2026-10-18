@@ -1280,6 +1280,30 @@
     }
   },
   "DENUVO": {
+	"1490890": {
+      "name": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET", "Microsoft VC redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX."
+      ],
+      "nombre_fix": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles - bypass",
+      "custom_images": {}
+    },
+	"2928600": {
+      "name": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET", "Microsoft VC redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX."
+      ],
+      "nombre_fix": "Demon Slayer -Kimetsu no Yaiba- The Hinokami Chronicles 2 - bypass",
+      "custom_images": {}
+    },
 	"700600": {
       "name": "Evil Genius 2",
       "launch_steam": true,
