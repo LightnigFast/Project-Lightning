@@ -733,6 +733,19 @@
       "nombre_fix": "Dead Space - bypass",
       "custom_images": {}
     },
+	"1237980": {
+      "name": "STAR WARS™ Battlefront™",
+      "launch_steam": false,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "EA App", "VC Redist 2013", "VC Redist 2015"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX, EA App, VC Redist 2013 and VC Redist 2015",
+		"The game does not work if you open it with Steam, you must open it with the exe called starwarsbattlefront.exe that is inside the main folder of the game"
+      ],
+      "nombre_fix": "STAR WARS™ Battlefront™ - bypass",
+      "custom_images": {}
+    },
     "1237950": {
       "name": "STAR WARS™ Battlefront™ II",
       "launch_steam": false,
