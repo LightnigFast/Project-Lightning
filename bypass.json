@@ -1960,6 +1960,18 @@
       "nombre_fix": "The Dark Pictures Anthology: Man of Medan - bypass",
       "custom_images": {}
     },
+	"620": {
+      "name": "Portal 2",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": ["DirectX", "VC Redist"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX and VC Redist."
+      ],
+      "nombre_fix": "Portal 2 - bypass",
+      "custom_images": {}
+    },
 	"2806050": {
       "name": "Halo: Campaign Evolved™",
       "launch_steam": true,
