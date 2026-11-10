@@ -1781,6 +1781,18 @@
       "nombre_fix": "Total War: THREE KINGDOMS - bypass",
       "custom_images": {}
     },
+	"456610": {
+      "name": "Pro Evolution Soccer 2017",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX 11", "VC Redist 2017"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 11 and VC Redist 2017."
+      ],
+      "nombre_fix": "Pro Evolution Soccer 2017 - bypass",
+      "custom_images": {}
+    },
     "1904540": {
       "name": "Football Manager 2023",
       "launch_steam": true,
