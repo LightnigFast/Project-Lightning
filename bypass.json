@@ -1285,6 +1285,18 @@
     }
   },
   "DENUVO": {
+	"4078430": {
+      "name": "STAR WARS: Galactic Racer™",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [".NET", "Microsoft VC redistributable", "DirectX"],
+      "errores": [
+        "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX."
+      ],
+      "nombre_fix": "STAR WARS: Galactic Racer™ - bypass",
+      "custom_images": {}
+    },
 	"2638890": {
       "name": "Onimusha: Way of the Sword",
       "launch_steam": true,
