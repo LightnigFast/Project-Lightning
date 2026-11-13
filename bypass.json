@@ -1295,7 +1295,9 @@
         "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX."
       ],
       "nombre_fix": "STAR WARS: Galactic Racer™ - bypass",
-      "custom_images": {}
+      "custom_images": {
+		"cover_image": "https://cdn2.steamgriddb.com/grid/a592d9fe5ade10553913fb1b94f1175c.png"
+	  }
     },
 	"2638890": {
       "name": "Onimusha: Way of the Sword",
