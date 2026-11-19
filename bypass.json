@@ -1786,6 +1786,18 @@
       "nombre_fix": "Total War: THREE KINGDOMS - bypass",
       "custom_images": {}
     },
+	"1259970": {
+      "name": "eFootball PES 2021 SEASON UPDATE",
+      "launch_steam": true,
+      "launch_exe": true,
+      "comentarios": "Enjoy the game ♥",
+      "programas_necesarios": [ "DirectX 11", "VC Redist 2020"],
+      "errores": [
+        "If the game shows errors when opening, you need to install DirectX 11 and VC Redist 2020."
+      ],
+      "nombre_fix": "PeFootball PES 2021 SEASON UPDATE - bypass",
+      "custom_images": {}
+    },
 	"456610": {
       "name": "Pro Evolution Soccer 2017",
       "launch_steam": true,
