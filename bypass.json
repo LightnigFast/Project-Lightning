@@ -1796,7 +1796,9 @@
         "If the game shows errors when opening, you need to install DirectX 11 and VC Redist 2020."
       ],
       "nombre_fix": "PeFootball PES 2021 SEASON UPDATE - bypass",
-      "custom_images": {}
+      "custom_images": {
+		  "cover_image": "https://cdn2.steamgriddb.com/grid/16f25b46149ce0369f6b9d856d0abe25.jpg"
+	  }
     },
 	"456610": {
       "name": "Pro Evolution Soccer 2017",
