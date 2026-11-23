@@ -1287,12 +1287,13 @@
   "DENUVO": {
 	"4115450": {
       "name": "Phantom Blade Zero",
-      "launch_steam": true,
+      "launch_steam": false,
       "launch_exe": true,
       "comentarios": "Enjoy the game ♥",
       "programas_necesarios": [".NET", "Microsoft VC redistributable", "DirectX"],
       "errores": [
-        "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX."
+        "If the game shows errors when opening, you need to install .NET, Microsoft VC redistributable and DirectX.",
+		"You need to launch the game with the exe called PBZ.exe inside the folder platform/steam, not with steam"
       ],
       "nombre_fix": "Phantom Blade Zero - bypass",
       "custom_images": {
